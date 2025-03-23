@@ -10,18 +10,16 @@ export type TSubItemNav = [
    }
 ];
 
-export type TSubItems = [
-   {
-      id: number;
-      perSubNavTitle: string;
-      engSubNavTitle: string;
-      href: string;
-   }
-];
+export type TSubItems = {
+   id: number;
+   perSubNavTitle: string;
+   engSubNavTitle: string;
+   href: string;
+} ;
 
 export type TPropsNavItem = {
    children: React.ReactNode;
-   navLinksItem:TLinksData
+   navLinksItem: TLinksData;
 };
 export type TLinksData = {
    id: number;
@@ -30,4 +28,3 @@ export type TLinksData = {
    subItems?: TSubItems[];
    link: string;
 };
-

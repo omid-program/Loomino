@@ -1,15 +1,12 @@
 import { TSubItems } from "@/types";
+import Link from "next/link";
 import React from "react";
 
-function NavSubItem() {
+function NavSubItem({subItems}:{subItems:TSubItems}) {
    return (
-      <div className="w-full shadow-sky-700 shadow-md px-2 py-3 max-h-10  z-50">
-         <ul>
-            <li>cat1</li>
-            <li>cat2</li>
-            <li>cat3</li>
-         </ul>
-      </div>
+<li>
+   <Link href={subItems.href}>{subItems.perSubNavTitle}</Link>
+</li>
    );
 }
 

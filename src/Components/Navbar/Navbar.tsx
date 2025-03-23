@@ -41,12 +41,20 @@ function Navbar() {
       },
    ];
    return (
-      <nav className="w-10/12 max-h-5 relative mx-auto  bg-sky-400 rounded-full py-2 px-1 flex justify-between items-center ">
+      <nav className="w-10/12 max-h-12 relative mx-auto  bg-sky-400 rounded-full py-2 px-1 flex justify-between items-center ">
          <ul className="flex gap-2">
             {navLinks.map((navLinksItem: TLinksData) => (
                <li>
                   <NavItem key={navLinksItem.id} navLinksItem={navLinksItem}>
-                     <NavSubItem />
+                        {
+                           navLinksItem.subItems?.map(subItem=>(
+                              <ul key={subItem?.id} className="shadow-sky-700 shadow-md px-2 py-3   z-50">
+                                 <NavSubItem subItems={subItem} />
+
+                              </ul>
+                              
+                           ))
+                        }
                   </NavItem>
                </li>
             ))}
