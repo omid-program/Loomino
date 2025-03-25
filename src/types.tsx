@@ -15,7 +15,7 @@ export type TSubItems = {
    perSubNavTitle: string;
    engSubNavTitle: string;
    href: string;
-} ;
+};
 
 export type TPropsNavItem = {
    children: React.ReactNode;
@@ -27,4 +27,28 @@ export type TLinksData = {
    engTitle: string;
    subItems?: TSubItems[];
    link: string;
+};
+
+export type TInStoreAllProduct = {
+   id: string;
+   colorName: string;
+   colorCode: string;
+   qtys: number;
+   colorImg: string;
+};
+
+export type TAllProductData = {
+   id: string;
+   perTitle: string;
+   engTitle: string;
+   perMiniDescription: string;
+   engMiniDescription: string;
+   perDescription: string;
+   engDescription: string;
+   rate: number;
+   width: string;
+   tags: string[];
+   inStore: TInStoreAllProduct;
+   cat: string[];
+   price: number;
 };

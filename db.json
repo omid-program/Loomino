@@ -1,1 +1,329 @@
-{}
+{
+   "fabrics": [
+      {
+         "id": "1",
+         "perTitle": "کرپ مازراتی",
+         "engTitle": "Maserati crepe",
+         "perMiniDescription": "کرپ مازراتی یکی از پرفروش ترین و محبوب ترین نوع پارچه های کرپ محسوب می شود. این پارچه با استفاده از نخ های تابدار و بهره گیری از فرایند شیمیایی ویژه ای تولید شده که ماحصل این روش، بافت منحصربفرد، پرتراکم، ضخیم و بدون درز است. از ویژگی های اصلی این پارچه ها حالت چین بسیار کم و سطح دانه دانه ای برجسته می باشد که در فرآیند بافت پارچه ایجاد می شود. همین ویژگی ها موجب شده تا کرپ مازراتی از دیگر کرپ ها متمایز شود.",
+         "engMiniDescription": "Maserati crepe is one of the best-selling and most popular types of crepe fabrics. This fabric is produced using twisted yarns and a special chemical process, which results in a unique, dense, thick and seamless texture. The main features of these fabrics are very low wrinkle and a prominent grain surface that is created during the weaving process. These features make Maserati crepe stand out from other crepes.",
+         "perDescription": "کرپ مازراتی جزء پارچه های ضخیم در میان دیگر انواع کرپ ها محسوب می شود، در نتیجه از آن بیشتر در فصول خنک و سرد سال مورد استفاده قرار می گیرد. این پارچه در رنگ ها و طرح های متنوعی بافته می شود و اغلب آب رفت ندارد از همین جهت تنوع دوخت بالایی در اختیار بانوان قرار می دهد.همچنین کیفیت و نوع پارچه های مازراتی، تعیین کننده ی نوع استفاده از آن می باشد. چنانچه نوع ضخیم تری از پارچه های مازراتی نیز موجود است که در صنایع دیگری همچون: دکوراسیون و تولید مبل مورد استفاده قرار می گیرد.",
+         "engDescription": "Maserati crepe is considered a thick fabric among other types of crepe, as a result of which it is used more in the cool and cold seasons of the year. This fabric is woven in various colors and designs and is often waterproof, therefore it provides women with a high variety of sewing.Also, the quality and type of Maserati fabrics determine the type of use. If there is a thicker type of Maserati fabrics, it is also used in other industries such as decoration and furniture production.",
+         "rate": 4.5,
+         "width": "1.5",
+         "tags": ["Width150"],
+         "inStore": [
+            {
+               "id": "1",
+               "colorName": "آبی آسمانی",
+               "colorCode": "#74EBFF",
+               "qtys": 50,
+               "colorImg": "/mozerati-sky-model.jpg"
+            },
+            {
+               "id": "2",
+               "colorName": "آجری",
+               "colorCode": "#FF7145",
+               "qtys": 48,
+               "colorImg": "/mozerati-orange-model.jpg"
+            },
+            {
+               "id": "3",
+               "colorName": "سبز",
+               "colorCode": "#08B079",
+               "qtys": 60,
+               "colorImg": "/mozerati-green-model.jpg"
+            },
+            {
+               "id": "4",
+               "colorName": "مشکی",
+               "colorCode": "#242424",
+               "qtys": 54,
+               "colorImg": "/mozerati-black-model.jpg"
+            }
+         ],
+         "cat": [
+            "cloth"
+         ],
+         "price": 200000
+      },
+      {
+         "id": "2",
+         "perTitle": "فوتر",
+         "engTitle": "Fotr",
+         "perMiniDescription": "یکی از پارچه های زمستانی که از زمان  های گذشته وجود داشته و بسیار کاربردی و پر طرفدار است، پارچه ی فوتر می باشد که از جنس پشم است و گرما بخشی خوبی در برابر سرما دارد. تولید پالتو یکی از رایج ترین کاربرد های پارچه فوتر است. در این مطلب از آی بولک می خواهیم در مورد پارچه فوتر صحبت کنیم تا بخوبی متوجه شوید پارچه فوتر چیست، چه ویژگی هایی دارد و برای چه لباس هایی مناسب است.",
+         "engMiniDescription": "One of the winter fabrics that has existed since ancient times and is very practical and popular is fleece fabric, which is made of wool and has good warmth against the cold. The production of coats is one of the most common uses of fleece fabric. In this article from iBulk, we want to talk about fleece fabric so that you can understand what fleece fabric is, what its features are, and what clothes it is suitable for.",
+         "perDescription": "پارچه فوتر پارچه شبیه به نمد می باشد که 80 درصد آن پشمی است و الیاف مصنوعی نیز در آن بکار برده می شود. ضخیم و گرم بودن و همچنین غیر قابل نفوذ بودن از جمله ویژگی های پارچه فوتر است. فوتر انواع مختلفی دارد و جنس مرغوبتر فوتر کشمیری است. مرغوب بودن پارچه فوتر به عواملی چون میزان پشم موجود در پارچه، نوع بافت پاچه و سایر الیافی که در کنار پشم بکار می روند بستگی دارد.تولید پارچه فوتر بدون اقدامات بافت صورت می گیرد و اینگونه است که الیاف پشمی تحت فشار و حرارت و رطوبت بالا در هم تنیده می شوند و پارچه فوتر را بوجود می آورند. جالب است بدانید اسم پارچه فوتر از سوی فرانسوی ها برای این پارچه انتخاب شده و با وجود ضخامتی که دارد، چون از الیاف طبیعی تهیه شده، اکسیژن را بخوبی عبور می دهد و ایستایی آن بسیار شیک است.",
+         "engDescription": "Footer fabric is a felt-like fabric that is 80 percent wool and synthetic fibers are also used in it. Being thick and warm, as well as being impermeable, are among the characteristics of footer fabric. There are different types of footer, and the better quality of footer is cashmere. The quality of footer fabric depends on factors such as the amount of wool in the fabric, the type of weave, and other fibers used alongside the wool. Footer fabric is produced without weaving, and this is how wool fibers are woven together under high pressure, heat, and humidity, creating footer fabric. It is interesting to know that the name footer fabric was chosen by the French for this fabric, and despite its thickness, because it is made from natural fibers, it passes oxygen well and its durability is very stylish.",
+         "rate": 4.7,
+         "width": "1.5",
+         "tags": ["Width150"],
+         "price": 620000,
+         "inStore": [
+            {
+               "id": "1",
+               "colorName": "صورتی",
+               "colorCode": "#B318AC",
+               "qtys": 33,
+               "colorImg": "/fotr-pink-model.jpg"
+            },
+            {
+               "id": "2",
+               "colorName": "آبی",
+               "colorCode": "#1C76B2",
+               "qtys": 28,
+               "colorImg": "/fotr-blue-model.jpg"
+            }
+         ],
+         "cat": [
+            "cloth"
+         ]
+      },
+      {
+         "id": "3",
+         "perTitle": "شانتون دو نخ",
+         "engTitle": "Two-thread shantung",
+         "perMiniDescription": "پارچه شانتون پلاس ( شانتون دو نخ ) دارای ویژگی و خاصیت ها فراوانی می باشد. اکنون به معرفی و بررسی برخی از این ویژگی ها مهم این پارچه می پردازیم. پارچه شانتون پلاس ( شانتون دو نخ ) از راحتی و خنکی خوبی برخوردار است که داشتن این ویژگی سبب می شود در فصل گرما پارچه خوبی برای دوخت مانتو به حساب  آید.همین ویژگی سبب محبوبیت و خرید پارچه شانتون پلاس در بسیاری از تولید کنندگان مانتو شده است. ",
+         "engMiniDescription": "Shanton Plus fabric (two-ply shanton) has many features and properties. Now we will introduce and review some of these important features of this fabric. Shanton Plus fabric (two-ply shanton) has good comfort and coolness, which makes it a good fabric for sewing coats in the hot season. This feature has made Shanton Plus fabric popular and purchased by many coat manufacturers.",
+         "perDescription": "پارچه شانتون پلاس ( شانتون دو نخ ) به دلیل قیمت مناسب و تنوع رنگ بندی این محصول از جمله پارچه های مناسب جهت دوخت مانتوهای اسپرت  برای تولیدی می باشد. پارچه های شانتون و شانتون پلاس در مصارفی به جز دوخت لباس و مانتو نیز کاربرد دارد. پارچه مبلی، پارچه رو تختی، پارچه رومیزی، پارچه کوسن، پارچه پرده و … را می توان از مصارف دیگر پارچه شانتون و شانتون پلاس ( شانتون دو نخ ) دانست.",
+         "engDescription": "Shanton Plus fabric (two-thread shanton) is one of the most suitable fabrics for sewing sports coats for production due to its reasonable price and variety of colors. Shanton and Shanton Plus fabrics are also used in uses other than sewing clothes and coats. Upholstery fabric, bedspread fabric, tablecloth fabric, cushion fabric, curtain fabric, etc. can be considered as other uses of Shanton and Shanton Plus (two-thread shanton) fabrics.",
+         "width": "1.5",
+         "tags": ["Width150"],
+         "rate": 4.8,
+         "inStore": [
+            {
+               "id": "1",
+               "colorName": "آبی",
+               "colorCode": "#232C7D",
+               "qtys": 83,
+               "colorImg": "/shantonDoNakh-blue-model.jpg"
+            },
+            {
+               "id": "2",
+               "colorName": "کرمی",
+               "colorCode": "#D1C168",
+               "qtys": 70,
+               "colorImg": "/shantonDoNakh-cream-model.jpg"
+            },
+            {
+               "id": "3",
+               "colorName": "خاکستری",
+               "colorCode": "#A1A1A1",
+               "qtys": 68,
+               "colorImg": "/shantonDoNakh-gray-model.jpg"
+            }
+         ],
+         "cat": [
+            "cloth"
+         ],
+         "price": 380000
+      },
+      {
+         "id": "4",
+         "perTitle": "کشمیر",
+         "engTitle": "Keshmir",
+         "perMiniDescription": "پارچه کشمیر از پرطرفدارترین پارچه‌هاست. «کشمیر» به دلیل کمیابی و نرمی فوق‌العاده‌ی که دارد، حس تجمّل و لوکس بودن را القاء می‌کند.پارچه کشمیر از الیاف بسیار لطیف موی بز کشمیر تهیه می‌شود. این بز در کوه‌های مغولستان و شمال چین پرورش می‌یابد.",
+         "engMiniDescription": "Cashmere fabric is one of the most popular fabrics. “Cashmere” evokes a sense of elegance and luxury due to its rarity and extraordinary softness. Cashmere fabric is made from the very fine hair fibers of the Kashmir goat. This goat is raised in the mountains of Mongolia and northern China.",
+         "perDescription": "عموماً به نظر می‌رسد که این بافت به‌عنوان بافتی از پشم است اما در حقیقت این پارچه از موی بز ساخته‌شده است که همین امر به آن خصوصیات متفاوتی می‌دهد که آن را از پشم گوسفند متمایز می‌کند. امروز تولید پارچه کشمیر به روش صنعتی انجام می‌شود و با تولید آن به روش سنتی کاملاً متفاوت است.",
+         "engDescription": "Generally, this fabric seems to be a wool fabric, but in fact, this fabric is made from goat hair, which gives it different characteristics that distinguish it from sheep wool. Today, the production of cashmere fabric is carried out industrially and is completely different from its production in the traditional way.",
+         "rate": 4.2,
+         "width": "1.5",
+         "tags": ["Width150"],
+         "inStore": [
+            {
+               "id": "1",
+               "colorName": "قهوه ای",
+               "colorCode": "#2B251E",
+               "qtys": 56,
+               "colorImg": "/Keshmir-brown-model.jpg"
+            },
+            {
+               "id": "2",
+               "colorName": "کرمی",
+               "colorCode": "#B89D81",
+               "qtys": 48,
+               "colorImg": "/Keshmir-cream-model.jpg"
+            },
+            {
+               "id": "3",
+               "colorName": "خاکستری",
+               "colorCode": "#A19C92",
+               "qtys": 55,
+               "colorImg": "/Keshmir-gray-model.jpg"
+            }
+         ],
+         "cat": [
+            "cloth"
+         ],
+         "price": 320000
+      },
+      {
+         "id": "5",
+         "perTitle": "دیپلومات",
+         "engTitle": "Diplomat",
+         "perMiniDescription": "کلاسیک بودن این پارچه خود را روی کت و شلوار بیشتر نمایان می کند اما در مورد لباس های دیگر شاید این موضوع برعکس به نظر بیاید، اینکه بگوییم این پارچه مردانه است تفکر دهه ۱۹۸۰ را داریم اما با گذشت زمان این پارچه وقتی توسط خانم ها مورد استفاده قرار گرفت محبوبیت آن دو چندان شد.",
+         "engMiniDescription": "The classic nature of this fabric is most evident on suits, but in other clothing, it may seem the opposite. To say that this fabric is for men is a 1980s mindset, but over time, this fabric has doubled in popularity when used by women.",
+         "perDescription": "مانتو و شلوار اداری راه راه انتخاب کلاسیکی مناسبی است که گاه می توان آن را در صفات مدرن تر دید. سوال اینجاست که برای ایجاد هر یک از مناسبت های خاص ، چه چیزی را با آن ست کنید. قانون اساسی این است که ترکیب را تا حد ممکن تمیز و متعادل نگه داریدخواه در یک جلسه کاری یا در یک امر پیچیده تر مثل عروسی.این مهم است که پیراهن بسیار ساده ای با آن به تن داشته باشید تا ظاهر آن را حفظ کند.با این پارچه بیانگر قدرت و غرور در یک ظاهر کلاسیک است.",
+         "engDescription": "A striped office coat and trousers is a classic choice that can sometimes be seen in more modern guises. The question is what to pair with it to create a look that is both stylish and sophisticated. The basic rule is to keep the combination as clean and balanced as possible, whether it is for a business meeting or a more sophisticated affair like a wedding. It is important to wear a very simple shirt with it to maintain the look. With this fabric, it expresses strength and pride in a classic look.",
+         "rate": 3.8,
+         "width": "1.5",
+         "tags": ["Width150"],
+         "inStore": [
+            {
+               "id": "1",
+               "colorName": "طوسی",
+               "colorCode": "#454545",
+               "qtys": 48,
+               "colorImg": "/diplomate-gray-model.jpg"
+            },
+            {
+               "id": "2",
+               "colorName": "سرمه‌ای",
+               "colorCode": "#03002E",
+               "qtys": 48,
+               "colorImg": "/diplomate-NavyBlue-model.jpg"
+            },
+            {
+               "id": "3",
+               "colorName": "مشکی",
+               "colorCode": "#121212",
+               "qtys": 60,
+               "colorImg": "/diplomate-black-model.jpg"
+            }
+         ],
+         "cat": [
+            "cloth"
+         ],
+         "price": 450000
+      },
+      {
+         "id": "6",
+         "perTitle": "مخمل کبریتی",
+         "engTitle": "Match velvet",
+         "perMiniDescription": "از انواع ضخیم تر پارچه کبریتی می توانید برای دوخت لباس های گرم و زمستانی استفاده کنید. نکته جالب توجه این که در زمان های گذشته از این پارچه به دلیل مقاومت بالای آن برای دوخت لباس کار استفاده می شود. پارچه مخمل کبریتی از زمان های گذشته ترند بوده است. البته پس از مدتی محبوبیت خود را از دست داد و این روزها مجددا به عرصه فشن و مد بازگشته است.",
+         "engMiniDescription": "You can use thicker types of velvet fabric to sew warm and winter clothes. Interestingly, in the past, this fabric was used to sew work clothes because of its high resistance. Velvet velvet fabric has been a trend since the past. However, after a while, it lost its popularity and these days it has returned to the fashion scene.",
+         "perDescription": "یکی از جذاب ترین پارچه های گرم و زمستانه، پارچه مخمل کبریتی است. این پارچه با ظاهر جذاب و چشمنواز خود، محبوبیت زیادی در بین طراحان و خیاطان دارد. این پارچه ضخیم، زیر دستی نرم دارد. بارزترین ویژگی ظاهری این پارچه، وجود راه راه های موازی روی سطح آن است. خوب است بدانید که به پارچه مخمل کبریتی، پارچه کبریتی نیز می گویند. پارچه مخمل کبربتی دارای ضخامت های گوناگونی است و کاربرد آن بر اساس ضخامتی که دارد، تعیین می شود. برای مثال پارچه های مخمل کبریتی نازک برای دوخت لباس های بهاری و پاییزه کاربرد دارند.",
+         "engDescription": "One of the most attractive warm and winter fabrics is match velvet fabric. This fabric is very popular among designers and tailors with its attractive and eye-catching appearance. This thick fabric has a soft touch. The most striking appearance feature of this fabric is the presence of parallel stripes on its surface. It is good to know that match velvet fabric is also called match cloth. Match velvet fabric has various thicknesses and its use is determined based on its thickness. For example, thin match velvet fabrics are used for sewing spring and autumn clothes.",
+         "rate": 4.8,
+         "width": "1.5",
+         "tags": ["Width150"],
+         "inStore": [
+            {
+               "id": "1",
+               "colorName": "آبی تیره",
+               "colorCode": "#142885",
+               "qtys": 50,
+               "colorImg": "/MatchVelvet-blue-model.jpg"
+            },
+            {
+               "id": "2",
+               "colorName": "طوسی",
+               "colorCode": "#636E63",
+               "qtys": 48,
+               "colorImg": "/MatchVelvet-gray-model.jpg"
+            }
+         ],
+         "cat": [
+            "cloth"
+         ],
+         "price": 520000
+      },
+      {
+         "id": "7",
+         "perTitle": "ملحفه بروجرد 100% نخ",
+         "engTitle": "bedsheet",
+         "perMiniDescription": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و",
+         "engMiniDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas purus viverra accumsan in nisl nisi. Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque. In egestas erat imperdiet sed euismod nisi porta lorem mollis. Morbi tristique senectus et netus. Mattis pellentesque id nibh tortor id aliquet lectus proin. Sapien faucibus et molestie",
+         "perDescription": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.",
+         "engDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas purus viverra accumsan in nisl nisi. Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque. In egestas erat imperdiet sed euismod nisi porta lorem mollis. Morbi tristique senectus et netus. Mattis pellentesque id nibh tortor id aliquet lectus proin. Sapien faucibus et molestie ac feugiat sed lectus vestibulum. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget. Dictum varius duis at consectetur lorem. Nisi vitae suscipit tellus mauris a diam maecenas sed enim. Velit ut tortor pretium viverra suspendisse potenti nullam. Et molestie ac feugiat sed lectus. Non nisi est sit amet facilisis magna. Dignissim diam quis enim lobortis scelerisque fermentum. Odio ut enim blandit volutpat maecenas volutpat. Ornare lectus sit amet est",
+         "rate": 4.5,
+         "width": "1.5",
+         "tags": ["Width150"],
+         "inStore": [
+            {
+               "id": "1",
+               "colorName": "آبی آسمانی",
+               "colorCode": "#74EBFF",
+               "qtys": 50,
+               "colorImg": "/mozerati-sky-model.jpg"
+            },
+            {
+               "id": "2",
+               "colorName": "آجری",
+               "colorCode": "#FF7145",
+               "qtys": 48,
+               "colorImg": "/mozerati-orange-model.jpg"
+            },
+            {
+               "id": "3",
+               "colorName": "سبز",
+               "colorCode": "#08B079",
+               "qtys": 60,
+               "colorImg": "/mozerati-green-model.jpg"
+            },
+            {
+               "id": "4",
+               "colorName": "مشکی",
+               "colorCode": "#242424",
+               "qtys": 54,
+               "colorImg": "/mozerati-black-model.jpg"
+            }
+         ],
+         "cat": [
+            "bedsheet"
+         ],
+         "price": 150000
+      }
+   ],
+   "cats": [
+      {
+         "id": "1",
+         "nameTag": "forCloth" , 
+         "perTitle": "لباسی",
+         "engTitle": "for Cloth",
+         "engDesc":"Clothing made from good, high-quality fabrics is always among the best and highest-quality clothing. Because in addition to being durable and long-lasting, they are comfortable to wear and provide you with comfort. In fact, it is the fabric that makes the clothing beautiful. Also, in order to wear clothes that you are comfortable in, you should pay attention to the fabric. Especially if you are a woman, because you attach great importance to style and beauty, you should consider this issue more so that you always remain stylish and well-dressed.",
+         "perDesc": "پوشاکی که از جنس پارچه های خوب و با کیفیت ساخته میشوند، همواره در دسته بهترین و باکیفیت ترین پوشاک قرار میگیرند. چراکه علاوه بر دوام و ماندگاری بالا، در تن راحت هستند و آسایش شما را فراهم می آورند. در واقع جنس پارچه است که لباس را زیبا میکند. همچنین برای اینکه لباس هایی بپوشید که در آن راحت باشید، باید به جنس پارچه آن توجه کنید. بخصوص که اگر از جامعه بانوان هستيد، به جهت اینکه به استایل و زیبایی اهمیت زیادی می دهید، میبایست این موضوع را بیشتر در نظر بگیرید تا همیشه شیک و خوش پوش بمانید."
+      },
+      {
+         "id": "2",
+         "nameTag": "bedSheet" , 
+         "perTitle": "ملحفه ای",
+         "engTitle": "bed sheet",
+         "engDesc":"Sheets are produced with various fabrics and are available in a wide variety of widths, grammage (weight), designs, and colors on the market, and people have many choices when buying. When choosing a sheet fabric, you should pay attention to various parameters such as personal preferences, allergies, financial ability, climate, weather, softness, resistance, fabric quality, color stability, standard texture, fabric width, etc. If you also plan to buy a suitable sheet fabric, stay with us until the end of this article from Ovita. In this article, we have introduced the types of sheet fabrics along with the characteristics of each so that you can make a proper purchase with sufficient knowledge and the necessary information in this field.",
+         "perDesc":"ملحفه‌ها با پارچه‌های گوناگونی تولید می‌شوند و از نظر عرض، گرماژ (وزن)، طرح و رنگ در تنوع بالایی در بازار موجود هستند و افراد در زمان خرید حق انتخاب‌های بسیاری دارند. در انتخاب پارچه ملحفه باید به پارامترهای مختلفی چون ترجیحات شخصی، آلرژی‌ها، توانایی مالی، اقلیم، آب و هوا، لطافت، مقاومت، کیفیت پارچه، ثبات رنگی، بافت استاندارد، عرض پارچه و … توجه کرد. اگر شما هم قصد خرید پارچه ملحفه‌ای مناسب را دارید تا آخر این مقاله از اویتا همراه ما باشید. در این مطلب به معرفی انواع پارچه ملحفه به همراه ویژگی‌های هر یک پرداخته‌ایم تا با شناخت کافی و داشتن اطلاعات لازم در این زمینه خرید مناسبی داشته باشید."
+      },
+      {
+         "id": "3",
+         "nameTag": "curtain" , 
+         "perTitle": "پرده‌",
+         "engTitle": "curtain",
+         "engDesc":"Curtain fabric has different types based on the material of production, curtain fabric design, and country of production. Choosing the right polyester curtain fabric, cotton curtain fabric, etc., requires knowing about the different types of curtain fabric and considering several factors, including your purpose for installing the curtains and the style you intend for the curtain fabric in your room and home. In addition, some factors that may play a role in your decision to choose curtain fabric such as linen, silk, polyester, wool, acrylic rayon, types of curtain lining, etc., are:",
+         "perDesc":"پارچه پرده‌ای بر اساس جنس تولیدی، طرح پارچه پرده و کشور تولیدکننده انواع مختلفی دارد. انتخاب پارچه مناسب پرده پلی‌استر، پرده نخی و…، مستلزم اطلاع از انواع مختلف پارچه پرده‌ای و در نظر گرفتن چندین عامل، شامل هدف شما از نصب پرده و سبکی است که برای پارچه پرده اتاق و خانه خود در نظر دارید. بجز آن، بعضی عواملی که ممکن است در تصمیم شما جهت انتخاب پارچه پرده ای کتان، ابریشم، پلی‌استر، وال، ریون اکرولیک، انواع زیر پرده و… نقش داشته باشد، عبارتند از:"
+      }
+   ],
+   "tags": [
+      {
+         "id": "1",
+         "nameTag": "Width200" , 
+         "perTitle": "عرض 1.5",
+         "engTitle": "width 1.5",
+         "perDesc": "پارچه های عرض 1.5",
+         "engDesc" : "1.5 width fabric"
+      },
+      {
+         "id": "2",
+         "nameTag": "Width200" , 
+         "perTitle": "عرض 2",
+         "engTitle": "width 2",
+         "perDesc": "پارچه های عرض 2",
+         "engDesc" : "2 width fabric"
+      },
+      {
+         "id": "3",
+         "nameTag": "Width300" , 
+         "perTitle": "عرض 3",
+         "engTitle": "width 3",
+         "perDesc": "پارچه های عرض  متر3",
+         "engDesc" : "3meter width fabric"
+      }
+   ]
+}

@@ -46,15 +46,14 @@ function Navbar() {
             {navLinks.map((navLinksItem: TLinksData) => (
                <li>
                   <NavItem key={navLinksItem.id} navLinksItem={navLinksItem}>
-                        {
-                           navLinksItem.subItems?.map(subItem=>(
-                              <ul key={subItem?.id} className="shadow-sky-700 shadow-md px-2 py-3   z-50">
-                                 <NavSubItem subItems={subItem} />
-
-                              </ul>
-                              
-                           ))
-                        }
+                     {navLinksItem.subItems?.map((subItem) => (
+                        <ul
+                           key={subItem?.id}
+                           className="shadow-sky-700 shadow-md px-2 py-3   z-50"
+                        >
+                           <NavSubItem subItems={subItem} />
+                        </ul>
+                     ))}
                   </NavItem>
                </li>
             ))}
