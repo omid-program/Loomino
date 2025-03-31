@@ -54,18 +54,18 @@ export type TAllProductData = {
 };
 
 export type TShopParams = {
-   params:Promise<{}>
-   searchParams:Promise<{
-      page:string
-      per_page:string
-      title:string
-   }>
-}
+   params: Promise<{}>;
+   searchParams: Promise<{
+      page: string;
+      per_page: string;
+      title: string;
+   }>;
+};
 
 export type TProductPageParams = {
-   params:Promise<{id:string}>
-   seachPrams:Promise<{}>
-}
+   params: Promise<{ id: string }>;
+   seachPrams: Promise<{}>;
+};
 
 export type TColorItem = {
    id: string;
@@ -73,9 +73,25 @@ export type TColorItem = {
    colorCode: string;
    qtys: number;
    colorImg: string;
-}
+};
 
 export type TSmartImgProps = {
-   colorList:TColorItem[]
-}
+   colorList: TColorItem[];
+   id:string
+};
 
+export type TUserOrds = {
+   id: string;
+   qty: number;
+   colorCode: string;
+};
+
+export type TShappingCartContext = {
+   userOrd: TUserOrds[];
+   addOrdToCart: (
+      id: string,
+      meterCount: number,
+      centiMeterCount: number,
+      colorCode: string
+   ) => void;
+};

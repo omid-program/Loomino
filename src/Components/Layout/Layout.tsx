@@ -1,3 +1,4 @@
+import { ShappingCartContextProvider } from "@/context/ShappongCartContext";
 import Navbar from "../Navbar/Navbar";
 
 export default function Layout({
@@ -7,8 +8,10 @@ export default function Layout({
 }>) {
    return (
       <div>
-         <Navbar />
-         {children}
+         <ShappingCartContextProvider>
+            <Navbar />
+            {children}
+         </ShappingCartContextProvider>
       </div>
    );
 }

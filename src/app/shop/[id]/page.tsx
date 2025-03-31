@@ -23,7 +23,7 @@ async function ProductPage({ params }: TProductPageParams) {
       <Container>
          <div className="grid grid-cols-4">
             <div className="col-span-1">
-               <SmartImg colorList={colorList} />
+               <SmartImg id={id} colorList={colorList} />
             </div>
             <div className="col-span-3 justify-center items-center gap-8">
                <div className="flex flex-col ">
