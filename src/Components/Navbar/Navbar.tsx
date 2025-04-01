@@ -4,6 +4,7 @@ import NavItem from "./NavItem/NavItem";
 import Link from "next/link";
 import { TLinksData } from "@/types";
 import NavSubItem from "./NavSubItem/NavSubItem";
+import { BsCart4 } from "react-icons/bs";
 
 function Navbar() {
    const navLinks: TLinksData[] = [
@@ -58,6 +59,13 @@ function Navbar() {
                </li>
             ))}
          </ul>
+         <div>
+            <div className="size-5">
+               <Link href={'/cart'} className="w-full">
+                  <BsCart4 />
+               </Link>
+            </div>
+         </div>
       </nav>
    );
 }

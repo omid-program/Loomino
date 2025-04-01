@@ -1,7 +1,8 @@
 "use client";
 import { useShappingCartContext } from "@/context/ShappongCartContext";
-import { TSmartImgProps, TUserOrds } from "@/types";
+import { TInStoreAllProduct, TSmartImgProps, TUserOrds } from "@/types";
 import React, { useState } from "react";
+import QtyManager from "../QtyManager/QtyManager";
 
 function SmartImg(props: TSmartImgProps) {
     console.log(props);
@@ -14,14 +15,17 @@ function SmartImg(props: TSmartImgProps) {
     );
     const [meterVal, setMeterVal] = useState<number>(0);
     const [centiMeterVal, setCentiMeterVal] = useState<number>(0);
+    const [colorCode , setColorCode]=useState<string>(colorList[0].colorCode)
     const { userOrd , addOrdToCart } = useShappingCartContext();
 
-    const changeImgColor = (colorSelectImg: string) => {
-        setColorImg(colorSelectImg);
+    const changeImgColor = (colorSelectImg: TInStoreAllProduct) => {
+        setColorImg(colorSelectImg.colorImg);
         let colorSelect = colorList.find((item) => {
-            return item.colorImg === colorSelectImg;
+            return item.colorImg === colorSelectImg.colorImg;
         });
         setColorQtys(colorSelect?.qtys);
+        setColorCode(colorSelectImg.colorCode)
+
     };
     return (
         <div className="flex flex-col gap-4 justify-center items-center my-8">
@@ -33,7 +37,8 @@ function SmartImg(props: TSmartImgProps) {
                 {colorList.map((colorItem) => (
                     <button
                         onClick={() => {
-                            changeImgColor(colorItem.colorImg);
+                            // changeImgColor(colorItem.colorImg);
+                            changeImgColor({...colorItem});
                         }}
                         style={{ backgroundColor: colorItem.colorCode }}
                         className="size-10 rounded-full"
@@ -43,7 +48,9 @@ function SmartImg(props: TSmartImgProps) {
                 ))}
             </div>
             <div>{colorQtys}</div>
-            <div className="grid grid-cols-2">
+            {/* manage QTY */}
+            <QtyManager id={id} colorCode={colorCode}/>
+            {/* <div className="grid grid-cols-2">
                 <div className="grid col-span-1">
                     <label htmlFor="meterInputId">متر:</label>
                     <input
@@ -70,12 +77,13 @@ function SmartImg(props: TSmartImgProps) {
                 </div>
                 <div>
                     <button className=" grid col-span-2 p-1 rounded-md bg-sky-400"
-                    onClick={()=>{addOrdToCart(id , meterVal , centiMeterVal)}}
+                    onClick={()=>{addOrdToCart(id , meterVal , centiMeterVal ,colorCode )}}
                     >
                         افزودن به سبد خرید
                     </button>
                 </div>
-            </div>
+            </div> */}
+            {/* end QTY manager */}
         </div>
     );
 }
