@@ -9,12 +9,11 @@ import React from "react";
 
 async function ProductPage({ params }: TProductPageParams) {
    const { id } = await params;
-   // console.log(id);
+   console.log('productPage=>' ,id);
    const response = await fetch(`http://localhost:8000/fabrics/${id}`);
    const productData = (await response.json()) as TAllProductData;
-   // console.log(productData);
-   // console.log(productData.inStore);
    const colorList = productData.inStore as TInStoreAllProduct[];
+   const productPrice = productData.price
    console.log(colorList);
    
    
@@ -23,7 +22,7 @@ async function ProductPage({ params }: TProductPageParams) {
       <Container>
          <div className="grid grid-cols-4">
             <div className="col-span-1">
-               <SmartImg id={id} colorList={colorList} />
+               <SmartImg id={id} colorList={colorList} price={productPrice} />
             </div>
             <div className="col-span-3 justify-center items-center gap-8">
                <div className="flex flex-col ">

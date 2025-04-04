@@ -53,9 +53,16 @@ export function ShappingCartContextProvider({
       console.log(userOrd);
       
    };
+   const removeProductFromCart = (id : string , colorCode:string)=>{
+      setUserOrd((prev)=>{
+         return prev.filter((ord)=>{
+            return ord.id !== id || ord.colorCode !== colorCode
+         })
 
+      })
+   }
    return (
-      <shappingCartContext.Provider value={{ userOrd, addOrdToCart }}>
+      <shappingCartContext.Provider value={{ userOrd, addOrdToCart ,removeProductFromCart }}>
          {children}
       </shappingCartContext.Provider>
    );

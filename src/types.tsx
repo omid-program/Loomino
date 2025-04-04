@@ -77,7 +77,8 @@ export type TColorItem = {
 
 export type TSmartImgProps = {
    colorList: TColorItem[];
-   id:string
+   id: string;
+   price: number | undefined;
 };
 
 export type TUserOrds = {
@@ -94,4 +95,16 @@ export type TShappingCartContext = {
       centiMeterCount: number,
       colorCode: string
    ) => void;
+   removeProductFromCart: (id: string, colorCode: string) => void;
+};
+export type TCartItemProps = {
+   id: string;
+   qty:number
+   colorCode: string;
+   price: number;
+};
+export type TQtyManagerProps = {
+   id: string ;
+   colorCode: string ;
+   price: number ;
 };
