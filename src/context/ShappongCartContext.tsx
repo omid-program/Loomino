@@ -21,7 +21,8 @@ export function ShappingCartContextProvider({
       id: string,
       meterCount: number,
       centiMeterCount: number,
-      colorCode: string
+      colorCode: string,
+      price: number
    ) => {
       let productCount = baskeFormatMeter(meterCount, centiMeterCount);
       let isHaveOrd = userOrd.find(
@@ -46,6 +47,7 @@ export function ShappingCartContextProvider({
                id,
                qty: productCount,
                colorCode,
+               price
             };
             setUserOrd((prev) => [...prev, newOrd]);
          }

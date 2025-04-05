@@ -12,8 +12,8 @@ async function ProductPage({ params }: TProductPageParams) {
    console.log('productPage=>' ,id);
    const response = await fetch(`http://localhost:8000/fabrics/${id}`);
    const productData = (await response.json()) as TAllProductData;
-   const colorList = productData.inStore as TInStoreAllProduct[];
-   const productPrice = productData.price
+   const colorList = productData?.inStore as TInStoreAllProduct[];
+   const productPrice = productData?.price
    console.log(colorList);
    
    
@@ -26,9 +26,9 @@ async function ProductPage({ params }: TProductPageParams) {
             </div>
             <div className="col-span-3 justify-center items-center gap-8">
                <div className="flex flex-col ">
-                  <h1 className="text-3xl">{productData.perTitle}</h1>
+                  <h1 className="text-3xl">{productData?.perTitle}</h1>
                   <div>
-                     <p>{productData.perDescription}</p>
+                     <p>{productData?.perDescription}</p>
                   </div>
                </div>
             </div>

@@ -7,6 +7,7 @@ function ProductBox({
    id,
    engMiniDescription,
    engTitle,
+   defImg,
    inStore,
    perTitle,
    perMiniDescription,
@@ -14,13 +15,14 @@ function ProductBox({
    width,
    price,
 }: TAllProductData) {
+   
    return (
       <div className="shadow-md shadow-sky-700 p-2">
          <div className="flex flex-col justify-center items-center">
             <div className="w-10/12 h-72">
                <img
                   className="bg-cover"
-                  src={inStore[0].colorImg}
+                  src={defImg}
                   alt=""
                />
             </div>

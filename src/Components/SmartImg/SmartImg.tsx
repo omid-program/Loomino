@@ -5,7 +5,7 @@ import QtyManager from "../QtyManager/QtyManager";
 
 function SmartImg(props: TSmartImgProps) {
     console.log(props);
-    const colorList = props.colorList;
+    const colorList = props?.colorList;
     const id = props.id
     const price = props.price
 
@@ -17,12 +17,15 @@ function SmartImg(props: TSmartImgProps) {
     const [colorCode , setColorCode]=useState<string>(colorList[0].colorCode)
 
     const changeImgColor = (colorSelectImg: TInStoreAllProduct) => {
-        setColorImg(colorSelectImg.colorImg);
-        let colorSelect = colorList.find((item) => {
-            return item.colorImg === colorSelectImg.colorImg;
+        if(colorSelectImg?.colorImg){
+            setColorImg(colorSelectImg.colorImg);
+        }
+        let colorSelect = colorList?.find((item) => {
+            return item.colorImg === colorSelectImg?.colorImg;
         });
         setColorQtys(colorSelect?.qtys);
-        setColorCode(colorSelectImg.colorCode)
+        colorSelectImg?.colorCode &&
+        setColorCode(colorSelectImg.colorCode);
 
     };
     console.log('SmartImg=>' , id);
