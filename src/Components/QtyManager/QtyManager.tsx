@@ -19,7 +19,7 @@ function QtyManager(props:TQtyManagerProps ) {
          setUserProductPrice((baskeFormatMeter(meterVal , centiMeterVal))*price)
          
       // }
-      console.log('userProductPrice => ' , userProductPrice);
+      // console.log('userProductPrice => ' , userProductPrice);
    },[meterVal , centiMeterVal ])
    
 
@@ -31,7 +31,7 @@ function QtyManager(props:TQtyManagerProps ) {
          }
       })
    },[colorCode , id])
-   console.log('qtyManager=> ',id);
+   // console.log('qtyManager=> ',id);
    
    return (
       <div>

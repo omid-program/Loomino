@@ -30,18 +30,18 @@ export type TLinksData = {
 };
 
 export type TInStoreAllProduct = {
-   id: string |undefined;
-   colorName: string |undefined;
-   colorCode: string |undefined;
-   qtys: number |undefined;
-   colorImg: string |undefined;
+   id: string | undefined;
+   colorName: string | undefined;
+   colorCode: string | undefined;
+   qtys: number | undefined;
+   colorImg: string | undefined;
 } | null;
 
 export type TAllProductData = {
    id: string;
    perTitle?: string;
    engTitle?: string;
-   defImg?:string
+   defImg?: string;
    perMiniDescription?: string;
    engMiniDescription?: string;
    perDescription?: string;
@@ -79,14 +79,14 @@ export type TColorItem = {
 export type TSmartImgProps = {
    colorList: TColorItem[];
    id: string;
-   price: number |undefined;
+   price: number | undefined;
 };
 
 export type TUserOrds = {
    id: string;
    qty: number;
    colorCode: string;
-   price: number
+   price: number;
 };
 
 export type TShappingCartContext = {
@@ -97,18 +97,24 @@ export type TShappingCartContext = {
       centiMeterCount: number,
       colorCode: string,
       price: number
-
    ) => void;
    removeProductFromCart: (id: string, colorCode: string) => void;
 };
 export type TCartItemProps = {
    id: string;
-   qty:number
+   qty: number;
    colorCode: string;
    price: number;
 };
 export type TQtyManagerProps = {
-   id: string ;
-   colorCode: string ;
-   price: number ;
+   id: string;
+   colorCode: string;
+   price: number;
 };
+
+export type TOffCodes = {
+   id: string;
+   offCode: string;
+   persentage: number;
+};
+

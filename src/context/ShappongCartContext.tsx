@@ -16,6 +16,7 @@ export function ShappingCartContextProvider({
    children: React.ReactNode;
 }) {
    const [userOrd, setUserOrd] = useState<TUserOrds[]>([]);
+   // const []
 
    const addOrdToCart = (
       id: string,
@@ -29,8 +30,8 @@ export function ShappingCartContextProvider({
          (ord) => ord.id === id && ord.colorCode === colorCode
       );
 
-      console.log("productCount", productCount);
-      console.log("isHaveOrd", isHaveOrd);
+      // console.log("productCount", productCount);
+      // console.log("isHaveOrd", isHaveOrd);
       if(productCount >= 0.2){
          if (isHaveOrd) {
             // اگر محصول از قبل وجود دارد، مقدار qty را جایگزین کن

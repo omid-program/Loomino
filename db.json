@@ -348,6 +348,30 @@
       "engDesc": "3meter width fabric"
     }
   ],
+  "ords" : [
+    {
+      "id":"1",
+      "fullName": "fullNameTesst",
+      "addres":[
+        {
+          "country" : "CountryTest",
+          "city":"CityTest",
+          "details" : "detailsTest"
+        }
+      ],
+      "phoneNumber":"phoneNumberTest",
+      "ords":[
+        {
+          "id":"1",
+          "colorCode":"#03002E",
+          "qty":1.5 , 
+          "price": 220000
+        }
+      ],
+      "offCode":10
+      
+    }
+  ],
   "offs":[
     {
       "id" : "1",
