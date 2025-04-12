@@ -1,11 +1,11 @@
 "use client";
 import CartItem from "@/Components/CartItem/CartItem";
 import Container from "@/Components/Container/Container";
+import OrderShappingInfo from "@/Components/OrderShappingInfo/OrderShappingInfo";
 import PagesTitle from "@/Components/PageTitle/PagesTitle";
 import TotalPriceBox from "@/Components/TotalPriceBox/TotalPriceBox";
 import { useShappingCartContext } from "@/context/ShappongCartContext";
 import { TAllProductData } from "@/types";
-import { all } from "axios";
 import { useEffect, useState } from "react";
 
 function Cart() {
@@ -34,6 +34,9 @@ function Cart() {
             </div>
             <div>
                <TotalPriceBox  />
+            </div>
+            <div>
+               <OrderShappingInfo/>
             </div>
          </div>
       </Container>

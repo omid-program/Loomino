@@ -294,7 +294,6 @@
       ],
       "price": 150000
     }
-
   ],
   "cats": [
     {
@@ -348,45 +347,68 @@
       "engDesc": "3meter width fabric"
     }
   ],
-  "ords" : [
+  "ords": [
     {
-      "id":"1",
+      "id": "1",
       "fullName": "fullNameTesst",
-      "addres":[
+      "addres": [
         {
-          "country" : "CountryTest",
-          "city":"CityTest",
-          "details" : "detailsTest"
+          "country": "CountryTest",
+          "city": "CityTest",
+          "details": "detailsTest"
         }
       ],
-      "phoneNumber":"phoneNumberTest",
-      "ords":[
+      "phoneNumber": "phoneNumberTest",
+      "ords": [
         {
-          "id":"1",
-          "colorCode":"#03002E",
-          "qty":1.5 , 
+          "id": "1",
+          "colorCode": "#03002E",
+          "qty": 1.5,
           "price": 220000
         }
       ],
-      "offCode":10
-      
+      "offCode": 10
+    },
+    {
+      "id": 1324,
+      "country": "ایران",
+      "state": "خراسان",
+      "city": "مشهد",
+      "address": "آموزگار 2 پلاک 28",
+      "phoneNumber": "091404787816",
+      "emailAddres": "odakli79",
+      "userOrd": [
+        {
+          "id": "1",
+          "qty": 1,
+          "colorCode": "#242424",
+          "price": 200000
+        },
+        {
+          "id": "3",
+          "qty": 0.6,
+          "colorCode": "#D1C168",
+          "price": 380000
+        }
+      ],
+      "userOffCode": 10
     }
   ],
-  "offs":[
+  "offs": [
     {
-      "id" : "1",
-      "offCode":"OFF10",
-      "persentage":10
+      "id": "1",
+      "offCode": "OFF10",
+      "persentage": 10
     },
     {
-      "id" : "2",
-      "offCode":"OFF20",
-      "persentage":20
+      "id": "2",
+      "offCode": "OFF20",
+      "persentage": 20
     },
     {
-      "id" : "3",
-      "offCode":"OFF30",
-      "persentage":30
+      "id": "3",
+      "offCode": "OFF30",
+      "persentage": 30
     }
   ]
 }

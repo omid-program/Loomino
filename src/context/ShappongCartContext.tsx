@@ -16,7 +16,7 @@ export function ShappingCartContextProvider({
    children: React.ReactNode;
 }) {
    const [userOrd, setUserOrd] = useState<TUserOrds[]>([]);
-   // const []
+   const [userOffCode, setUserOffCode] = useState<number>(0);
 
    const addOrdToCart = (
       id: string,
@@ -29,10 +29,9 @@ export function ShappingCartContextProvider({
       let isHaveOrd = userOrd.find(
          (ord) => ord.id === id && ord.colorCode === colorCode
       );
-
       // console.log("productCount", productCount);
       // console.log("isHaveOrd", isHaveOrd);
-      if(productCount >= 0.2){
+      if (productCount >= 0.2) {
          if (isHaveOrd) {
             // اگر محصول از قبل وجود دارد، مقدار qty را جایگزین کن
             setUserOrd((prev) =>
@@ -48,24 +47,36 @@ export function ShappingCartContextProvider({
                id,
                qty: productCount,
                colorCode,
-               price
+               price,
             };
             setUserOrd((prev) => [...prev, newOrd]);
          }
       }
       console.log(userOrd);
-      
    };
-   const removeProductFromCart = (id : string , colorCode:string)=>{
-      setUserOrd((prev)=>{
-         return prev.filter((ord)=>{
-            return ord.id !== id || ord.colorCode !== colorCode
-         })
 
-      })
-   }
+   const removeProductFromCart = (id: string, colorCode: string) => {
+      setUserOrd((prev) => {
+         return prev.filter((ord) => {
+            return ord.id !== id || ord.colorCode !== colorCode;
+         });
+      });
+   };
+
+   const addOffcode = (persentageOffCode: number) => {
+      setUserOffCode(persentageOffCode);
+   };
+
    return (
-      <shappingCartContext.Provider value={{ userOrd, addOrdToCart ,removeProductFromCart }}>
+      <shappingCartContext.Provider
+         value={{
+            userOrd,
+            addOffcode,
+            addOrdToCart,
+            removeProductFromCart,
+            userOffCode,
+         }}
+      >
          {children}
       </shappingCartContext.Provider>
    );

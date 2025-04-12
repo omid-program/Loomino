@@ -99,6 +99,8 @@ export type TShappingCartContext = {
       price: number
    ) => void;
    removeProductFromCart: (id: string, colorCode: string) => void;
+   addOffcode : (persentageOffCode:number) =>void
+   userOffCode:number
 };
 export type TCartItemProps = {
    id: string;
@@ -118,3 +120,19 @@ export type TOffCodes = {
    persentage: number;
 };
 
+export type TOrderShappingInfo = {
+   country:string
+   state:string
+   city:string
+   address:string
+   phoneNumber: string
+   emailAddres: string
+}
+export type TSendNewOrdInfo = (name:string , value:string)=>void
+
+export type TOrderShappingInfoInputProps = {
+   name:string
+   label: string
+   typeInput: string
+   sendNewOrdInfo: TSendNewOrdInfo
+}
