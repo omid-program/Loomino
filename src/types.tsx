@@ -54,6 +54,22 @@ export type TAllProductData = {
    price: number;
 } | null;
 
+export type TAddres = {
+   country: string;
+   city: string;
+   details: string;
+};
+
+export type TAllOrdData = {
+   id: string;
+   fullName: string;
+   addres: TAddres[];
+   phoneNumber: string;
+   emailAddres: string;
+   ords: TUserOrds[];
+   offCode: number;
+};
+
 export type TShopParams = {
    params: Promise<{}>;
    searchParams: Promise<{
@@ -99,8 +115,8 @@ export type TShappingCartContext = {
       price: number
    ) => void;
    removeProductFromCart: (id: string, colorCode: string) => void;
-   addOffcode : (persentageOffCode:number) =>void
-   userOffCode:number
+   addOffcode: (persentageOffCode: number) => void;
+   userOffCode: number;
 };
 export type TCartItemProps = {
    id: string;
@@ -121,18 +137,23 @@ export type TOffCodes = {
 };
 
 export type TOrderShappingInfo = {
-   country:string
-   state:string
-   city:string
-   address:string
-   phoneNumber: string
-   emailAddres: string
-}
-export type TSendNewOrdInfo = (name:string , value:string)=>void
+   country: string;
+   state: string;
+   city: string;
+   address: string;
+   phoneNumber: string;
+   emailAddres: string;
+};
+export type TSendNewOrdInfo = (name: string, value: string) => void;
 
 export type TOrderShappingInfoInputProps = {
-   name:string
-   label: string
-   typeInput: string
-   sendNewOrdInfo: TSendNewOrdInfo
-}
+   name: string;
+   label: string;
+   typeInput: string;
+   sendNewOrdInfo: TSendNewOrdInfo;
+};
+export type TPaginationProps = {
+   pageNumber: number;
+   itemPageCount: number;
+   paginatedHand: (startIndex: number , endIndex:number) => void;
+};

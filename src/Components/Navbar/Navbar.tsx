@@ -40,6 +40,12 @@ function Navbar() {
          ],
          link: "/categiries",
       },
+      {
+         id: 4,
+         perTitle: "داشبورد",
+         engTitle: "Dashboard",
+         link: "/dashboard",
+      },
    ];
    return (
       <nav className="w-10/12 max-h-12 relative mx-auto  bg-sky-400 rounded-full py-2 px-1 flex justify-between items-center ">
