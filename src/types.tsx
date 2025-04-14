@@ -155,5 +155,6 @@ export type TOrderShappingInfoInputProps = {
 export type TPaginationProps = {
    pageNumber: number;
    itemPageCount: number;
-   paginatedHand: (startIndex: number , endIndex:number) => void;
+   activeBtn:number
+   paginatedHand: (startIndex: number , endIndex:number  , i:number) => void;
 };

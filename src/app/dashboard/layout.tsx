@@ -22,7 +22,7 @@ function layout({
    ];
    return (
       <div className="flex">
-         <div className="sidebar mr-0 px-6 py-8  w-1/5 min-h-screen sticky bg-rose-300 rounded-tl-[80px]">
+         <div className="sidebar mr-0 ml-5 px-6 py-8  w-1/5 min-h-screen sticky bg-rose-300 rounded-tl-[80px]">
             <div className="mb-7 mx-auto text-center">logo</div>
             <div>
                <div className="flex flex-col gap-5">

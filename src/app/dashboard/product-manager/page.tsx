@@ -3,7 +3,7 @@ import React from 'react'
 
 function ProductManager() {
   return (
-    <div>
+    <div className='flex flex-col items-center w-full'>
       <ProductManagerTable/>
     </div>
   )
