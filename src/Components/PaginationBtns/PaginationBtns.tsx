@@ -1,6 +1,6 @@
 'use client'
 import { TPaginationProps } from '@/types';
-import React, { useEffect } from 'react';
+// import React, { useEffect } from 'react';
 
 function PaginationBtns(props: TPaginationProps) {
 	const { pageNumber, itemPageCount, activeBtn, paginatedHand } = props;

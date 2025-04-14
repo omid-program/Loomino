@@ -25,6 +25,7 @@ function Cart() {
             <div>
                {userOrd?.map((item) => (
                   <CartItem
+                     key={item.id}
                      id={item.id}
                      colorCode={item.colorCode}
                      price={item.price}

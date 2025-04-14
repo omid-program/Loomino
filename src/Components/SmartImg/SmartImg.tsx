@@ -38,7 +38,7 @@ function SmartImg(props: TSmartImgProps) {
 
             <div className="flex gap-3">
                 {colorList.map((colorItem) => (
-                    <button
+                    <button key={colorItem.id}
                         onClick={() => {
                             changeImgColor({...colorItem});
                         }}

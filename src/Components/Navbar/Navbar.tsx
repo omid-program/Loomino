@@ -51,7 +51,7 @@ function Navbar() {
       <nav className="w-10/12 max-h-12 relative mx-auto  bg-sky-400 rounded-full py-2 px-1 flex justify-between items-center ">
          <ul className="flex gap-2">
             {navLinks.map((navLinksItem: TLinksData) => (
-               <li>
+               <li key={navLinksItem.id}>
                   <NavItem key={navLinksItem.id} navLinksItem={navLinksItem}>
                      {navLinksItem.subItems?.map((subItem) => (
                         <ul

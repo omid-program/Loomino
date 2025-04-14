@@ -27,7 +27,7 @@ function NavbarS(params:TNavbarPromps) {
          <ul className=" items-center">
          {
             navItem.map(item=>(
-               <li className="text-lg ">
+               <li className="text-lg " key={item.id}>
                <Link href={item.href}>{item.perTitle}</Link>
                </li>
             ))

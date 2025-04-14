@@ -2,6 +2,8 @@
 //    params:string
 // }
 
+import { promises } from "dns";
+
 export type TSubItemNav = [
    {
       id: string;
@@ -158,3 +160,11 @@ export type TPaginationProps = {
    activeBtn:number
    paginatedHand: (startIndex: number , endIndex:number  , i:number) => void;
 };
+export type TProductManagerEditActionsProps = {
+   id: string | undefined
+}
+
+export type TEditProductParams = {
+   params: Promise<{id:string}>
+   searchParams: Promise<{}>
+}

@@ -2,6 +2,8 @@
 import { TAllProductData } from '@/types';
 import React, { useEffect, useState } from 'react';
 import PaginationBtns from '../PaginationBtns/PaginationBtns';
+import ProductManager from '@/app/dashboard/product-manager/page';
+import ProductManagerEditActions from '../ProductManagerEditActions/ProductManagerEditActions';
 
 function ProductManagerTable() {
 	const [allFabric, setAllFabric] = useState<TAllProductData[]>([]);
@@ -53,7 +55,7 @@ function ProductManagerTable() {
 					<div className='w-1/4 bg-red-400'>
 						{
 							currentItem.map(item=>(
-								<div>
+								<div key={item?.id}>
 									{item?.id}
 								</div>
 							))
@@ -62,7 +64,7 @@ function ProductManagerTable() {
 					<div className='w-1/4 bg-blue-400'>
 						{
 							currentItem.map(item=>(
-								<div>
+								<div key={item?.id}>
 									{item?.perTitle}
 								</div>
 							))
@@ -71,7 +73,7 @@ function ProductManagerTable() {
 					<div className='w-1/4 bg-purple-400'>
 						{
 							currentItem.map(item=>(
-								<div>
+								<div key={item?.id}>
 									{item?.defImg}
 								</div>
 							))
@@ -80,8 +82,8 @@ function ProductManagerTable() {
 					<div className='w-1/4 bg-green-400'>
 						{
 							currentItem.map(item=>(
-								<div>
-									actions
+								<div  key={item?.id}>
+									<ProductManagerEditActions id={item?.id}/>
 								</div>
 							))
 						}
