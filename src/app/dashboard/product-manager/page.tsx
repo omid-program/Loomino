@@ -1,4 +1,4 @@
-import ProductManagerTable from '@/Components/ProductManagerTable/ProductManagerTable'
+import ProductManagerTable from '@/Components/DashboardTools/ProductManagerTable/ProductManagerTable'
 import React from 'react'
 
 function ProductManager() {

@@ -1,5 +1,5 @@
-import OrdManagerTable from "@/Components/OrdManagerTable/OrdManagerTable";
-import OrdManagerTable2 from "@/Components/OrdManagerTable/OrdManagerTable2";
+import OrdManagerTable from "@/Components/DashboardTools/OrdManagerTable/OrdManagerTable";
+import OrdManagerTable2 from "@/Components/DashboardTools/OrdManagerTable/OrdManagerTable2";
 import React from "react";
 
 function OrdManager() {

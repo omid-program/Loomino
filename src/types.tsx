@@ -41,18 +41,18 @@ export type TInStoreAllProduct = {
 
 export type TAllProductData = {
    id: string;
-   perTitle?: string;
-   engTitle?: string;
-   defImg?: string;
-   perMiniDescription?: string;
-   engMiniDescription?: string;
-   perDescription?: string;
-   engDescription?: string;
-   rate?: number;
-   width?: string;
-   tags?: string[];
-   inStore?: TInStoreAllProduct[];
-   cat?: string[];
+   perTitle: string;
+   engTitle: string;
+   defImg: string;
+   perMiniDescription: string;
+   engMiniDescription: string;
+   perDescription: string;
+   engDescription: string;
+   rate: number;
+   width: string;
+   tags: string[];
+   inStore: TInStoreAllProduct[];
+   cat: string[];
    price: number;
 } | null;
 
@@ -167,4 +167,19 @@ export type TProductManagerEditActionsProps = {
 export type TEditProductParams = {
    params: Promise<{id:string}>
    searchParams: Promise<{}>
+}
+
+export type TEditProductComponent = {
+   id: string
+}
+
+export type TProductManagerEditInputProps = {
+   // id: number,
+   label: string,
+   type: string,
+   name: string,
+   isLong: boolean,
+   size: string,
+   value: string
+   changeInputHand: (e: React.ChangeEvent<HTMLInputElement>)=>void
 }
