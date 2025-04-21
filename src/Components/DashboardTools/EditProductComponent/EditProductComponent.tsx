@@ -1,11 +1,16 @@
 'use client';
-import { TAllProductData, TEditProductComponent, TInStoreAllProduct } from '@/types';
+import {
+	TAllProductData,
+	TEditProductComponent,
+	TInStoreAllProduct,
+} from '@/types';
 import React, { useEffect, useState } from 'react';
 import ProductManagerEditInput from '../ProductManagerEditInput/ProductManagerEditInput';
+import EditeBoxInStore from '../EditeBoxInStore/EditeBoxInStore';
 
 function EditProductComponent({ id }: TEditProductComponent) {
 	const [fabricData, setFabricData] = useState<TAllProductData | null>(null);
-	// const [inStoreState , setInStoreState]=useState<TInStoreAllProduct[] | null>()
+	const [inStoreState, setInStoreState] = useState<TInStoreAllProduct[]>([]);
 
 	useEffect(() => {
 		async function getProduct() {
@@ -13,20 +18,37 @@ function EditProductComponent({ id }: TEditProductComponent) {
 				const response = await fetch(`http://localhost:8000/fabrics/${id}`);
 				const data = await response.json();
 				setFabricData(data);
-				// setInStoreState(fabricData?.inStore)
+				// بررسی اینکه data.inStore یک آرایه است
+				if (Array.isArray(data.inStore)) {
+					setInStoreState(data.inStore);
+				} else {
+					setInStoreState([]);
+				}
 			} catch (error) {
 				console.error('خطا در دریافت داده‌ها:', error);
 			}
 		}
 		getProduct();
 	}, [id]);
+	useEffect(() => {
+		console.log('inStoreState updated:', inStoreState);
+	}, [inStoreState]);
 
-	const changeStateHand = (e: React.ChangeEvent<HTMLInputElement>)=>{
+	const changeStateHand = (e: React.ChangeEvent<HTMLInputElement>) => {
 		console.log(e.target.value);
 		const { name, value } = e.target;
-		setFabricData(prevData => prevData ? { ...prevData, [name]: value } : null)  
-		
-	}
+		setFabricData(prevData =>
+			prevData ? { ...prevData, [name]: value } : null
+		);
+	};
+
+	const changeInStoreItemHand = (id: string, name: string, value: any) => {
+		setInStoreState(prevState =>
+			prevState.map(item =>
+				item.id === id ? { ...item, [name]: value } : item
+			)
+		);
+	};
 
 	const inputEditItems = fabricData
 		? [
@@ -120,25 +142,11 @@ function EditProductComponent({ id }: TEditProductComponent) {
 					size: 'md',
 					value: fabricData.price,
 				},
-		]
+		  ]
 		: [];
 
-		// const inputEditInStoreItems = fabricData ?
-		// [
-		// 	{
-		// 		id: 10,
-		// 		label: 'قیمت',
-		// 		type: 'number',
-		// 		name: 'price',
-		// 		isLong: false,
-		// 		size: 'md',
-		// 		value: ,
-		// 	},
-		// ]:[]
-
-
 	return (
-		<div className='grid col-span-3'>
+		<div className="grid col-span-3">
 			{inputEditItems.map(item => (
 				<ProductManagerEditInput
 					key={item.id}
@@ -151,17 +159,19 @@ function EditProductComponent({ id }: TEditProductComponent) {
 					changeInputHand={changeStateHand}
 				/>
 			))}
-			{/* <div>
-				{
-					inStoreState?.map(inStoreItem=>(
-						<ProductManagerEditInput
-						isLong={false}
-						label={inStoreItem.}
-						
-						/>
-					))
-				}
-			</div> */}
+			<div>
+				{inStoreState?.map(inStoreItem => (
+					<EditeBoxInStore
+						id={inStoreItem.id}
+						key={inStoreItem?.id}
+						colorCode={inStoreItem?.colorCode}
+						colorName={inStoreItem?.colorName}
+						colorImg={inStoreItem?.colorImg}
+						qtys={inStoreItem?.qtys}
+						changeInStoreItemHand={changeInStoreItemHand}
+					/>
+				))}
+			</div>
 		</div>
 	);
 }

@@ -37,7 +37,7 @@ export type TInStoreAllProduct = {
    colorCode: string | undefined;
    qtys: number | undefined;
    colorImg: string | undefined;
-} | null;
+} ;
 
 export type TAllProductData = {
    id: string;
@@ -180,6 +180,15 @@ export type TProductManagerEditInputProps = {
    name: string,
    isLong: boolean,
    size: string,
-   value: string
+   value: string  
    changeInputHand: (e: React.ChangeEvent<HTMLInputElement>)=>void
 }
+
+export type TEditeBoxInStoreProps = {
+   id: string | undefined
+   colorCode: string | undefined
+   colorName: string | undefined
+   colorImg: string | undefined
+   qtys: number | undefined
+   changeInStoreItemHand : (name: string , id: string, value: any)=>void
+} 
