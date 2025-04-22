@@ -17,37 +17,37 @@
       "inStore": [
         {
           "id": "1",
-          "colorName": "آبی آسمانی",
+          "colorName": "آبی یواش",
           "colorCode": "#74EBFF",
-          "qtys": 50,
+          "qtys": "45",
           "colorImg": "/mozerati-sky-model.jpg"
         },
         {
           "id": "2",
           "colorName": "آجری",
           "colorCode": "#FF7145",
-          "qtys": 48,
+          "qtys": "48",
           "colorImg": "/mozerati-orange-model.jpg"
         },
         {
           "id": "3",
-          "colorName": "سبز",
+          "colorName": "سبز پسته ای",
           "colorCode": "#08B079",
-          "qtys": 60,
+          "qtys": "75",
           "colorImg": "/mozerati-green-model.jpg"
         },
         {
-          "id": "4",
+          "id": "3a6d0962-1cd2-4431-8160-584aac41cfc8",
           "colorName": "مشکی",
-          "colorCode": "#242424",
-          "qtys": 54,
+          "colorCode": "#292929",
+          "qtys": "90",
           "colorImg": "/mozerati-black-model.jpg"
         }
       ],
       "cat": [
         "cloth"
       ],
-      "price": 200000
+      "price": "260000"
     },
     {
       "id": "2",
@@ -69,14 +69,14 @@
           "id": "1",
           "colorName": "صورتی",
           "colorCode": "#B318AC",
-          "qtys": 33,
+          "qtys": "33",
           "colorImg": "/fotr-pink-model.jpg"
         },
         {
           "id": "2",
           "colorName": "آبی",
           "colorCode": "#1C76B2",
-          "qtys": 28,
+          "qtys": "28",
           "colorImg": "/fotr-blue-model.jpg"
         }
       ],
@@ -103,21 +103,21 @@
           "id": "1",
           "colorName": "آبی",
           "colorCode": "#232C7D",
-          "qtys": 83,
+          "qtys": "83",
           "colorImg": "/shantonDoNakh-blue-model.jpg"
         },
         {
           "id": "2",
           "colorName": "کرمی",
           "colorCode": "#D1C168",
-          "qtys": 70,
+          "qtys": "70",
           "colorImg": "/shantonDoNakh-cream-model.jpg"
         },
         {
           "id": "3",
           "colorName": "خاکستری",
           "colorCode": "#A1A1A1",
-          "qtys": 68,
+          "qtys": "68",
           "colorImg": "/shantonDoNakh-gray-model.jpg"
         }
       ],
@@ -145,21 +145,21 @@
           "id": "1",
           "colorName": "قهوه ای",
           "colorCode": "#2B251E",
-          "qtys": 56,
+          "qtys": "56",
           "colorImg": "/Keshmir-brown-model.jpg"
         },
         {
           "id": "2",
           "colorName": "کرمی",
           "colorCode": "#B89D81",
-          "qtys": 48,
+          "qtys": "48",
           "colorImg": "/Keshmir-cream-model.jpg"
         },
         {
           "id": "3",
           "colorName": "خاکستری",
           "colorCode": "#A19C92",
-          "qtys": 55,
+          "qtys": "55",
           "colorImg": "/Keshmir-gray-model.jpg"
         }
       ],
@@ -187,21 +187,21 @@
           "id": "1",
           "colorName": "طوسی",
           "colorCode": "#454545",
-          "qtys": 48,
+          "qtys": "48",
           "colorImg": "/diplomate-gray-model.jpg"
         },
         {
           "id": "2",
           "colorName": "سرمه‌ای",
           "colorCode": "#03002E",
-          "qtys": 48,
+          "qtys": "48",
           "colorImg": "/diplomate-NavyBlue-model.jpg"
         },
         {
           "id": "3",
           "colorName": "مشکی",
           "colorCode": "#121212",
-          "qtys": 60,
+          "qtys": "60",
           "colorImg": "/diplomate-black-model.jpg"
         }
       ],
@@ -229,14 +229,14 @@
           "id": "1",
           "colorName": "آبی تیره",
           "colorCode": "#142885",
-          "qtys": 50,
+          "qtys": "50",
           "colorImg": "/MatchVelvet-blue-model.jpg"
         },
         {
           "id": "2",
           "colorName": "طوسی",
           "colorCode": "#636E63",
-          "qtys": 48,
+          "qtys": "48",
           "colorImg": "/MatchVelvet-gray-model.jpg"
         }
       ],
@@ -264,28 +264,28 @@
           "id": "1",
           "colorName": "آبی آسمانی",
           "colorCode": "#74EBFF",
-          "qtys": 50,
+          "qtys": "50",
           "colorImg": "/mozerati-sky-model.jpg"
         },
         {
           "id": "2",
           "colorName": "آجری",
           "colorCode": "#FF7145",
-          "qtys": 48,
+          "qtys": "48",
           "colorImg": "/mozerati-orange-model.jpg"
         },
         {
           "id": "3",
           "colorName": "سبز",
           "colorCode": "#08B079",
-          "qtys": 60,
+          "qtys": "60",
           "colorImg": "/mozerati-green-model.jpg"
         },
         {
           "id": "4",
           "colorName": "مشکی",
           "colorCode": "#242424",
-          "qtys": 54,
+          "qtys": "54",
           "colorImg": "/mozerati-black-model.jpg"
         }
       ],
@@ -359,7 +359,7 @@
         }
       ],
       "phoneNumber": "phoneNumberTest",
-      "emailAddres":"odakli79",
+      "emailAddres": "odakli79",
       "ords": [
         {
           "id": "1",
@@ -371,7 +371,7 @@
       "offCode": 10
     },
     {
-      "id": 1324,
+      "id": "1324",
       "country": "ایران",
       "state": "خراسان",
       "city": "مشهد",

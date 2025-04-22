@@ -1,8 +1,5 @@
-// export type TNavbarPromps = {
-//    params:string
-// }
 
-import { promises } from "dns";
+
 
 export type TSubItemNav = [
    {
@@ -35,7 +32,7 @@ export type TInStoreAllProduct = {
    id: string | undefined;
    colorName: string | undefined;
    colorCode: string | undefined;
-   qtys: number | undefined;
+   qtys: string | undefined;
    colorImg: string | undefined;
 } ;
 
@@ -90,7 +87,7 @@ export type TColorItem = {
    id: string;
    colorName: string;
    colorCode: string;
-   qtys: number;
+   qtys: string;
    colorImg: string;
 };
 
@@ -189,6 +186,7 @@ export type TEditeBoxInStoreProps = {
    colorCode: string | undefined
    colorName: string | undefined
    colorImg: string | undefined
-   qtys: number | undefined
+   qtys: string | undefined
    changeInStoreItemHand : (name: string , id: string, value: any)=>void
+   removeInStoreItemHand : (id:string)=>void
 } 

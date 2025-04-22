@@ -11,7 +11,7 @@ function SmartImg(props: TSmartImgProps) {
 
     console.log(colorList);
     const [colorImg, setColorImg] = useState<string>(colorList[0].colorImg);
-    const [colorQtys, setColorQtys] = useState<number | undefined>(
+    const [colorQtys, setColorQtys] = useState<string | undefined>(
         colorList[0].qtys
     );
     const [colorCode , setColorCode]=useState<string>(colorList[0].colorCode)

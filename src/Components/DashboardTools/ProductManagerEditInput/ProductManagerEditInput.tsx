@@ -6,7 +6,7 @@ function ProductManagerEditInput(props: TProductManagerEditInputProps) {
 	const { name, label, type, value, isLong, size ,changeInputHand} = props;
 
 	return (
-		<div className="flex gap-2">
+		<div className=" gap-2 ">
 			<label>{label} : </label>
 			<input
 				type={type}
