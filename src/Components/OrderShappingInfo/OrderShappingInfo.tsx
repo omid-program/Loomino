@@ -32,21 +32,19 @@ function OrderShappingInfo() {
 		console.log(orderShappingInfo);
 	};
 	const { userOrd, userOffCode } = useShappingCartContext();
-	const [ordDate, setOrdDate] = useState<TOrdDateState>();
+	// const [ordDate, setOrdDate] = useState<TOrdDateState>();
+
 
 	const submitedOrdHand = async () => {
-		// const ordDateVar = new Date().toISOString();
-		const isoDate = new Date().toISOString();
-
-		const ordDateVarIso = new Date(isoDate);
+		const now = new Date();
 		const formatDate = {
-			year: ordDateVarIso.getFullYear().toString(),
-			month: ordDateVarIso.getMonth().toString(),
-			day: ordDateVarIso.getDay().toString(),
-			time: ordDateVarIso.toLocaleTimeString('fa-IR' , {hour:'2-digit' , minute: '2-digit'})
+			year: now.toLocaleDateString('fa-IR' , {year:'numeric'}),
+			month: now.toLocaleDateString('fa-IR' , {month:'2-digit'}),
+			day: now.toLocaleDateString('fa-IR' , {day:'2-digit'}),
+			time: now.toLocaleTimeString('fa-IR' , {hour:'2-digit' , minute: '2-digit'})
 		}
-		// setOrdDate(ordDateVar);
-		setOrdDate(formatDate);
+
+		const isoDate = now.toISOString()
       try{
          await axios({
             method: 'POST',
@@ -61,9 +59,13 @@ function OrderShappingInfo() {
                emailAddres: orderShappingInfo.emailAddres,
                userOrd,
                userOffCode,
-               date: ordDate,
+               date: {
+						pertionDate: formatDate,
+						isoDate: isoDate
+					},
             },
          });
+			// setOrdDate(formatDate);
          console.log("ارسال داده ها با موفقیت انجام شد");
          
       }catch(error){
