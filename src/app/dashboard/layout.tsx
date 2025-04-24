@@ -9,12 +9,18 @@ function layout({
    const sidebarItems = [
       {
          id: "1",
+         perTitle: "افرودن محصول",
+         engTitle: "Add Product",
+         href: "/dashboard/add-product",
+      },
+      {
+         id: "2",
          perTitle: "مدیریت محصولات",
          engTitle: "product Manager",
          href: "/dashboard/product-manager",
       },
       {
-         id: "2",
+         id: "3",
          perTitle: "مدیریت سفارشات",
          engTitle: "Ord Manager",
          href: "/dashboard/ord-manager",

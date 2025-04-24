@@ -66,6 +66,7 @@ export type TAllOrdData = {
    phoneNumber: string;
    emailAddres: string;
    ords: TUserOrds[];
+   // date:{year:string , month:string , day:string , houer:string}
    offCode: number;
 };
 

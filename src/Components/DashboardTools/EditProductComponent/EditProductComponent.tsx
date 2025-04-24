@@ -88,7 +88,7 @@ function EditProductComponent({ id }: TEditProductComponent) {
 			id: crypto.randomUUID(),
 			colorName: '',
 			colorCode: '',
-			qtys: 0,
+			qtys: '0',
 			colorImg: '',
 		};
 		setInStoreState(prevInStore => [...prevInStore, newInStoreItem]);

@@ -32,9 +32,12 @@ function OrderShappingInfo() {
       console.log(orderShappingInfo);
    };
    const { userOrd, userOffCode } = useShappingCartContext();
+   // const [ordDate , setOrdDate] = useState<string>('')
+    
 
    const submitedOrd = () => {
       if (userOrd.length > 0) {
+         
          axios({
             method: "POST",
             url: "http://localhost:8000/ords",
@@ -48,6 +51,8 @@ function OrderShappingInfo() {
                emailAddres: orderShappingInfo.emailAddres,
                userOrd,
                userOffCode,
+               // date:
+
             },
          });
       } else {
