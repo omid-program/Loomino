@@ -24,7 +24,7 @@ function TotalPriceBox() {
    ////////////////////////////////////
    useEffect(() => {
       const totalPriceReduse = userOrd.reduce((total, item) => {
-         return item.price * item.qty + total;
+         return Number(item.price) * Number(item.qty) + Number(total);
       }, 0);
       setTotalPrice(totalPriceReduse);
    }, [qtyList]);

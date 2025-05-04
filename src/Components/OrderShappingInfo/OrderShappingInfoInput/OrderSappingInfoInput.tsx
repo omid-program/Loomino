@@ -2,7 +2,7 @@ import { TOrderShappingInfoInputProps } from "@/types";
 import React from "react";
 
 function OrderShappingInfoInput(props: TOrderShappingInfoInputProps) {
-   const { name, label, sendNewOrdInfo, typeInput } = props;
+   const { name, label, sendNewOrdInfo, typeInput , isLong } = props;
 
    const sendNewOrdInfoHan = (
       e:
@@ -14,10 +14,9 @@ function OrderShappingInfoInput(props: TOrderShappingInfoInputProps) {
    };
    return (
       <div className="w-full flex gap-1 items-center">
-         <label htmlFor="">{label}:</label>
-         {typeInput === "text" ? (
+         <label>{label}:</label>
+         {!isLong ? (
             <input
-               id="countryInputId"
                placeholder={label}
                type="text"
                name={name}

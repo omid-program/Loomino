@@ -13,7 +13,7 @@ async function ProductPage({ params }: TProductPageParams) {
    const response = await fetch(`http://localhost:8000/fabrics/${id}`);
    const productData = (await response.json()) as TAllProductData;
    const colorList = productData?.inStore as TInStoreAllProduct[];
-   const productPrice = productData?.price
+   const productPrice = Number(productData?.price)
    console.log(colorList);
    
    

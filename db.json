@@ -47,7 +47,7 @@
       "cat": [
         "cloth"
       ],
-      "price": "260000"
+      "price": 260000
     },
     {
       "id": "2",
@@ -349,31 +349,11 @@
   ],
   "ords": [
     {
-      "id": "1",
-      "fullName": "fullNameTesst",
-      "addres": [
-        {
-          "country": "CountryTest",
-          "city": "CityTest",
-          "details": "detailsTest"
-        }
-      ],
-      "phoneNumber": "phoneNumberTest",
-      "emailAddres": "odakli79",
-      "ords": [
-        {
-          "id": "1",
-          "colorCode": "#03002E",
-          "qty": 1.5,
-          "price": 220000
-        }
-      ],
-      "offCode": 10
-    },
-    {
-      "id": "1324",
+      "id": "f9b66ef1-7538-45eb-8b38-6575194e6bed",
+      "statusCode": 0,
+      "name": "امید اکملی",
       "country": "ایران",
-      "state": "خراسان",
+      "state": "خراسان رضوی",
       "city": "مشهد",
       "address": "آموزگار 2 پلاک 28",
       "phoneNumber": "091404787816",
@@ -381,154 +361,75 @@
       "userOrd": [
         {
           "id": "1",
-          "qty": 1,
-          "colorCode": "#242424",
-          "price": 200000
+          "qty": 1.5,
+          "colorCode": "#FF7145",
+          "price": 260000
         },
         {
-          "id": "3",
-          "qty": 0.6,
-          "colorCode": "#D1C168",
-          "price": 380000
-        }
-      ],
-      "userOffCode": 10
-    },
-    {
-      "id": "8666",
-      "country": "ایران",
-      "state": "کرمان",
-      "city": "کرمان",
-      "address": "خیابان ابوحامد پلاک 13",
-      "phoneNumber": "091404787816",
-      "emailAddres": "odakli79",
-      "userOrd": [
-        {
           "id": "1",
-          "qty": 1.5,
+          "qty": 1.4,
           "colorCode": "#08B079",
-          "price": "260000"
+          "price": 260000
         },
         {
           "id": "2",
-          "qty": 1.2,
+          "qty": 1,
           "colorCode": "#1C76B2",
           "price": 620000
+        }
+      ],
+      "finalPrice": 1374000,
+      "userOffCode": 0,
+      "date": {
+        "pertionDate": {
+          "year": "1404",
+          "month": "02",
+          "day": "13",
+          "time": "16:23"
         },
+        "isoDate": "2025-05-03T12:53:43.512Z"
+      }
+    },
+    {
+      "id": "17c26b0d-44cb-43a8-8f4b-a4baa423923d",
+      "statusCode": 0,
+      "name": "سعید موسوی",
+      "country": "ایران2",
+      "state": "فارس2",
+      "city": "شیراز2",
+      "address": "اونجا",
+      "phoneNumber": "01464513",
+      "emailAddres": "asdfg-2",
+      "userOrd": [
         {
           "id": "3",
           "qty": 0.6,
           "colorCode": "#D1C168",
           "price": 380000
-        }
-      ],
-      "userOffCode": 10
-    },
-    {
-      "id": 8314,
-      "country": "ایران",
-      "state": "خراسان",
-      "city": "مشهد",
-      "address": "فلسطین 26 پلاک 28",
-      "phoneNumber": "09231081730",
-      "emailAddres": "odakli79",
-      "userOrd": [
-        {
-          "id": "3",
-          "qty": 0.6,
-          "colorCode": "#232C7D",
-          "price": 380000
-        }
-      ],
-      "userOffCode": 10,
-      "date": ""
-    },
-    {
-      "id": 5137,
-      "country": "ایران",
-      "state": "کردستان",
-      "city": "شهر کرد",
-      "address": "آدرس ایمان",
-      "phoneNumber": "0258147369",
-      "emailAddres": "imamnmanm",
-      "userOrd": [
-        {
-          "id": "3",
-          "qty": 0.6,
-          "colorCode": "#232C7D",
-          "price": 380000
-        }
-      ],
-      "userOffCode": 10,
-      "date": "2025-04-24T12:42:57.584Z"
-    },
-    {
-      "id": 3328,
-      "country": "ایران",
-      "state": "فارس",
-      "city": "شیراز",
-      "address": "شهدا کوچه 12 پلاک 8",
-      "phoneNumber": "012345678",
-      "emailAddres": "asdfg",
-      "userOrd": [
+        },
         {
           "id": "4",
           "qty": 2,
           "colorCode": "#2B251E",
           "price": 320000
-        }
-      ],
-      "userOffCode": 20
-    },
-    {
-      "id": 6665,
-      "country": "ایران2",
-      "state": "فارس2",
-      "city": "شیراز2",
-      "address": "شهدا کوچه 12 پلاک 8--2",
-      "phoneNumber": "012345678-2",
-      "emailAddres": "asdfg-2",
-      "userOrd": [
+        },
         {
-          "id": "4",
-          "qty": 2,
-          "colorCode": "#2B251E",
-          "price": 320000
+          "id": "5",
+          "qty": 2.5,
+          "colorCode": "#454545",
+          "price": 450000
         }
       ],
-      "userOffCode": 20,
-      "date": {
-        "year": "2025",
-        "month": "3",
-        "day": "4",
-        "time": "۱۷:۴۸"
-      }
-    },
-    {
-      "id": 9672,
-      "country": "آلمان",
-      "state": "ژوزف",
-      "city": "برلین",
-      "address": "خیابان 5 بلوک 8 طبقه-2",
-      "phoneNumber": "5555555",
-      "emailAddres": "aaaaaa",
-      "userOrd": [
-        {
-          "id": "4",
-          "qty": 2,
-          "colorCode": "#2B251E",
-          "price": 320000
-        }
-      ],
-      "userOffCode": 20,
+      "finalPrice": 1993000,
+      "userOffCode": 0,
       "date": {
         "pertionDate": {
-          "year": "۱۴۰۴",
-          "month": "۰۲",
-          "day": "۰۴",
-          "time": "۱۸:۱۷"
+          "year": "1404",
+          "month": "02",
+          "day": "13",
+          "time": "16:27"
         },
-        "isoDate": "2025-04-24T14:47:56.527Z"
+        "isoDate": "2025-05-03T12:57:42.216Z"
       }
     }
   ],

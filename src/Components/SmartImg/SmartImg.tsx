@@ -7,7 +7,7 @@ function SmartImg(props: TSmartImgProps) {
     console.log(props);
     const colorList = props?.colorList;
     const id = props.id
-    const price = props.price
+    const price = Number(props.price)
 
     console.log(colorList);
     const [colorImg, setColorImg] = useState<string>(colorList[0].colorImg);

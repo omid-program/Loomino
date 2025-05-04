@@ -57,22 +57,32 @@ export type TAddres = {
 };
 
 export type TAllOrdData = {
-	id: string;
-	fullName: string;
-	addres: TAddres[];
+	id: string
+	// status: "paid" | "comfirm" | "preparation" | "send" | "finish"   ,
+	statusCode: number   ,
+	name: string
+	country: string;
+	state: string;
+	city: string;
+	address: string;
 	phoneNumber: string;
 	emailAddres: string;
-	ords: TUserOrds[];
-	// date:{year:string , month:string , day:string , houer:string}
-	date: string;
-	offCode: number;
-};
+	userOrd: TUserOrds[]
+	finalPrice : number
+	userOffCode: number
+	date: TOrdDateState
+	isoDate: string
+} ;
 export type TOrdDateState = {
+	pertionDate: TPertionDate
+	isoDate: string
+};
+export type TPertionDate = {
 	year: string;
 	month: string;
 	day: string;
-   time: string
-};
+	time: string;
+}
 export type TShopParams = {
 	params: Promise<{}>;
 	searchParams: Promise<{
@@ -139,21 +149,38 @@ export type TOffCodes = {
 	persentage: number;
 };
 
-export type TOrderShappingInfo = {
-	country: string;
-	state: string;
-	city: string;
-	address: string;
-	phoneNumber: string;
-	emailAddres: string;
-};
+// export type TOrderShappingInfo = {
+// 	id: string
+// 	status: "paid" | "comfirm" | "preparation" | "send" | "finish"   ,
+// 	name: string
+// 	country: string;
+// 	state: string;
+// 	city: string;
+// 	address: string;
+// 	phoneNumber: string;
+// 	emailAddres: string;
+// 	userOrd: TUserOrds[]
+// 	userOffCode: number
+// 	date: TOrdDateState
+// 	isoDate: string
+// };
 export type TSendNewOrdInfo = (name: string, value: string) => void;
 
 export type TOrderShappingInfoInputProps = {
 	name: string;
 	label: string;
 	typeInput: string;
+	isLong: boolean;
+	size: 'sm' | 'md' | 'lg';
 	sendNewOrdInfo: TSendNewOrdInfo;
+};
+export type TInputItem = {
+	id: string;
+	name: string;
+	label: string;
+	type: string;
+	isLong: boolean;
+	size: 'sm' | 'md' | 'lg'; // همان تایپ یکسان
 };
 export type TPaginationProps = {
 	pageNumber: number;
@@ -194,3 +221,16 @@ export type TEditeBoxInStoreProps = {
 	changeInStoreItemHand: (name: string, id: string, value: any) => void;
 	removeInStoreItemHand: (id: string) => void;
 };
+export type TOrdStatusProps = {
+	status : string
+}
+export type TStatusRulles =    {
+	id: string,
+	name: string,
+	label: string,
+	statusCode: number,
+	style: string
+}
+export type TChartComponentProps ={
+	data: TAllOrdData[]
+}

@@ -47,7 +47,7 @@ export function ShappingCartContextProvider({
                id,
                qty: productCount,
                colorCode,
-               price,
+               price: Number(price),
             };
             setUserOrd((prev) => [...prev, newOrd]);
          }

@@ -16,7 +16,7 @@ function QtyManager(props:TQtyManagerProps ) {
    const { addOrdToCart, removeProductFromCart , userOrd } = useShappingCartContext();
    useEffect(()=>{
       // if(price){
-         setUserProductPrice((baskeFormatMeter(meterVal , centiMeterVal))*price)
+         setUserProductPrice((baskeFormatMeter(meterVal , centiMeterVal))*Number(price))
          
       // }
       // console.log('userProductPrice => ' , userProductPrice);
@@ -63,7 +63,7 @@ function QtyManager(props:TQtyManagerProps ) {
                <div>
                   <span>قیمت هر متر: </span>
                   {
-                     price && <span>{formatPrice(price)}</span>
+                     price && <span>{formatPrice(Number(price))}</span>
                   }
                   
                </div>
@@ -81,7 +81,7 @@ function QtyManager(props:TQtyManagerProps ) {
                <button
                   className=" w-full mx-auto px-1 py-2 rounded-md bg-sky-400"
                   onClick={() => {
-                     addOrdToCart(id, meterVal, centiMeterVal, colorCode , price);
+                     addOrdToCart(id, meterVal, centiMeterVal, colorCode , Number(price));
                   }}
                >
                   افزودن به سبد خرید
