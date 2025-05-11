@@ -20,6 +20,7 @@ export function ShappingCartContextProvider({
 
    const addOrdToCart = (
       id: string,
+      colorId : string,
       meterCount: number,
       centiMeterCount: number,
       colorCode: string,
@@ -27,7 +28,8 @@ export function ShappingCartContextProvider({
    ) => {
       let productCount = baskeFormatMeter(meterCount, centiMeterCount);
       let isHaveOrd = userOrd.find(
-         (ord) => ord.id === id && ord.colorCode === colorCode
+         (ord) => ord.colorId === colorId 
+         // && ord.colorCode === colorCode
       );
       // console.log("productCount", productCount);
       // console.log("isHaveOrd", isHaveOrd);
@@ -36,7 +38,7 @@ export function ShappingCartContextProvider({
             // اگر محصول از قبل وجود دارد، مقدار qty را جایگزین کن
             setUserOrd((prev) =>
                prev.map((ord) =>
-                  ord.id === id && ord.colorCode === colorCode
+                  ord.colorId === colorId && ord.colorCode === colorCode
                      ? { ...ord, qty: productCount } // مقدار جدید را جایگزین مقدار قبلی کن
                      : ord
                )
@@ -45,6 +47,7 @@ export function ShappingCartContextProvider({
             // اگر محصول وجود ندارد، یک آیتم جدید اضافه کن
             let newOrd: TUserOrds = {
                id,
+               colorId,
                qty: productCount,
                colorCode,
                price: Number(price),
@@ -54,11 +57,13 @@ export function ShappingCartContextProvider({
       }
       console.log(userOrd);
    };
+   
 
-   const removeProductFromCart = (id: string, colorCode: string) => {
+
+   const removeProductFromCart = (colorId: string, colorCode: string) => {
       setUserOrd((prev) => {
          return prev.filter((ord) => {
-            return ord.id !== id || ord.colorCode !== colorCode;
+            return ord.colorId !== colorId || ord.colorCode !== colorCode;
          });
       });
    };

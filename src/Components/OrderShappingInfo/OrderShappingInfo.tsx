@@ -94,6 +94,14 @@ function OrderShappingInfo() {
 				},
 			});
 			// setOrdDate(formatDate);
+			// await axios({
+			// 	method:'POST',
+			// 	url:'http://localhost:8000/sailRaport',
+			// 	data:{
+			// 		date: formatDate,
+			// 		basket: userOrd
+			// 	}
+			// })
 			console.log('ارسال داده ها با موفقیت انجام شد');
 		} catch (error) {
 			console.log('خطا در ارسال داده ها', error);

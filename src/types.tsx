@@ -112,7 +112,8 @@ export type TSmartImgProps = {
 };
 
 export type TUserOrds = {
-	id: string;
+	id: string
+	colorId: string;
 	qty: number;
 	colorCode: string;
 	price: number;
@@ -122,6 +123,7 @@ export type TShappingCartContext = {
 	userOrd: TUserOrds[];
 	addOrdToCart: (
 		id: string,
+		colorId: string,
 		meterCount: number,
 		centiMeterCount: number,
 		colorCode: string,
@@ -132,7 +134,8 @@ export type TShappingCartContext = {
 	userOffCode: number;
 };
 export type TCartItemProps = {
-	id: string;
+	id: string
+	colorId: string;
 	qty: number;
 	colorCode: string;
 	price: number;
@@ -141,6 +144,7 @@ export type TQtyManagerProps = {
 	id: string;
 	colorCode: string;
 	price: number;
+	colorId: string |undefined
 };
 
 export type TOffCodes = {

@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import PaginationBtns from '../PaginationBtns/PaginationBtns';
 import ProductManager from '@/app/dashboard/product-manager/page';
 import ProductManagerEditActions from '../ProductManagerEditActions/ProductManagerEditActions';
+import ProductManagerRaportAction from '../ProductManagerRaportAction/ProductManagerRaportAction';
 
 function ProductManagerTable() {
 	const [allFabric, setAllFabric] = useState<TAllProductData[]>([]);
@@ -82,8 +83,10 @@ function ProductManagerTable() {
 					<div className='w-1/4 bg-green-400'>
 						{
 							currentItem.map(item=>(
-								<div  key={item?.id}>
+								<div  key={item?.id} className='flex justify-center items-center gap-5'>
 									<ProductManagerEditActions id={item?.id}/>
+									<ProductManagerRaportAction id={item?.id} />
+									
 								</div>
 							))
 						}

@@ -9,12 +9,15 @@ function SmartImg(props: TSmartImgProps) {
     const id = props.id
     const price = Number(props.price)
 
-    console.log(colorList);
+    console.log("colorList => " , colorList);
+
     const [colorImg, setColorImg] = useState<string>(colorList[0].colorImg);
     const [colorQtys, setColorQtys] = useState<string | undefined>(
         colorList[0].qtys
     );
     const [colorCode , setColorCode]=useState<string>(colorList[0].colorCode)
+
+    const [colorId , setColorId] = useState<string | undefined>(colorList[0].id)
 
     const changeImgColor = (colorSelectImg: TInStoreAllProduct) => {
         if(colorSelectImg?.colorImg){
@@ -26,9 +29,10 @@ function SmartImg(props: TSmartImgProps) {
         setColorQtys(colorSelect?.qtys);
         colorSelectImg?.colorCode &&
         setColorCode(colorSelectImg.colorCode);
+        setColorId(colorSelect?.id)
 
     };
-    console.log('SmartImg=>' , id);
+    // console.log('SmartImg=>' , id);
     
     return (
         <div className="flex flex-col gap-4 justify-center items-center my-8">
@@ -50,7 +54,7 @@ function SmartImg(props: TSmartImgProps) {
                 ))}
             </div>
             <div>{colorQtys}</div>
-            <QtyManager id={id} colorCode={colorCode} price={price} />
+            <QtyManager id={id} colorCode={colorCode} price={price} colorId={colorId}  />
         </div>
     );
 }

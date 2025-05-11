@@ -5,7 +5,7 @@ import { TAllProductData, TCartItemProps, TInStoreAllProduct } from "@/types";
 import axios from "axios";
 
 function CartItem(props: TCartItemProps) {
-   const { id, colorCode, price } = props;
+   const {id , colorId, colorCode, price } = props;
    const [productDatas, setProductDatas] = useState<TAllProductData | null>(
       null
    );
@@ -42,8 +42,10 @@ function CartItem(props: TCartItemProps) {
             )}
          </div>
          <div className="col-span-2">
+
             <QtyManager
                id={id}
+               colorId={colorId}
                colorCode={colorCode}
                price={productDatas?.price}
             />
