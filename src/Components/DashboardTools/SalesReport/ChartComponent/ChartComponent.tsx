@@ -55,7 +55,7 @@ function ChartComponent({ data }: TChartComponentProps) {
 				.reduce((total, order) => total + (order.finalPrice || 0), 0);
 		});
 	};
-
+	
 	const calculateYearSales = () => {
 		return yearOfAll.map(year => {
 			return data

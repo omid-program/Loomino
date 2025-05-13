@@ -20,8 +20,8 @@ async function Shop(params: TShopParams) {
             <PagesTitle title={"فروشگاه"} />
          </div>
          <div className="grid grid-cols-4 gap-3">
-            {allProducts.map((product) => (
-               <Link key={product?.id} href={`/shop/${product.id}`}>
+            { allProducts.map((product) => (
+               <Link key={product?.id} href={`/shop/${product?.id}`}>
                   <ProductBox {...product} />
                </Link>
             ))}

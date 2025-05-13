@@ -55,7 +55,9 @@ function OrderShappingInfo() {
 		const isoDate = now.toISOString();
 		const formatDate = convertToJalali(isoDate);
 		console.log(formatDate);
-		const basketPrice = userOrd.reduce((total , item)=>{
+		const basketPrice = userOrd.flatMap(ord=>{
+			return ord.items
+		}).reduce((total , item)=>{
 			return Number(item.price) * Number(item.qty) + Number(total)
 		}, 0)
 		const finalPrice = basketPrice - (basketPrice * (userOffCode / 100))
@@ -84,7 +86,14 @@ function OrderShappingInfo() {
 					address: orderShappingInfo.address,
 					phoneNumber: orderShappingInfo.phoneNumber,
 					emailAddres: orderShappingInfo.emailAddres,
-					userOrd,
+					orders:[
+						{
+							orderId: crypto.randomUUID(),
+							date: isoDate ,
+							items: userOrd
+						}
+					],
+					// userOrd,
 					finalPrice,
 					userOffCode,
 					date: {

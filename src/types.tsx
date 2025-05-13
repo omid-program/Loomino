@@ -8,6 +8,7 @@ export type TSubItemNav = [
 
 export type TSubItems = {
 	id: number;
+	catName: string;
 	perSubNavTitle: string;
 	engSubNavTitle: string;
 	href: string;
@@ -48,41 +49,41 @@ export type TAllProductData = {
 	inStore: TInStoreAllProduct[];
 	cat: string[];
 	price: number;
-} | null;
+} ;
 
 export type TAddres = {
 	country: string;
 	city: string;
 	details: string;
 };
-
+// readyfor change
 export type TAllOrdData = {
-	id: string
+	id: string;
 	// status: "paid" | "comfirm" | "preparation" | "send" | "finish"   ,
-	statusCode: number   ,
-	name: string
+	statusCode: number;
+	name: string;
 	country: string;
 	state: string;
 	city: string;
 	address: string;
 	phoneNumber: string;
 	emailAddres: string;
-	userOrd: TUserOrds[]
-	finalPrice : number
-	userOffCode: number
-	date: TOrdDateState
-	isoDate: string
-} ;
+	orders: TUserOrds[];
+	finalPrice: number;
+	userOffCode: number;
+	date: TOrdDateState;
+	isoDate: string;
+};
 export type TOrdDateState = {
-	pertionDate: TPertionDate
-	isoDate: string
+	pertionDate: TPertionDate;
+	isoDate: string;
 };
 export type TPertionDate = {
 	year: string;
 	month: string;
 	day: string;
 	time: string;
-}
+};
 export type TShopParams = {
 	params: Promise<{}>;
 	searchParams: Promise<{
@@ -96,6 +97,10 @@ export type TProductPageParams = {
 	params: Promise<{ id: string }>;
 	seachPrams: Promise<{}>;
 };
+export type TCatItemParams = {
+	params: Promise<{id:string}>
+	searchParams: Promise<{}>
+}
 
 export type TColorItem = {
 	id: string;
@@ -111,12 +116,18 @@ export type TSmartImgProps = {
 	price: number | undefined;
 };
 
-export type TUserOrds = {
-	id: string
+export type TItemsOfOrders = {
+	id: string;
 	colorId: string;
 	qty: number;
 	colorCode: string;
 	price: number;
+};
+
+export type TUserOrds = {
+	orderId: string;
+	date: string;
+	items: TItemsOfOrders[];
 };
 
 export type TShappingCartContext = {
@@ -134,7 +145,7 @@ export type TShappingCartContext = {
 	userOffCode: number;
 };
 export type TCartItemProps = {
-	id: string
+	id: string;
 	colorId: string;
 	qty: number;
 	colorCode: string;
@@ -144,7 +155,7 @@ export type TQtyManagerProps = {
 	id: string;
 	colorCode: string;
 	price: number;
-	colorId: string |undefined
+	colorId: string | undefined;
 };
 
 export type TOffCodes = {
@@ -226,15 +237,34 @@ export type TEditeBoxInStoreProps = {
 	removeInStoreItemHand: (id: string) => void;
 };
 export type TOrdStatusProps = {
-	status : string
-}
-export type TStatusRulles =    {
-	id: string,
-	name: string,
-	label: string,
-	statusCode: number,
-	style: string
-}
-export type TChartComponentProps ={
-	data: TAllOrdData[]
-}
+	status: string;
+};
+export type TStatusRulles = {
+	id: string;
+	name: string;
+	label: string;
+	statusCode: number;
+	style: string;
+};
+export type TChartComponentProps = {
+	data: TAllOrdData[];
+};
+
+export type TCatParams = {
+	params: Promise<{ cat: string }>;
+	searchParams: Promise<{}>;
+};
+export type TCatDatas = {
+	id: string;
+	nameTag: string;
+	defImg: string;
+	perMiniDescription: string;
+	engMiniDescription: string;
+	perTitle: string;
+	engTitle: string;
+	engDesc: string;
+	perDesc: string;
+} ;
+// export type TCatItemBox = {
+
+// }

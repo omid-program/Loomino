@@ -45,7 +45,7 @@
         }
       ],
       "cat": [
-        "cloth"
+        "1"
       ],
       "price": 260000
     },
@@ -81,7 +81,7 @@
         }
       ],
       "cat": [
-        "cloth"
+        "1"
       ]
     },
     {
@@ -122,7 +122,7 @@
         }
       ],
       "cat": [
-        "cloth"
+        "1"
       ],
       "price": 380000
     },
@@ -164,7 +164,7 @@
         }
       ],
       "cat": [
-        "cloth"
+        "1"
       ],
       "price": 320000
     },
@@ -206,7 +206,7 @@
         }
       ],
       "cat": [
-        "cloth"
+        "1"
       ],
       "price": 450000
     },
@@ -241,7 +241,7 @@
         }
       ],
       "cat": [
-        "cloth"
+        "1"
       ],
       "price": 520000
     },
@@ -290,7 +290,7 @@
         }
       ],
       "cat": [
-        "bedsheet"
+        "2"
       ],
       "price": 150000
     }
@@ -299,6 +299,9 @@
     {
       "id": "1",
       "nameTag": "forCloth",
+      "defImg": "/CatDefImg/dress-def-img.jpg",
+      "perMiniDescription": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله",
+      "engMiniDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas purus",
       "perTitle": "لباسی",
       "engTitle": "for Cloth",
       "engDesc": "Clothing made from good, high-quality fabrics is always among the best and highest-quality clothing. Because in addition to being durable and long-lasting, they are comfortable to wear and provide you with comfort. In fact, it is the fabric that makes the clothing beautiful. Also, in order to wear clothes that you are comfortable in, you should pay attention to the fabric. Especially if you are a woman, because you attach great importance to style and beauty, you should consider this issue more so that you always remain stylish and well-dressed.",
@@ -307,6 +310,9 @@
     {
       "id": "2",
       "nameTag": "bedSheet",
+      "defImg": "/CatDefImg/bedsheet-def-img.jpg",
+      "perMiniDescription": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله",
+      "engMiniDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas purus ",
       "perTitle": "ملحفه ای",
       "engTitle": "bed sheet",
       "engDesc": "Sheets are produced with various fabrics and are available in a wide variety of widths, grammage (weight), designs, and colors on the market, and people have many choices when buying. When choosing a sheet fabric, you should pay attention to various parameters such as personal preferences, allergies, financial ability, climate, weather, softness, resistance, fabric quality, color stability, standard texture, fabric width, etc. If you also plan to buy a suitable sheet fabric, stay with us until the end of this article from Ovita. In this article, we have introduced the types of sheet fabrics along with the characteristics of each so that you can make a proper purchase with sufficient knowledge and the necessary information in this field.",
@@ -315,6 +321,9 @@
     {
       "id": "3",
       "nameTag": "curtain",
+      "defImg": "/CatDefImg/curtain-def-img.jpg",
+      "perMiniDescription": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله",
+      "engMiniDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas purus ",
       "perTitle": "پرده‌",
       "engTitle": "curtain",
       "engDesc": "Curtain fabric has different types based on the material of production, curtain fabric design, and country of production. Choosing the right polyester curtain fabric, cotton curtain fabric, etc., requires knowing about the different types of curtain fabric and considering several factors, including your purpose for installing the curtains and the style you intend for the curtain fabric in your room and home. In addition, some factors that may play a role in your decision to choose curtain fabric such as linen, silk, polyester, wool, acrylic rayon, types of curtain lining, etc., are:",
@@ -350,148 +359,142 @@
   ],
   "ords": [
     {
-      "id": "50d7343f-796c-4fbb-8f6a-d066f47767fa",
+      "id": "de0ab8d1-79ea-4323-9c5b-8ba1aa09c3ef",
       "statusCode": 2,
-      "name": "سعیده موسوی",
+      "name": "سعید موسوی-2",
       "country": "انگلیس",
       "state": "خراسان رضوی",
-      "city": "شیراز2",
-      "address": "شسنتی شسد نتشسدین",
-      "phoneNumber": "12345678",
-      "emailAddres": "zxcvzxc",
-      "userOrd": [
+      "city": "لندن",
+      "address": "kbutgf",
+      "phoneNumber": "09211081730",
+      "emailAddres": "asdqwe",
+      "orders": [
         {
-          "id": "2",
-          "colorId": "as5v1bg416d1sdf",
-          "qty": 2.7,
-          "colorCode": "#1C76B2",
-          "price": 620000
-        },
-        {
-          "id": "4",
-          "colorId": "546s484xcc31",
-          "qty": 2,
-          "colorCode": "#B89D81",
-          "price": 320000
+          "orderId": "bb982557-ed56-4d20-9cb0-a564c48c1716",
+          "date": "2025-05-12T07:14:09.183Z",
+          "items": [
+            {
+              "id": "1",
+              "colorId": "3a6d0962-1cd2-4431-8160-584aac41cfc8",
+              "qty": 1.1,
+              "colorCode": "#292929",
+              "price": 260000
+            },
+            {
+              "id": "2",
+              "colorId": "98xcv2cvbs6df54",
+              "qty": 2.6,
+              "colorCode": "#B318AC",
+              "price": 620000
+            },
+            {
+              "id": "4",
+              "colorId": "56sdas412asde",
+              "qty": 2,
+              "colorCode": "#2B251E",
+              "price": 320000
+            }
+          ]
         }
       ],
-      "finalPrice": 2082600,
+      "finalPrice": 2538000,
+      "userOffCode": 0,
+      "date": {
+        "pertionDate": {
+          "year": "1404",
+          "month": "02",
+          "day": "22",
+          "time": "10:44"
+        },
+        "isoDate": "2025-05-12T07:14:09.183Z"
+      }
+    },
+    {
+      "id": "f4f641c2-404a-404f-a843-788a821e513a",
+      "statusCode": 1,
+      "name": "الهه ضیاء",
+      "country": "انگلیس",
+      "state": "نمیدونم",
+      "city": "مشهد",
+      "address": "الر اشسی",
+      "phoneNumber": "65412897",
+      "emailAddres": "qwewert",
+      "orders": [
+        {
+          "orderId": "7091da6c-952d-401d-b411-7f68315d170e",
+          "date": "2025-05-12T09:04:41.353Z",
+          "items": [
+            {
+              "id": "3",
+              "colorId": "16e54112df35a",
+              "qty": 0.6,
+              "colorCode": "#232C7D",
+              "price": 380000
+            }
+          ]
+        }
+      ],
+      "finalPrice": 205200,
       "userOffCode": 10,
       "date": {
         "pertionDate": {
           "year": "1404",
           "month": "02",
-          "day": "21",
-          "time": "11:35"
+          "day": "22",
+          "time": "12:34"
         },
-        "isoDate": "2025-05-11T08:05:31.556Z"
+        "isoDate": "2025-05-12T09:04:41.353Z"
       }
     },
     {
-      "id": "4fadcef4-eb95-4216-b812-8d57413f92d9",
-      "statusCode": 1,
+      "id": "63f765a5-d94f-49b7-ab16-f85650e5e5d9",
+      "statusCode": 0,
       "name": "شخص 2",
-      "country": "آمریکا",
-      "state": "نمیدونم",
-      "city": "قوچان",
-      "address": "نئی شسنتد شنستبد",
-      "phoneNumber": "01464513",
+      "country": "ایران",
+      "state": "خراسان رضوی",
+      "city": "مشهد",
+      "address": "تدب تشسدب نمسب",
+      "phoneNumber": "12345678",
       "emailAddres": "asdfg-2",
-      "userOrd": [
+      "orders": [
         {
-          "id": "4",
-          "colorId": "asd54sf1654",
-          "qty": 2.1,
-          "colorCode": "#A19C92",
-          "price": 320000
+          "orderId": "694ade4d-655c-4e5a-a7bf-4976403c96b7",
+          "date": "2025-05-12T09:59:37.054Z",
+          "items": [
+            {
+              "id": "3",
+              "colorId": "16e54112df35a",
+              "qty": 0.6,
+              "colorCode": "#232C7D",
+              "price": 380000
+            },
+            {
+              "id": "5",
+              "colorId": "j54df2163sdf654",
+              "qty": 3.6,
+              "colorCode": "#454545",
+              "price": 450000
+            },
+            {
+              "id": "2",
+              "colorId": "as5v1bg416d1sdf",
+              "qty": 1.5,
+              "colorCode": "#1C76B2",
+              "price": 620000
+            }
+          ]
         }
       ],
-      "finalPrice": 537600,
-      "userOffCode": 20,
+      "finalPrice": 2500200,
+      "userOffCode": 10,
       "date": {
         "pertionDate": {
           "year": "1404",
           "month": "02",
-          "day": "21",
-          "time": "12:43"
+          "day": "22",
+          "time": "13:29"
         },
-        "isoDate": "2025-05-11T09:13:00.882Z"
-      }
-    },
-    {
-      "id": "ffd51869-4db0-4ded-b34e-e89a9eead1b1",
-      "statusCode": 0,
-      "name": "شخص آزمایشی",
-      "country": "نروژ",
-      "state": "ایالت آزمایشی",
-      "city": "شهر آزمایشی",
-      "address": "آدرس آزمایشی",
-      "phoneNumber": "564651613",
-      "emailAddres": "jndkjas@g.com",
-      "userOrd": [
-        {
-          "id": "1",
-          "colorId": "sd541bg65",
-          "qty": 1.5,
-          "colorCode": "#74EBFF",
-          "price": 260000
-        },
-        {
-          "id": "1",
-          "colorId": "3a6d0962-1cd2-4431-8160-584aac41cfc8",
-          "qty": 1.1,
-          "colorCode": "#292929",
-          "price": 260000
-        },
-        {
-          "id": "3",
-          "colorId": "16e54112df35a",
-          "qty": 0.6,
-          "colorCode": "#232C7D",
-          "price": 380000
-        }
-      ],
-      "finalPrice": 904000,
-      "userOffCode": 0,
-      "date": {
-        "pertionDate": {
-          "year": "1404",
-          "month": "02",
-          "day": "21",
-          "time": "13:18"
-        },
-        "isoDate": "2025-05-11T09:48:39.107Z"
-      }
-    },
-    {
-      "id": "b78eb2a0-9f1c-40ff-b604-49ad558644c3",
-      "statusCode": 0,
-      "name": "آزمایش 3",
-      "country": "کشور آزمایشی-3",
-      "state": "ایالت آزمایشی-3",
-      "city": "شهر آزمایشی-3",
-      "address": "آدرس آزمایشی 3",
-      "phoneNumber": "4981456445",
-      "emailAddres": "experience-3@gmail.com",
-      "userOrd": [
-        {
-          "id": "5",
-          "colorId": "j54df2163sdf654",
-          "qty": 2.6,
-          "colorCode": "#454545",
-          "price": 450000
-        }
-      ],
-      "finalPrice": 1170000,
-      "userOffCode": 0,
-      "date": {
-        "pertionDate": {
-          "year": "1404",
-          "month": "02",
-          "day": "21",
-          "time": "14:22"
-        },
-        "isoDate": "2025-05-11T10:52:16.322Z"
+        "isoDate": "2025-05-12T09:59:37.054Z"
       }
     }
   ],

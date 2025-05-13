@@ -27,18 +27,21 @@ function Navbar() {
          subItems: [
             {
                id: 1,
+               catName:'clothFab',
                perSubNavTitle: "خرید پارچه لباسی",
                engSubNavTitle: "Buying clothes",
-               href: "/",
+               href: `/${''}`,
+               // Tagname => href ... => subItem.map=> link('/${params.cat}')
             },
             {
                id: 2,
+               catName:'bedSheetFab',
                perSubNavTitle: "خرید پارچه ملحفه ای",
                engSubNavTitle: "Buying bed sheet fabric",
                href: "/",
             },
          ],
-         link: "/categiries",
+         link: "/cats",
       },
       {
          id: 4,

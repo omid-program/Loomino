@@ -3,9 +3,11 @@ import Link from "next/link";
 import React from "react";
 
 function NavSubItem({subItems}:{subItems:TSubItems}) {
+   console.log(subItems);
+   
    return (
 <li>
-   <Link href={subItems.href}>{subItems.perSubNavTitle}</Link>
+   <Link href={`/cats/${subItems.catName}`}>{subItems.perSubNavTitle}</Link>
 </li>
    );
 }

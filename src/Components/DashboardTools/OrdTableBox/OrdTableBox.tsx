@@ -8,7 +8,7 @@ import axios from 'axios';
 import { patch } from '@mui/material';
 
 function OrdTableBox(props: TAllOrdData) {
-	const { id, date, userOrd, country, city, address, statusCode } = props;
+	const { id, date, orders, country, city, address, statusCode } = props;
 	const [totalPrice, setTotalPrice] = useState<number>();
 	const [statosRulleOrd, setStatosRulleOrd] = useState<TStatusRulles | null>(
 		null
@@ -16,12 +16,19 @@ function OrdTableBox(props: TAllOrdData) {
 	const [statusCodeState, setStatusCodeState] = useState(statusCode);
 	const [isLoading, setIsLoadndg] = useState(false);
 
+
 	useEffect(() => {
-		const totalPriceReduse = userOrd.reduce((total, item) => {
-			return item.price * item.qty + total;
-		}, 0);
+		if (!orders) return;
+
+		const totalPriceReduse = orders
+			.flatMap(ord => ord.items) // تبدیل همه items به یک آرایه تخت
+			.reduce((total, item) => {
+				return item.price * item.qty + total;
+			}, 0);
+
 		setTotalPrice(totalPriceReduse);
-	}, []);
+		console.log('totalPriceReduse => ', totalPriceReduse);
+	}, [orders]);
 
 	useEffect(() => {
 		const selectStatus = statusRules.find(rulls => {
@@ -67,9 +74,7 @@ function OrdTableBox(props: TAllOrdData) {
 				{date.pertionDate.year}/{date.pertionDate.month}/
 				{date.pertionDate.day}-{date.pertionDate.time}
 			</div>
-			<div className="grid col-span-1 text-center">
-				{userOrd.length}محصول
-			</div>
+			<div className="grid col-span-1 text-center">{orders.length}محصول</div>
 			<div className="grid col-span-1 text-center">
 				{country} - {city}
 			</div>
@@ -84,7 +89,11 @@ function OrdTableBox(props: TAllOrdData) {
 				>
 					<IoIosArrowForward />
 				</button>
-				<span className={`text-center col-span-3 ${statosRulleOrd?.style || 'bg-gray-200'}`}>
+				<span
+					className={`text-center col-span-3 ${
+						statosRulleOrd?.style || 'bg-gray-200'
+					}`}
+				>
 					{isLoading ? 'درحال به روز رسانی' : statosRulleOrd?.label}
 				</span>
 
