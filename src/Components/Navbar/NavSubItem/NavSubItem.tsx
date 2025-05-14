@@ -7,7 +7,7 @@ function NavSubItem({subItems}:{subItems:TSubItems}) {
    
    return (
 <li>
-   <Link href={`/cats/${subItems.catName}`}>{subItems.perSubNavTitle}</Link>
+   <Link href={subItems.href}>{subItems.perSubNavTitle}</Link>
 </li>
    );
 }

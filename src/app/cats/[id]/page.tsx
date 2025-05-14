@@ -1,6 +1,7 @@
 import Container from '@/Components/Container/Container';
 import ProductBox from '@/Components/ProductBox/ProductBox';
 import { TAllProductData, TCartItemProps, TCatDatas, TCatItemParams } from '@/types';
+import Link from 'next/link';
 import React from 'react';
 
 async function page({ params }: TCatItemParams) {
@@ -28,7 +29,9 @@ async function page({ params }: TCatItemParams) {
 				<div className="grid grid-cols-4 gap-3" >
 					{
 						fabricSelCat.map(fabric=>(
+							<Link href={`/shop/${fabric.id}`}>
 							<ProductBox {...fabric} />
+							</Link>
 						))
 					}
 				</div>

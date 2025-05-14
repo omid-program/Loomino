@@ -33,6 +33,12 @@ export type TInStoreAllProduct = {
 	qtys: string | undefined;
 	colorImg: string | undefined;
 };
+export type TTagData = {
+	id: string;
+	TagName: string;
+	perTitle: string;
+	engTitle: string;
+};
 
 export type TAllProductData = {
 	id: string;
@@ -45,11 +51,11 @@ export type TAllProductData = {
 	engDescription: string;
 	rate: number;
 	width: string;
-	tags: string[];
+	tags: TTagData[];
 	inStore: TInStoreAllProduct[];
 	cat: string[];
 	price: number;
-} ;
+};
 
 export type TAddres = {
 	country: string;
@@ -98,9 +104,9 @@ export type TProductPageParams = {
 	seachPrams: Promise<{}>;
 };
 export type TCatItemParams = {
-	params: Promise<{id:string}>
-	searchParams: Promise<{}>
-}
+	params: Promise<{ id: string }>;
+	searchParams: Promise<{}>;
+};
 
 export type TColorItem = {
 	id: string;
@@ -254,6 +260,10 @@ export type TCatParams = {
 	params: Promise<{ cat: string }>;
 	searchParams: Promise<{}>;
 };
+export type TTagParams = {
+	params: Promise<{id:string}>
+	searchParams: Promise<{}>
+}
 export type TCatDatas = {
 	id: string;
 	nameTag: string;
@@ -264,7 +274,7 @@ export type TCatDatas = {
 	engTitle: string;
 	engDesc: string;
 	perDesc: string;
-} ;
+};
 // export type TCatItemBox = {
 
 // }

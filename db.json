@@ -12,7 +12,12 @@
       "rate": 4.5,
       "width": "1.5",
       "tags": [
-        "Width150"
+        {
+          "id": "1",
+          "TagName": "Width150",
+          "perTitle": "پارچه های عرض 1.5",
+          "engTitle": "1.5 width fabric"
+        }
       ],
       "inStore": [
         {
@@ -61,7 +66,12 @@
       "rate": 4.7,
       "width": "1.5",
       "tags": [
-        "Width150"
+        {
+          "id": "1",
+          "TagName": "Width150",
+          "perTitle": "پارچه های عرض 1.5",
+          "engTitle": "1.5 width fabric"
+        }
       ],
       "price": 620000,
       "inStore": [
@@ -95,7 +105,12 @@
       "engDescription": "Shanton Plus fabric (two-thread shanton) is one of the most suitable fabrics for sewing sports coats for production due to its reasonable price and variety of colors. Shanton and Shanton Plus fabrics are also used in uses other than sewing clothes and coats. Upholstery fabric, bedspread fabric, tablecloth fabric, cushion fabric, curtain fabric, etc. can be considered as other uses of Shanton and Shanton Plus (two-thread shanton) fabrics.",
       "width": "1.5",
       "tags": [
-        "Width150"
+        {
+          "id": "1",
+          "TagName": "Width150",
+          "perTitle": "پارچه های عرض 1.5",
+          "engTitle": "1.5 width fabric"
+        }
       ],
       "rate": 4.8,
       "inStore": [
@@ -138,7 +153,12 @@
       "rate": 4.2,
       "width": "1.5",
       "tags": [
-        "Width150"
+        {
+          "id": "1",
+          "TagName": "Width150",
+          "perTitle": "پارچه های عرض 1.5",
+          "engTitle": "1.5 width fabric"
+        }
       ],
       "inStore": [
         {
@@ -180,7 +200,12 @@
       "rate": 3.8,
       "width": "1.5",
       "tags": [
-        "Width150"
+        {
+          "id": "1",
+          "TagName": "Width150",
+          "perTitle": "پارچه های عرض 1.5",
+          "engTitle": "1.5 width fabric"
+        }
       ],
       "inStore": [
         {
@@ -222,7 +247,12 @@
       "rate": 4.8,
       "width": "1.5",
       "tags": [
-        "Width150"
+        {
+          "id": "1",
+          "TagName": "Width150",
+          "perTitle": "پارچه های عرض 1.5",
+          "engTitle": "1.5 width fabric"
+        }
       ],
       "inStore": [
         {
@@ -257,7 +287,12 @@
       "rate": 4.5,
       "width": "1.5",
       "tags": [
-        "Width150"
+        {
+          "id": "2",
+          "TagName": "Width200",
+          "perTitle": "پارچه های عرض 2",
+          "engTitle": "2 width fabric"
+        }
       ],
       "inStore": [
         {
@@ -334,27 +369,21 @@
   "tags": [
     {
       "id": "1",
-      "nameTag": "Width200",
-      "perTitle": "عرض 1.5",
-      "engTitle": "width 1.5",
-      "perDesc": "پارچه های عرض 1.5",
-      "engDesc": "1.5 width fabric"
+      "TagName": "Width150",
+      "perTitle": "پارچه های عرض 1.5",
+      "engTitle": "1.5 width fabric"
     },
     {
       "id": "2",
-      "nameTag": "Width200",
-      "perTitle": "عرض 2",
-      "engTitle": "width 2",
-      "perDesc": "پارچه های عرض 2",
-      "engDesc": "2 width fabric"
+      "TagName": "Width200",
+      "perTitle": "پارچه های عرض 2",
+      "engTitle": "2 width fabric"
     },
     {
       "id": "3",
-      "nameTag": "Width300",
-      "perTitle": "عرض 3",
-      "engTitle": "width 3",
-      "perDesc": "پارچه های عرض  متر3",
-      "engDesc": "3meter width fabric"
+      "TagName": "Width300",
+      "perTitle": "پارچه های عرض 3",
+      "engTitle": "3 width fabric"
     }
   ],
   "ords": [
