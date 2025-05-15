@@ -1,6 +1,7 @@
 'use client';
 import {
 	TAllProductData,
+	TCatDatas,
 	TEditProductComponent,
 	TInStoreAllProduct,
 } from '@/types';
@@ -11,12 +12,25 @@ import EditeBoxInStore from '../EditeBoxInStore/EditeBoxInStore';
 function EditProductComponent({ id }: TEditProductComponent) {
 	const [fabricData, setFabricData] = useState<TAllProductData | null>(null);
 	const [inStoreState, setInStoreState] = useState<TInStoreAllProduct[]>([]);
+	const [catData, setCatData] = useState<TCatDatas[]>([]);
+	const [tagData, setTagData] = useState<TCatDatas[]>([]);
+	const [catSelectVal , setCatSelectVal ] = useState<string>()
+	const getCatHand = async () => {
+		const catResponse = await fetch(`http://localhost:8000/cats`);
+		const catFetched = await catResponse.json();
+		setCatData(catFetched);
+	};
+	const getTagHand = async () => {
+		const tagResponse = await fetch(`http://localhost:8000/tags`);
+		const tagFetched = await tagResponse.json();
+		setTagData(tagFetched);
+	};
 
 	useEffect(() => {
 		async function getProduct() {
 			try {
 				const response = await fetch(`http://localhost:8000/fabrics/${id}`);
-				const data = await response.json();
+				const data = await response.json() as TAllProductData;
 				setFabricData(data);
 				// بررسی اینکه data.inStore یک آرایه است
 				if (Array.isArray(data.inStore)) {
@@ -24,11 +38,15 @@ function EditProductComponent({ id }: TEditProductComponent) {
 				} else {
 					setInStoreState([]);
 				}
+				setCatSelectVal(data.cat[0])
 			} catch (error) {
 				console.error('خطا در دریافت داده‌ها:', error);
 			}
 		}
+
 		getProduct();
+		getCatHand()
+		getTagHand()
 	}, [id]);
 	useEffect(() => {
 		console.log('inStoreState updated:', inStoreState);
@@ -96,7 +114,7 @@ function EditProductComponent({ id }: TEditProductComponent) {
 	const removeInStoreItemHand = (id: string) => {
 		let newInStoreItems = inStoreState.filter(item => item.id !== id);
 		console.log(newInStoreItems);
-		setInStoreState(newInStoreItems)
+		setInStoreState(newInStoreItems);
 	};
 	const inputEditItems = fabricData
 		? [
@@ -208,6 +226,21 @@ function EditProductComponent({ id }: TEditProductComponent) {
 						changeInputHand={changeStateHand}
 					/>
 				))}
+			</div>
+			<div className="border-2 border-rose-700">
+				<div>
+					<select 
+					value={catSelectVal}
+					onChange={e=>{setCatSelectVal(e.target.value)}}
+					>
+						{
+							catData.map(cat=>(
+								<option value={cat.id}>{cat.perTitle}</option>
+							))
+						}
+						</select>
+				</div>
+				<div></div>
 			</div>
 			<div className=" gap-7 bg-rose-200">
 				{inStoreState?.map(inStoreItem => (

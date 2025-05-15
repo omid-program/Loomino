@@ -2,8 +2,13 @@
 import EditeBoxInStore from '@/Components/DashboardTools/EditeBoxInStore/EditeBoxInStore';
 import ProductManagerEditInput from '@/Components/DashboardTools/ProductManagerEditInput/ProductManagerEditInput';
 import PagesTitle from '@/Components/PageTitle/PagesTitle';
-import { TAllProductData, TInStoreAllProduct } from '@/types';
-import React, { useState } from 'react';
+import {
+	TAllProductData,
+	TCatDatas,
+	TInStoreAllProduct,
+	TTagData,
+} from '@/types';
+import React, { useEffect, useState } from 'react';
 
 function AddProduct() {
 	const [fabricData, setFabricData] = useState<TAllProductData>({
@@ -16,7 +21,7 @@ function AddProduct() {
 		perDescription: '',
 		engDescription: '',
 		rate: 5,
-		width: "",
+		width: '',
 		tags: [],
 		inStore: [
 			// { id: '', colorCode: '', colorImg: '', colorName: '', qtys: '' },
@@ -33,7 +38,11 @@ function AddProduct() {
 			qtys: '',
 		},
 	]);
+	const [catSelectVal, setCatSelectVal] = useState<string[]>(['1']);
 
+	const [catData, setCatData] = useState<TCatDatas[]>();
+	const [tagData, setTagData] = useState<TTagData[]>();
+	const [selectedTag, setSelectedTag] = useState<string[]>([]);
 	const inputCommonItems = [
 		{
 			id: 1,
@@ -126,6 +135,24 @@ function AddProduct() {
 			value: fabricData?.price,
 		},
 	];
+
+	const getCats = async () => {
+		const catResponse = await fetch(`http://localhost:8000/cats`);
+		const catFetched = (await catResponse.json()) as TCatDatas[];
+		setCatData(catFetched);
+		console.log('CatData => ', catData);
+	};
+	const getTags = async () => {
+		const tagResponse = await fetch(`http://localhost:8000/tags`);
+		const tagFetched = (await tagResponse.json()) as TTagData[];
+		setTagData(tagFetched);
+		console.log('tagFetched=> ', tagFetched);
+	};
+	useEffect(() => {
+		getCats();
+		getTags();
+	}, []);
+
 	const changeStateHand = (e: React.ChangeEvent<HTMLInputElement>) => {
 		console.log(e.target.value);
 		const { name, value } = e.target;
@@ -155,7 +182,7 @@ function AddProduct() {
 		};
 		setInStoreState(prevInStore => [...prevInStore, newInStoreItem]);
 	};
-   const handleSaveChanges = () => {
+	const handleSaveChanges = () => {
 		if (fabricData) {
 			setFabricData({
 				...fabricData,
@@ -163,20 +190,22 @@ function AddProduct() {
 			});
 			console.log('داده‌های نهایی برای ارسال به بکند:', {
 				...fabricData,
+				cat: catSelectVal,
 				inStore: inStoreState,
 			});
 		}
 	};
+	/// ناقصههههه
 	const sendEditedFabServer = async () => {
 		if (fabricData) {
-			const updatedData = { ...fabricData, inStore: inStoreState };
+			// const updatedData = { ...fabricData, inStore: inStoreState };
 			try {
 				const response = await fetch(
-					`http://localhost:8000/fabrics/${id}`,
+					`http://localhost:8000/fabrics/`,
 					{
-						method: 'PUT',
+						method: 'POST',
 						headers: { 'Content-Type': 'application/json' },
-						body: JSON.stringify(updatedData),
+						body: JSON.stringify(fabricData),
 					}
 				);
 				if (response.ok) {
@@ -187,15 +216,22 @@ function AddProduct() {
 			}
 		}
 	};
+	const changeChackBoxHand = (tagName: string, checked: boolean) => {
+		if (checked) {
+			setSelectedTag(prev => [...prev, tagName]);
+		} else {
+			setSelectedTag(prev => prev.filter(tag => tag !== tagName));
+		}
+	};
 
 	return (
 		<div>
 			<PagesTitle title="افزودن محصول" />
-			<div className='px-4'>
-				<div className='grid grid-cols-2 '>
+			<div className="px-4">
+				<div className="grid grid-cols-2 ">
 					{inputCommonItems.map(item => (
 						<ProductManagerEditInput
-						key={item.id}
+							key={item.id}
 							label={item.label}
 							name={item.name}
 							type={item.type}
@@ -206,10 +242,43 @@ function AddProduct() {
 						/>
 					))}
 				</div>
-				<div className='grid grid-cols-2 gap-5 my-5'>
+				<div>
+					<div>
+						<select
+							name=""
+							id=""
+							value={catSelectVal}
+							onChange={e => {
+								setCatSelectVal([e.target.value]);
+							}}
+						>
+							{catData?.map(category => (
+								<option value={category.id}>
+									{category.perTitle}
+								</option>
+							))}
+						</select>
+					</div>
+					<div>
+						{tagData?.map(tag => (
+							<div>
+								<label>{tag.perTitle}</label>
+								<input
+									type="checkbox"
+									value={tag.TagName}
+									checked={selectedTag.includes(tag.TagName)}
+									onChange={e => {
+										changeChackBoxHand(tag.TagName, e.target.checked);
+									}}
+								/>
+							</div>
+						))}
+					</div>
+				</div>
+				<div className="grid grid-cols-2 gap-5 my-5">
 					{inStoreState.map(inStoreItem => (
 						<EditeBoxInStore
-						key={inStoreItem.id}
+							key={inStoreItem.id}
 							id={inStoreItem.id}
 							colorName={inStoreItem.colorName}
 							colorCode={inStoreItem.colorCode}
@@ -220,7 +289,7 @@ function AddProduct() {
 						/>
 					))}
 				</div>
-				<div className='flex justify-between '>
+				<div className="flex justify-between ">
 					<button
 						className="w-1/4 mx-auto py-2 text-center bg-rose-300 rounded-lg"
 						onClick={addInStoreItem}
@@ -239,7 +308,6 @@ function AddProduct() {
 					>
 						افزودن محصول به فروشگاه
 					</button>
-
 				</div>
 			</div>
 		</div>

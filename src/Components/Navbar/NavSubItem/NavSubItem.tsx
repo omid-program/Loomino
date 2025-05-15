@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 
 function NavSubItem({subItems}:{subItems:TSubItems}) {
-   console.log(subItems);
+   // console.log(subItems);
    
    return (
 <li>
