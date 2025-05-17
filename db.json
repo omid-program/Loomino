@@ -49,9 +49,12 @@
           "colorImg": "/mozerati-black-model.jpg"
         }
       ],
-      "cat": [
-        "1"
-      ],
+      "cat": {
+        "id": "1",
+        "catName": "forCloth",
+        "perTitle": "لباسی",
+        "engTitle": "for Cloth"
+      },
       "price": 260000
     },
     {
@@ -90,9 +93,12 @@
           "colorImg": "/fotr-blue-model.jpg"
         }
       ],
-      "cat": [
-        "1"
-      ]
+      "cat": {
+        "id": "1",
+        "catName": "forCloth",
+        "perTitle": "لباسی",
+        "engTitle": "for Cloth"
+      }
     },
     {
       "id": "3",
@@ -136,9 +142,12 @@
           "colorImg": "/shantonDoNakh-gray-model.jpg"
         }
       ],
-      "cat": [
-        "1"
-      ],
+      "cat": {
+        "id": "1",
+        "catName": "forCloth",
+        "perTitle": "لباسی",
+        "engTitle": "for Cloth"
+      },
       "price": 380000
     },
     {
@@ -183,9 +192,12 @@
           "colorImg": "/Keshmir-gray-model.jpg"
         }
       ],
-      "cat": [
-        "1"
-      ],
+      "cat": {
+        "id": "1",
+        "catName": "forCloth",
+        "perTitle": "لباسی",
+        "engTitle": "for Cloth"
+      },
       "price": 320000
     },
     {
@@ -230,9 +242,12 @@
           "colorImg": "/diplomate-black-model.jpg"
         }
       ],
-      "cat": [
-        "1"
-      ],
+      "cat": {
+        "id": "1",
+        "catName": "forCloth",
+        "perTitle": "لباسی",
+        "engTitle": "for Cloth"
+      },
       "price": 450000
     },
     {
@@ -270,9 +285,12 @@
           "colorImg": "/MatchVelvet-gray-model.jpg"
         }
       ],
-      "cat": [
-        "1"
-      ],
+      "cat": {
+        "id": "1",
+        "catName": "forCloth",
+        "perTitle": "لباسی",
+        "engTitle": "for Cloth"
+      },
       "price": 520000
     },
     {
@@ -288,10 +306,10 @@
       "width": "1.5",
       "tags": [
         {
-          "id": "2",
-          "TagName": "Width200",
-          "perTitle": "پارچه های عرض 2",
-          "engTitle": "2 width fabric"
+          "id": "3",
+          "TagName": "Width300",
+          "perTitle": "پارچه های عرض 3",
+          "engTitle": "3 width fabric"
         }
       ],
       "inStore": [
@@ -324,59 +342,90 @@
           "colorImg": "/mozerati-black-model.jpg"
         }
       ],
-      "cat": [
-        "2"
-      ],
-      "price": 150000
+      "cat": {
+        "id": "2",
+        "catName": "bedSheet",
+        "perTitle": "ملحفه ای",
+        "engTitle": "bed sheet"
+      },
+      "price": 150000,
+      "cats": {
+        "id": "2",
+        "catName": "bedSheet",
+        "perTitle": "ملحفه ای",
+        "engTitle": "bed sheet"
+      }
     },
     {
-      "id": "41ccba94-a96c-4447-a068-bd83e3cc0845",
-      "perTitle": "محصول آزمایشی 1",
-      "engTitle": "experiens-1",
-      "defImg": "C:\\Users\\Omid\\Pictures\\CustomizedDesktop/savedWallpaper.jpg",
-      "perMiniDescription": "شتوضیحات کوتاه 1",
-      "engMiniDescription": "mini des exp",
-      "perDescription": " توضیحات کامل1",
-      "engDescription": "long des",
-      "rate": 5,
-      "width": "",
-      "tags": [],
-      "inStore": [
-        {
-          "id": "4775d1a2-8226-482e-a559-2eb672b9fe9f",
-          "colorName": "رنگ آزمایشی",
-          "colorCode": "#fd21ea",
-          "colorImg": "C:\\Users\\Omid\\Pictures\\CustomizedDesktop/savedWallpaper.jpg",
-          "qtys": "050"
-        }
-      ],
-      "cat": [],
-      "price": "50000000",
-      "": "1"
-    },
-    {
-      "id": "cfb5174f-53dd-43ad-b255-558cc3ce1e19",
-      "perTitle": "عنوان محصول3",
-      "engTitle": "engTitle-3",
+      "id": "d1b8eae4-5c22-4fa4-b4bc-4641483b4703",
+      "perTitle": "عنوان محصول4",
+      "engTitle": "engTitle-4",
       "defImg": "/fotr-pink-model.jpg",
-      "perMiniDescription": " توضیحات کوتاه فارسی-3",
-      "engMiniDescription": "mini description-3",
-      "perDescription": " توضیحات کامل-3",
-      "engDescription": "description-3",
+      "perMiniDescription": " توضیحات کوتاه فارسی-4",
+      "engMiniDescription": "mini description-4",
+      "perDescription": " توضیحات کامل-4",
+      "engDescription": "description-4",
       "rate": 5,
       "width": "",
       "tags": [],
       "inStore": [
         {
-          "id": "d998ce2f-cb5f-4774-acf9-7820118dd364",
-          "colorName": "صورتی",
-          "colorCode": "#f54dde",
+          "id": "b8c6c905-bd5d-4ef4-8c9b-61ba5b1edd03",
+          "colorName": "عشقی",
+          "colorCode": "#002aff",
           "colorImg": "/fotr-pink-model.jpg",
-          "qtys": "25"
+          "qtys": "100"
         }
       ],
-      "cat": [],
-      "price": "0300000"
+      "cat": {
+        "id": "1",
+        "catName": "forCloth",
+        "engTitle": "for Cloth",
+        "perTitle": "لباسی"
+      },
+      "price": 0
+    },
+    {
+      "id": "cdd51041-9db6-4c85-bdd7-2cc8d76a8282",
+      "perTitle": "عنوان محصول5",
+      "engTitle": "engTitle-5",
+      "defImg": "/fotr-pink-model.jpg",
+      "perMiniDescription": " توضیحات کوتاه فارسی-5",
+      "engMiniDescription": "mini description-5",
+      "perDescription": " توضیحات کامل-4",
+      "engDescription": "description-5",
+      "rate": "5",
+      "width": "",
+      "tags": [
+        {
+          "id": "3",
+          "TagName": "Width300",
+          "perTitle": "پارچه های عرض 3",
+          "engTitle": "3 width fabric"
+        },
+        {
+          "id": "1",
+          "TagName": "Width150",
+          "perTitle": "پارچه های عرض 1.5",
+          "engTitle": "1.5 width fabric"
+        }
+      ],
+      "inStore": [
+        {
+          "id": "974b5c47-6c5b-447f-b3df-70cb109e4d80",
+          "colorName": "قرمز",
+          "colorCode": "#ff0000",
+          "colorImg": "/fotr-pink-model.jpg",
+          "qtys": "40"
+        }
+      ],
+      "cat": {
+        "id": "2",
+        "catName": "bedSheet",
+        "engTitle": "bed sheet",
+        "perTitle": "ملحفه ای"
+      },
+      "price": "400000"
     }
   ],
   "cats": [
@@ -414,7 +463,6 @@
       "perDesc": "پارچه پرده‌ای بر اساس جنس تولیدی، طرح پارچه پرده و کشور تولیدکننده انواع مختلفی دارد. انتخاب پارچه مناسب پرده پلی‌استر، پرده نخی و…، مستلزم اطلاع از انواع مختلف پارچه پرده‌ای و در نظر گرفتن چندین عامل، شامل هدف شما از نصب پرده و سبکی است که برای پارچه پرده اتاق و خانه خود در نظر دارید. بجز آن، بعضی عواملی که ممکن است در تصمیم شما جهت انتخاب پارچه پرده ای کتان، ابریشم، پلی‌استر، وال، ریون اکرولیک، انواع زیر پرده و… نقش داشته باشد، عبارتند از:"
     }
   ],
-  "sailRaport": [],
   "tags": [
     {
       "id": "1",

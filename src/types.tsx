@@ -34,11 +34,17 @@ export type TInStoreAllProduct = {
 	colorImg: string | undefined;
 };
 export type TTagData = {
-	id: string;
-	TagName: string;
+	id: string 
+	TagName: string 
 	perTitle: string;
 	engTitle: string;
-};
+} 
+export type TProductCatData = {
+	id:string | undefined
+	catName: string |undefined
+	perTitle: string | undefined
+	engTitle: string | undefined
+} |undefined
 
 export type TAllProductData = {
 	id: string;
@@ -53,7 +59,7 @@ export type TAllProductData = {
 	width: string;
 	tags: TTagData[];
 	inStore: TInStoreAllProduct[];
-	cat: string[];
+	cat: TProductCatData;
 	price: number;
 };
 

@@ -6,8 +6,10 @@ import {
 	TAllProductData,
 	TCatDatas,
 	TInStoreAllProduct,
+	TProductCatData,
 	TTagData,
 } from '@/types';
+import { randomUUID } from 'crypto';
 import React, { useEffect, useState } from 'react';
 
 function AddProduct() {
@@ -38,11 +40,20 @@ function AddProduct() {
 			qtys: '',
 		},
 	]);
-	const [catSelectVal, setCatSelectVal] = useState<string[]>(['1']);
+	const [catSelectVal, setCatSelectVal] = useState<string>('forCloth');
 
 	const [catData, setCatData] = useState<TCatDatas[]>();
 	const [tagData, setTagData] = useState<TTagData[]>();
 	const [selectedTag, setSelectedTag] = useState<string[]>([]);
+	const [catObjetForSend, setCatObjetForSend] = useState<TProductCatData>();
+	const [productTagList , setProductTagList] = useState<TTagData[]>([])
+
+	// 	{
+	// 	id: crypto.randomUUID(),
+	// 	catName:'',
+	// 	engTitle: '',
+	// 	perTitle: ''
+	// }
 	const inputCommonItems = [
 		{
 			id: 1,
@@ -156,7 +167,7 @@ function AddProduct() {
 	const changeStateHand = (e: React.ChangeEvent<HTMLInputElement>) => {
 		console.log(e.target.value);
 		const { name, value } = e.target;
-		setFabricData(prevData =>
+		setFabricData((prevData) =>
 			prevData ? { ...prevData, [name]: value } : null
 		);
 	};
@@ -186,12 +197,14 @@ function AddProduct() {
 		if (fabricData) {
 			setFabricData({
 				...fabricData,
+				cat: catObjetForSend,
+				tags: productTagList ,
 				inStore: inStoreState, // جایگزینی inStore با حالت آپدیت شده
 			});
 			console.log('داده‌های نهایی برای ارسال به بکند:', {
 				...fabricData,
-				cat: catSelectVal,
 				inStore: inStoreState,
+				cat: catObjetForSend,
 			});
 		}
 	};
@@ -200,14 +213,11 @@ function AddProduct() {
 		if (fabricData) {
 			// const updatedData = { ...fabricData, inStore: inStoreState };
 			try {
-				const response = await fetch(
-					`http://localhost:8000/fabrics/`,
-					{
-						method: 'POST',
-						headers: { 'Content-Type': 'application/json' },
-						body: JSON.stringify(fabricData),
-					}
-				);
+				const response = await fetch(`http://localhost:8000/fabrics`, {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify(fabricData),
+				});
 				if (response.ok) {
 					alert('تغییرات با موفقیت اعمال شد');
 				}
@@ -222,6 +232,28 @@ function AddProduct() {
 		} else {
 			setSelectedTag(prev => prev.filter(tag => tag !== tagName));
 		}
+	};
+	const submiteSelectCatHand = () => {
+		const catFiltred = catData?.find(cat => cat.nameTag === catSelectVal);
+		const tagList = selectedTag.map(tagSel => {
+			return tagData?.find(tagInfo => tagInfo.TagName === tagSel);
+		});
+		const matchTagDataSelTag = selectedTag;
+
+		const newObgCategory = {
+			id: catFiltred?.id,
+			catName: catFiltred?.nameTag,
+			engTitle: catFiltred?.engTitle,
+			perTitle: catFiltred?.perTitle,
+		};
+		setCatObjetForSend(newObgCategory);
+		setProductTagList(tagList.filter(Boolean) as TTagData[])
+
+		console.log('catFiltred=>', catFiltred);
+		console.log('catData=>', catData);
+		console.log('newObgCategory=>', newObgCategory);
+		console.log('matchTagDataSelTag=> ', matchTagDataSelTag);
+		console.log('tagList=> ', tagList);
 	};
 
 	return (
@@ -244,20 +276,22 @@ function AddProduct() {
 				</div>
 				<div>
 					<div>
+						{/* find cat */}
 						<select
 							name=""
 							id=""
 							value={catSelectVal}
 							onChange={e => {
-								setCatSelectVal([e.target.value]);
+								setCatSelectVal(e.target.value);
 							}}
 						>
 							{catData?.map(category => (
-								<option value={category.id}>
+								<option value={category.nameTag}>
 									{category.perTitle}
 								</option>
 							))}
 						</select>
+						<button onClick={submiteSelectCatHand}>ثبت دسته بندی</button>
 					</div>
 					<div>
 						{tagData?.map(tag => (
@@ -300,7 +334,7 @@ function AddProduct() {
 						className="w-1/4 mx-auto py-2 text-center bg-sky-300 rounded-lg"
 						onClick={handleSaveChanges}
 					>
-						ثبت رنگبندی
+						ثبت اطلاعات
 					</button>
 					<button
 						className="w-1/4 mx-auto py-2 text-center bg-green-300 rounded-lg"

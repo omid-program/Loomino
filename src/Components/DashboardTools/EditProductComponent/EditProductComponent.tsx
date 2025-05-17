@@ -4,6 +4,8 @@ import {
 	TCatDatas,
 	TEditProductComponent,
 	TInStoreAllProduct,
+	TProductCatData,
+	TTagData,
 } from '@/types';
 import React, { useEffect, useState } from 'react';
 import ProductManagerEditInput from '../ProductManagerEditInput/ProductManagerEditInput';
@@ -12,13 +14,25 @@ import EditeBoxInStore from '../EditeBoxInStore/EditeBoxInStore';
 function EditProductComponent({ id }: TEditProductComponent) {
 	const [fabricData, setFabricData] = useState<TAllProductData | null>(null);
 	const [inStoreState, setInStoreState] = useState<TInStoreAllProduct[]>([]);
+
 	const [catData, setCatData] = useState<TCatDatas[]>([]);
-	const [tagData, setTagData] = useState<TCatDatas[]>([]);
-	const [catSelectVal , setCatSelectVal ] = useState<string>()
+
+	///////////////////////////////////////////////////////////
+
+	const [tagData, setTagData] = useState<TTagData[]>([]);
+	const [productTag, setProductTag] = useState<TTagData[]>([]);
+
+	////////////////////////////////////////////////////////////
+
+	const [catSelectVal, setCatSelectVal] = useState<TProductCatData>();
+	const [tempProductCat, setTempProductCat] = useState<TProductCatData>();
+
 	const getCatHand = async () => {
 		const catResponse = await fetch(`http://localhost:8000/cats`);
-		const catFetched = await catResponse.json();
+		const catFetched = (await catResponse.json()) as TCatDatas[];
 		setCatData(catFetched);
+		setCatData(catFetched);
+		// console.log("catFetched => " , catFetched);
 	};
 	const getTagHand = async () => {
 		const tagResponse = await fetch(`http://localhost:8000/tags`);
@@ -30,30 +44,44 @@ function EditProductComponent({ id }: TEditProductComponent) {
 		async function getProduct() {
 			try {
 				const response = await fetch(`http://localhost:8000/fabrics/${id}`);
-				const data = await response.json() as TAllProductData;
+				const data = (await response.json()) as TAllProductData;
 				setFabricData(data);
+				// setCatSelectVal(data.cat);
 				// بررسی اینکه data.inStore یک آرایه است
 				if (Array.isArray(data.inStore)) {
 					setInStoreState(data.inStore);
 				} else {
 					setInStoreState([]);
 				}
-				setCatSelectVal(data.cat[0])
+				setTempProductCat(data.cat);
+				setProductTag(data.tags);
 			} catch (error) {
 				console.error('خطا در دریافت داده‌ها:', error);
 			}
 		}
 
 		getProduct();
-		getCatHand()
-		getTagHand()
+		getCatHand();
+		getTagHand();
+		console.log('catSelectVal=>', catSelectVal);
 	}, [id]);
+
 	useEffect(() => {
-		console.log('inStoreState updated:', inStoreState);
-	}, [inStoreState]);
+		if (catData.length > 0 && tempProductCat) {
+			setCatSelectVal(tempProductCat);
+		}
+	}, [catData, tempProductCat]);
+
+	useEffect(() => {
+		console.log('productTag=> ', productTag);
+	}, [productTag]);
+
+	// useEffect(() => {
+	// 	console.log('inStoreState updated:', inStoreState);
+	// }, [inStoreState]);
 
 	const changeStateHand = (e: React.ChangeEvent<HTMLInputElement>) => {
-		console.log(e.target.value);
+		// console.log(e.target.value);
 		const { name, value } = e.target;
 		setFabricData(prevData =>
 			prevData ? { ...prevData, [name]: value } : null
@@ -72,18 +100,27 @@ function EditProductComponent({ id }: TEditProductComponent) {
 			setFabricData({
 				...fabricData,
 				inStore: inStoreState, // جایگزینی inStore با حالت آپدیت شده
+				cat: catSelectVal,
+				tags: productTag,
 			});
 			// اینجا می‌تونی درخواست API برای ذخیره در بکند رو هم اضافه کنی
 			console.log('داده‌های نهایی برای ارسال به بکند:', {
 				...fabricData,
 				inStore: inStoreState,
+				cat: catSelectVal,
+				tags: productTag,
 			});
 		}
 	};
 
 	const sendEditedFabServer = async () => {
 		if (fabricData) {
-			const updatedData = { ...fabricData, inStore: inStoreState };
+			const updatedData = {
+				...fabricData,
+				inStore: inStoreState,
+				cats: catSelectVal,
+				tags: productTag,
+			};
 			try {
 				const response = await fetch(
 					`http://localhost:8000/fabrics/${id}`,
@@ -113,9 +150,42 @@ function EditProductComponent({ id }: TEditProductComponent) {
 	};
 	const removeInStoreItemHand = (id: string) => {
 		let newInStoreItems = inStoreState.filter(item => item.id !== id);
-		console.log(newInStoreItems);
+		// console.log(newInStoreItems);
 		setInStoreState(newInStoreItems);
 	};
+	const changeSelectHand = (tagName: string) => {
+		const findCatData = catData.find(cat => cat.nameTag === tagName);
+		const newCat = {
+			id: findCatData?.id,
+			catName: findCatData?.nameTag,
+			perTitle: findCatData?.perTitle,
+			engTitle: findCatData?.engTitle,
+		};
+		setCatSelectVal(newCat);
+	};
+	const chechTag = (tagId: string) => {
+		return productTag.some(tag => tag.id === tagId);
+	};
+
+	// //////////////////////////  im hear  ////////////////////////////////////
+
+	const changeTagChackBox = (checked: boolean, tagId: string) => {
+		const tagFinded = tagData.find(tag => tag.id === tagId);
+		// const tagRemoveProduct =
+		console.log('tagData=> ', tagData);
+
+		if (checked) {
+			if (tagFinded) {
+				setProductTag(prev => [...prev, tagFinded]);
+			}
+		} else {
+			setProductTag(prev => prev.filter(item => item.id !== tagId));
+		}
+	};
+
+	///////////////////////////////////////////////////////
+
+	// what the hell???
 	const inputEditItems = fabricData
 		? [
 				{
@@ -227,20 +297,37 @@ function EditProductComponent({ id }: TEditProductComponent) {
 					/>
 				))}
 			</div>
-			<div className="border-2 border-rose-700">
-				<div>
-					<select 
-					value={catSelectVal}
-					onChange={e=>{setCatSelectVal(e.target.value)}}
-					>
-						{
-							catData.map(cat=>(
-								<option value={cat.id}>{cat.perTitle}</option>
-							))
-						}
+			<div className="border-2 border-rose-700 grid grid-cols-4">
+				<div className=" col-span-1">
+					{catSelectVal && (
+						<select
+							value={catSelectVal?.catName}
+							onChange={e => {
+								changeSelectHand(e.target.value);
+							}}
+						>
+							{catData.map(cat => (
+								<option key={cat.id} value={cat.nameTag}>
+									{cat.perTitle}
+								</option>
+							))}
 						</select>
+					)}
 				</div>
-				<div></div>
+				<div className="col-span-3">
+					{tagData?.map(tag => (
+						<div key={tag.id}>
+							<label>{tag.perTitle}</label>
+							<input
+								type="checkbox"
+								checked={chechTag(tag.id)}
+								onChange={e =>
+									changeTagChackBox(e.target.checked, tag.id)
+								}
+							/>
+						</div>
+					))}
+				</div>
 			</div>
 			<div className=" gap-7 bg-rose-200">
 				{inStoreState?.map(inStoreItem => (
