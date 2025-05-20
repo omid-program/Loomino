@@ -1,0 +1,142 @@
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+import { TTagData } from '@/types';
+
+const style = {
+	position: 'absolute',
+	top: '50%',
+	left: '50%',
+	transform: 'translate(-50%, -50%)',
+	width: 400,
+	bgcolor: 'background.paper',
+	border: '2px solid #000',
+	boxShadow: 24,
+	p: 4,
+};
+
+interface IAddTagModalProps {
+	open: boolean;
+	onClose: () => void;
+}
+
+export default function AddTagModal({ open, onClose }: IAddTagModalProps) {
+	// const [open, setOpen] = React.useState(false);
+	const [tagInputData, setTagInputData] = React.useState<TTagData | null>({
+		id: crypto.randomUUID(),
+		perTitle: '',
+		engTitle: '',
+		TagName: '',
+	});
+
+	const catInputs = [
+		{
+			id: '1',
+			label: 'عنوان',
+			name: 'perTitle',
+			type: 'text',
+			isLong: false,
+			size: 'sm',
+			value: tagInputData?.perTitle,
+		},
+		{
+			id: '2',
+			label: 'عنوان انگلیسی',
+			name: 'engTitle',
+			type: 'text',
+			isLong: false,
+			size: 'sm',
+			value: tagInputData?.engTitle,
+		},
+		{
+			id: '3',
+			label: 'شناسه',
+			name: 'TagName',
+			type: 'text',
+			isLong: false,
+			size: 'sm',
+			value: tagInputData?.TagName,
+		},
+	];
+
+	// const handleOpen = () => setOpen(true);
+	// const handleClose = () => setOpen(false);
+
+	const changeStateHand = (
+		e:
+			| React.ChangeEvent<HTMLInputElement>
+			| React.ChangeEvent<HTMLTextAreaElement>
+	) => {
+		console.log(e.target.value);
+		const { name, value } = e.target;
+		setTagInputData(prevData =>
+			prevData ? { ...prevData, [name]: value } : null
+		);
+	};
+
+	const sendNewCatToDatabase = async () => {
+		if (tagInputData) {
+			try {
+				const response = await fetch('http://localhost:8000/tags', {
+					method: 'POST',
+					headers: { 'Contetnt-Type': 'application/json' },
+					body: JSON.stringify(tagInputData),
+				});
+				if (response.ok) {
+					alert('افزودن دسته ی جدید با موفقیت انجام شد🔥🔥');
+				}
+			} catch (error) {
+				console.log(error);
+			}
+		}
+	};
+
+	return (
+		<div>
+			{/* <Button onClick={open}>افزودن برچسب</Button> */}
+			<Modal
+				open={open}
+				onClose={onClose}
+				aria-labelledby="modal-modal-title"
+				aria-describedby="modal-modal-description"
+			>
+				<Box sx={style}>
+					<Typography id="modal-modal-title" variant="h6" component="h2">
+						افزودن برچسب جدید
+					</Typography>
+					<Typography id="modal-modal-description" sx={{ mt: 2 }}>
+						<div
+						// className="grid grid-cols-2"
+						>
+							{catInputs.map(item => (
+								<div
+									key={item.name}
+									className="flex items-center justify-center"
+								>
+									<label htmlFor={item.name}>{item.label}</label>
+									<input
+										name={item.name}
+										value={item.value}
+										type="text"
+										className="rounded-sm col-span-1 px-1 py-2 border border-rose-500"
+										onChange={e => {
+											changeStateHand(e);
+										}}
+									/>
+								</div>
+							))}
+							<button
+								className="w-full bg-green-300"
+								onClick={sendNewCatToDatabase}
+							>
+								ثبت برچسب جدید
+							</button>
+						</div>
+					</Typography>
+				</Box>
+			</Modal>
+		</div>
+	);
+}

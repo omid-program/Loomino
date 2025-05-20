@@ -34,17 +34,19 @@ export type TInStoreAllProduct = {
 	colorImg: string | undefined;
 };
 export type TTagData = {
-	id: string 
-	TagName: string 
+	id: string;
+	TagName: string;
 	perTitle: string;
 	engTitle: string;
-} 
-export type TProductCatData = {
-	id:string | undefined
-	catName: string |undefined
-	perTitle: string | undefined
-	engTitle: string | undefined
-} |undefined
+};
+export type TProductCatData =
+	| {
+			id: string | undefined;
+			catName: string | undefined;
+			perTitle: string | undefined;
+			engTitle: string | undefined;
+	  }
+	| undefined;
 
 export type TAllProductData = {
 	id: string;
@@ -267,9 +269,9 @@ export type TCatParams = {
 	searchParams: Promise<{}>;
 };
 export type TTagParams = {
-	params: Promise<{id:string}>
-	searchParams: Promise<{}>
-}
+	params: Promise<{ id: string }>;
+	searchParams: Promise<{}>;
+};
 export type TCatDatas = {
 	id: string;
 	nameTag: string;
@@ -281,6 +283,11 @@ export type TCatDatas = {
 	engDesc: string;
 	perDesc: string;
 };
-// export type TCatItemBox = {
+export type TRemoveCatModalProps = {
+	openHandelModal: () => void;
+};
+export type TBoxItemPaginated = TAllProductData[];
 
-// }
+// export type TSplicedDataForPagination = [
+
+// ]

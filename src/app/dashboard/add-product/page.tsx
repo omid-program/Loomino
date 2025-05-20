@@ -13,7 +13,7 @@ import { randomUUID } from 'crypto';
 import React, { useEffect, useState } from 'react';
 
 function AddProduct() {
-	const [fabricData, setFabricData] = useState<TAllProductData>({
+	const [fabricData, setFabricData] = useState<TAllProductData | null>({
 		id: crypto.randomUUID(),
 		perTitle: '',
 		engTitle: '',
@@ -208,7 +208,6 @@ function AddProduct() {
 			});
 		}
 	};
-	/// ناقصههههه
 	const sendEditedFabServer = async () => {
 		if (fabricData) {
 			// const updatedData = { ...fabricData, inStore: inStoreState };

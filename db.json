@@ -384,48 +384,6 @@
         "perTitle": "لباسی"
       },
       "price": 0
-    },
-    {
-      "id": "cdd51041-9db6-4c85-bdd7-2cc8d76a8282",
-      "perTitle": "عنوان محصول5",
-      "engTitle": "engTitle-5",
-      "defImg": "/fotr-pink-model.jpg",
-      "perMiniDescription": " توضیحات کوتاه فارسی-5",
-      "engMiniDescription": "mini description-5",
-      "perDescription": " توضیحات کامل-4",
-      "engDescription": "description-5",
-      "rate": "5",
-      "width": "",
-      "tags": [
-        {
-          "id": "3",
-          "TagName": "Width300",
-          "perTitle": "پارچه های عرض 3",
-          "engTitle": "3 width fabric"
-        },
-        {
-          "id": "1",
-          "TagName": "Width150",
-          "perTitle": "پارچه های عرض 1.5",
-          "engTitle": "1.5 width fabric"
-        }
-      ],
-      "inStore": [
-        {
-          "id": "974b5c47-6c5b-447f-b3df-70cb109e4d80",
-          "colorName": "قرمز",
-          "colorCode": "#ff0000",
-          "colorImg": "/fotr-pink-model.jpg",
-          "qtys": "40"
-        }
-      ],
-      "cat": {
-        "id": "2",
-        "catName": "bedSheet",
-        "engTitle": "bed sheet",
-        "perTitle": "ملحفه ای"
-      },
-      "price": "400000"
     }
   ],
   "cats": [

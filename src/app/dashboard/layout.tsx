@@ -25,6 +25,12 @@ function layout({
          engTitle: "Ord Manager",
          href: "/dashboard/ord-manager",
       },
+      {
+         id: "4",
+         perTitle: "مدیریت دسته بندی و برچست",
+         engTitle: "cat and Tag Manager",
+         href: "/dashboard/manage-items",
+      },
    ];
    return (
       <div className="flex">
