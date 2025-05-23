@@ -141,9 +141,7 @@ function ProductManagerTable2() {
 		);
 		if (response.ok) {
 			alert('حذف با موفقیت انجام شد');
-			setAllProductDatas(prev =>
-				prev?.filter(item => item.id !== seletedItem.id)
-			);
+			getAllProducts()
 		} else {
 			console.log('عمیات نا موفق');
 		}

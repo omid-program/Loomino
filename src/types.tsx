@@ -22,7 +22,7 @@ export type TLinksData = {
 	id: number;
 	perTitle: string;
 	engTitle: string;
-	subItems?: TSubItems[];
+	subItems?: TCatDatas[];
 	link: string;
 };
 
@@ -64,6 +64,15 @@ export type TAllProductData = {
 	cat: TProductCatData;
 	price: number;
 };
+export interface IPaginateShop {
+	first: number | null;
+	items: number | null;
+	last: number | null;
+	next: number | null;
+	pages: number;
+	prev: number | null;
+	data: TAllOrdData[];
+}
 
 export type TAddres = {
 	country: string;
@@ -291,3 +300,8 @@ export type TBoxItemPaginated = TAllProductData[];
 // export type TSplicedDataForPagination = [
 
 // ]
+export interface ValidationRule {
+	value: string;
+	min?: number;
+	max?: number;
+}
