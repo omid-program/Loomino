@@ -1,17 +1,23 @@
-import { ShappingCartContextProvider } from "@/context/ShappongCartContext";
-import Navbar from "../Navbar/Navbar";
+import { ShappingCartContextProvider } from '@/context/ShappongCartContext';
+// import Navbar from "../Navbar/ServerNavbar/ServerNavbar";
+import ServerNavbar from '../Navbar/ServerNavbar/ServerNavbar';
+import ClientNavbar from '../Navbar/ClientNavbar/ClientNavbar';
 
 export default function Layout({
-   children,
+	children,
 }: Readonly<{
-   children: React.ReactNode;
+	children: React.ReactNode;
 }>) {
-   return (
-      <div>
-         <ShappingCartContextProvider>
-            <Navbar />
-            {children}
-         </ShappingCartContextProvider>
-      </div>
-   );
+	return (
+		<div>
+			<ShappingCartContextProvider>
+				<div className="flex gap-0 justify-center">
+					<ServerNavbar />
+					<ClientNavbar />
+				</div>
+
+				{children}
+			</ShappingCartContextProvider>
+		</div>
+	);
 }

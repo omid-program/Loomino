@@ -1,6 +1,6 @@
 "use client";
 
-import { TShappingCartContext, TUserOrds } from "@/types";
+import { TItemsOfOrders, TShappingCartContext, TUserOrds } from "@/types";
 import { baskeFormatMeter } from "@/utils/inputMeter";
 import { createContext, useContext, useState } from "react";
 
@@ -15,7 +15,7 @@ export function ShappingCartContextProvider({
 }: {
    children: React.ReactNode;
 }) {
-   const [userOrd, setUserOrd] = useState<TUserOrds[]>([]);
+   const [userOrd, setUserOrd] = useState<TItemsOfOrders[]>([]);
    const [userOffCode, setUserOffCode] = useState<number>(0);
 
    const addOrdToCart = (
@@ -45,7 +45,7 @@ export function ShappingCartContextProvider({
             );
          } else {
             // اگر محصول وجود ندارد، یک آیتم جدید اضافه کن
-            let newOrd: TUserOrds = {
+            let newOrd: TItemsOfOrders = {
                id,
                colorId,
                qty: productCount,

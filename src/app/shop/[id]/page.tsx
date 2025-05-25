@@ -32,7 +32,7 @@ async function ProductPage({ params }: TProductPageParams) {
 					</div>
 					<div className="flex gap-1 w-5/6 border-2 border-rose-600 rounded">
 						{productData.tags.map(tag => (
-							<Link href={`/tags/${tag.id}`}>
+							<Link key={tag.id} href={`/tags/${tag.id}`}>
 								<div>{tag.perTitle}</div>
 							</Link>
 						))}

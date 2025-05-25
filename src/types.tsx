@@ -154,7 +154,7 @@ export type TUserOrds = {
 };
 
 export type TShappingCartContext = {
-	userOrd: TUserOrds[];
+	userOrd: TItemsOfOrders[];
 	addOrdToCart: (
 		id: string,
 		colorId: string,

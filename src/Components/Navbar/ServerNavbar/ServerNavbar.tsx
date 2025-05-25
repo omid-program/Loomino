@@ -1,15 +1,22 @@
 // import { TNavbarPromps } from "@/types";
+export const dynamic = 'force-dynamic';
+
 import React from 'react';
 import NavItem from './NavItem/NavItem';
 import Link from 'next/link';
 import { TCatDatas, TLinksData } from '@/types';
 import NavSubItem from './NavSubItem/NavSubItem';
 import { BsCart4 } from 'react-icons/bs';
+import { TbChartArcs } from "react-icons/tb";
+
 import LogoutComponent from '../LogoutComponent/LogoutComponent';
 
-async function Navbar() {
+async function ServerNavbar() {
 	const response = await fetch(`http://localhost:8000/cats`);
 	const catData = (await response.json()) as TCatDatas[];
+
+
+
 	const navLinks: TLinksData[] = [
 		{
 			id: 1,
@@ -30,15 +37,15 @@ async function Navbar() {
 			subItems: catData,
 			link: '/cats',
 		},
-		{
-			id: 4,
-			perTitle: 'داشبورد',
-			engTitle: 'Dashboard',
-			link: '/dashboard',
-		},
+		// {
+		// 	id: 4,
+		// 	perTitle: 'داشبورد',
+		// 	engTitle: 'Dashboard',
+		// 	link: '/dashboard',
+		// },
 	];
 	return (
-		<nav className="w-10/12 max-h-12 relative mx-auto py-2 px-1 flex justify-between items-center border-b border-violet-400  ">
+		<nav className="w-10/12 max-h-16 relative mx-auto py-3 px-1 flex justify-between items-center    ">
 			<div>
 				<ul className="flex gap-2">
 					{navLinks.map((navLinksItem: TLinksData) => (
@@ -57,23 +64,9 @@ async function Navbar() {
 					))}
 				</ul>
 			</div>
-			<div className="flex items-center justify-center gap-2">
-				<div className="size-6">
-					<Link href={'/cart'} className="w-full">
-						<BsCart4 />
-					</Link>
-				</div>
-				<div className='flex'>
-					{/* <div>
-						<Link href={'/dashboard'}>داشبورد</Link>
-					</div> */}
-					<div className="size-6">
-						<LogoutComponent />
-					</div>
-				</div>
-			</div>
+			
 		</nav>
 	);
 }
 
-export default Navbar;
+export default ServerNavbar;

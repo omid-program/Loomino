@@ -42,13 +42,15 @@ function CartItem(props: TCartItemProps) {
             )}
          </div>
          <div className="col-span-2">
-
+               {
+                  productDatas?.price &&
             <QtyManager
-               id={id}
-               colorId={colorId}
-               colorCode={colorCode}
-               price={productDatas?.price}
+            id={id}
+            colorId={colorId}
+            colorCode={colorCode}
+            price={productDatas?.price}
             />
+         }
          </div>
          <div className="grid col-span-4 ">
             <h3>{productDatas?.perTitle}</h3>
