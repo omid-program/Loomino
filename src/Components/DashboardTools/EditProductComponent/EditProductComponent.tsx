@@ -10,6 +10,14 @@ import {
 import React, { useEffect, useState } from 'react';
 import ProductManagerEditInput from '../ProductManagerEditInput/ProductManagerEditInput';
 import EditeBoxInStore from '../EditeBoxInStore/EditeBoxInStore';
+import { format } from '@/date-fns-jalali';
+import jalaali from 'jalaali-js';
+
+interface TPerCreatedAt {
+	year: string;
+	month: string;
+	day: string;
+}
 
 function EditProductComponent({ id }: TEditProductComponent) {
 	const [fabricData, setFabricData] = useState<TAllProductData | null>(null);
@@ -26,6 +34,15 @@ function EditProductComponent({ id }: TEditProductComponent) {
 
 	const [catSelectVal, setCatSelectVal] = useState<TProductCatData>();
 	const [tempProductCat, setTempProductCat] = useState<TProductCatData>();
+
+	////////////////////////////////////////////////////////////
+
+	const [perCreatedAt, setPerCreatedAt] = useState<TPerCreatedAt>({
+		year: '',
+		month: '',
+		day: '',
+	});
+	const [isoDateGenState, setIsoDateGenState] = useState<string>();
 
 	const getCatHand = async () => {
 		const catResponse = await fetch(`http://localhost:8000/cats`);
@@ -46,6 +63,16 @@ function EditProductComponent({ id }: TEditProductComponent) {
 				const response = await fetch(`http://localhost:8000/fabrics/${id}`);
 				const data = (await response.json()) as TAllProductData;
 				setFabricData(data);
+				setIsoDateGenState(data.createdAt);
+				//////////////////////////////////////////////////
+				const date = new Date(data.createdAt);
+				const { jy, jm, jd } = jalaali.toJalaali(date);
+				setPerCreatedAt({
+					year: String(jy),
+					month: String(jm).padStart(2, '0'),
+					day: String(jd).padStart(2, '0'),
+				});
+				//////////////////////////////////////////////////
 				// setCatSelectVal(data.cat);
 				// بررسی اینکه data.inStore یک آرایه است
 				if (Array.isArray(data.inStore)) {
@@ -76,10 +103,6 @@ function EditProductComponent({ id }: TEditProductComponent) {
 		console.log('productTag=> ', productTag);
 	}, [productTag]);
 
-	// useEffect(() => {
-	// 	console.log('inStoreState updated:', inStoreState);
-	// }, [inStoreState]);
-
 	const changeStateHand = (e: React.ChangeEvent<HTMLInputElement>) => {
 		// console.log(e.target.value);
 		const { name, value } = e.target;
@@ -97,11 +120,20 @@ function EditProductComponent({ id }: TEditProductComponent) {
 	};
 	const handleSaveChanges = () => {
 		if (fabricData) {
+			const { day, year, month } = perCreatedAt;
+			const { gy, gm, gd } = jalaali.toGregorian(
+				Number(year),
+				Number(month),
+				Number(day)
+			);
+			const isoDateGenerate = new Date(gy, gm - 1, gd).toISOString();
+			setIsoDateGenState(isoDateGenerate);
 			setFabricData({
 				...fabricData,
 				inStore: inStoreState, // جایگزینی inStore با حالت آپدیت شده
 				cat: catSelectVal,
 				tags: productTag,
+				createdAt: isoDateGenerate,
 			});
 			// اینجا می‌تونی درخواست API برای ذخیره در بکند رو هم اضافه کنی
 			console.log('داده‌های نهایی برای ارسال به بکند:', {
@@ -109,6 +141,7 @@ function EditProductComponent({ id }: TEditProductComponent) {
 				inStore: inStoreState,
 				cat: catSelectVal,
 				tags: productTag,
+				createdAt: isoDateGenerate,
 			});
 		}
 	};
@@ -120,6 +153,7 @@ function EditProductComponent({ id }: TEditProductComponent) {
 				inStore: inStoreState,
 				cats: catSelectVal,
 				tags: productTag,
+				createdAt: isoDateGenState,
 			};
 			try {
 				const response = await fetch(
@@ -184,6 +218,19 @@ function EditProductComponent({ id }: TEditProductComponent) {
 	};
 
 	///////////////////////////////////////////////////////
+
+	const changePreDateHand = (
+		e:
+			| React.ChangeEvent<HTMLSelectElement>
+			| React.ChangeEvent<HTMLInputElement>
+	) => {
+		setPerCreatedAt(prev => {
+			const { name, value } = e.target;
+			console.log('changePreDateHand=> ', { ...prev, [name]: value });
+
+			return { ...prev, [name]: value };
+		});
+	};
 
 	// what the hell???
 	const inputEditItems = fabricData
@@ -280,6 +327,56 @@ function EditProductComponent({ id }: TEditProductComponent) {
 				},
 		  ]
 		: [];
+	const monthInputInfo = [
+		{
+			value: '1',
+			monthName: 'فروردین',
+		},
+		{
+			value: '2',
+			monthName: 'اردیبهشت',
+		},
+		{
+			value: '3',
+			monthName: 'خرداد',
+		},
+		{
+			value: '4',
+			monthName: 'تیر',
+		},
+		{
+			value: '5',
+			monthName: 'مرداد',
+		},
+		{
+			value: '6',
+			monthName: 'شهریور',
+		},
+		{
+			value: '7',
+			monthName: 'مهر',
+		},
+		{
+			value: '8',
+			monthName: 'آبان',
+		},
+		{
+			value: '9',
+			monthName: 'آذر',
+		},
+		{
+			value: '10',
+			monthName: 'دی',
+		},
+		{
+			value: '11',
+			monthName: 'بهمن',
+		},
+		{
+			value: '12',
+			monthName: 'اسفند',
+		},
+	];
 
 	return (
 		<div className="border border-sky-600 p-2 w-10/12">
@@ -296,6 +393,46 @@ function EditProductComponent({ id }: TEditProductComponent) {
 						changeInputHand={changeStateHand}
 					/>
 				))}
+			</div>
+			<div>
+				<select
+					name="day"
+					className="grid grid-cols-3"
+					value={perCreatedAt.day}
+					onChange={e => {
+						changePreDateHand(e);
+					}}
+				>
+					{Array.from({ length: 31 }, (_, i) => (
+						<option
+							key={i + 1}
+							value={i + 1}
+							className="p-1 bg-violet-300"
+						>
+							{i + 1}
+						</option>
+					))}
+				</select>
+				<select
+					name="month"
+					onChange={e => {
+						changePreDateHand(e);
+					}}
+					value={perCreatedAt.month}
+				>
+					{monthInputInfo.map(month => (
+						<option value={month.value}>{month.monthName}</option>
+					))}
+				</select>
+				<input
+					name="year"
+					onChange={e => {
+						changePreDateHand(e);
+					}}
+					type="number"
+					className="w-full"
+					value={perCreatedAt.year}
+				/>
 			</div>
 			<div className="border-2 border-rose-700 grid grid-cols-4">
 				<div className=" col-span-1">

@@ -63,7 +63,9 @@ export type TAllProductData = {
 	inStore: TInStoreAllProduct[];
 	cat: TProductCatData;
 	price: number;
+	createdAt: string;
 };
+
 export interface IPaginateShop {
 	first: number | null;
 	items: number | null;
@@ -297,6 +299,13 @@ export type TRemoveCatModalProps = {
 };
 export type TBoxItemPaginated = TAllProductData[];
 
+export type TCatItemBoxProps = {
+	defImg: string;
+	perTitle: string;
+	perMiniDescription: string;
+	id: string;
+};
+
 // export type TSplicedDataForPagination = [
 
 // ]
@@ -305,3 +314,59 @@ export interface ValidationRule {
 	min?: number;
 	max?: number;
 }
+
+// slide types
+// export type TSliderCollection = {
+// 	sliders: {
+// 		[sliderName: string]: TSliderConfig[];
+// 	};
+// };
+
+// export type TSliderConfig = {
+// 	effect?: 'slide' | 'fade' | 'cube' | 'cards';
+// 	autoplay?: boolean;
+// 	loop?: boolean;
+// 	delay?: number;
+// 	items: TSlideItem[];
+// };
+
+// type TSlideItem = {
+// 	id: string;
+// 	title: string;
+// 	subtitle?: string;
+// 	image: string;
+// 	link?: string;
+// };
+
+export type THomeHeadrSliders = {
+	effect?: 'fade' | 'slide' | 'cube' | 'cards';
+	autoplay?: true;
+	delay?: number;
+	items: THomeHederSlideItem[];
+};
+
+export type THomeHederSlideItem = {
+	id: string;
+	title: string;
+	subItem: string;
+	image: string;
+	link: string;
+	imgNumber: string;
+};
+
+export type TSliders = {
+	homeHeadrSliders: THomeHeadrSliders;
+};
+
+// Home page - bestSelles
+export type TProductBoxData = {
+	id: string;
+	perTitle: string;
+	engTitle: string;
+	defImg: string;
+	perMiniDescription: string;
+	engMiniDescription: string;
+	rate?: number;
+	width?: string;
+	price?: number;
+};

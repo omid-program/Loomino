@@ -10,7 +10,11 @@ import {
 	TTagData,
 } from '@/types';
 import { randomUUID } from 'crypto';
+import { format } from 'date-fns-jalali';
+import jalaali from 'jalaali-js';
+
 import React, { useEffect, useState } from 'react';
+// import {} from 'date-fns-jalali'
 
 function AddProduct() {
 	const [fabricData, setFabricData] = useState<TAllProductData | null>({
@@ -46,14 +50,15 @@ function AddProduct() {
 	const [tagData, setTagData] = useState<TTagData[]>();
 	const [selectedTag, setSelectedTag] = useState<string[]>([]);
 	const [catObjetForSend, setCatObjetForSend] = useState<TProductCatData>();
-	const [productTagList , setProductTagList] = useState<TTagData[]>([])
+	const [productTagList, setProductTagList] = useState<TTagData[]>([]);
+	const [perCreatedAt, setPerCreatedAt] = useState({
+		year: '',
+		month: '',
+		day: '',
+	});
 
-	// 	{
-	// 	id: crypto.randomUUID(),
-	// 	catName:'',
-	// 	engTitle: '',
-	// 	perTitle: ''
-	// }
+
+
 	const inputCommonItems = [
 		{
 			id: 1,
@@ -145,29 +150,52 @@ function AddProduct() {
 			size: 'md',
 			value: fabricData?.price,
 		},
+		// {
+		// 	id: 11,
+		// 	label: 'تاریخ قرارگیری',
+		// 	type: 'date',
+		// 	name: 'createdAt',
+		// 	isLong: false,
+		// 	size: 'md',
+		// 	value: fabricData?.createdAt,
+		// },
 	];
 
 	const getCats = async () => {
 		const catResponse = await fetch(`http://localhost:8000/cats`);
 		const catFetched = (await catResponse.json()) as TCatDatas[];
 		setCatData(catFetched);
-		console.log('CatData => ', catData);
+		// console.log('CatData => ', catData);
 	};
 	const getTags = async () => {
 		const tagResponse = await fetch(`http://localhost:8000/tags`);
 		const tagFetched = (await tagResponse.json()) as TTagData[];
 		setTagData(tagFetched);
-		console.log('tagFetched=> ', tagFetched);
+		// console.log('tagFetched=> ', tagFetched);
+	};
+
+	const setDefaultPerCreatedAt = () => {
+		const now = new Date().toISOString();
+		const nowYear = format(now, 'yyyy');
+		const nowMonth = format(now, 'MM');
+		const nowDay = format(now, 'dd');
+		setPerCreatedAt({
+			year: nowYear,
+			month: nowMonth,
+			day: nowDay,
+		});
+		console.log('year=>', nowYear);
 	};
 	useEffect(() => {
 		getCats();
 		getTags();
+		setDefaultPerCreatedAt();
 	}, []);
 
 	const changeStateHand = (e: React.ChangeEvent<HTMLInputElement>) => {
-		console.log(e.target.value);
+		// console.log(e.target.value);
 		const { name, value } = e.target;
-		setFabricData((prevData) =>
+		setFabricData(prevData =>
 			prevData ? { ...prevData, [name]: value } : null
 		);
 	};
@@ -180,7 +208,7 @@ function AddProduct() {
 	};
 	const removeInStoreItemHand = (id: string) => {
 		let newInStoreItems = inStoreState.filter(item => item.id !== id);
-		console.log(newInStoreItems);
+		// console.log(newInStoreItems);
 		setInStoreState(newInStoreItems);
 	};
 	const addInStoreItem = () => {
@@ -195,16 +223,28 @@ function AddProduct() {
 	};
 	const handleSaveChanges = () => {
 		if (fabricData) {
+			const { day, year, month } = perCreatedAt;
+			const { gy, gm, gd } = jalaali.toGregorian(
+				Number(year),
+				Number(month),
+				Number(day)
+			);
+			const isoDateGenerate = new Date(gy, gm - 1, gd).toISOString();
+
+			// const miniIsoDate = jalaaliToDate()
 			setFabricData({
 				...fabricData,
 				cat: catObjetForSend,
-				tags: productTagList ,
+				tags: productTagList,
 				inStore: inStoreState, // جایگزینی inStore با حالت آپدیت شده
+				createdAt: isoDateGenerate,
 			});
 			console.log('داده‌های نهایی برای ارسال به بکند:', {
 				...fabricData,
 				inStore: inStoreState,
 				cat: catObjetForSend,
+				tags: productTagList,
+				createdAt: isoDateGenerate,
 			});
 		}
 	};
@@ -246,13 +286,76 @@ function AddProduct() {
 			perTitle: catFiltred?.perTitle,
 		};
 		setCatObjetForSend(newObgCategory);
-		setProductTagList(tagList.filter(Boolean) as TTagData[])
+		setProductTagList(tagList.filter(Boolean) as TTagData[]);
 
-		console.log('catFiltred=>', catFiltred);
-		console.log('catData=>', catData);
-		console.log('newObgCategory=>', newObgCategory);
-		console.log('matchTagDataSelTag=> ', matchTagDataSelTag);
-		console.log('tagList=> ', tagList);
+		// console.log('catFiltred=>', catFiltred);
+		// console.log('catData=>', catData);
+		// console.log('newObgCategory=>', newObgCategory);
+		// console.log('matchTagDataSelTag=> ', matchTagDataSelTag);
+		// console.log('tagList=> ', tagList);
+	};
+
+	const monthInputInfo = [
+		{
+			value: '1',
+			monthName: 'فروردین',
+		},
+		{
+			value: '2',
+			monthName: 'اردیبهشت',
+		},
+		{
+			value: '3',
+			monthName: 'خرداد',
+		},
+		{
+			value: '4',
+			monthName: 'تیر',
+		},
+		{
+			value: '5',
+			monthName: 'مرداد',
+		},
+		{
+			value: '6',
+			monthName: 'شهریور',
+		},
+		{
+			value: '7',
+			monthName: 'مهر',
+		},
+		{
+			value: '8',
+			monthName: 'آبان',
+		},
+		{
+			value: '9',
+			monthName: 'آذر',
+		},
+		{
+			value: '10',
+			monthName: 'دی',
+		},
+		{
+			value: '11',
+			monthName: 'بهمن',
+		},
+		{
+			value: '12',
+			monthName: 'اسفند',
+		},
+	];
+	const changePreDateHand = (
+		e:
+			| React.ChangeEvent<HTMLSelectElement>
+			| React.ChangeEvent<HTMLInputElement>
+	) => {
+		setPerCreatedAt(prev => {
+			const { name, value } = e.target;
+			console.log('changePreDateHand=> ', { ...prev, [name]: value });
+
+			return { ...prev, [name]: value };
+		});
 	};
 
 	return (
@@ -272,6 +375,46 @@ function AddProduct() {
 							changeInputHand={changeStateHand}
 						/>
 					))}
+					<div>
+						<select
+							name="day"
+							className="grid grid-cols-3"
+							value={perCreatedAt.day}
+							onChange={e => {
+								changePreDateHand(e);
+							}}
+						>
+							{Array.from({ length: 31 }, (_, i) => (
+								<option
+									key={i + 1}
+									value={i + 1}
+									className="p-1 bg-violet-300"
+								>
+									{i + 1}
+								</option>
+							))}
+						</select>
+						<select
+							name="month"
+							onChange={e => {
+								changePreDateHand(e);
+							}}
+							value={perCreatedAt.month}
+						>
+							{monthInputInfo.map(month => (
+								<option value={month.value}>{month.monthName}</option>
+							))}
+						</select>
+						<input
+							name="year"
+							onChange={e => {
+								changePreDateHand(e);
+							}}
+							type="number"
+							className="w-full"
+							value={perCreatedAt.year}
+						/>
+					</div>
 				</div>
 				<div>
 					<div>

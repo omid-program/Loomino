@@ -55,7 +55,8 @@
         "perTitle": "لباسی",
         "engTitle": "for Cloth"
       },
-      "price": 260000
+      "price": 260000,
+      "createdAt": "2025-04-12T07:14:09.183Z"
     },
     {
       "id": "2",
@@ -74,6 +75,12 @@
           "TagName": "Width150",
           "perTitle": "پارچه های عرض 1.5",
           "engTitle": "1.5 width fabric"
+        },
+        {
+          "id": "59025f29-f387-4c4f-b2c2-8a014ef72bc8",
+          "perTitle": "پارچه ی زمستانه",
+          "engTitle": "winter cloth",
+          "TagName": "winterCloth"
         }
       ],
       "price": 620000,
@@ -98,6 +105,13 @@
         "catName": "forCloth",
         "perTitle": "لباسی",
         "engTitle": "for Cloth"
+      },
+      "createdAt": "2025-04-11T20:30:00.000Z",
+      "cats": {
+        "id": "1",
+        "catName": "forCloth",
+        "perTitle": "لباسی",
+        "engTitle": "for Cloth"
       }
     },
     {
@@ -116,6 +130,12 @@
           "TagName": "Width150",
           "perTitle": "پارچه های عرض 1.5",
           "engTitle": "1.5 width fabric"
+        },
+        {
+          "id": "9f5e5f15-3c11-4103-b9c7-92d1a790e1ca",
+          "perTitle": "پارچه ی تابستانه",
+          "engTitle": "summer cloth",
+          "TagName": "summerCloth"
         }
       ],
       "rate": 4.8,
@@ -148,7 +168,14 @@
         "perTitle": "لباسی",
         "engTitle": "for Cloth"
       },
-      "price": 380000
+      "price": 380000,
+      "createdAt": "2025-03-11T20:30:00.000Z",
+      "cats": {
+        "id": "1",
+        "catName": "forCloth",
+        "perTitle": "لباسی",
+        "engTitle": "for Cloth"
+      }
     },
     {
       "id": "4",
@@ -167,6 +194,12 @@
           "TagName": "Width150",
           "perTitle": "پارچه های عرض 1.5",
           "engTitle": "1.5 width fabric"
+        },
+        {
+          "id": "59025f29-f387-4c4f-b2c2-8a014ef72bc8",
+          "perTitle": "پارچه ی زمستانه",
+          "engTitle": "winter cloth",
+          "TagName": "winterCloth"
         }
       ],
       "inStore": [
@@ -198,7 +231,14 @@
         "perTitle": "لباسی",
         "engTitle": "for Cloth"
       },
-      "price": 320000
+      "price": 320000,
+      "createdAt": "2025-02-11T20:30:00.000Z",
+      "cats": {
+        "id": "1",
+        "catName": "forCloth",
+        "perTitle": "لباسی",
+        "engTitle": "for Cloth"
+      }
     },
     {
       "id": "5",
@@ -248,7 +288,8 @@
         "perTitle": "لباسی",
         "engTitle": "for Cloth"
       },
-      "price": 450000
+      "price": 450000,
+      "createdAt": "2025-02-12T07:14:09.183Z"
     },
     {
       "id": "6",
@@ -267,6 +308,24 @@
           "TagName": "Width150",
           "perTitle": "پارچه های عرض 1.5",
           "engTitle": "1.5 width fabric"
+        },
+        {
+          "id": "59025f29-f387-4c4f-b2c2-8a014ef72bc8",
+          "perTitle": "پارچه ی زمستانه",
+          "engTitle": "winter cloth",
+          "TagName": "winterCloth"
+        },
+        {
+          "id": "48a4c97e-0d1d-4b25-9289-525995e81bfa6",
+          "perTitle": "پارچه ی بهاری",
+          "engTitle": "spring cloth",
+          "TagName": "springCloth"
+        },
+        {
+          "id": "48a4c97e-0d1d-4b25-9289-52995e81bfa6",
+          "perTitle": "پارچه ی پاییزه",
+          "engTitle": "autumn cloth",
+          "TagName": "autumnCloth"
         }
       ],
       "inStore": [
@@ -291,7 +350,14 @@
         "perTitle": "لباسی",
         "engTitle": "for Cloth"
       },
-      "price": 520000
+      "price": 520000,
+      "createdAt": "2025-02-11T20:30:00.000Z",
+      "cats": {
+        "id": "1",
+        "catName": "forCloth",
+        "perTitle": "لباسی",
+        "engTitle": "for Cloth"
+      }
     },
     {
       "id": "7",
@@ -354,7 +420,8 @@
         "catName": "bedSheet",
         "perTitle": "ملحفه ای",
         "engTitle": "bed sheet"
-      }
+      },
+      "createdAt": "2025-01-12T07:14:09.183Z"
     },
     {
       "id": "d1b8eae4-5c22-4fa4-b4bc-4641483b4703",
@@ -367,7 +434,14 @@
       "engDescription": "description-4",
       "rate": 5,
       "width": "",
-      "tags": [],
+      "tags": [
+        {
+          "id": "9f5e5f15-3c11-4103-b9c7-92d1a790e1ca",
+          "perTitle": "پارچه ی تابستانه",
+          "engTitle": "summer cloth",
+          "TagName": "summerCloth"
+        }
+      ],
       "inStore": [
         {
           "id": "b8c6c905-bd5d-4ef4-8c9b-61ba5b1edd03",
@@ -383,7 +457,154 @@
         "engTitle": "for Cloth",
         "perTitle": "لباسی"
       },
-      "price": 0
+      "price": 0,
+      "createdAt": "2025-01-11T20:30:00.000Z",
+      "cats": {
+        "id": "1",
+        "catName": "forCloth",
+        "engTitle": "for Cloth",
+        "perTitle": "لباسی"
+      }
+    },
+    {
+      "id": "57b02b4a-dcdc-465f-b8bd-f04626525bc1",
+      "perTitle": "عنوان محصول6",
+      "engTitle": "engTitle-6",
+      "defImg": "/abrbadygoldar/abrbadygoldar-green.jpg",
+      "perMiniDescription": " توضیحات کوتاه فارسی-6",
+      "engMiniDescription": "mini description-6",
+      "perDescription": " توضیحات کامل-6",
+      "engDescription": "description-6",
+      "rate": "5",
+      "width": "",
+      "tags": [
+        {
+          "id": "1",
+          "TagName": "Width150",
+          "perTitle": "پارچه های عرض 1.5",
+          "engTitle": "1.5 width fabric"
+        },
+        {
+          "id": "48a4c97e-0d1d-4b25-9289-525995e81bfa6",
+          "perTitle": "پارچه ی بهاری",
+          "engTitle": "spring cloth",
+          "TagName": "springCloth"
+        },
+        {
+          "id": "48a4c97e-0d1d-4b25-9289-52995e81bfa6",
+          "perTitle": "پارچه ی پاییزه",
+          "engTitle": "autumn cloth",
+          "TagName": "autumnCloth"
+        }
+      ],
+      "inStore": [
+        {
+          "id": "01d5109d-cb31-4273-90ca-e34399d23b3e",
+          "colorName": "قهوه ای",
+          "colorCode": "#cd8037",
+          "colorImg": "/abrbadygoldar/abrbadygoldar-brown.jpg",
+          "qtys": "035"
+        },
+        {
+          "id": "35b55156-1891-4aa1-b5b9-8e9ac9538b67",
+          "colorName": "سبز تیره",
+          "colorCode": "#036f01",
+          "qtys": "40",
+          "colorImg": "/abrbadygoldar/abrbadygoldar-dark-rgreen.jpg"
+        },
+        {
+          "id": "0410e213-6bad-4f80-a9cf-67ea8f5499e5",
+          "colorName": "سبز",
+          "colorCode": "#3fee5c",
+          "qtys": "40",
+          "colorImg": "/abrbadygoldar/abrbadygoldar-green.jpg"
+        },
+        {
+          "id": "c1e45f49-6927-4294-9d44-7464efe722a2",
+          "colorName": "مشکی",
+          "colorCode": "#270202",
+          "qtys": "20",
+          "colorImg": "/abrbadygoldar/abrbadygoldar-black.jpg"
+        }
+      ],
+      "cat": {
+        "id": "1",
+        "catName": "forCloth",
+        "engTitle": "for Cloth",
+        "perTitle": "لباسی"
+      },
+      "price": "500000",
+      "": "4",
+      "createdAt": "2025-05-26T20:30:00.000Z",
+      "cats": {
+        "id": "1",
+        "catName": "forCloth",
+        "engTitle": "for Cloth",
+        "perTitle": "لباسی"
+      }
+    },
+    {
+      "id": "9312d317-3558-4b3c-b6c9-29807f86c0c4",
+      "perTitle": "عنوان محصول7",
+      "engTitle": "engTitle-7",
+      "defImg": "ShantonLenin/gray-Shanton-Lenin.jpg",
+      "perMiniDescription": " توضیحات کوتاه فارسی-7",
+      "engMiniDescription": "mini description-7",
+      "perDescription": " توضیحات کامل-7",
+      "engDescription": "description-7",
+      "rate": 5,
+      "width": "",
+      "tags": [
+        {
+          "id": "1",
+          "TagName": "Width150",
+          "perTitle": "پارچه های عرض 1.5",
+          "engTitle": "1.5 width fabric"
+        },
+        {
+          "id": "9f5e5f15-3c11-4103-b9c7-92d1a790e1ca",
+          "perTitle": "پارچه ی تابستانه",
+          "engTitle": "summer cloth",
+          "TagName": "summerCloth"
+        }
+      ],
+      "inStore": [
+        {
+          "id": "6bda2179-eaf3-49a3-91d5-3b1ba4d19f17",
+          "colorName": "نوکمدادی",
+          "colorCode": "#62717f",
+          "colorImg": "/ShantonLenin/gray-Shanton-Lenin.jpg",
+          "qtys": "35"
+        },
+        {
+          "id": "a91ae3d2-f902-481a-aacf-98221930d2c3",
+          "colorName": "شیری",
+          "colorCode": "#ebedd9",
+          "qtys": "35",
+          "colorImg": "/ShantonLenin/milk-Shanton-Lenin.jpg"
+        },
+        {
+          "id": "7055b84f-d058-4a92-955f-53613871eee7",
+          "colorName": "مشکی",
+          "colorCode": "#212121",
+          "qtys": "35",
+          "colorImg": "/ShantonLenin/black-Shanton-Lenin.jpg"
+        }
+      ],
+      "cat": {
+        "id": "1",
+        "catName": "forCloth",
+        "engTitle": "for Cloth",
+        "perTitle": "لباسی"
+      },
+      "price": "700000",
+      "createdAt": "2025-04-26T20:30:00.000Z",
+      "cats": {
+        "id": "1",
+        "catName": "forCloth",
+        "engTitle": "for Cloth",
+        "perTitle": "لباسی"
+      }
     }
   ],
   "cats": [
@@ -439,6 +660,30 @@
       "TagName": "Width300",
       "perTitle": "پارچه های عرض 3",
       "engTitle": "3 width fabric"
+    },
+    {
+      "id": "59025f29-f387-4c4f-b2c2-8a014ef72bc8",
+      "perTitle": "پارچه ی زمستانه",
+      "engTitle": "winter cloth",
+      "TagName": "winterCloth"
+    },
+    {
+      "id": "9f5e5f15-3c11-4103-b9c7-92d1a790e1ca",
+      "perTitle": "پارچه ی تابستانه",
+      "engTitle": "summer cloth",
+      "TagName": "summerCloth"
+    },
+    {
+      "id": "48a4c97e-0d1d-4b25-9289-525995e81bfa6",
+      "perTitle": "پارچه ی بهاری",
+      "engTitle": "spring cloth",
+      "TagName": "springCloth"
+    },
+    {
+      "id": "48a4c97e-0d1d-4b25-9289-52995e81bfa6",
+      "perTitle": "پارچه ی پاییزه",
+      "engTitle": "autumn cloth",
+      "TagName": "autumnCloth"
     }
   ],
   "ords": [
@@ -597,6 +842,93 @@
       "id": "3",
       "offCode": "OFF30",
       "persentage": 30
+    }
+  ],
+  "sliders": {
+    "homeHeadrSliders": {
+      "effect": "fade",
+      "autoplay": true,
+      "delay": 4000,
+      "items": [
+        {
+          "id": "9asd6asd51",
+          "title": "عنوان آزمایشی 2",
+          "subItem": "توضیحات آزمایشی 2",
+          "imgNaumber": "1",
+          "image": "https://static.vecteezy.com/system/resources/previews/026/680/634/non_2x/pink-female-dress-mock-up-isolated-on-white-background-ai-generative-photo.jpg",
+          "link": "http://localhost:3000/cats/1"
+        },
+        {
+          "id": "9846asd51",
+          "title": "عنوان آزمایشی 1",
+          "subItem": "توضیحات آزمایشی 1",
+          "imgNaumber": "2",
+          "image": "https://media.cnn.com/api/v1/images/stellar/prod/petal-and-pup-spring-dresses-lead.jpg?c=original",
+          "link": "http://localhost:3000/shop/4"
+        },
+        {
+          "id": "98q4w6d51",
+          "title": "عنوان آزمایشی 3",
+          "subItem": "توضیحات آزمایشی 3",
+          "imgNaumber": "3",
+          "image": "https://cf.ruedeseine.com/common/content-blocks/_2400xAUTO_crop_center-center_70_none/Q2-Rue-HomepageArtboard-1-copy_0000_Into-The-Woods.jpg",
+          "link": "http://localhost:3000/shop/1"
+        },
+        {
+          "id": "98s46sasd1",
+          "title": "عنوان آزمایشی 4",
+          "subItem": "توضیحات آزمایشی 4",
+          "imgNaumber": "4",
+          "image": "https://hrp.imgix.net/https%3A%2F%2Fhistoricroyalpalaces.picturepark.com%2Fv%2FoCjfzdUg%2F?auto=format&s=f18cdb44a58388c849bf85d3db6b4fe8",
+          "link": "http://localhost:3000/cats/2"
+        }
+      ]
+    }
+  },
+  "bestSelles": [
+    {
+      "id": "1",
+      "perTitle": "کرپ مازراتی",
+      "engTitle": "Maserati crepe",
+      "defImg": "/mozerati-sky-model.jpg",
+      "perMiniDescription": "کرپ مازراتی یکی از پرفروش ترین و محبوب ترین نوع پارچه های کرپ محسوب می شود. این پارچه با استفاده از نخ های تابدار و بهره گیری از فرایند شیمیایی ویژه ای تولید شده که ماحصل این روش، بافت منحصربفرد، پرتراکم، ضخیم و بدون درز است. از ویژگی های اصلی این پارچه ها حالت چین بسیار کم و سطح دانه دانه ای برجسته می باشد که در فرآیند بافت پارچه ایجاد می شود. همین ویژگی ها موجب شده تا کرپ مازراتی از دیگر کرپ ها متمایز شود.",
+      "engMiniDescription": "Maserati crepe is one of the best-selling and most popular types of crepe fabrics. This fabric is produced using twisted yarns and a special chemical process, which results in a unique, dense, thick and seamless texture. The main features of these fabrics are very low wrinkle and a prominent grain surface that is created during the weaving process. These features make Maserati crepe stand out from other crepes.",
+      "rate": 4.5,
+      "width": "1.5",
+      "price": 260000
+    },
+    {
+      "id": "2",
+      "perTitle": "فوتر",
+      "engTitle": "Fotr",
+      "defImg": "/fotr-pink-model.jpg",
+      "perMiniDescription": "یکی از پارچه های زمستانی که از زمان  های گذشته وجود داشته و بسیار کاربردی و پر طرفدار است، پارچه ی فوتر می باشد که از جنس پشم است و گرما بخشی خوبی در برابر سرما دارد. تولید پالتو یکی از رایج ترین کاربرد های پارچه فوتر است. در این مطلب از آی بولک می خواهیم در مورد پارچه فوتر صحبت کنیم تا بخوبی متوجه شوید پارچه فوتر چیست، چه ویژگی هایی دارد و برای چه لباس هایی مناسب است.",
+      "engMiniDescription": "One of the winter fabrics that has existed since ancient times and is very practical and popular is fleece fabric, which is made of wool and has good warmth against the cold. The production of coats is one of the most common uses of fleece fabric. In this article from iBulk, we want to talk about fleece fabric so that you can understand what fleece fabric is, what its features are, and what clothes it is suitable for.",
+      "rate": 4.7,
+      "width": "1.5",
+      "price": 620000
+    },
+    {
+      "id": "3",
+      "perTitle": "شانتون دو نخ",
+      "engTitle": "Two-thread shantung",
+      "defImg": "/shantonDoNakh-blue-model.jpg",
+      "perMiniDescription": "پارچه شانتون پلاس ( شانتون دو نخ ) دارای ویژگی و خاصیت ها فراوانی می باشد. اکنون به معرفی و بررسی برخی از این ویژگی ها مهم این پارچه می پردازیم. پارچه شانتون پلاس ( شانتون دو نخ ) از راحتی و خنکی خوبی برخوردار است که داشتن این ویژگی سبب می شود در فصل گرما پارچه خوبی برای دوخت مانتو به حساب  آید.همین ویژگی سبب محبوبیت و خرید پارچه شانتون پلاس در بسیاری از تولید کنندگان مانتو شده است. ",
+      "engMiniDescription": "Shanton Plus fabric (two-ply shanton) has many features and properties. Now we will introduce and review some of these important features of this fabric. Shanton Plus fabric (two-ply shanton) has good comfort and coolness, which makes it a good fabric for sewing coats in the hot season. This feature has made Shanton Plus fabric popular and purchased by many coat manufacturers.",
+      "width": "1.5",
+      "rate": 4.8,
+      "price": 380000
+    },
+    {
+      "id": "4",
+      "perTitle": "کشمیر",
+      "engTitle": "Keshmir",
+      "defImg": "/Keshmir-brown-model.jpg",
+      "perMiniDescription": "پارچه کشمیر از پرطرفدارترین پارچه‌هاست. «کشمیر» به دلیل کمیابی و نرمی فوق‌العاده‌ی که دارد، حس تجمّل و لوکس بودن را القاء می‌کند.پارچه کشمیر از الیاف بسیار لطیف موی بز کشمیر تهیه می‌شود. این بز در کوه‌های مغولستان و شمال چین پرورش می‌یابد.",
+      "engMiniDescription": "Cashmere fabric is one of the most popular fabrics. “Cashmere” evokes a sense of elegance and luxury due to its rarity and extraordinary softness. Cashmere fabric is made from the very fine hair fibers of the Kashmir goat. This goat is raised in the mountains of Mongolia and northern China.",
+      "rate": 4.2,
+      "width": "1.5",
+      "price": 320000
     }
   ]
 }

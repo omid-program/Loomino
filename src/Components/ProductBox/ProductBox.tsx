@@ -1,15 +1,14 @@
-import { TAllProductData } from '@/types';
+import { TAllProductData, TProductBoxData } from '@/types';
 import { formatPrice } from '@/utils/price';
 import React from 'react';
 import { MdStarRate } from 'react-icons/md';
 
-function ProductBox(props: TAllProductData) {
+function ProductBox(props: TProductBoxData) {
 	const {
 		id,
 		engMiniDescription,
 		engTitle,
 		defImg,
-		inStore,
 		perTitle,
 		perMiniDescription,
 		rate,

@@ -54,7 +54,7 @@ async function ServerNavbar() {
 								{navLinksItem.subItems?.map(subItem => (
 									<ul
 										key={subItem?.id}
-										className="shadow-sky-700 shadow-md bg-sky-300 mt-1 px-2 py-3 rounded z-50"
+										className="shadow-sky-700 shadow-md bg-sky-300 mt-1 px-2 py-3 rounded relative z-50"
 									>
 										<NavSubItem subItems={subItem} />
 									</ul>
