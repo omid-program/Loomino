@@ -3,6 +3,7 @@ import { TAllProductData } from '@/types';
 import React from 'react';
 import TitleSectionHome from '../TitleSectionHome/TitleSectionHome';
 import { AiFillProduct } from '@/react-icons/ai';
+import Link from '@/next/link';
 
 async function InThisSesson() {
 	const now = new Date().getUTCMonth() + 1;
@@ -37,16 +38,24 @@ async function InThisSesson() {
 
 	console.log('sessonProduct=> ', seasonProducts);
 	return (
-		<div className='my-8'>
+		<div className="my-8">
 			<div className="flex gap-2 text-xl">
 				<span>
 					<AiFillProduct />
 				</span>
-				<h3 className="">پارچه های هوای {sessonName}{sessonEmogy}</h3>
+				<h3 className="">
+					پارچه های هوای {sessonName}
+					{sessonEmogy}
+				</h3>
 			</div>{' '}
 			<div className="grid grid-cols-4">
 				{seasonProducts.map(prod => (
-					<ProductBox key={prod.id} {...prod} />
+					<Link
+						href={`http://localhost:3000/shop/${prod.id}`}
+						key={prod.id}
+					>
+						<ProductBox {...prod} />
+					</Link>
 				))}
 			</div>
 		</div>

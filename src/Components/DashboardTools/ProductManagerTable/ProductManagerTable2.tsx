@@ -7,6 +7,8 @@ import PaginationBtns2 from '../PaginationBtns/PaginationBtns2';
 import { TiDeleteOutline } from 'react-icons/ti';
 import RemoveModal from '../RemoveModal/RemoveModal';
 
+// | products paginated and Filtred
+
 function ProductManagerTable2() {
 	const [allProductDatas, setAllProductDatas] = useState<TAllProductData[]>();
 	const [catData, setCatData] = useState<TCatDatas[] | undefined>();
@@ -141,7 +143,7 @@ function ProductManagerTable2() {
 		);
 		if (response.ok) {
 			alert('حذف با موفقیت انجام شد');
-			getAllProducts()
+			getAllProducts();
 		} else {
 			console.log('عمیات نا موفق');
 		}
@@ -164,6 +166,7 @@ function ProductManagerTable2() {
 
 	return (
 		<div className="border-2 border-sky-600 rounded-md w-10/12">
+			{/* Filttering Elements */}
 			{isShowTitleSearch && (
 				<div className="col-span-6 flex justify-between">
 					<input
@@ -181,6 +184,7 @@ function ProductManagerTable2() {
 					{/* <button onClick={searchTitleHandler}>جست و جو عنوان</button> */}
 				</div>
 			)}
+			{/* Header Table */}
 			<div className="grid grid-cols-6 w-full py-2 px-1">
 				<div
 					className="col-span-1 border-y w-full"
@@ -192,10 +196,11 @@ function ProductManagerTable2() {
 				<div className="col-span-1 border-y w-full">قیمت</div>
 				<div className="col-span-1 border-y w-full">موجودی</div>
 				<div className="col-span-1 border-y w-full">
+					{/* Category FiltterHeadeer */}
 					<select
 						onChange={e => {
 							setCatSelectedTable(e.target.value);
-							setPresentPage(1)
+							setPresentPage(1);
 						}}
 					>
 						<option value={''}>دسته بندی</option>
@@ -206,6 +211,7 @@ function ProductManagerTable2() {
 				</div>
 				<div className="col-span-1 border-y w-full">عملگرها</div>
 			</div>
+			{/* Table Body */}
 			{paginatedProducts.length > 0 &&
 				paginatedProducts[presentPage - 1].map(item => (
 					<div className="grid grid-cols-6 w-full py-2 px-1">

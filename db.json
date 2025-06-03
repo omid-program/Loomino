@@ -930,5 +930,67 @@
       "width": "1.5",
       "price": 320000
     }
+  ],
+  "comments": [
+    {
+      "id": "46a09d80-e861-44e7-b418-e11102a8e4ab",
+      "name": "شخص 1",
+      "email": "hasd@jgmail.com",
+      "phoneNumber": "01464513",
+      "commentText": "نظر آزمایشی 1",
+      "createdAt": "2025-05-31T17:45:21.152Z",
+      "isShow": true,
+      "productId": "57b02b4a-dcdc-465f-b8bd-f04626525bc1",
+      "productTitle": "عنوان محصول6",
+      "productImg": "/abrbadygoldar/abrbadygoldar-green.jpg"
+    },
+    {
+      "id": "a714532f-f6ce-4e82-8c87-c01fc3c132aa",
+      "name": "شخص 2",
+      "email": "omidprogram79@gmail.com",
+      "phoneNumber": "09211081730",
+      "commentText": "نظر شماره 2",
+      "createdAt": "2025-05-31T17:46:21.379Z",
+      "isShow": false,
+      "productId": "1",
+      "productTitle": "کرپ مازراتی",
+      "productImg": "/mozerati-sky-model.jpg"
+    },
+    {
+      "id": "1fa060f7-5755-4474-864f-d394b81075c9",
+      "name": "شخص 3",
+      "email": "asdjmj@gmail.com",
+      "phoneNumber": "65412897",
+      "commentText": "نظر شماره 3",
+      "createdAt": "2025-05-31T17:46:55.681Z",
+      "isShow": false,
+      "productId": "9312d317-3558-4b3c-b6c9-29807f86c0c4",
+      "productTitle": "عنوان محصول7",
+      "productImg": "ShantonLenin/gray-Shanton-Lenin.jpg"
+    },
+    {
+      "id": "3df69afe-74f6-478e-beca-3673aca71c57",
+      "name": "سعید موسوی",
+      "email": "sasan@gmail.com",
+      "phoneNumber": "65412897",
+      "commentText": "متن آزمایشی 5",
+      "createdAt": "2025-05-31T17:48:20.707Z",
+      "isShow": false,
+      "productId": "5",
+      "productTitle": "دیپلومات",
+      "productImg": "/diplomate-gray-model.jpg"
+    },
+    {
+      "id": "82b57443-c81d-400f-a5b5-c79bc01cb758",
+      "name": "شخص 5",
+      "email": "jhasdfb@gmail.com",
+      "phoneNumber": "4981456445",
+      "commentText": "نظر شماره ی 12",
+      "createdAt": "2025-06-02T10:20:22.475Z",
+      "isShow": true,
+      "productId": "57b02b4a-dcdc-465f-b8bd-f04626525bc1",
+      "productTitle": "عنوان محصول6",
+      "productImg": "/abrbadygoldar/abrbadygoldar-green.jpg"
+    }
   ]
 }

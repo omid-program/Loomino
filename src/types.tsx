@@ -370,3 +370,28 @@ export type TProductBoxData = {
 	width?: string;
 	price?: number;
 };
+
+///////// comments-type
+
+export type TCommetsData = {
+	id: string;
+	productId: string;
+	productTitle: string;
+	productImg: string;
+	name: string;
+	phoneNumber: string;
+	email: string;
+	createdAt: string;
+	commentText: string;
+	isShow: boolean;
+	onStatusChange: (id: string, newStatus: boolean) => void;
+};
+
+export type TCommentUserInfo = {
+	name: string;
+	phoneNumber: string;
+	email: string;
+};
+// export type TUserInfoModal = {
+// 	name
+// }

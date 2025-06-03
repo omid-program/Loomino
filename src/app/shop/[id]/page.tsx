@@ -1,3 +1,4 @@
+import CommentsImport from '@/Components/Comments/CommentsImport/CommentsImport';
 import Container from '@/Components/Container/Container';
 import SmartImg from '@/Components/SmartImg/SmartImg';
 import {
@@ -38,6 +39,13 @@ async function ProductPage({ params }: TProductPageParams) {
 						))}
 					</div>
 				</div>
+			</div>
+			<div className="">
+				<CommentsImport
+					productId={id}
+					productTitle={productData.perTitle}
+					productImg={productData.defImg}
+				/>
 			</div>
 		</Container>
 	);

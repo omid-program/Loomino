@@ -19,6 +19,7 @@ async function StorePiece(props: {
 			<div className="grid grid-cols-4 gap-3 my-5">
 				{data.map(product => (
 					<Link
+					key={product.id}
 						href={`http://localhost:3000/${kind}/${product.id}`}
 						className="col-span-1"
 					>
