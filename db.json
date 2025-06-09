@@ -547,7 +547,7 @@
       "id": "9312d317-3558-4b3c-b6c9-29807f86c0c4",
       "perTitle": "عنوان محصول7",
       "engTitle": "engTitle-7",
-      "defImg": "ShantonLenin/gray-Shanton-Lenin.jpg",
+      "defImg": "/ShantonLenin/gray-Shanton-Lenin.jpg",
       "perMiniDescription": " توضیحات کوتاه فارسی-7",
       "engMiniDescription": "mini description-7",
       "perDescription": " توضیحات کامل-7",
@@ -992,5 +992,36 @@
       "productTitle": "عنوان محصول6",
       "productImg": "/abrbadygoldar/abrbadygoldar-green.jpg"
     }
-  ]
+  ],
+  "spetialOffer": {
+    "id": "1",
+    "time": "2026-02-22T20:30:00.000Z",
+    "description": "فروش ویژه!!!",
+    "spetialOfferList": [
+      {
+        "productId": "5",
+        "persentage": "10",
+        "perTitle": "دیپلومات",
+        "defImg": "/diplomate-gray-model.jpg"
+      },
+      {
+        "productId": "6",
+        "persentage": "5",
+        "perTitle": "مخمل کبریتی",
+        "defImg": "/MatchVelvet-blue-model.jpg"
+      },
+      {
+        "productId": "57b02b4a-dcdc-465f-b8bd-f04626525bc1",
+        "persentage": "15",
+        "perTitle": "عنوان محصول6",
+        "defImg": "/abrbadygoldar/abrbadygoldar-green.jpg"
+      },
+      {
+        "productId": "4",
+        "persentage": "3",
+        "perTitle": "کشمیر",
+        "defImg": "/Keshmir-brown-model.jpg"
+      }
+    ]
+  }
 }

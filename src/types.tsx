@@ -384,7 +384,7 @@ export type TCommetsData = {
 	createdAt: string;
 	commentText: string;
 	isShow: boolean;
-	onStatusChange: (id: string, newStatus: boolean) => void;
+	onStatusChange?: (id: string, newStatus: boolean) => void;
 };
 
 export type TCommentUserInfo = {
@@ -395,3 +395,68 @@ export type TCommentUserInfo = {
 // export type TUserInfoModal = {
 // 	name
 // }
+export type TCommentsShow = {
+	id: string;
+};
+export type TspetialOfferList = {
+	productId: string;
+	perTitle: string;
+	defImg: string;
+	persentage: string;
+};
+export type TSpetialOfferData = {
+	id: string;
+	time: string;
+	description: string;
+	spetialOfferList: TspetialOfferList[] | undefined;
+};
+export type TOfferPackData = {
+	monthExpier: string;
+	dayExpier: string;
+	spetialOfferText: string;
+};
+export type TAddSpetialOfferDataProps = {
+	changeOfferPackData: (name: string, value: string) => void;
+	removeProToSPeOffer: (productId: string) => void;
+	offerPackData: TOfferPackData;
+	spetialOfferList: TspetialOfferList[];
+
+	sendSpetialOffer: (
+		description: string,
+		// time: string,
+		month: string,
+		day: string,
+		spetialOfferList: TspetialOfferList[]
+	) => void;
+	clearSpetialOffer:()=>void
+};
+
+export type TProductManagerTable2Props = {
+	addProToSpeOffer: (
+		persentage: string,
+		productId: string,
+		perTitle: string,
+		defImg: string
+	) => void;
+	removeProToSPeOffer: (productId: string) => void;
+	spetialOfferList: TspetialOfferList[];
+};
+export type TPMTSOI = {
+	productId: string;
+	perTitle: string;
+	defImg: string;
+	addProToSpeOffer: (
+		persentage: string,
+		productId: string,
+		perTitle: string,
+		defImg: string
+	) => void;
+
+	removeProToSPeOffer: (productId: string) => void;
+
+	spetialOfferList: TspetialOfferList[];
+};
+export type TSpetialOfferListModalProps = {
+	spetialOfferList: TspetialOfferList[];
+	removeProToSPeOffer: (productId: string) => void;
+};

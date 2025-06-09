@@ -1,10 +1,13 @@
 import CommentsImport from '@/Components/Comments/CommentsImport/CommentsImport';
+import CommentsShow from '@/Components/Comments/CommentsShow/CommentsShow';
 import Container from '@/Components/Container/Container';
 import SmartImg from '@/Components/SmartImg/SmartImg';
 import {
 	TAllProductData,
 	TInStoreAllProduct,
 	TProductPageParams,
+	TSpetialOfferData,
+	TspetialOfferList,
 } from '@/types';
 import Link from 'next/link';
 import React from 'react';
@@ -14,15 +17,27 @@ async function ProductPage({ params }: TProductPageParams) {
 	console.log('productPage=>', id);
 	const response = await fetch(`http://localhost:8000/fabrics/${id}`);
 	const productData = (await response.json()) as TAllProductData;
+
+	const spOfferRes = await fetch(`http://localhost:8000/spetialOffer`)
+	const spOfferData = await spOfferRes.json() as TSpetialOfferData
+
 	const colorList = productData?.inStore as TInStoreAllProduct[];
+	//if(spetialOfferDtata.pspetialOfferDataList.filter(item)=>item.id ===id){
+	// /...
+	// }
+	let finalPrice = Number(productData.price)
+	if(spOfferData.spetialOfferList){
+		const item = spOfferData.spetialOfferList.find((i:TspetialOfferList)=>i.productId === id)
+		finalPrice = productData.price - (productData.price) * ((Number(item?.persentage) / 100))
+	} 
 	const productPrice = Number(productData?.price);
 	console.log(colorList);
-
+	
 	return (
 		<Container>
 			<div className="grid grid-cols-4">
 				<div className="col-span-1">
-					<SmartImg id={id} colorList={colorList} price={productPrice} />
+					<SmartImg id={id} colorList={colorList} price={finalPrice} />
 				</div>
 				<div className="col-span-3 justify-center items-center gap-8">
 					<div className="flex flex-col ">
@@ -30,6 +45,7 @@ async function ProductPage({ params }: TProductPageParams) {
 						<div>
 							<p>{productData?.perDescription}</p>
 						</div>
+						
 					</div>
 					<div className="flex gap-1 w-5/6 border-2 border-rose-600 rounded">
 						{productData.tags.map(tag => (
@@ -47,6 +63,8 @@ async function ProductPage({ params }: TProductPageParams) {
 					productImg={productData.defImg}
 				/>
 			</div>
+			<CommentsShow id={id}/>
+
 		</Container>
 	);
 }

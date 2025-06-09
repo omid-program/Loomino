@@ -1,15 +1,24 @@
 'use client';
-import { TAllProductData, TBoxItemPaginated, TCatDatas } from '@/types';
+import {
+	TAllProductData,
+	TBoxItemPaginated,
+	TCatDatas,
+	TProductManagerTable2Props,
+} from '@/types';
 import React, { useEffect, useMemo, useState } from 'react';
 import ProductManagerEditActions from '../ProductManagerEditActions/ProductManagerEditActions';
 import ProductManagerRaportAction from '../ProductManagerRaportAction/ProductManagerRaportAction';
 import PaginationBtns2 from '../PaginationBtns/PaginationBtns2';
 import { TiDeleteOutline } from 'react-icons/ti';
 import RemoveModal from '../RemoveModal/RemoveModal';
+import PMTSOI from './PMTSOI/PMTSOI';
 
 // | products paginated and Filtred
 
-function ProductManagerTable2() {
+function ProductManagerTable2(props: TProductManagerTable2Props) {
+	const { addProToSpeOffer, removeProToSPeOffer , spetialOfferList } = props;
+	// const {persentageSO , setPersentageSO} = props
+
 	const [allProductDatas, setAllProductDatas] = useState<TAllProductData[]>();
 	const [catData, setCatData] = useState<TCatDatas[] | undefined>();
 	const [catSelectedTable, setCatSelectedTable] = useState<string>('');
@@ -185,17 +194,17 @@ function ProductManagerTable2() {
 				</div>
 			)}
 			{/* Header Table */}
-			<div className="grid grid-cols-6 w-full py-2 px-1">
+			<div className="grid grid-cols-12 w-full py-2 px-1">
 				<div
-					className="col-span-1 border-y w-full"
+					className="col-span-2 border w-full"
 					onClick={() => setIsShowTitleSearch(prev => !prev)}
 				>
 					عنوان
 				</div>
-				<div className="col-span-1 border-y w-full">عکس</div>
-				<div className="col-span-1 border-y w-full">قیمت</div>
-				<div className="col-span-1 border-y w-full">موجودی</div>
-				<div className="col-span-1 border-y w-full">
+				<div className="col-span-2 border w-full">عکس</div>
+				<div className="col-span-2 border w-full">قیمت</div>
+				<div className="col-span-1 border w-full">موجودی</div>
+				<div className="col-span-2 border w-full">
 					{/* Category FiltterHeadeer */}
 					<select
 						onChange={e => {
@@ -209,29 +218,30 @@ function ProductManagerTable2() {
 						))}
 					</select>
 				</div>
-				<div className="col-span-1 border-y w-full">عملگرها</div>
+				<div className="col-span-1 border w-full">عملگرها</div>
+				<div className="col-span-2 border w-full">فروش ویژه</div>
 			</div>
 			{/* Table Body */}
 			{paginatedProducts.length > 0 &&
 				paginatedProducts[presentPage - 1].map(item => (
-					<div className="grid grid-cols-6 w-full py-2 px-1">
-						<div className="col-span-1 border-y w-full">
+					<div className="grid grid-cols-12 w-full py-2 px-1">
+						<div className="col-span-2 border w-full">
 							{item.perTitle}
 						</div>
-						<div className="col-span-1 border-y w-full">
+						<div className="col-span-2 border w-full">
 							<img src={item.defImg} alt="" />
 						</div>
-						<div className="col-span-1 border-y w-full">{item.price}</div>
+						<div className="col-span-2 border w-full">{item.price}</div>
 
-						<div className="col-span-1 border-y w-full">
+						<div className="col-span-1 border w-full">
 							{item.inStore.reduce((total, item) => {
 								return total + Number(item.qtys);
 							}, 0)}
 						</div>
-						<div className="col-span-1 border-y w-full">
+						<div className="col-span-2 border w-full">
 							{item.cat?.perTitle}
 						</div>
-						<div className="col-span-1 border-y w-full">
+						<div className="col-span-1 border w-full">
 							<ProductManagerEditActions id={item.id} />
 							<ProductManagerRaportAction id={item.id} />
 							<button
@@ -245,6 +255,16 @@ function ProductManagerTable2() {
 							>
 								<TiDeleteOutline />
 							</button>
+						</div>
+						<div className="col-span-2 border w-full">
+							<PMTSOI
+								defImg={item.defImg}
+								perTitle={item.perTitle}
+								productId={item.id}
+								addProToSpeOffer={addProToSpeOffer}
+								removeProToSPeOffer={removeProToSPeOffer}
+								spetialOfferList={spetialOfferList}
+							/>
 						</div>
 					</div>
 				))}
