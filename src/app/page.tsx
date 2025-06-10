@@ -2,6 +2,7 @@ import Container from '@/Components/Container/Container';
 import HeaderStatic from '@/Components/HeaderStatic/HeaderStatic';
 import InThisSesson from '@/Components/HomeComponents/InThisSesson/InThisSesson';
 import NewestProductPiece from '@/Components/HomeComponents/NewestProductPiece/NewestProductPiece';
+import SpetialOffer from '@/Components/HomeComponents/SpetialOffer/SpetialOffer';
 import StorePiece from '@/Components/HomeComponents/StorePiece/StorePiece';
 import PagesTitle from '@/Components/PageTitle/PagesTitle';
 import HeaderHomeSlider from '@/Components/Sliders/HeaderHomeSlider/HeaderHomeSlider';
@@ -28,6 +29,7 @@ function Home() {
 				/>
 				<NewestProductPiece/>
 				<InThisSesson/>
+				<SpetialOffer/>
 				{/* <HeaderHomeSlider/> */}
 				{/* <HeaderHomeSlider2/> */}
 

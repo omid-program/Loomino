@@ -1,5 +1,5 @@
 import ProductBox from '@/Components/ProductBox/ProductBox';
-import { TAllProductData } from '@/types';
+import { TAllProductData, TSpetialOfferData } from '@/types';
 import React from 'react';
 import TitleSectionHome from '../TitleSectionHome/TitleSectionHome';
 import { AiFillProduct } from '@/react-icons/ai';
@@ -10,6 +10,9 @@ async function InThisSesson() {
 	// const now = 12
 	const res = await fetch(`http://localhost:8000/fabrics`);
 	const data = (await res.json()) as TAllProductData[];
+
+	const spOfferRes = await fetch(`http://localhost:8000/spetialOffer`);
+	const spOfferData = (await spOfferRes.json()) as TSpetialOfferData;
 
 	let sessonTag = '';
 	let sessonName = '';
@@ -36,7 +39,7 @@ async function InThisSesson() {
 		.filter(product => product.tags.some(tag => tag.TagName === sessonTag))
 		.slice(0, 4);
 
-	console.log('sessonProduct=> ', seasonProducts);
+	// console.log('sessonProduct=> ', seasonProducts);
 	return (
 		<div className="my-8">
 			<div className="flex gap-2 text-xl">
@@ -49,14 +52,30 @@ async function InThisSesson() {
 				</h3>
 			</div>{' '}
 			<div className="grid grid-cols-4">
-				{seasonProducts.map(prod => (
+				{/* {seasonProducts.map(prod => (
 					<Link
 						href={`http://localhost:3000/shop/${prod.id}`}
 						key={prod.id}
 					>
 						<ProductBox {...prod} />
 					</Link>
-				))}
+				))} */}
+				{seasonProducts.map(product => {
+					const item = spOfferData.spetialOfferList?.find(
+						offer => offer.productId === product.id
+					);
+					return (
+						<Link
+							href={`http://localhost:3000/shop/${product.id}`}
+							key={product.id}
+						>
+							<ProductBox
+								{...product}
+								offerPersentage={item?.persentage}
+							/>
+						</Link>
+					);
+				})}
 			</div>
 		</div>
 	);

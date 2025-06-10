@@ -1,20 +1,46 @@
-import { TAllProductData, TProductBoxData } from '@/types';
+import {
+	TAllProductData,
+	TProductBoxData,
+	TSpetialOfferData,
+	TspetialOfferList,
+} from '@/types';
 import { formatPrice } from '@/utils/price';
 import React from 'react';
 import { MdStarRate } from 'react-icons/md';
 
-function ProductBox(props: TProductBoxData) {
+type TProductBoxProps = TProductBoxData & {
+	offerPersentage?: string;
+};
+
+function ProductBox(
+	props: TProductBoxProps
+	// & TOfferPersentage
+) {
 	const {
 		id,
-		engMiniDescription,
-		engTitle,
+		// engMiniDescription,
+		// engTitle,
 		defImg,
 		perTitle,
 		perMiniDescription,
 		rate,
 		width,
 		price,
+		offerPersentage,
 	} = props;
+	// console.log("spetialOfferList=>" , spetialOfferList);
+	// console.log("id=>" , id);
+	// console.log('props=>', props);
+
+	let finalPrice = Number(price);
+
+	if (offerPersentage !== undefined) {
+		finalPrice =
+			Number(price) - Number(price) * (Number(offerPersentage) / 100);
+	}
+
+	// console.log(perTitle , price , finalPrice);
+
 	return (
 		<div className="shadow-md shadow-sky-700 p-2">
 			<div className="flex flex-col justify-center items-center">
@@ -36,8 +62,28 @@ function ProductBox(props: TProductBoxData) {
 							<span>{rate}</span>
 						</div>
 						<div>
-							<span>{formatPrice(Number(price))}</span>
-							<span>تومان</span>
+							{Number(finalPrice) !== Number(price) ? (
+								<div>
+									<div>
+										<span className="line-through">
+											{formatPrice(Number(price))}
+										</span>
+										<span>تومان</span>
+									</div>
+									<div>
+										<span className="">
+											{formatPrice(Number(finalPrice))}
+										</span>
+									</div>
+								</div>
+							) : (
+								<div>
+									<span className="">
+										{formatPrice(Number(price))}
+									</span>
+									<span>تومان</span>
+								</div>
+							)}
 						</div>
 						<div className="bg-red-400">
 							<span>عرض:{width}</span>

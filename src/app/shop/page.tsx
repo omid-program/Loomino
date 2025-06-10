@@ -1,4 +1,5 @@
 import Container from '@/Components/Container/Container';
+import SpetialOfferListModal from '@/Components/DashboardTools/AddSpetialOfferData/SpetialOfferListModal/SpetialOfferListModal';
 import PagesTitle from '@/Components/PageTitle/PagesTitle';
 import Pagination from '@/Components/Pagination/Pagination';
 import PaginationC from '@/Components/PaginationC/PaginationC';
@@ -30,8 +31,7 @@ async function Shop({ searchParams }: TShopParams) {
 	const allProducts = (await response.json()) as IPaginateShop;
 	console.log(allProducts);
 
-
-   // spetial-Offer / پیشنهاد ویژه
+	// spetial-Offer / پیشنهاد ویژه
 	const spOfferRes = await fetch(`http://localhost:8000/spetialOffer`);
 	const spOfferData = (await spOfferRes.json()) as TSpetialOfferData;
 
@@ -59,11 +59,21 @@ async function Shop({ searchParams }: TShopParams) {
 				</div>
 			</div>
 			<div className="grid grid-cols-4 gap-3">
-				{allProducts.data.map(product => (
-					<Link key={product?.id} href={`/shop/${product?.id}`}>
-						<ProductBox {...product} />
-					</Link>
-				))}
+				{allProducts.data &&
+					allProducts.data.map(product => {
+						const item = spOfferData.spetialOfferList?.find(
+							offerItem => offerItem.productId === product.id
+						);
+						return (
+							<Link key={product?.id} href={`/shop/${product?.id}`}>
+								<ProductBox
+									{...product}
+									offerPersentage={item?.persentage}
+									// {...spOfferData}
+								/>
+							</Link>
+						);
+					})}
 			</div>
 			<div>{/* <Pagination pageCount={allProducts.pages}/> */}</div>
 			<PaginationC pageCount={2} />

@@ -369,7 +369,7 @@ export type TProductBoxData = {
 	rate?: number;
 	width?: string;
 	price?: number;
-};
+} ;
 
 ///////// comments-type
 
