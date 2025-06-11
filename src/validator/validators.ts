@@ -49,3 +49,4 @@ export default {
    MAX_VALUE,
    EMAIL_VALUE,
 };
+

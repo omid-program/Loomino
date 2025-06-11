@@ -138,11 +138,13 @@ export type TColorItem = {
 export type TSmartImgProps = {
 	colorList: TColorItem[];
 	id: string;
+	perTitle: string
 	price: number | undefined;
 };
 
 export type TItemsOfOrders = {
 	id: string;
+	perTitle: string
 	colorId: string;
 	qty: number;
 	colorCode: string;
@@ -159,6 +161,7 @@ export type TShappingCartContext = {
 	userOrd: TItemsOfOrders[];
 	addOrdToCart: (
 		id: string,
+		perTitle: string ,
 		colorId: string,
 		meterCount: number,
 		centiMeterCount: number,
@@ -178,6 +181,7 @@ export type TCartItemProps = {
 };
 export type TQtyManagerProps = {
 	id: string;
+	perTitle: string
 	colorCode: string;
 	price: number;
 	colorId: string | undefined;
@@ -460,3 +464,6 @@ export type TSpetialOfferListModalProps = {
 	spetialOfferList: TspetialOfferList[];
 	removeProToSPeOffer: (productId: string) => void;
 };
+export type TOrdDetailModal = {
+	ords?: TUserOrds[] 
+}

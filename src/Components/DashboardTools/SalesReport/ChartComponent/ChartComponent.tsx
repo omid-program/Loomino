@@ -5,6 +5,8 @@ import React, { useState } from 'react';
 import { format, getYear, toDate } from 'date-fns-jalali';
 
 function ChartComponent({ data }: TChartComponentProps) {
+	console.log(data);
+	
 	const now = new Date();
 	const isoDate = now.toISOString();
 	const defDate = toDate(isoDate);

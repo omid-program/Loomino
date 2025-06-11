@@ -8,6 +8,7 @@ function SmartImg(props: TSmartImgProps) {
     const colorList = props?.colorList;
     const id = props.id
     const price = Number(props.price)
+    const perTitle = props.perTitle
 
     console.log("colorList => " , colorList);
 
@@ -54,7 +55,7 @@ function SmartImg(props: TSmartImgProps) {
                 ))}
             </div>
             <div>{colorQtys}</div>
-            <QtyManager id={id} colorCode={colorCode} price={price} colorId={colorId}  />
+            <QtyManager id={id} colorCode={colorCode} price={price} colorId={colorId} perTitle={perTitle}  />
         </div>
     );
 }

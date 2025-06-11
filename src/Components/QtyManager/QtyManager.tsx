@@ -10,7 +10,7 @@ import { RiDeleteBinLine } from 'react-icons/ri';
 function QtyManager(props: TQtyManagerProps) {
 	const [meterVal, setMeterVal] = useState<number>(0);
 	const [centiMeterVal, setCentiMeterVal] = useState<number>(0);
-	const { id, colorCode, price, colorId } = props;
+	const { id, colorCode, price, colorId , perTitle } = props;
 	const [userProductPrice, setUserProductPrice] = useState<number>(0);
 	const { addOrdToCart, removeProductFromCart, userOrd } =
 		useShappingCartContext();
@@ -35,6 +35,8 @@ function QtyManager(props: TQtyManagerProps) {
 				setCentiMeterVal(Math.floor((ord.qty - Math.floor(ord.qty)) * 100));
 			}
 		});
+		console.log("price=>" , price);
+		
 	}, [colorCode, id , colorId]);
 	// console.log('qtyManager=> ',id);
 
@@ -87,6 +89,7 @@ function QtyManager(props: TQtyManagerProps) {
 							if (colorId) {
 								addOrdToCart(
 									id,
+									perTitle,
 									colorId,
 									meterVal,
 									centiMeterVal,

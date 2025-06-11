@@ -20,6 +20,7 @@ export function ShappingCartContextProvider({
 
    const addOrdToCart = (
       id: string,
+      perTitle: string ,
       colorId : string,
       meterCount: number,
       centiMeterCount: number,
@@ -47,6 +48,7 @@ export function ShappingCartContextProvider({
             // اگر محصول وجود ندارد، یک آیتم جدید اضافه کن
             let newOrd: TItemsOfOrders = {
                id,
+               perTitle,
                colorId,
                qty: productCount,
                colorCode,

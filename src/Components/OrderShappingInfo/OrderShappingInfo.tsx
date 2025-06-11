@@ -14,7 +14,7 @@ import {
 import { format, toDate } from 'date-fns-jalali';
 
 function OrderShappingInfo() {
-	// function for colected information
+	// ------------function for colected information---------------
 	const [orderShappingInfo, setOrderShappingInfo] = useState({
 		name: '',
 		country: '',
@@ -29,18 +29,15 @@ function OrderShappingInfo() {
 	const { userOrd, userOffCode } = useShappingCartContext();
 
 	const sendNewOrdInfo = (name: string, value: string) => {
-		// let newOrdInfo = {
-		//    [name] : value
-		// }
 		setOrderShappingInfo({
 			...orderShappingInfo,
 			[name]: value,
 		});
 		console.log(orderShappingInfo);
 	};
-	// const [ordDate, setOrdDate] = useState<TOrdDateState>();
 
-	// make isodate => jalali
+	// --------- make isodate => jalali------------------
+
 	const convertToJalali = (isoDate: string) => {
 		const dateObg = toDate(isoDate);
 		return {
@@ -54,13 +51,24 @@ function OrderShappingInfo() {
 		const now = new Date();
 		const isoDate = now.toISOString();
 		const formatDate = convertToJalali(isoDate);
-		console.log(formatDate);
-		const basketPrice = userOrd.flatMap(ord=>{
-			return ord.items
-		}).reduce((total , item)=>{
-			return Number(item.price) * Number(item.qty) + Number(total)
-		}, 0)
+		// console.log(formatDate);
+		// ---------------totalPrice?------------------
+
+
+		const basketPrice = userOrd.reduce((total , price)=>{
+			return total + price.price
+		},0)
 		const finalPrice = basketPrice - (basketPrice * (userOffCode / 100))
+
+
+		// _________________________________________________________________________
+
+		// const basketPrice = userOrd.flatMap(ord=>{
+		// 	return ord.items
+		// }).reduce((total , item)=>{
+		// 	return Number(item.price) * Number(item.qty) + Number(total)
+		// }, 0)
+		// const finalPrice = basketPrice - (basketPrice * (userOffCode / 100))
 
 		// const formatDate = {
 		// 	year: now.toLocaleDateString('fa-IR', { year: 'numeric' }),
@@ -71,7 +79,7 @@ function OrderShappingInfo() {
 		// 		minute: '2-digit',
 		// 	}),
 		// };
-
+		//  ---------send to database ----------
 		try {
 			await axios({
 				method: 'POST',

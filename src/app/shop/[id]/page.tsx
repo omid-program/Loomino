@@ -28,8 +28,14 @@ async function ProductPage({ params }: TProductPageParams) {
 	let finalPrice = Number(productData.price)
 	if(spOfferData.spetialOfferList){
 		const item = spOfferData.spetialOfferList.find((i:TspetialOfferList)=>i.productId === id)
-		finalPrice = productData.price - (productData.price) * ((Number(item?.persentage) / 100))
-	} 
+		if(item){
+			finalPrice = productData.price - (productData.price) * ((Number(item?.persentage) / 100))
+		}
+	}else{
+		finalPrice = Number(productData.price)
+	}
+	console.log('finalPrice' , finalPrice);
+	
 	const productPrice = Number(productData?.price);
 	console.log(colorList);
 	
@@ -37,7 +43,7 @@ async function ProductPage({ params }: TProductPageParams) {
 		<Container>
 			<div className="grid grid-cols-4">
 				<div className="col-span-1">
-					<SmartImg id={id} colorList={colorList} price={finalPrice} />
+					<SmartImg id={id} colorList={colorList} price={finalPrice} perTitle={productData.perTitle} />
 				</div>
 				<div className="col-span-3 justify-center items-center gap-8">
 					<div className="flex flex-col ">

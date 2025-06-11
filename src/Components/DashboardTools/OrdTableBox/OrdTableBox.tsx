@@ -6,16 +6,19 @@ import { IoIosArrowBack } from 'react-icons/io';
 import { statusRules } from '@/rules/statusRules/StatusRules';
 import axios from 'axios';
 import { patch } from '@mui/material';
+import OrdDetailModal from './OrdDetailModal/OrdDetailModal';
+import OrdAddresModal from './OrdAddresModal/OrdAddresModal';
 
 function OrdTableBox(props: TAllOrdData) {
-	const { id, date, orders, country, city, address, statusCode } = props;
+	const { id, date, orders, country, city, address, statusCode, state } =
+		props;
 	const [totalPrice, setTotalPrice] = useState<number>();
 	const [statosRulleOrd, setStatosRulleOrd] = useState<TStatusRulles | null>(
 		null
 	);
 	const [statusCodeState, setStatusCodeState] = useState(statusCode);
 	const [isLoading, setIsLoadndg] = useState(false);
-
+	console.log('OrdTableBox-props-orders=>', orders);
 
 	useEffect(() => {
 		if (!orders) return;
@@ -74,9 +77,17 @@ function OrdTableBox(props: TAllOrdData) {
 				{date.pertionDate.year}/{date.pertionDate.month}/
 				{date.pertionDate.day}-{date.pertionDate.time}
 			</div>
-			<div className="grid col-span-1 text-center">{orders.length}محصول</div>
 			<div className="grid col-span-1 text-center">
-				{country} - {city}
+				<OrdDetailModal ords={orders} />
+			</div>
+			<div className="grid col-span-1 text-center">
+				
+				<OrdAddresModal
+					address={address}
+					city={city}
+					country={country}
+					state={state}
+				/>
 			</div>
 			<div className="grid col-span-1 text-center">{totalPrice}</div>
 			<div className="grid col-span-1 text-center grid-cols-5 px-3">
