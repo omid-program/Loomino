@@ -12,6 +12,8 @@ import ProductManagerEditInput from '../ProductManagerEditInput/ProductManagerEd
 import EditeBoxInStore from '../EditeBoxInStore/EditeBoxInStore';
 import { format } from '@/date-fns-jalali';
 import jalaali from 'jalaali-js';
+import Container from '@/Components/Container/Container';
+import PagesTitle from '@/Components/PageTitle/PagesTitle';
 
 interface TPerCreatedAt {
 	year: string;
@@ -103,7 +105,11 @@ function EditProductComponent({ id }: TEditProductComponent) {
 		console.log('productTag=> ', productTag);
 	}, [productTag]);
 
-	const changeStateHand = (e: React.ChangeEvent<HTMLInputElement>) => {
+	const changeStateHand = (
+		e:
+			| React.ChangeEvent<HTMLInputElement>
+			| React.ChangeEvent<HTMLTextAreaElement>
+	) => {
 		// console.log(e.target.value);
 		const { name, value } = e.target;
 		setFabricData(prevData =>
@@ -263,42 +269,6 @@ function EditProductComponent({ id }: TEditProductComponent) {
 					value: fabricData.defImg,
 				},
 				{
-					id: 4,
-					label: 'توضیحات کوتاه فارسی',
-					type: 'text',
-					name: 'perMiniDescription',
-					isLong: true,
-					size: 'lg',
-					value: fabricData.perMiniDescription,
-				},
-				{
-					id: 5,
-					label: 'توضیحات کوتاه انگلیسی',
-					type: 'text',
-					name: 'engMiniDescription',
-					isLong: true,
-					size: 'lg',
-					value: fabricData.engMiniDescription,
-				},
-				{
-					id: 6,
-					label: 'توضیحات کامل',
-					type: 'text',
-					name: 'perDescription',
-					isLong: true,
-					size: 'lg',
-					value: fabricData.perDescription,
-				},
-				{
-					id: 7,
-					label: 'توضیحات کامل انگلیسی',
-					type: 'text',
-					name: 'engDescription',
-					isLong: true,
-					size: 'lg',
-					value: fabricData.engDescription,
-				},
-				{
 					id: 8,
 					label: 'امتیاز',
 					type: 'number',
@@ -311,10 +281,10 @@ function EditProductComponent({ id }: TEditProductComponent) {
 					id: 9,
 					label: 'عرض',
 					type: 'number',
-					name: '',
+					name: 'width',
 					isLong: false,
 					size: 'sm',
-					value: fabricData.rate,
+					value: fabricData.width,
 				},
 				{
 					id: 10,
@@ -322,8 +292,44 @@ function EditProductComponent({ id }: TEditProductComponent) {
 					type: 'number',
 					name: 'price',
 					isLong: false,
-					size: 'md',
+					size: 'sm',
 					value: fabricData.price,
+				},
+				{
+					id: 4,
+					label: 'توضیحات کوتاه فارسی',
+					type: 'text',
+					name: 'perMiniDescription',
+					isLong: true,
+					size: 'xl',
+					value: fabricData.perMiniDescription,
+				},
+				{
+					id: 5,
+					label: 'توضیحات کوتاه انگلیسی',
+					type: 'text',
+					name: 'engMiniDescription',
+					isLong: true,
+					size: 'xl',
+					value: fabricData.engMiniDescription,
+				},
+				{
+					id: 6,
+					label: 'توضیحات کامل',
+					type: 'text',
+					name: 'perDescription',
+					isLong: true,
+					size: '2xl',
+					value: fabricData.perDescription,
+				},
+				{
+					id: 7,
+					label: 'توضیحات کامل انگلیسی',
+					type: 'text',
+					name: 'engDescription',
+					isLong: true,
+					size: '2xl',
+					value: fabricData.engDescription,
 				},
 		  ]
 		: [];
@@ -379,82 +385,125 @@ function EditProductComponent({ id }: TEditProductComponent) {
 	];
 
 	return (
-		<div className="border border-sky-600 p-2 w-10/12">
-			<div className="gird grid-cols-2">
-				{inputEditItems.map(item => (
-					<ProductManagerEditInput
-						key={item.id}
-						isLong={item.isLong}
-						label={item.label}
-						name={item.name}
-						size={item.size}
-						type={item.type}
-						value={item.value}
-						changeInputHand={changeStateHand}
-					/>
-				))}
-			</div>
-			<div>
-				<select
-					name="day"
-					className="grid grid-cols-3"
-					value={perCreatedAt.day}
-					onChange={e => {
-						changePreDateHand(e);
-					}}
-				>
-					{Array.from({ length: 31 }, (_, i) => (
-						<option
-							key={i + 1}
-							value={i + 1}
-							className="p-1 bg-violet-300"
-						>
-							{i + 1}
-						</option>
+		<Container>
+			{/* <PagesTitle title="ویرایش محصول" /> */}
+			<div className="px-4">
+				<div className="grid grid-cols-12 gap-5">
+					{inputEditItems.map(item => (
+						<ProductManagerEditInput
+							key={item.id}
+							isLong={item.isLong}
+							label={item.label}
+							name={item.name}
+							size={item.size}
+							type={item.type}
+							value={item.value}
+							changeInputHand={changeStateHand}
+						/>
 					))}
-				</select>
-				<select
-					name="month"
-					onChange={e => {
-						changePreDateHand(e);
-					}}
-					value={perCreatedAt.month}
-				>
-					{monthInputInfo.map(month => (
-						<option value={month.value}>{month.monthName}</option>
-					))}
-				</select>
-				<input
-					name="year"
-					onChange={e => {
-						changePreDateHand(e);
-					}}
-					type="number"
-					className="w-full"
-					value={perCreatedAt.year}
-				/>
-			</div>
-			<div className="border-2 border-rose-700 grid grid-cols-4">
-				<div className=" col-span-1">
-					{catSelectVal && (
-						<select
-							value={catSelectVal?.catName}
-							onChange={e => {
-								changeSelectHand(e.target.value);
-							}}
-						>
-							{catData.map(cat => (
-								<option key={cat.id} value={cat.nameTag}>
-									{cat.perTitle}
-								</option>
-							))}
-						</select>
-					)}
 				</div>
-				<div className="col-span-3">
+				<div
+					id="createAt-cat-select"
+					className="grid grid-cols-3 my-8 gap-4"
+				>
+					<div
+						id="createdAt-select-option"
+						className="border-2 border-violet-500 px-1 py-2 col-span-1 "
+					>
+						<div className="w-full py-2 text-center border-b-2 border-dashed">
+							<h3 className="text-lg font-bold">تاریخ افرودن محصول</h3>
+						</div>
+						<div className="grid grid-cols-3 py-1 text-center border-b">
+							<label className="border-x" htmlFor="">
+								روز
+							</label>
+							<label className="border-x" htmlFor="">
+								ماه
+							</label>
+							<label className="border-x" htmlFor="">
+								سال
+							</label>
+						</div>
+						<div className="grid grid-cols-3 text-center py-1 border-b ">
+							<select
+								name="day"
+								className="col-span-1 border-x px-1 text-center py-2"
+								value={perCreatedAt.day}
+								onChange={e => {
+									changePreDateHand(e);
+								}}
+							>
+								{Array.from({ length: 31 }, (_, i) => (
+									<option
+										key={i + 1}
+										value={i + 1}
+										className="p-1 bg-violet-300"
+									>
+										{i + 1}
+									</option>
+								))}
+							</select>
+							<select
+								className="col-span-1 border-x px-1 py-2 text-center"
+								name="month"
+								onChange={e => {
+									changePreDateHand(e);
+								}}
+								value={perCreatedAt.month}
+							>
+								{monthInputInfo.map(month => (
+									<option value={month.value}>
+										{month.monthName}
+									</option>
+								))}
+							</select>
+							<input
+								name="year"
+								onChange={e => {
+									changePreDateHand(e);
+								}}
+								type="number"
+								className='col-span-1 py-2 border-x px-1 text-center'
+								value={perCreatedAt.year}
+							/>
+						</div>
+						<span className="text-sm text-violet-600">
+							در صورت عدم تغییر تارخ قبلی ثبت می‌شود
+						</span>
+					</div>
+					{/* cat-edit */}
+					<div
+						id="cat-select"
+						className="col-span-1 grid grid-cols-1 border-2 border-violet-500 px-1 "
+					>
+						<div className="py-1 text-center border-b-2 border-dashed my-2">
+							<h3 className="text-lg font-bold">انتخاب دسته بندی</h3>
+						</div>
+						{/* find-cat */}
+						{catSelectVal && (
+							<select
+								className="text-center py-1 my-2 shadow-md shadow-violet-200  bg-gray-50"
+								value={catSelectVal?.catName}
+								onChange={e => {
+									changeSelectHand(e.target.value);
+								}}
+							>
+								{catData.map(cat => (
+									<option key={cat.id} value={cat.nameTag}>
+										{cat.perTitle}
+									</option>
+								))}
+							</select>
+						)}
+					</div>
+				</div>
+				{/* tag-edit */}
+				<div className=" w-3/4 grid grid-cols-3 px-2 py-4 border-2 max-h-64 overflow-y-scroll border-violet-500 rounded-md">
+					<div className=" col-span-3 text-center py-2 border-b-2 border-dashed">
+						<h3 className="text-lg font-bold ">انتخاب برچسب ها</h3>
+					</div>
 					{tagData?.map(tag => (
 						<div key={tag.id}>
-							<label>{tag.perTitle}</label>
 							<input
 								type="checkbox"
 								checked={chechTag(tag.id)}
@@ -462,42 +511,49 @@ function EditProductComponent({ id }: TEditProductComponent) {
 									changeTagChackBox(e.target.checked, tag.id)
 								}
 							/>
+							<label>{tag.perTitle}</label>
 						</div>
 					))}
 				</div>
-			</div>
-			<div className=" gap-7 bg-rose-200">
-				{inStoreState?.map(inStoreItem => (
-					<EditeBoxInStore
-						id={inStoreItem.id}
-						key={inStoreItem?.id}
-						colorCode={inStoreItem?.colorCode}
-						colorName={inStoreItem?.colorName}
-						colorImg={inStoreItem?.colorImg}
-						qtys={inStoreItem?.qtys}
-						changeInStoreItemHand={changeInStoreItemHand}
-						removeInStoreItemHand={removeInStoreItemHand}
-					/>
-				))}
-				<div>
+				{/* color-product-edit */}
+
+				<div className="grid grid-cols-2 gap-5 my-5">
+					{inStoreState?.map(inStoreItem => (
+						<EditeBoxInStore
+							id={inStoreItem.id}
+							key={inStoreItem?.id}
+							colorCode={inStoreItem?.colorCode}
+							colorName={inStoreItem?.colorName}
+							colorImg={inStoreItem?.colorImg}
+							qtys={inStoreItem?.qtys}
+							changeInStoreItemHand={changeInStoreItemHand}
+							removeInStoreItemHand={removeInStoreItemHand}
+						/>
+					))}
+				</div>
+				{/* btns-edit */}
+				<div className="flex justify-between  py-2">
 					<button
-						className="py-2 px-1 border border-rose-700 rounded-md w-1/6 mx-auto"
+						className="w-1/4 mx-auto py-2 text-center border-2 border-double border-sky-500 rounded-md hover:bg-sky-50"
 						onClick={handleSaveChanges}
 					>
 						ثبت تغییرات
 					</button>
 					<button
-						className="py-2 px-1 border-2 border-sky-500"
+						className="w-1/4 mx-auto py-2 text-center border-2 border-double border-sky-500 rounded-md hover:bg-sky-50"
 						onClick={addInStoreItem}
 					>
 						افزودن رنگبندی
 					</button>
+					<button
+						className="w-1/4 mx-auto py-2 text-center border-2 border-double border-green-500 rounded-md hover:bg-green-50"
+						onClick={sendEditedFabServer}
+					>
+						ثبت نهایی محصول
+					</button>
 				</div>
 			</div>
-			<button className="" onClick={sendEditedFabServer}>
-				ثبت نهایی محصول
-			</button>
-		</div>
+		</Container>
 	);
 }
 

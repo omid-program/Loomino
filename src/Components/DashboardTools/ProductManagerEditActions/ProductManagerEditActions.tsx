@@ -13,9 +13,9 @@ function ProductManagerEditActions(props:TProductManagerEditActionsProps) {
    }
 
    return (
-		<button className="size-10 rounded-full bg-sky-500"
+		<button className="size-10 rounded-full shadow-md shadow-sky-300 border-2 border-sky-600 flex items-center justify-center text-sky-600"
       onClick={runToEditPage}>
-			<TiEdit />
+			<TiEdit className='w-full size-5' />
 		</button>
 	);
 }

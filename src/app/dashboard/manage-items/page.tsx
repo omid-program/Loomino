@@ -71,35 +71,40 @@ function AddItemPage() {
 	const handelCloseAddTagModal = () => {
 		setOpenAddTagModal(false);
 	};
-	const handelCloseAddCatModal = ()=>{
-		setOpenAddCatModal(false)
-	} 
+	const handelCloseAddCatModal = () => {
+		setOpenAddCatModal(false);
+	};
 	useEffect(() => {
 		getCats();
 		getTag();
 	}, []);
 	// const
 	return (
-		<Container>
-			<div>
+		<>
+			<div className="w-11/12 mx-auto">
 				<PagesTitle title="مدیریت آیتم ها" />
 				<div className="grid grid-cols-2 gap-4">
 					<div className="col-span-1">
-						<h2>برچسب ها</h2>
 						<div>
-							<button onClick={() => setOpenAddTagModal(true)}>
-								برچسب جدید
-							</button>
+							<div className="flex justify-between px-8 items-center">
+								<h2 className="text-xl font-bold">برچسب ها</h2>
+								<button
+									className="text-3xl text-blue-600  shadow-md shadow-blue-300 size-10 rounded-full flex justify-center items-center font-bold"
+									onClick={() => setOpenAddTagModal(true)}
+								>
+									+
+								</button>
+							</div>
 							<AddTagModal
 								open={openAddTagModal}
 								onClose={handelCloseAddTagModal}
 							/>
 						</div>
-						<div>
+						<div className="shadow-md shadow-blue-200 rounded-md py-4 px-2 max-h-96 overflow-y-scroll grid grid-cols-2 gap-5">
 							{tagData?.map(tag => (
 								<div
 									key={tag.id}
-									className="border-r-4  px-1 py-2 my-1 border-sky-500 bg-sky-200 cursor-pointer"
+									className="border-r-4 rounded-l-md  px-1 py-2 border-blue-500 bg-blue-200 cursor-pointer"
 									onClick={() => {
 										setOpenRemoveModal(true);
 										setSelectedItem({
@@ -114,26 +119,31 @@ function AddItemPage() {
 							))}
 						</div>
 					</div>
-					<div className="col-span-1 justify-center">
-						<h2>دسته بندی ها</h2>
-						<button
-							onClick={() => {
-								setOpenAddCatModal(true);
-							}}
-						>
-							دسته بندی جدید
-						</button>
+					<div className="col-span-1">
 						<div>
-							<AddCatModal
-								openCatModal={openAddCatModal}
-								onCloseCatModal={handelCloseAddCatModal}
-							/>
+							<div className="flex justify-between px-8 items-center">
+								<h2 className="text-xl font-bold">دسته بندی ها</h2>
+								<button
+									className="text-3xl text-rose-600  shadow-md shadow-rose-300 size-10 rounded-full flex justify-center items-center font-bold"
+									onClick={() => {
+										setOpenAddCatModal(true);
+									}}
+								>
+									+
+								</button>
+							</div>
+							<div>
+								<AddCatModal
+									openCatModal={openAddCatModal}
+									onCloseCatModal={handelCloseAddCatModal}
+								/>
+							</div>
 						</div>
-						<div>
+						<div className="shadow-md shadow-rose-200 rounded-md py-4 px-2 max-h-96 overflow-y-scroll grid grid-cols-2 gap-5">
 							{catDatas?.map(cat => (
 								<div
 									key={cat.id}
-									className="border-r-4  px-1 py-2 my-1 border-rose-500 bg-rose-200 cursor-pointer"
+									className="border-r-4 rounded-l-md  px-1 py-2 my-1 border-rose-500 bg-rose-200 cursor-pointer"
 									onClick={() => {
 										setOpenRemoveModal(true);
 										setSelectedItem({
@@ -160,7 +170,7 @@ function AddItemPage() {
 					</div>
 				</div>
 			</div>
-		</Container>
+		</>
 	);
 }
 

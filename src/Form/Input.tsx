@@ -73,7 +73,7 @@ const Input: React.FC<InputProps> = props => {
 			<input
 				type={props.type || 'text'}
 				placeholder={props.placeholder}
-				className={`${props.className} ${isValid ? 'success' : 'error'}`}
+				className={` shadow-md ${props.className} ${isValid ? 'border-2 border-green-600 shadow-green-300' : 'border-2 border-rose-600 shadow-rose-300'}`}
 				onChange={onChangeHandler}
 				value={value}
 			/>

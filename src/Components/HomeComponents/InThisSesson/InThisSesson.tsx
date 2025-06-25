@@ -4,6 +4,7 @@ import React from 'react';
 import TitleSectionHome from '../TitleSectionHome/TitleSectionHome';
 import { AiFillProduct } from '@/react-icons/ai';
 import Link from '@/next/link';
+import ProductCard from '@/Components/Cards/ProductCard/ProductCard';
 
 async function InThisSesson() {
 	const now = new Date().getUTCMonth() + 1;
@@ -41,7 +42,7 @@ async function InThisSesson() {
 
 	// console.log('sessonProduct=> ', seasonProducts);
 	return (
-		<div className="my-8">
+		<div className="my-8 bg-violet-100 rounded-lg p-1">
 			<div className="flex gap-2 text-xl">
 				<span>
 					<AiFillProduct />
@@ -51,7 +52,7 @@ async function InThisSesson() {
 					{sessonEmogy}
 				</h3>
 			</div>{' '}
-			<div className="grid grid-cols-4">
+			<main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-screen-lg mx-auto p-4 font-yekan">
 				{/* {seasonProducts.map(prod => (
 					<Link
 						href={`http://localhost:3000/shop/${prod.id}`}
@@ -69,14 +70,14 @@ async function InThisSesson() {
 							href={`http://localhost:3000/shop/${product.id}`}
 							key={product.id}
 						>
-							<ProductBox
+							<ProductCard
 								{...product}
 								offerPersentage={item?.persentage}
 							/>
 						</Link>
 					);
 				})}
-			</div>
+			</main>
 		</div>
 	);
 }

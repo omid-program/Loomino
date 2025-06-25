@@ -689,7 +689,7 @@
   "ords": [
     {
       "id": "06099fdf-9f75-4a56-bd3e-865aad6dc825",
-      "statusCode": 0,
+      "statusCode": 4,
       "name": "شخص 20/2",
       "country": "کشور 20/2",
       "state": "ایالت 20/2",
@@ -735,7 +735,7 @@
     },
     {
       "id": "f3cc7512-ac40-46a4-9a76-be0bf903383e",
-      "statusCode": 0,
+      "statusCode": 4,
       "name": "شخص 20/3",
       "country": "کشور 20/3",
       "state": "ایالت20/3",
@@ -777,6 +777,120 @@
           "time": "12:50"
         },
         "isoDate": "2025-06-11T09:20:18.027Z"
+      }
+    },
+    {
+      "id": "37aa1c53-7aeb-47e6-95eb-9120ec849b58",
+      "statusCode": 1,
+      "name": "شخص10",
+      "country": "جیبوتی",
+      "state": "l;df",
+      "city": "salfdsf",
+      "address": "lsdkf;lds",
+      "phoneNumber": "26541212",
+      "emailAddres": "kajdsad@gmail.com",
+      "orders": [
+        {
+          "orderId": "d565db36-cceb-4a60-b0dd-3d47ca646d06",
+          "date": "2025-06-20T09:37:20.772Z",
+          "items": [
+            {
+              "id": "57b02b4a-dcdc-465f-b8bd-f04626525bc1",
+              "perTitle": "عنوان محصول6",
+              "colorId": "c1e45f49-6927-4294-9d44-7464efe722a2",
+              "qty": 1.5,
+              "colorCode": "#270202",
+              "price": 425000
+            }
+          ]
+        }
+      ],
+      "finalPrice": 382500,
+      "userOffCode": 10,
+      "date": {
+        "pertionDate": {
+          "year": "1404",
+          "month": "03",
+          "day": "30",
+          "time": "13:07"
+        },
+        "isoDate": "2025-06-20T09:37:20.772Z"
+      }
+    },
+    {
+      "id": "fc94ec48-4a80-444b-a69c-309867577288",
+      "statusCode": 4,
+      "name": "سعید موسوی",
+      "country": "asdas",
+      "state": "خراسان رضوی",
+      "city": "zxcfwe",
+      "address": "dsadasd",
+      "phoneNumber": "6451651",
+      "emailAddres": "asdfg-2",
+      "orders": [
+        {
+          "orderId": "c6b4df88-93a3-48a7-8135-2b4bcd37cc72",
+          "date": "2025-06-22T09:34:24.896Z",
+          "items": [
+            {
+              "id": "5",
+              "perTitle": "دیپلومات",
+              "colorId": "q13w546we789",
+              "qty": 1.3,
+              "colorCode": "#03002E",
+              "price": 450000
+            }
+          ]
+        }
+      ],
+      "finalPrice": 405000,
+      "userOffCode": 10,
+      "date": {
+        "pertionDate": {
+          "year": "1404",
+          "month": "04",
+          "day": "01",
+          "time": "13:04"
+        },
+        "isoDate": "2025-06-22T09:34:24.896Z"
+      }
+    },
+    {
+      "id": "bf38a201-96ae-4eb6-8923-7b485ce04446",
+      "statusCode": 4,
+      "name": "ایران 1",
+      "country": "irdn",
+      "state": "ایالت ایران",
+      "city": "شهر ایران",
+      "address": "خیابان ایران",
+      "phoneNumber": "26468468432",
+      "emailAddres": "iran1@gmail.com",
+      "orders": [
+        {
+          "orderId": "e5c4c620-87c7-48c0-8d4a-7a64c9a86e47",
+          "date": "2025-06-23T09:28:00.454Z",
+          "items": [
+            {
+              "id": "57b02b4a-dcdc-465f-b8bd-f04626525bc1",
+              "perTitle": "عنوان محصول6",
+              "colorId": "01d5109d-cb31-4273-90ca-e34399d23b3e",
+              "qty": 1.4,
+              "colorCode": "#cd8037",
+              "price": 500000
+            }
+          ]
+        }
+      ],
+      "finalPrice": 450000,
+      "userOffCode": 10,
+      "date": {
+        "pertionDate": {
+          "year": "1404",
+          "month": "04",
+          "day": "02",
+          "time": "12:58"
+        },
+        "isoDate": "2025-06-23T09:28:00.454Z"
       }
     }
   ],
@@ -944,34 +1058,64 @@
       "productId": "57b02b4a-dcdc-465f-b8bd-f04626525bc1",
       "productTitle": "عنوان محصول6",
       "productImg": "/abrbadygoldar/abrbadygoldar-green.jpg"
+    },
+    {
+      "id": "6cc6f0f4-588a-4044-8ea9-176e335ffec6",
+      "name": "امید اکملی",
+      "email": "omidprogram79@gmail.com",
+      "phoneNumber": "09140477816",
+      "commentText": "متن آزمتایشی",
+      "createdAt": "2025-06-22T18:13:33.522Z",
+      "isShow": true,
+      "productId": "57b02b4a-dcdc-465f-b8bd-f04626525bc1",
+      "productTitle": "عنوان محصول6",
+      "productImg": "/abrbadygoldar/abrbadygoldar-green.jpg"
+    },
+    {
+      "id": "5f920638-b753-4335-8687-4fe7d33931d7",
+      "name": "شخص 1",
+      "email": "omidprogram79@gmail.com",
+      "phoneNumber": "16514",
+      "commentText": "kljasdhl",
+      "createdAt": "2025-06-23T09:20:35.477Z",
+      "isShow": false,
+      "productId": "57b02b4a-dcdc-465f-b8bd-f04626525bc1",
+      "productTitle": "عنوان محصول6",
+      "productImg": "/abrbadygoldar/abrbadygoldar-green.jpg"
+    },
+    {
+      "id": "5f9202638-b753-4335-8687-4fe7d33931d7",
+      "name": "ایران",
+      "email": "omidprogram79@gmail.com",
+      "phoneNumber": "165466514",
+      "commentText": "نظر ایران 1",
+      "createdAt": "2025-06-23T09:20:35.477Z",
+      "isShow": true,
+      "productId": "57b02b4a-dcdc-465f-b8bd-f04626525bc1",
+      "productTitle": "عنوان محصول6",
+      "productImg": "/abrbadygoldar/abrbadygoldar-green.jpg"
     }
   ],
   "spetialOffer": {
     "id": "1",
-    "time": "2026-02-22T20:30:00.000Z",
+    "time": "2025-10-26T20:30:00.000Z",
     "description": "فروش ویژه!!!",
     "spetialOfferList": [
       {
-        "productId": "5",
-        "persentage": "10",
-        "perTitle": "دیپلومات",
-        "defImg": "/diplomate-gray-model.jpg"
+        "productId": "2",
+        "persentage": "3",
+        "perTitle": "فوتر",
+        "defImg": "/fotr-pink-model.jpg"
       },
       {
-        "productId": "6",
-        "persentage": "5",
-        "perTitle": "مخمل کبریتی",
-        "defImg": "/MatchVelvet-blue-model.jpg"
-      },
-      {
-        "productId": "57b02b4a-dcdc-465f-b8bd-f04626525bc1",
-        "persentage": "15",
-        "perTitle": "عنوان محصول6",
-        "defImg": "/abrbadygoldar/abrbadygoldar-green.jpg"
+        "productId": "3",
+        "persentage": "0.75",
+        "perTitle": "شانتون دو نخ",
+        "defImg": "/shantonDoNakh-blue-model.jpg"
       },
       {
         "productId": "4",
-        "persentage": "3",
+        "persentage": "2",
         "perTitle": "کشمیر",
         "defImg": "/Keshmir-brown-model.jpg"
       }

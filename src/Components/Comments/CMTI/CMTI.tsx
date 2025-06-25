@@ -64,17 +64,29 @@ function CMTI(props: TCommetsData) {
 				<div className="grid col-span-1 text-center py-2 border border-gray-800">
 					<CommentTextModal commentText={commentText} />
 				</div>
-				<div className="  text-center py-2 border border-gray-800">
+				<div className="  text-center py-2 border border-gray-800 ">
 					<button
 						onClick={() => {
 							changeCommentStatus();
 						}}
 						style={
 							isShow
-								? { backgroundColor: '#CBC0FF', color: '#374151' }
-								: { backgroundColor: '#374151', color: '#CBC0FF' }
+								? {
+										// backgroundColor: '#CBC0FF',
+										// color: '#374151',
+										boxShadow: ' 0 4px 6px -1px rgb(137 255 133 )',
+										borderWidth: '2px',
+										borderColor: '#23A100',
+								  }
+								: {
+										// backgroundColor: '#374151',
+										// color: '#CBC0FF',
+										boxShadow: ' 0 4px 6px -1px rgb(255 102 35 )',
+										borderWidth: '2px',
+										borderColor: '#DE701F',
+								  }
 						}
-						className={`rounded-md p-1`}
+						className={`rounded-md p-2`}
 					>
 						{isShow === true ? (
 							<span>تایید شده</span>

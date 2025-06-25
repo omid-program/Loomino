@@ -31,7 +31,11 @@ export default function OrdAddresModal(props: TOrdAddresModal) {
 
 	return (
 		<div>
-			<Button onClick={handleOpen}>{country} - {city}</Button>
+			<Button onClick={handleOpen}>
+				<span className='px-2 py-1 border-2 border-violet-600 rounded-md text-md'>
+				{country} - {city}
+				</span>
+				</Button>
 			<Modal
 				open={open}
 				onClose={handleClose}
@@ -39,22 +43,24 @@ export default function OrdAddresModal(props: TOrdAddresModal) {
 				aria-describedby="modal-modal-description"
 			>
 				<Box sx={style}>
-					<Typography id="modal-modal-title" variant="h6" component="h2">
+					<div className=' text-center border-b-2 border-gray-800'>
+					<Typography id="modal-modal-title" variant="h5" component="h2">
 						آدرس دقیق
 					</Typography>
+					</div>
 					<Box id="modal-modal-description" sx={{ mt: 2 }}>
-                  <ul>
-                     <li>
-                        <span>کشور: </span><span>{country}</span>
+                  <ul className=''>
+                     <li className='p-2 border-b-2 border-dashed border-gray-600'>
+                        <span className='font-bold text-lg'>کشور: </span><span>{country}</span>
                      </li>
-                     <li>
-                        <span>ایالت: </span><span>{state}</span>
+                     <li className='p-2 border-b-2 border-dashed border-gray-600'>
+                        <span className='font-bold text-lg'>ایالت: </span><span>{state}</span>
                      </li>
-                     <li>
-                        <span>شهر: </span><span>{city}</span>
+                     <li className='p-2 border-b-2 border-dashed border-gray-600'>
+                        <span className='font-bold text-lg'>شهر: </span><span>{city}</span>
                      </li>
-                     <li>
-                        <span>آدرس: </span><span>{address}</span>
+                     <li className='p-2 border-b-2 border-dashed border-gray-600'>
+                        <span className='font-bold text-lg'>آدرس: </span><span>{address}</span>
                      </li>
                   </ul>
 					</Box>

@@ -8,6 +8,7 @@ import axios from 'axios';
 import { patch } from '@mui/material';
 import OrdDetailModal from './OrdDetailModal/OrdDetailModal';
 import OrdAddresModal from './OrdAddresModal/OrdAddresModal';
+import { formatPrice } from '@/utils/price';
 
 function OrdTableBox(props: TAllOrdData) {
 	const { id, date, orders, country, city, address, statusCode, state } =
@@ -73,14 +74,14 @@ function OrdTableBox(props: TAllOrdData) {
 
 	return (
 		<div className="grid grid-cols-5 border">
-			<div className="grid col-span-1 text-center ">
+			<div className="grid col-span-1 text-center py-2 border-x ">
 				{date.pertionDate.year}/{date.pertionDate.month}/
 				{date.pertionDate.day}-{date.pertionDate.time}
 			</div>
-			<div className="grid col-span-1 text-center">
+			<div className="grid col-span-1 text-center py-2 border-x ">
 				<OrdDetailModal ords={orders} />
 			</div>
-			<div className="grid col-span-1 text-center">
+			<div className="grid col-span-1 text-center py-2 border-x">
 				
 				<OrdAddresModal
 					address={address}
@@ -89,7 +90,7 @@ function OrdTableBox(props: TAllOrdData) {
 					state={state}
 				/>
 			</div>
-			<div className="grid col-span-1 text-center">{totalPrice}</div>
+			<div className="grid col-span-1 text-center py-2 border-x">{formatPrice(Number(totalPrice))} تومان </div>
 			<div className="grid col-span-1 text-center grid-cols-5 px-3">
 				<button
 					onClick={nextStatusHand}

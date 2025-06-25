@@ -6,6 +6,7 @@ import ProductBox from '@/Components/ProductBox/ProductBox';
 import dayjs from 'dayjs'
 import duration from 'dayjs/plugin/duration'
 import SpetialOfferTimer from '../SpetialOfferTimer/SpetialOfferTimer';
+import ProductCard from '@/Components/Cards/ProductCard/ProductCard';
 
 async function SpetialOffer() {
    dayjs.extend(duration)
@@ -33,9 +34,9 @@ async function SpetialOffer() {
 	}, [] as (TAllProductData & { persentage: string })[]);
 
 	return (
-		<div>
-			<TitleSectionHome title="فروش ویژه" />
-			<div className="grid grid-cols-4">
+		<div className='bg-violet-100 p-1 my-8 rounded-lg'>
+			<TitleSectionHome title={offerData.description} />
+			<main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-screen-lg mx-auto p-4 font-yekan">
 				{combineProductOffer.map(product => {
 					// const item = spOfferData.spetialOfferList?.find(
 					// 	offer => offer.productId === product.id
@@ -45,14 +46,14 @@ async function SpetialOffer() {
 							href={`http://localhost:3000/shop/${product.id}`}
 							key={product.id}
 						>
-							<ProductBox
+							<ProductCard
 								{...product}
 								offerPersentage={product.persentage}
 							/>
 						</Link>
 					);
 				})}
-			</div>
+			</main>
          {/* <SpetialOfferTimer expierTime={offerData.time}/> */}
 		</div>
 	);

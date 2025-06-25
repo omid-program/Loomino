@@ -12,6 +12,7 @@ import {
 	useShappingCartContext,
 } from '@/context/ShappongCartContext';
 import { format, toDate } from 'date-fns-jalali';
+import { LuNotebookPen } from 'react-icons/lu';
 
 function OrderShappingInfo() {
 	// ------------function for colected information---------------
@@ -54,12 +55,10 @@ function OrderShappingInfo() {
 		// console.log(formatDate);
 		// ---------------totalPrice?------------------
 
-
-		const basketPrice = userOrd.reduce((total , price)=>{
-			return total + price.price
-		},0)
-		const finalPrice = basketPrice - (basketPrice * (userOffCode / 100))
-
+		const basketPrice = userOrd.reduce((total, price) => {
+			return total + price.price;
+		}, 0);
+		const finalPrice = basketPrice - basketPrice * (userOffCode / 100);
 
 		// _________________________________________________________________________
 
@@ -94,12 +93,12 @@ function OrderShappingInfo() {
 					address: orderShappingInfo.address,
 					phoneNumber: orderShappingInfo.phoneNumber,
 					emailAddres: orderShappingInfo.emailAddres,
-					orders:[
+					orders: [
 						{
 							orderId: crypto.randomUUID(),
-							date: isoDate ,
-							items: userOrd
-						}
+							date: isoDate,
+							items: userOrd,
+						},
 					],
 					// userOrd,
 					finalPrice,
@@ -190,7 +189,11 @@ function OrderShappingInfo() {
 		},
 	];
 	return (
-		<div className="">
+		<div className=" my-8 px-4 py-6 shadow-lg shadow-violet-200 rounded-md">
+			<div id="userInfoOrd" className='my-5 flex flex-row items-center'>
+				<LuNotebookPen className='text-2xl font-bold ' />
+				<h3 className="text-2xl font-bold">مشخصات جهت ارسال سفارش</h3>
+			</div>
 			<div className="flex flex-col gap-3 ">
 				<div className="grid grid-cols-2 my-1 justify-between  items-center gap-4 w-full">
 					{ordInputItem.map(inputItem => (
@@ -214,7 +217,10 @@ function OrderShappingInfo() {
 				>
 					سبد خرید شما نمیتواند خالی باشد
 				</p>
-				<button className="w-1/4" onClick={submitedOrd}>
+				<button
+					className="border-2 border-violet-500 rounded-md px-7 py-3 my-5 hover:bg-violet-200 hover:text-gray-700"
+					onClick={submitedOrd}
+				>
 					ثبت سفارش
 				</button>
 			</div>

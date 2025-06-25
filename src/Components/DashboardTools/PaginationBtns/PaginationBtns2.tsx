@@ -10,7 +10,7 @@ export default function PaginationBtns2(props: IPaginationBtnsProps) {
 	const { i, paginationHand , presentPage } = props;
 	return (
 		<div
-      className={`rounded-full size-8 justify-center items-center p-2 ${i==presentPage ? 'bg-rose-600' : 'bg-rose-300'}`}
+      className={` cursor-pointer size-9 rounded-full flex justify-center items-center shadow-md shadow-violet-300 ${i==presentPage ? 'border-2 border-violet-600' : ''}`}
 			onClick={() => {
 				paginationHand(i);
 			}}

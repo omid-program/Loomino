@@ -1,5 +1,5 @@
 'use client';
-import CartItem from '@/Components/CartItem/CartItem';
+import CartItem from '@/Components/CartTools/CartItem/CartItem';
 import Container from '@/Components/Container/Container';
 import OrderShappingInfo from '@/Components/OrderShappingInfo/OrderShappingInfo';
 import PagesTitle from '@/Components/PageTitle/PagesTitle';
@@ -18,7 +18,7 @@ function Cart() {
 		<Container>
 			<div>
 				<PagesTitle title="سبد خرید" />
-				<div>
+				<div className='grid grid-cols-2 gap-8 '>
 					{userOrd?.map(item => (
 						<CartItem
 							key={item.colorId}

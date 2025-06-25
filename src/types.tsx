@@ -168,7 +168,7 @@ export type TShappingCartContext = {
 		colorCode: string,
 		price: number
 	) => void;
-	removeProductFromCart: (id: string, colorCode: string) => void;
+	removeProductFromCart: (productId: string, colorId: string) => void;
 	addOffcode: (persentageOffCode: number) => void;
 	userOffCode: number;
 };
@@ -181,10 +181,11 @@ export type TCartItemProps = {
 };
 export type TQtyManagerProps = {
 	id: string;
-	perTitle: string
+	perTitle?: string
 	colorCode: string;
 	price: number;
 	colorId: string | undefined;
+	colorQtys?:number
 };
 
 export type TOffCodes = {
@@ -253,7 +254,7 @@ export type TProductManagerEditInputProps = {
 	isLong: boolean;
 	size: string;
 	value: string;
-	changeInputHand: (e: React.ChangeEvent<HTMLInputElement>) => void;
+	changeInputHand: (e: React.ChangeEvent<HTMLInputElement> |React.ChangeEvent<HTMLTextAreaElement> ) => void;
 };
 
 export type TEditeBoxInStoreProps = {

@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 
 interface ICommentImportProps {
 	productId: string;
-	productTitle: string
-	productImg: string
+	productTitle: string;
+	productImg: string;
 }
 // interface ICommentInfoState {
 // 	name: string;
@@ -18,15 +18,15 @@ interface ICommentImportProps {
 // }
 
 function CommentsImport(props: ICommentImportProps) {
-	const { productId ,productImg , productTitle } = props;
-	const now = new Date().toISOString()
+	const { productId, productImg, productTitle } = props;
+	const now = new Date().toISOString();
 	const [commentInfo, setComentInfo] = useState<TCommetsData>({
 		id: crypto.randomUUID(),
 		name: '',
 		email: '',
 		phoneNumber: '',
 		commentText: '',
-		createdAt: now ,
+		createdAt: now,
 		isShow: false,
 		productId: productId,
 		productTitle,
@@ -49,7 +49,6 @@ function CommentsImport(props: ICommentImportProps) {
 	const sendCommentHandler = () => {
 		try {
 			commentInfo &&
-
 				fetch(`http://localhost:8000/comments`, {
 					method: 'POST',
 					headers: { 'Content-Type': 'application/json' },
@@ -85,16 +84,16 @@ function CommentsImport(props: ICommentImportProps) {
 	];
 
 	return (
-		<div className="mx-auto my-10 border border-violet-500">
+		<div className="mx-auto my-10 border border-violet-500 px-2 py-4">
 			{commentInput.map(item => (
-				<div key={item.id} className="my-3 mx-3">
-					<label className="text-xl mx-1 ">{item.label}:</label>
+				<div key={item.id} className="my-2">
+					<label className="text-xl  ">{item.label}:</label>
 					<input
 						name={item.name}
 						value={item.value}
 						onChange={e => changeInputHand(e)}
 						type="text"
-						className=" border-b-2 border-violet-600 border-dashed px-1 py-2 text-lg "
+						className=" border-b-2 border-violet-600 border-dashed px-1 pt-3 pb-0 text-lg "
 					/>
 				</div>
 			))}
@@ -110,12 +109,15 @@ function CommentsImport(props: ICommentImportProps) {
 					className=" w-9/12 h-48 border-r-4 border-violet-600 bg-violet-100 rounded-md  px-1 py-2 text-lg "
 				/>
 			</div>
-			<button
-				onClick={sendCommentHandler}
-				className="w-24 border-violet-500 text-center"
-			>
-				ارسال
-			</button>
+			<div className="flex justify-center">
+				<button
+					onClick={sendCommentHandler}
+					// className=" border-2 border-violet-500 text-center rounded-md text-xl py-2 px-8 "
+					className=" border-x-4 bg-violet-100 border-violet-500 text-center rounded-md text-xl py-2 px-8 "
+				>
+					ارسال
+				</button>
+			</div>
 		</div>
 	);
 }

@@ -55,18 +55,38 @@ export default function RemoveModal({
 			aria-describedby="modal-modal-description"
 		>
 			<Box sx={style}>
-				<Typography id="modal-modal-title" variant="h6" component="h2">
-					حذف دسته‌بندی
-				</Typography>
-				<Typography id="modal-modal-description" sx={{ mt: 2 }}>
-					آیا مطمئنی می‌خوای «{itemTitle}» رو حذف کنی؟
-				</Typography>
-				<button className='mx-3' disabled={loading} onClick={handleRemove}>
-					{loading ? loadingText : confirmText}
-				</button>
-				<button 
-				onClick={onClose}
-				>{cancelText}</button>
+				<div className="border-b-2 border-gray-700 text-center my-4">
+					<Typography id="modal-modal-title" variant="h5" component="h2">
+						حذف محصول
+					</Typography>
+				</div>
+				<div className="shadow-md shadow-orange-300 px-1 py-2 rounded-md">
+					<Typography
+						id="modal-modal-description"
+						variant="inherit"
+						color="warning"
+						sx={{ mt: 2 }}
+					>
+						آیا مطمئنی می‌خوای «{itemTitle}» رو حذف کنی؟
+					</Typography>
+				</div>
+				<Box>
+					<div className="flex gap-5 px-3 mt-5">
+						<button
+							className="mx-3 px-5 py-2 rounded-md border-2 border-rose-600 shadow-md shadow-rose-300 text-red-600  "
+							disabled={loading}
+							onClick={handleRemove}
+						>
+							{loading ? loadingText : confirmText}
+						</button>
+						<button
+							className="mx-3 px-5 py-2 rounded-md border-2 border-gray-700 shadow-md shadow-gray-400 text-gray-700  "
+							onClick={onClose}
+						>
+							{cancelText}
+						</button>
+					</div>
+				</Box>
 				{/* اینجا دکمه حذف نهایی */}
 			</Box>
 		</Modal>

@@ -6,7 +6,7 @@ import { format, getYear, toDate } from 'date-fns-jalali';
 
 function ChartComponent({ data }: TChartComponentProps) {
 	console.log(data);
-	
+
 	const now = new Date();
 	const isoDate = now.toISOString();
 	const defDate = toDate(isoDate);
@@ -32,7 +32,7 @@ function ChartComponent({ data }: TChartComponentProps) {
 		const start = end - count + 1;
 		return Array.from({ length: count }, (_, i) => (start + i).toString());
 	};
-	const yearOfAll = getJalaliYearRange(7);
+	const yearOfAll = getJalaliYearRange(Number(yearRange));
 	// 2. محاسبه مجموع فروش هر روز
 	const calculateDailySales = () => {
 		return daysOfMonth.map(day => {
@@ -57,13 +57,14 @@ function ChartComponent({ data }: TChartComponentProps) {
 				.reduce((total, order) => total + (order.finalPrice || 0), 0);
 		});
 	};
-	
+
 	const calculateYearSales = () => {
 		return yearOfAll.map(year => {
 			return data
-			.filter(order=>
-				Number(order.date.pertionDate.year) === Number(year)
-			).reduce((total , item)=>total + (item.finalPrice || 0),0)
+				.filter(
+					order => Number(order.date.pertionDate.year) === Number(year)
+				)
+				.reduce((total, item) => total + (item.finalPrice || 0), 0);
 		});
 	};
 
@@ -87,33 +88,33 @@ function ChartComponent({ data }: TChartComponentProps) {
 	};
 
 	return (
-		<div>
-			<div>
+		<div className="border-2 border-violet-500 rounded-md shadow-md shadow-violet-200 w-11/12 px-2 py-4 my-4 mx-auto">
+			<div id="btn-raports" className="flex gap-4 py-4">
 				<button
-					className={`border border-orange-600 ${
-						chartActiave === 'month'
-							? 'bg-green-800 text-white'
-							: 'bg-green-300 text-black'
+					className={`border-2 border-green-600 px-2 py-2 rounded-md ${
+						chartActiave === 'day'
+							? 'shadow-md shadow-green-400 text-green-700'
+							: ''
 					}`}
 					onClick={() => setChartActiave('day')}
 				>
 					گزارش روزانه
 				</button>
 				<button
-					className={`border border-orange-600 ${
+					className={` px-2 py-2 rounded-md border-2 border-orange-600 ${
 						chartActiave === 'month'
-							? 'bg-orange-800 text-white'
-							: 'bg-orange-300 text-black'
+							? 'shadow-md shadow-orange-400 text-orange-700'
+							: ''
 					}`}
 					onClick={() => setChartActiave('month')}
 				>
 					گزارش ماهانه
 				</button>
 				<button
-					className={`border border-blue-600 ${
+					className={` px-2 py-2 rounded-md border border-blue-600 ${
 						chartActiave === 'year'
-							? 'bg-blue-800 text-white'
-							: 'bg-blue-300 text-black'
+							? 'shadow-md shadow-blue-400 text-blue-700'
+							: ''
 					}`}
 					onClick={() => setChartActiave('year')}
 				>
@@ -124,25 +125,35 @@ function ChartComponent({ data }: TChartComponentProps) {
 			{/* 	Day Charts */}
 			<div>
 				{chartActiave === 'day' && (
-					<div>
-						<div>
-							<label>سال: </label>
-							<input
-								type="number"
-								value={yearSel}
-								onChange={e => {
-									setYearSel(e.target.value);
-								}}
-							/>
-							<label>ماه: </label>
-							<input
-								type="number"
-								value={monthSel}
-								onChange={e => {
-									setMonthSel(e.target.value);
-								}}
-							/>
+					<div className="">
+						<div className="flex gap-2 mt-3 mb-5 justify-start items-center text-lg">
+							<div className=" grid-cols-4 ">
+								<label className="col-span-1">سال: </label>
+								<input
+									className="col-span-3 border-b-2 border-dashed border-violet-500 px-2 pt-2"
+									type="number"
+									value={yearSel}
+									onChange={e => {
+										setYearSel(e.target.value);
+									}}
+								/>
+							</div>
+							<div
+								// className="col-span-3 grid-cols-3 ">
+								className=" grid-cols-3 "
+							>
+								<label className="col-span-1">ماه: </label>
+								<input
+									className="col-span-2 border-b-2 border-dashed border-violet-500 pt-2 px-2"
+									type="number"
+									value={monthSel}
+									onChange={e => {
+										setMonthSel(e.target.value);
+									}}
+								/>
+							</div>
 						</div>
+
 						<div>
 							<LineChart
 								xAxis={[
@@ -173,9 +184,10 @@ function ChartComponent({ data }: TChartComponentProps) {
 
 				{chartActiave === 'month' && (
 					<div>
-						<div>
+						<div className="text-lg flex gap-2">
 							<label>سال: </label>
 							<input
+								className="border-b-2 pb-0 pt-3 px-2 border-dashed border-violet-500"
 								type="number"
 								value={yearSel}
 								onChange={e => {
@@ -210,26 +222,31 @@ function ChartComponent({ data }: TChartComponentProps) {
 				)}
 
 				{chartActiave === 'year' && (
-					<div>
-						<div>
-							<label>از سال .... </label>
-							<input
-								type="number"
-								value={yearEnd}
-								onChange={e => {
-									setYearEnd(e.target.value);
-								}}
-							/>
-						</div>
-						<div>
-							<label>چند سال متوال؟ </label>
-							<input
-								type="number"
-								value={yearRange}
-								onChange={e => {
-									setYearRange(e.target.value);
-								}}
-							/>
+					<div className="">
+						<div className="flex text-lg">
+							<div className="flex ">
+								<label className="pt-2 pb-0">از سال </label>
+								<input
+									className="w-16 px-1 pt-2 pb-0 text-center border-b-2 border-dashed border-violet-400  "
+									type="number"
+									value={yearEnd}
+									onChange={e => {
+										setYearEnd(e.target.value);
+									}}
+								/>
+							</div>
+							<div className="flex">
+								<label className="pt-2 pb-0 ">تا</label>
+								<input
+									className="w-14 text-center border-b-2 border-dashed border-violet-500 pb-0 pt-2"
+									type="number"
+									value={yearRange}
+									onChange={e => {
+										setYearRange(e.target.value);
+									}}
+								/>
+								<span className="pt-2 pb-0">سال قبل</span>
+							</div>
 						</div>
 						<LineChart
 							xAxis={[

@@ -12,11 +12,12 @@ import PaginationBtns2 from '../PaginationBtns/PaginationBtns2';
 import { TiDeleteOutline } from 'react-icons/ti';
 import RemoveModal from '../RemoveModal/RemoveModal';
 import PMTSOI from './PMTSOI/PMTSOI';
+import { formatPrice } from '@/utils/price';
 
 // | products paginated and Filtred
 
 function ProductManagerTable2(props: TProductManagerTable2Props) {
-	const { addProToSpeOffer, removeProToSPeOffer , spetialOfferList } = props;
+	const { addProToSpeOffer, removeProToSPeOffer, spetialOfferList } = props;
 	// const {persentageSO , setPersentageSO} = props
 
 	const [allProductDatas, setAllProductDatas] = useState<TAllProductData[]>();
@@ -174,77 +175,84 @@ function ProductManagerTable2(props: TProductManagerTable2Props) {
 	}
 
 	return (
-		<div className="border-2 border-sky-600 rounded-md w-10/12">
+		<div className="border-2 border-violet-400 shadow-md shadow-violet-200 rounded-md w-10/12 my-8">
 			{/* Filttering Elements */}
 			{isShowTitleSearch && (
-				<div className="col-span-6 flex justify-between">
-					<input
-						type="text"
-						placeholder="جست و جو در عنوان"
-						onChange={e => setTitleSearchInput(e.target.value)}
-					/>
-					<select onChange={e => setSortOption(e.target.value as any)}>
-						<option value="">مرتب‌سازی</option>
-						<option value="priceAsc">قیمت ↑</option>
-						<option value="priceDesc">قیمت ↓</option>
-						<option value="stockAsc">موجودی ↑</option>
-						<option value="stockDesc">موجودی ↓</option>
+				<div className="col-span-6 flex justify-center gap-12 border-b-2 border-violet-500">
+						<input
+							className="	px-1 py-2 my-1 shadow-md shadow-violet-200 border-2 border-violet-400  rounded-md "
+							type="text"
+							placeholder="جست و جو در عنوان"
+							onChange={e => setTitleSearchInput(e.target.value)}
+						/>
+					<select onChange={e => setSortOption(e.target.value as any)}
+						className='shadow-md shadow-violet-200 px-2 rounded-md my-1'
+						>
+						<option className='py-0.5 text-center ' value="">مرتب‌سازی</option>
+						<option className='py-0.5 text-center ' value="priceAsc">قیمت ↑</option>
+						<option className='py-0.5 text-center ' value="priceDesc">قیمت ↓</option>
+						<option className='py-0.5 text-center ' value="stockAsc">موجودی ↑</option>
+						<option className='py-0.5 text-center ' value="stockDesc">موجودی ↓</option>
 					</select>
-					{/* <button onClick={searchTitleHandler}>جست و جو عنوان</button> */}
 				</div>
 			)}
 			{/* Header Table */}
-			<div className="grid grid-cols-12 w-full py-2 px-1">
+			<div className="grid grid-cols-12 w-full py-2 px-1 m-0 border-b-2 border-violet-500">
 				<div
-					className="col-span-2 border w-full"
-					onClick={() => setIsShowTitleSearch(prev => !prev)}
-				>
-					عنوان
+					className="col-span-2 w-full text-center py-1 font-bold border-x"
+					onClick={() => setIsShowTitleSearch(prev => !prev)} 
+				> 
+					عنوان 
 				</div>
-				<div className="col-span-2 border w-full">عکس</div>
-				<div className="col-span-2 border w-full">قیمت</div>
-				<div className="col-span-1 border w-full">موجودی</div>
-				<div className="col-span-2 border w-full">
+				<div className="col-span-2 w-full text-center py-1 font-bold border-x">عکس</div>
+				<div className="col-span-2 w-full text-center py-1 font-bold border-x">قیمت</div>
+				<div className="col-span-1 w-full text-center py-1 font-bold border-x">موجودی</div>
+				<div className="col-span-2 w-full text-center py-1 font-bold border-x">
 					{/* Category FiltterHeadeer */}
 					<select
+					className='text-center py-1 font-bold'
 						onChange={e => {
 							setCatSelectedTable(e.target.value);
 							setPresentPage(1);
 						}}
 					>
-						<option value={''}>دسته بندی</option>
+						<option className='text-center py-1 font-bold border-x' value={''}>دسته بندی</option>
 						{catData?.map(cat => (
 							<option value={cat.nameTag}>{cat.perTitle}</option>
 						))}
 					</select>
 				</div>
-				<div className="col-span-1 border w-full">عملگرها</div>
-				<div className="col-span-2 border w-full">فروش ویژه</div>
+				<div className="col-span-1 border-x w-full text-center py-1 font-bold">عملگرها</div>
+				<div className="col-span-2 border-x w-full text-center py-1 font-bold">فروش ویژه</div>
 			</div>
 			{/* Table Body */}
 			{paginatedProducts.length > 0 &&
 				paginatedProducts[presentPage - 1].map(item => (
-					<div className="grid grid-cols-12 w-full py-2 px-1">
-						<div className="col-span-2 border w-full">
+					<div className="grid grid-cols-12 w-full px-1 text-center border-b-2 border-violet-500">
+						<div className="col-span-2  border-x flex items-center justify-center">
 							{item.perTitle}
 						</div>
-						<div className="col-span-2 border w-full">
+						<div className="col-span-2  border-x">
 							<img src={item.defImg} alt="" />
 						</div>
-						<div className="col-span-2 border w-full">{item.price}</div>
+						<div className="col-span-2  border-x flex items-center justify-center">{formatPrice(item.price)} تومان</div>
 
-						<div className="col-span-1 border w-full">
+						<div className="col-span-1  border-x flex items-center justify-center">
 							{item.inStore.reduce((total, item) => {
 								return total + Number(item.qtys);
-							}, 0)}
+							}, 0)} متر
 						</div>
-						<div className="col-span-2 border w-full">
+						<div className="col-span-2  border-x flex items-center justify-center">
 							{item.cat?.perTitle}
 						</div>
-						<div className="col-span-1 border w-full">
+						<div 
+						className="col-span-1 border-x flex flex-col justify-center items-center gap-4"
+						>
 							<ProductManagerEditActions id={item.id} />
 							<ProductManagerRaportAction id={item.id} />
+							{/* remove-Product-Btn */}
 							<button
+							className='shadow-md shadow-red-300 size-10 rounded-full border-2 border-red-600 flex justify-center items-center'
 								onClick={() => {
 									setIsShowRemoveModal(true);
 									setSeletedItem({
@@ -253,10 +261,11 @@ function ProductManagerTable2(props: TProductManagerTable2Props) {
 									});
 								}}
 							>
-								<TiDeleteOutline />
+								<TiDeleteOutline className='size-7 text-red-500' />
 							</button>
 						</div>
-						<div className="col-span-2 border w-full">
+						<div className="col-span-2  border-x">
+							{/* product-manager-table-spetioal-offer-input */}
 							<PMTSOI
 								defImg={item.defImg}
 								perTitle={item.perTitle}
@@ -268,7 +277,8 @@ function ProductManagerTable2(props: TProductManagerTable2Props) {
 						</div>
 					</div>
 				))}
-			<div className="flex gap-3">{buttons}</div>
+				{/* Pagination-BTN */}
+			<div className="flex gap-3 justify-center items-center my-2">{buttons}</div>
 			<RemoveModal
 				cancelText="لغو"
 				confirmText="حذف"

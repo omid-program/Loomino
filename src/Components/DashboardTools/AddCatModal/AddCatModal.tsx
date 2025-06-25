@@ -158,23 +158,25 @@ export default function AddCatModal(
 				aria-describedby="modal-modal-description"
 			>
 				<Box sx={style}>
-					<Typography id="modal-modal-title" variant="h6" component="h2">
+					<div className='border-b-2 border-gray-800 py-1 text-center'>
+					<Typography id="modal-modal-title" variant="h5" component="h2">
 						افزودن دسته بندی جدید
 					</Typography>
-					<Typography id="modal-modal-description" sx={{ mt: 2 }}>
-						<div className="grid grid-cols-2">
+					</div>
+					<Box id="modal-modal-description" sx={{ mt: 2 }}>
+						<div className="grid grid-cols-2 gap-1 overflow-y-scroll">
 							{catInputs.map(item => (
 								<div
 									key={item.name}
-									className="flex items-center justify-center"
+									className={`flex gap-1 items-center my-1 ${item.size === 'sm'? 'col-span-1':'col-span-2'}`}
 								>
-									<label htmlFor={item.name}>{item.label}</label>
+									<label htmlFor={item.name}>{item.label}:</label>
 									{item.isLong === false ? (
 										<input
 											name={item.name}
 											value={item.value}
 											type="text"
-											className="rounded-sm col-span-1 px-1 py-2 border border-rose-500"
+											className=" w-full border-r-4 border-rose-600 bg-rose-200 rounded-l-md py-1"
 											onChange={e => {
 												changeStateHand(e);
 											}}
@@ -183,7 +185,7 @@ export default function AddCatModal(
 										<textarea
 											name={item.name}
 											value={item.value}
-											className="rounded-sm col-span-2 px-1 py-2 border border-rose-500"
+											className="w-full border-r-4 border-rose-600 bg-rose-200 rounded-l-md py-1"
 											rows={4}
 											onChange={e => {
 												changeStateHand(e);
@@ -192,14 +194,14 @@ export default function AddCatModal(
 									)}
 								</div>
 							))}
+						</div>
 							<button
-								className="w-full bg-green-300"
+								className="w-1/3 mx-auto my-2 border-2 border-rose-600 rounded-md py-2 hover:bg-rose-200 text-center"
 								onClick={sendNewCatToDatabase}
 							>
 								ثبت دسته بندی جدید
 							</button>
-						</div>
-					</Typography>
+					</Box>
 				</Box>
 			</Modal>
 		</div>

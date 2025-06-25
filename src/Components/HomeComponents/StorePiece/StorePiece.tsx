@@ -3,7 +3,9 @@ import { TProductBoxData, TSpetialOfferData } from '@/types';
 import Link from 'next/link';
 import React from 'react';
 import TitleSectionHome from '../TitleSectionHome/TitleSectionHome';
-import CatItemBox from '@/Components/CatItemBox/CatItemBox';
+import CatItemBox from '@/Components/CartTools/CatItemBox/CatItemBox';
+import CatCard from '@/Components/Cards/CatCard/CatCard';
+import ProductCard from '@/Components/Cards/ProductCard/ProductCard';
 
 async function StorePiece(props: {
 	title: string;
@@ -19,9 +21,9 @@ async function StorePiece(props: {
 	const spOfferData = (await spOfferRes.json()) as TSpetialOfferData;
 
 	return (
-		<div className="">
+		<div className="bg-violet-100 rounded-lg p-1 my-8">
 			<TitleSectionHome title={title} />
-			<div className="grid grid-cols-4 gap-3 my-5">
+			<main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-screen-lg mx-auto p-4 font-yekan">
 				{data.map(product => {
 					const item = spOfferData.spetialOfferList?.find(
 						offer => offer.productId === product.id
@@ -31,8 +33,9 @@ async function StorePiece(props: {
 							<Link
 								href={`http://localhost:3000/${kind}/${product.id}`}
 								className="col-span-1"
+								key={product.id}
 							>
-								<ProductBox
+								<ProductCard
 									{...product}
 									offerPersentage={item?.persentage}
 								/>
@@ -45,9 +48,18 @@ async function StorePiece(props: {
 								className="col-span-1"
 							>
 								<div>
-									<CatItemBox {...product} />
+									<CatCard {...product} />
 								</div>
 							</Link>
+
+							// <Link
+							// 	href={`http://localhost:3000/${kind}/${product.id}`}
+							// 	className="col-span-1"
+							// >
+							// 	<div>
+							// 		<CatItemBox {...product} />
+							// 	</div>
+							// </Link>
 						);
 					}
 				})}
@@ -71,7 +83,7 @@ async function StorePiece(props: {
 						
 					</Link>
 				))} */}
-			</div>
+			</main>
 		</div>
 	);
 }

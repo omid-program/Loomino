@@ -25,7 +25,10 @@ export default function SpetialOfferListModal(props:TSpetialOfferListModalProps)
 
 	return (
 		<div>
-			<Button onClick={handleOpen}>لیست محصولات</Button>
+			<Button
+			style={{fontSize:'1.1rem', color:'black'}}
+			className='text-lg shadow-md shadow-violet-200'
+			onClick={handleOpen}>لیست محصولات</Button>
 			<Modal
 				open={open}
 				onClose={handleClose}
@@ -33,22 +36,25 @@ export default function SpetialOfferListModal(props:TSpetialOfferListModalProps)
 				aria-describedby="modal-modal-description"
 			>
 				<Box sx={style}>
-					<Typography id="modal-modal-title" variant="h6" component="h2">
+					<div className='text-center border-b-2 border-gray-700'>
+					<Typography id="modal-modal-title" variant="h5" component="h2">
 						محصولات فروش ویژه
 					</Typography>
-					<Typography id="modal-modal-description" sx={{ mt: 2 }}>
-						<div className='grid grid-cols-5 overflow-scroll '>
+					</div>
+					<Box id="modal-modal-description" sx={{ mt: 2 }}>
+						<div className='grid grid-cols-5 gap-3 overflow-y-scroll '>
 							{
 								spetialOfferList.map(item=>(
 									<div
-									className='border '>
-										<img src={item.defImg}  />
-										<h3>{item.perTitle}</h3>
+									onClick={()=>removeProToSPeOffer(item.productId) }
+									className='border-2 border-gray-800 rounded-md cursor-pointer  '>
+										<img src={item.defImg} className='rounded-md'  />
+										<h3 className='txt-lg text-center'>{item.perTitle}</h3>
 									</div>
 								))
 							}
 						</div>
-					</Typography>
+					</Box>
 				</Box>
 			</Modal>
 		</div>

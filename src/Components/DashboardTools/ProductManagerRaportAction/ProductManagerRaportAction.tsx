@@ -13,7 +13,7 @@ function ProductManagerRaportAction(props: TProductManagerEditActionsProps) {
 	};
 	return (
 		<button
-			className="bg-yellow-700 text-white size-10 rounded-full"
+			className=" shadow-md shadow-yellow-300 size-10 rounded-full border-2 border-yellow-600 flex justify-center items-center"
 			onClick={runProductRaportPage}
 		>
 			<FaChartPie />

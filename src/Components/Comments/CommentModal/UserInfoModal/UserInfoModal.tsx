@@ -17,15 +17,17 @@ const style = {
 	p: 4,
 };
 
-export default function UserInfoModal(props:TCommentUserInfo) {
-	const {email,name,phoneNumber} = props
+export default function UserInfoModal(props: TCommentUserInfo) {
+	const { email, name, phoneNumber } = props;
 	const [open, setOpen] = React.useState(false);
 	const handleOpen = () => setOpen(true);
 	const handleClose = () => setOpen(false);
 
 	return (
 		<div>
-			<Button onClick={handleOpen}><span className='text-xl '>نمایش مشخصات</span></Button>
+			<Button onClick={handleOpen}>
+				<span className="text-xl ">نمایش مشخصات</span>
+			</Button>
 			<Modal
 				open={open}
 				onClose={handleClose}
@@ -33,19 +35,41 @@ export default function UserInfoModal(props:TCommentUserInfo) {
 				aria-describedby="modal-modal-description"
 			>
 				<Box sx={style}>
-					<Typography id="modal-modal-title" variant="h6" component="h2">
-						<h3>لیست مشخصات کاربر</h3>
-					</Typography>
-					<Typography id="modal-modal-description" sx={{ mt: 2 }}>
-						<div>
-							<span>نام کاربر: </span><span>{name}</span>
+					<div className="p-1 text-center border-2">
+						<Typography
+							id="modal-modal-title"
+							variant="h5"
+							component="h2"
+						>
+							لیست مشخصات کاربر
+						</Typography>
+					</div>
+					<div className="mt-4">
+						<div className=" p-1 border-b-2 border-dashed border-gray-800 flex gap-4 items-center">
+							<span className="">
+								<Typography variant="h6">نام کاربری: </Typography>
+							</span>
+							<span>
+								<Typography>{name}</Typography>
+							</span>
 						</div>
-						<div>
-							<span>شماره تماس:  </span><span>{phoneNumber}</span>
-
+						<div className=" p-1 border-b-2 border-dashed border-gray-800 flex gap-4 items-center">
+							<span className="">
+								<Typography variant="h6">شماره تماس: </Typography>
+							</span>
+							<span>
+								<Typography>{phoneNumber}</Typography>
+							</span>
 						</div>
-							<span>ایمیل: </span><span>{email}</span>
-					</Typography>
+						<div className=" p-1 border-b-2 border-dashed border-gray-800 flex gap-4 items-center">
+							<span className="">
+								<Typography variant="h6"> ایمیل: </Typography>
+							</span>
+							<span>
+								<Typography>{email}</Typography>
+							</span>
+						</div>
+					</div>
 				</Box>
 			</Modal>
 		</div>

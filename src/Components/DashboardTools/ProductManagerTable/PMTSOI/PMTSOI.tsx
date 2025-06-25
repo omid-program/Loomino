@@ -23,11 +23,11 @@ function PMTSOI(props: TPMTSOI) {
 	}, [spetialOfferList, productId]);
 
 	return (
-		<div>
+		<div className='flex flex-col gap-5 justify-center items-center'>
 			<div>
-				<label htmlFor="">درصد تخفیف: </label>
+				<label htmlFor=""> % درصد تخفیف %  </label>
 				<input
-					className="appearance-none w-full border border-violet-600"
+					className=" py-1 px-1 text-center rounded-md w-11/12 border border-violet-600"
 					value={persentageSO}
 					onChange={e => {
 						setPersentageSO(e.target.value);
@@ -36,19 +36,20 @@ function PMTSOI(props: TPMTSOI) {
 				/>
 			</div>
 			<button
-				className="border placeholder-red-200 px-1 w-11/12 bg-violet-100"
+				className="border-2 border-green-600 shadow-md shadow-green-300 size-10 rounded-full flex justify-center items-center"
 				onClick={() => {
 					addProToSpeOffer(persentageSO, productId, perTitle, defImg);
 				}}
 			>
-				افزودن به فروش ویژه
+				✅
 			</button>
 			<button
+			className='border-2 border-red-600 shadow-md shadow-red-300 size-10 rounded-full flex justify-center items-center'
 				onClick={() => {
 					removeProToSPeOffer(productId);
 				}}
 			>
-				حذف از فروش ویژه
+				⛔
 			</button>
 		</div>
 	);

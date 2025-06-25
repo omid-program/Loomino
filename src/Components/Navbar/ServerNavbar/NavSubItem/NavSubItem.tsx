@@ -6,7 +6,7 @@ function NavSubItem({subItems}:{subItems:TCatDatas}) {
    // console.log(subItems);
    
    return (
-<li>
+<li className="text-sm">
    <Link href={`http://localhost:3000/cats/${subItems.id}`}> خرید پارچه ی {subItems.perTitle}</Link>
 </li>
    );

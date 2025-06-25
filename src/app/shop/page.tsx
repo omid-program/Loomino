@@ -1,3 +1,4 @@
+import ProductCard from '@/Components/Cards/ProductCard/ProductCard';
 import Container from '@/Components/Container/Container';
 import SpetialOfferListModal from '@/Components/DashboardTools/AddSpetialOfferData/SpetialOfferListModal/SpetialOfferListModal';
 import PagesTitle from '@/Components/PageTitle/PagesTitle';
@@ -54,11 +55,11 @@ async function Shop({ searchParams }: TShopParams) {
 				<div>
 					<PagesTitle title={'فروشگاه'} />
 				</div>
-				<div>
+				<div className='grid items-center  '>
 					<Search />
 				</div>
 			</div>
-			<div className="grid grid-cols-4 gap-3">
+			<main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-screen-lg mx-auto p-4 font-yekan">
 				{allProducts.data &&
 					allProducts.data.map(product => {
 						const item = spOfferData.spetialOfferList?.find(
@@ -66,17 +67,20 @@ async function Shop({ searchParams }: TShopParams) {
 						);
 						return (
 							<Link key={product?.id} href={`/shop/${product?.id}`}>
-								<ProductBox
+								<ProductCard
 									{...product}
 									offerPersentage={item?.persentage}
 									// {...spOfferData}
 								/>
 							</Link>
+							// </main>
 						);
 					})}
-			</div>
+			</main>
 			<div>{/* <Pagination pageCount={allProducts.pages}/> */}</div>
+			<div className=' flex items-center'>
 			<PaginationC pageCount={2} />
+			</div>
 		</Container>
 	);
 }

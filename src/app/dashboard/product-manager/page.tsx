@@ -187,7 +187,10 @@ function ProductManager() {
 	// 	setPersentageSO(persentageInput);
 	// };
 	return (
-		<div className="flex flex-col items-center w-full">
+		<div
+			id="AddSpetialOfferData"
+			className="flex flex-col items-center w-full"
+		>
 			<AddSpetialOfferData
 				changeOfferPackData={changeOfferPackData}
 				offerPackData={offerPackData}

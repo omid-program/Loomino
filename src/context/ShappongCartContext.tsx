@@ -62,10 +62,10 @@ export function ShappingCartContextProvider({
    
 
 
-   const removeProductFromCart = (colorId: string, colorCode: string) => {
+   const removeProductFromCart = (productId: string, colorId: string) => {
       setUserOrd((prev) => {
          return prev.filter((ord) => {
-            return ord.colorId !== colorId || ord.colorCode !== colorCode;
+            return ord.colorId !== colorId || ord.id !== productId;
          });
       });
    };

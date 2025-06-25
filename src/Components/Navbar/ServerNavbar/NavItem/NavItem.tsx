@@ -21,12 +21,12 @@ function NavItem({ children, navLinksItem }: TPropsNavItem): React.JSX.Element{
 
    return (
       <div
-         className={`p-1 text-lg   ${pathName ===navLinksItem.link ? 'border border-rose-600': '' }`} 
+         className={`p-1 text-lg   ${pathName ===navLinksItem.link ? 'border-b-4 border-violet-600 bg-violet-100 rounded-t-md': '' }`} 
          onMouseEnter={startHoverItem}
          onMouseLeave={endHoverItem}
       >
          <Link href={navLinksItem.link}>{navLinksItem.perTitle}</Link>
-         <div className={`${!hoverFlag ? "hidden" : "absolute"}`}>{children}</div>
+         <div className={`transition-all duration-500 delay-75 ${!hoverFlag ? "hidden" : "absolute"}`}>{children}</div>
       </div>
    );
 }

@@ -15,54 +15,14 @@ function EditeBoxInStore(props: TEditeBoxInStoreProps) {
 	} = props;
 	console.log(props);
 
-	//مثل اینپوت های قبلی
 
-	// const inputEditItems = props
-	// 	? [
-	// 			{
-	// 				id: 1,
-	// 				label: 'نام رنگ: ',
-	// 				type: 'text',
-	// 				name: 'colorName',
-	// 				isLong: false,
-	// 				size: 'md',
-	// 				value: colorName,
-	// 			},
-	// 			{
-	// 				id: 2,
-	// 				label: 'کد رنگی: ',
-	// 				type: 'color',
-	// 				name: 'colorCode',
-	// 				isLong: false,
-	// 				size: 'md',
-	// 				value: colorCode,
-	// 			},
-	// 			{
-	// 				id: 3,
-	// 				label: 'عکس محصول: ',
-	// 				type: 'text',
-	// 				name: 'defImg',
-	// 				isLong: false,
-	// 				size: 'lg',
-	// 				value: colorImg,
-	// 			},
-	// 			{
-	// 				id: 4,
-	// 				label: 'موجودی انبار',
-	// 				type: 'number',
-	// 				name: 'qtys',
-	// 				isLong: true,
-	// 				size: 'sm',
-	// 				value: qtys,
-	// 			},
-	// 	  ]
-	// 	: [];
 
 	return (
-		<div className="border border-rose-600 rounded-md">
+		<div className= "border-2 border-violet-400 px-2 py-4 shadow-md shadow-violet-200 rounded-md">
 			<div className="my-4 col-span-1">
-				<label>نام رنگ</label>
+				<label className='mx-2'>نام رنگ</label>
 				<input
+				placeholder='نام رنگ ...'
 					name="colorName"
 					type="text"
 					value={colorName}
@@ -71,11 +31,11 @@ function EditeBoxInStore(props: TEditeBoxInStoreProps) {
 							changeInStoreItemHand(id, e.target.name, e.target.value);
 						}
 					}}
-					className="px-1 py-2 bg-rose-400"
+					className="px-1 py-2 shadow-md shadow-violet-200 rounded-md"
 				/>
 			</div>
 			<div className="my-4">
-				<label>کد رنگی</label>
+				<label className='mx-2'>کد رنگی</label>
 				<input
 					name="colorCode"
 					type="color"
@@ -85,11 +45,11 @@ function EditeBoxInStore(props: TEditeBoxInStoreProps) {
 							changeInStoreItemHand(id, e.target.name, e.target.value);
 						}
 					}}
-					className="px-1 py-2 bg-rose-400"
+					className="size-8 rounded-full shadow-md shadow-violet-300 p-1 "
 				/>
 			</div>
 			<div className="my-4">
-				<label>موجودی انبار</label>
+				<label className='mx-2'>موجودی انبار</label>
 				<input
 					name="qtys"
 					type="number"
@@ -99,12 +59,13 @@ function EditeBoxInStore(props: TEditeBoxInStoreProps) {
 							changeInStoreItemHand(id, e.target.name, e.target.value);
 						}
 					}}
-					className="px-1 py-2 bg-rose-400"
+					className="px-1 py-2 shadow-md shadow-violet-200 rounded-md"
 				/>
 			</div>
 			<div className="my-4">
-				<label>عکس محصول</label>
+				<label className='mx-2'>عکس محصول</label>
 				<input
+				placeholder='آدرس عکس محصول مورد نظر را وارد کنید ...'
 					name="colorImg"
 					type="text"
 					value={colorImg}
@@ -113,18 +74,18 @@ function EditeBoxInStore(props: TEditeBoxInStoreProps) {
 							changeInStoreItemHand(id, e.target.name, e.target.value);
 						}
 					}}
-					className="px-1 py-2 bg-rose-400"
+					className="px-1 py-2 shadow-md shadow-violet-200 rounded-md w-full"
 				/>
 			</div>
 			<button
-				className="bg-red-700 p-1 rounded-full "
+				className=" border-2 border-gray-700 p-1 rounded-full "
 				onClick={() => {
 					if (id) {
 						removeInStoreItemHand(id);
 					}
 				}}
 			>
-				<AiOutlineDelete className="size-10 text-white" />
+				<AiOutlineDelete className="size-7 text-red-600" />
 			</button>
 		</div>
 	);

@@ -31,9 +31,9 @@ export default function OrdDetailModal(props: TOrdDetailModal) {
 
 	return (
 		<div>
-			<Button onClick={handleOpen}>
+			<Button onClick={handleOpen} >
 				{ords ? (
-					<span>{ords?.flatMap(ord => ord.items.length)}-محصول</span>
+					<span className='text-lg text-violet-500 py-1 px-3 border-2 border-violet-600 rounded-md'>{ords?.flatMap(ord => ord.items.length)}-محصول</span>
 				) : (
 					<div></div>
 				)}
@@ -45,29 +45,65 @@ export default function OrdDetailModal(props: TOrdDetailModal) {
 				aria-describedby="modal-modal-description"
 			>
 				<Box sx={style}>
-					<Typography id="modal-modal-title" variant="h6" component="h2">
-						Text in a modal
-					</Typography>
+					<div className="border-b-2 border-gray-800 text-center">
+						<Typography
+							id="modal-modal-title"
+							variant="h5"
+							component="h2"
+						>
+							لیست محصولات
+						</Typography>
+					</div>
 					<Box id="modal-modal-description" sx={{ mt: 2 }}>
 						{ords &&
 							ords.flatMap(ord => (
-								<div>
-									<div id='header-ord-detail' className='grid-cols-5 font-bold w-full' >
-										<span className='grid col-span-1 border px-1 py-2 text-center'>عنوان</span>
-										<span className='grid col-span-1 border px-1 py-2 text-center'>قیمت</span>
-										<span className='grid col-span-1 border px-1 py-2 text-center'>متراژ</span>
-										<span className='grid col-span-1 border px-1 py-2 text-center'>قیمت کل</span>
-										<span className='grid col-span-1 border px-1 py-2 text-center'>زنگ</span>
+								<div className='overflow-y-scroll'>
+									<div
+										id="header-ord-detail"
+										className=" grid grid-cols-5 font-bold w-full"
+									>
+										<span className="grid col-span-1 border px-1 py-2 text-center">
+											عنوان
+										</span>
+										<span className="grid col-span-1 border px-1 py-2 text-center">
+											قیمت
+										</span>
+										<span className="grid col-span-1 border px-1 py-2 text-center">
+											متراژ
+										</span>
+										<span className="grid col-span-1 border px-1 py-2 text-center">
+											قیمت کل
+										</span>
+										<span className="grid col-span-1 border px-1 py-2 text-center">
+											رنگ
+										</span>
 									</div>
-									{ord.items.map(item => (
-										<div className='grid grid-cols-5'>
-											<span>{item.perTitle}</span>
-											<span>{formatPrice(item.price)}</span>
-											<span>{item.qty}</span>
-											<span>{formatPrice((item.qty) * (item.price))}</span>
-											<span style={{backgroundColor:item.colorCode}} >{item.colorCode}</span>
-										</div>
-									))}
+									<div className=''>
+										{ord.items.map(item => (
+											<div className="grid grid-cols-5 text-center border-b">
+												<span className="border-x p-1">
+													{item.perTitle}
+												</span>
+												<span className="border-x p-1">
+													{formatPrice(item.price)}
+												</span>
+												<span className="border-x p-1">
+													{item.qty}
+												</span>
+												<span className="border-x p-1">
+													{formatPrice(item.qty * item.price)}
+												</span>
+												<span
+													className="border-x p-1"
+													style={{
+														backgroundColor: item.colorCode,
+													}}
+												>
+													{item.colorCode}
+												</span>
+											</div>
+										))}
+									</div>
 								</div>
 							))}
 					</Box>

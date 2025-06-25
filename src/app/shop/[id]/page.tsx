@@ -18,45 +18,58 @@ async function ProductPage({ params }: TProductPageParams) {
 	const response = await fetch(`http://localhost:8000/fabrics/${id}`);
 	const productData = (await response.json()) as TAllProductData;
 
-	const spOfferRes = await fetch(`http://localhost:8000/spetialOffer`)
-	const spOfferData = await spOfferRes.json() as TSpetialOfferData
+	const spOfferRes = await fetch(`http://localhost:8000/spetialOffer`);
+	const spOfferData = (await spOfferRes.json()) as TSpetialOfferData;
 
 	const colorList = productData?.inStore as TInStoreAllProduct[];
 	//if(spetialOfferDtata.pspetialOfferDataList.filter(item)=>item.id ===id){
 	// /...
 	// }
-	let finalPrice = Number(productData.price)
-	if(spOfferData.spetialOfferList){
-		const item = spOfferData.spetialOfferList.find((i:TspetialOfferList)=>i.productId === id)
-		if(item){
-			finalPrice = productData.price - (productData.price) * ((Number(item?.persentage) / 100))
+	let finalPrice = Number(productData.price);
+	if (spOfferData.spetialOfferList) {
+		const item = spOfferData.spetialOfferList.find(
+			(i: TspetialOfferList) => i.productId === id
+		);
+		if (item) {
+			finalPrice =
+				productData.price -
+				productData.price * (Number(item?.persentage) / 100);
 		}
-	}else{
-		finalPrice = Number(productData.price)
+	} else {
+		finalPrice = Number(productData.price);
 	}
-	console.log('finalPrice' , finalPrice);
-	
+	console.log('finalPrice', finalPrice);
+
 	const productPrice = Number(productData?.price);
 	console.log(colorList);
-	
+
 	return (
 		<Container>
-			<div className="grid grid-cols-4">
-				<div className="col-span-1">
-					<SmartImg id={id} colorList={colorList} price={finalPrice} perTitle={productData.perTitle} />
+			<div className="grid grid-cols-10 gap-16 items-start  ">
+				<div className="col-span-3 ">
+					<SmartImg
+						id={id}
+						colorList={colorList}
+						price={finalPrice}
+						perTitle={productData.perTitle}
+					/>
 				</div>
-				<div className="col-span-3 justify-center items-center gap-8">
-					<div className="flex flex-col ">
-						<h1 className="text-3xl">{productData?.perTitle}</h1>
-						<div>
+				<div className="col-span-7 my-8 ">
+					<div className="flex flex-col mb-16 border-2 border-violet-600 rounded-xl px-2 py-4 ">
+						<h1 className="text-3xl my-3">{productData?.perTitle}</h1>
+						<div className="bg-violet-50 px-2 rounded-xl min-h-80 py-4">
 							<p>{productData?.perDescription}</p>
 						</div>
-						
 					</div>
-					<div className="flex gap-1 w-5/6 border-2 border-rose-600 rounded">
+					<div className="grid grid-cols-4 gap-5 w-11/12 mx-auto shadow-md shadow-violet-300 rounded px-2 py-4 min-h-52 max-h-56 overflow-y-scroll">
+						<div className="col-span-4 text-center">
+							<h2 className="text-xl ">
+								شاید این نوع پارچه ها را هم بپسندید😉
+							</h2>
+						</div>
 						{productData.tags.map(tag => (
 							<Link key={tag.id} href={`/tags/${tag.id}`}>
-								<div>{tag.perTitle}</div>
+								<div className='border-r-4 rounded-l-md p-1 border-violet-600 bg-violet-50'>{tag.perTitle}</div>
 							</Link>
 						))}
 					</div>
@@ -69,8 +82,7 @@ async function ProductPage({ params }: TProductPageParams) {
 					productImg={productData.defImg}
 				/>
 			</div>
-			<CommentsShow id={id}/>
-
+			<CommentsShow id={id} />
 		</Container>
 	);
 }

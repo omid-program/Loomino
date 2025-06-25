@@ -18,7 +18,7 @@ import { useRouter } from 'next/navigation';
 export default function Login() {
 	// const [isRecaptcha, setIsRecaptcha] = useState(false);
 	const [formValidMasage, setFormValidMasage] = useState<boolean>(false);
-	const router = useRouter()
+	const router = useRouter();
 	const [formState, onInputHandeler] = useForm(
 		{
 			username: {
@@ -55,7 +55,7 @@ export default function Login() {
 				expaier: 5,
 			};
 			cookie.set('token', response.token, { expires: 5 });
-			router.push('/dashboard')
+			router.push('/dashboard');
 		} else {
 			console.log('❌ اطلاعات ناقص یا ریکپچا تایید نشده است.');
 			setFormValidMasage(false);
@@ -68,21 +68,32 @@ export default function Login() {
 	// };
 
 	return (
-		<section className="login-register">
-			<div className="login">
-				<span className="login__title">ورود به حساب کاربری</span>
-				<span className="login__subtitle">
-					خوشحالیم دوباره می‌بینیمت دوست عزیز :)
-				</span>
-				<form
-					className="login-form"
-					onSubmit={e => {
-						userLogin(e);
-					}}
-				>
-					<div className="login-form__username">
+		<section
+			id="login-register"
+			className=" flex justify-center items-center py-5 my-24 "
+		>
+			<form
+				onSubmit={e => {
+					userLogin(e);
+				}}
+				id="login"
+				className=" border-2 rounded-md border-violet-600 shadow-md shadow-violet-300 px-4 py-8 flex flex-col"
+			>
+				{/* top-form */}
+				<div className="mb-6" id="top-form">
+					<div className=" border-2 border-dashed border-violet-400 rounded-md px-2 py-3 mb-3 text-center">
+						<h2 className="text-2xl mb-2">صفحه ی ورود</h2>
+					</div>
+					<span id="login__subtitle" className="text-violet-700 mb-7">
+						خوشحالم دوباره می‌بینیمت دوست من :)
+					</span>
+				</div>
+				{/* input-aria */}
+				<div id="login-form-input" className="flex flex-col gap-4">
+					<div id="username-input" className="flex gap-2 items-center">
+						<label>نام کاربری/ ایمیل: </label>
 						<Input
-							className="border-b border-sky-600"
+							className="rounded-md p-2"
 							type="text"
 							placeholder="نام کاربری یا آدرس ایمیل"
 							element="input"
@@ -97,9 +108,10 @@ export default function Login() {
 						<i className="login-form__username-icon fa fa-user"></i>
 					</div>
 
-					<div className="login-form__password">
+					<div id="password-input" className="flex gap-2 mb-5 items-center">
+						<label htmlFor="">رمز عبور: </label>
 						<Input
-							className="login-form__password-input"
+							className="rounded-md p-2 "
 							type="password"
 							placeholder="رمز عبور"
 							element="input"
@@ -120,20 +132,20 @@ export default function Login() {
 						/> */}
 					</div>
 					{formState.isFormValid ? (
-						<div className="bg-green-400 rounded-lg px-1 py-2 ">
-							<p>مقدار ورودی ها معتبر است</p>
+						<div className="shadow-md shadow-green-300 border-2 border-green-600 rounded-lg px-1 py-2 w-10/12 text-center mx-auto ">
+							<p >مقدار ورودی ها معتبر است</p>
 						</div>
 					) : (
-						<div className="bg-red-400 rounded-lg px-1 py-2 ">
+						<div className="shadow-md shadow-rose-300 border-2 border-rose-600 rounded-lg px-1 py-2 w-10/12 text-center mx-auto ">
 							<p>مقادیر وارد شده نا معتبر است</p>
 						</div>
 					)}
 					<Button
-						className={`login-form__btn ${
-							formState.isFormValid
+						className={`border-2 rounded-md py-2 w-8/12 mx-auto  ${
+							!formState.isFormValid
 								? // && isRecaptcha
-								  'login-form-btn-succes'
-								: 'login-form-btn-error'
+								  ' bg-gray-400'
+								: ' border-violet-400 shadow-md shadow-violet-200'
 						}`}
 						type={'submit'}
 						disabled={
@@ -144,8 +156,8 @@ export default function Login() {
 						<i className="login-form__btn-icon fas fa-sign-out-alt"></i>
 						<span className="login-form__btn-text">ورود</span>
 					</Button>
-				</form>
-			</div>
+				</div>
+			</form>
 		</section>
 	);
 }

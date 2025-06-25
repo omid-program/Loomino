@@ -32,16 +32,20 @@ export default function CommentTextModal(props:{commentText:string}) {
 				aria-describedby="modal-modal-description"
 			>
 				<Box sx={style}>
-					<Typography id="modal-modal-title" variant="h6" component="h2">
-						<h3 className='text-xl'>متن کامل نظر</h3>
-					</Typography>
-					<Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                  <p>
+					<Box id="modal-modal-title"  component="h2">
+						<div className='p-1 border-b-2 text-center'>
+							<Typography variant='h5' >متن کامل نظر</Typography>
+						</div>
+					</Box>
+					<Box id="modal-modal-description" sx={{ mt: 2 }}>
+						<div className='overflow-y-scroll'>
+                  <Typography>
                      {commentText}
-                  </p>
-					</Typography>
+                  </Typography>
+						</div>
+					</Box>
 				</Box>
 			</Modal>
 		</div>
-	);
+	)
 }

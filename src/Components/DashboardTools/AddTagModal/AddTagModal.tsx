@@ -103,24 +103,33 @@ export default function AddTagModal({ open, onClose }: IAddTagModalProps) {
 				aria-describedby="modal-modal-description"
 			>
 				<Box sx={style}>
-					<Typography id="modal-modal-title" variant="h6" component="h2">
-						افزودن برچسب جدید
-					</Typography>
-					<Typography id="modal-modal-description" sx={{ mt: 2 }}>
+					<div className="border-b-2 border-gray-700 text-center">
+						<Typography
+							id="modal-modal-title"
+							variant="h5"
+							component="h2"
+						>
+							افزودن برچسب جدید
+						</Typography>
+					</div>
+					<Box id="modal-modal-description" sx={{ mt: 2 }}>
 						<div
-						// className="grid grid-cols-2"
+							className="flex flex-col gap-3 justify-start items-start"
+							// className="grid grid-cols-2"
 						>
 							{catInputs.map(item => (
 								<div
 									key={item.name}
-									className="flex items-center justify-center"
+									className="flex items-center justify-center gap-2"
 								>
-									<label htmlFor={item.name}>{item.label}</label>
+									<label htmlFor={item.name}>{item.label}: </label>
 									<input
+										placeholder={`${item.label} برچسب ...`}
 										name={item.name}
 										value={item.value}
 										type="text"
-										className="rounded-sm col-span-1 px-1 py-2 border border-rose-500"
+										// className="shadow-md shadow-violet-200 rounded-md p-1 flex-shrink"
+										className="border-r-4 border-blue-500 rounded-l-md bg-blue-200 p-1 flex-shrink"
 										onChange={e => {
 											changeStateHand(e);
 										}}
@@ -128,13 +137,13 @@ export default function AddTagModal({ open, onClose }: IAddTagModalProps) {
 								</div>
 							))}
 							<button
-								className="w-full bg-green-300"
+								className="w-full py-2 my-1 border-2 border-blue-500 rounded-md hover:bg-blue-200  "
 								onClick={sendNewCatToDatabase}
 							>
 								ثبت برچسب جدید
 							</button>
 						</div>
-					</Typography>
+					</Box>
 				</Box>
 			</Modal>
 		</div>
