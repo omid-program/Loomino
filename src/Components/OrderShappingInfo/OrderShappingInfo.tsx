@@ -55,10 +55,10 @@ function OrderShappingInfo() {
 		// console.log(formatDate);
 		// ---------------totalPrice?------------------
 
-		const basketPrice = userOrd.reduce((total, price) => {
-			return total + price.price;
+		const basketPrice = userOrd.reduce((total, item) => {
+			return total + (item.price * item.qty);
 		}, 0);
-		const finalPrice = basketPrice - basketPrice * (userOffCode / 100);
+		const finalPrice = basketPrice - (basketPrice * (userOffCode / 100));
 
 		// _________________________________________________________________________
 

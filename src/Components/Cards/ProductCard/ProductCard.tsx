@@ -27,7 +27,7 @@ export default function ProductCard(props: TProductBoxProps) {
 		price,
 		offerPersentage,
 	} = props;
-	let finalDescription = perMiniDescription.slice(0, 96);
+	let finalDescription = perMiniDescription?.slice(0, 96);
 	return (
 		<Card
 			sx={{

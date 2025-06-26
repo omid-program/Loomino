@@ -51,38 +51,9 @@ async function StorePiece(props: {
 									<CatCard {...product} />
 								</div>
 							</Link>
-
-							// <Link
-							// 	href={`http://localhost:3000/${kind}/${product.id}`}
-							// 	className="col-span-1"
-							// >
-							// 	<div>
-							// 		<CatItemBox {...product} />
-							// 	</div>
-							// </Link>
 						);
 					}
 				})}
-				{/* {data.map(product => (
-					<Link
-					key={product.id}
-						href={`http://localhost:3000/${kind}/${product.id}`}
-						className="col-span-1"
-					>
-						{
-						kind === 'shop' ? (
-							<ProductBox {...product} />
-						) : (
-							<div>
-								<CatItemBox {...product} />
-							</div>
-						)}
-	
-						
-							
-						
-					</Link>
-				))} */}
 			</main>
 		</div>
 	);

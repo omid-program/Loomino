@@ -215,6 +215,30 @@ function AddProduct() {
 		};
 		setInStoreState(prevInStore => [...prevInStore, newInStoreItem]);
 	};
+
+	const submiteSelectCatHand = () => {
+		const catFiltred = catData?.find(cat => cat.nameTag === catSelectVal);
+		const tagList = selectedTag.map(tagSel => {
+			return tagData?.find(tagInfo => tagInfo.TagName === tagSel);
+		});
+		const matchTagDataSelTag = selectedTag;
+
+		const newObgCategory = {
+			id: catFiltred?.id,
+			catName: catFiltred?.nameTag,
+			engTitle: catFiltred?.engTitle,
+			perTitle: catFiltred?.perTitle,
+		};
+		setCatObjetForSend(newObgCategory);
+		setProductTagList(tagList.filter(Boolean) as TTagData[]);
+
+		// console.log('catFiltred=>', catFiltred);
+		// console.log('catData=>', catData);
+		// console.log('newObgCategory=>', newObgCategory);
+		// console.log('matchTagDataSelTag=> ', matchTagDataSelTag);
+		// console.log('tagList=> ', tagList);
+	};
+
 	const handleSaveChanges = () => {
 		if (fabricData) {
 			const { day, year, month } = perCreatedAt;
@@ -253,6 +277,24 @@ function AddProduct() {
 				});
 				if (response.ok) {
 					alert('تغییرات با موفقیت اعمال شد');
+					setFabricData({
+						id: crypto.randomUUID(),
+						perTitle: '',
+						engTitle: '',
+						defImg: '',
+						perMiniDescription: '',
+						engMiniDescription: '',
+						perDescription: '',
+						engDescription: '',
+						rate: 5,
+						width: '',
+						tags: [],
+						inStore: [
+							// { id: '', colorCode: '', colorImg: '', colorName: '', qtys: '' },
+						],
+						cat: [],
+						price: 0,
+					});
 				}
 			} catch (error) {
 				console.log(error);
@@ -265,28 +307,6 @@ function AddProduct() {
 		} else {
 			setSelectedTag(prev => prev.filter(tag => tag !== tagName));
 		}
-	};
-	const submiteSelectCatHand = () => {
-		const catFiltred = catData?.find(cat => cat.nameTag === catSelectVal);
-		const tagList = selectedTag.map(tagSel => {
-			return tagData?.find(tagInfo => tagInfo.TagName === tagSel);
-		});
-		const matchTagDataSelTag = selectedTag;
-
-		const newObgCategory = {
-			id: catFiltred?.id,
-			catName: catFiltred?.nameTag,
-			engTitle: catFiltred?.engTitle,
-			perTitle: catFiltred?.perTitle,
-		};
-		setCatObjetForSend(newObgCategory);
-		setProductTagList(tagList.filter(Boolean) as TTagData[]);
-
-		// console.log('catFiltred=>', catFiltred);
-		// console.log('catData=>', catData);
-		// console.log('newObgCategory=>', newObgCategory);
-		// console.log('matchTagDataSelTag=> ', matchTagDataSelTag);
-		// console.log('tagList=> ', tagList);
 	};
 
 	const monthInputInfo = [
@@ -379,7 +399,7 @@ function AddProduct() {
 						className="border-2 border-violet-500 px-1 py-2 col-span-1 "
 					>
 						<div className="w-full py-2 text-center border-b-2 border-dashed">
-							<h3 className='text-lg font-bold'>تاریخ افرودن محصول</h3>
+							<h3 className="text-lg font-bold">تاریخ افرودن محصول</h3>
 						</div>
 						<div className="grid grid-cols-3 py-1 text-center border-b">
 							<label className="border-x" htmlFor="">
@@ -446,7 +466,7 @@ function AddProduct() {
 						className="col-span-1 grid grid-cols-1 border-2 border-violet-500 px-1 "
 					>
 						<div className="py-2 text-center border-b-2 border-dashed my-2">
-							<h3 className='text-lg font-bold' >انتخاب دسته بندی</h3>
+							<h3 className="text-lg font-bold">انتخاب دسته بندی</h3>
 						</div>
 
 						{/* find cat */}
@@ -513,13 +533,13 @@ function AddProduct() {
 					<button
 						className="w-1/4 mx-auto py-2 text-center border-2 border-double border-violet-500 rounded-md hover:bg-violet-50"
 						onClick={addInStoreItem}
-						>
+					>
 						افزودن رنگبندی
 					</button>
 					<button
 						className="w-1/4 mx-auto py-2 text-center border-2 border-double border-sky-500 rounded-md hover:bg-sky-50"
 						onClick={handleSaveChanges}
-						>
+					>
 						ثبت اطلاعات
 					</button>
 					<button

@@ -365,12 +365,12 @@ export type TSliders = {
 
 // Home page - bestSelles
 export type TProductBoxData = {
-	id: string;
-	perTitle: string;
-	engTitle: string;
-	defImg: string;
-	perMiniDescription: string;
-	engMiniDescription: string;
+	id?: string;
+	perTitle?: string;
+	engTitle?: string;
+	defImg?: string;
+	perMiniDescription?: string;
+	engMiniDescription?: string;
 	rate?: number;
 	width?: string;
 	price?: number;
