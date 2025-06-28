@@ -711,6 +711,82 @@
       },
       "price": "206000",
       "createdAt": "2025-06-25T20:30:00.000Z"
+    },
+    {
+      "id": "bd8f91f0-383d-4350-bcd8-505021913892",
+      "perTitle": "عنوان محصول 401 ویرایش شده",
+      "engTitle": "eng product title 401 edited",
+      "defImg": "/img-example-01/img-example-01-orange.jpg",
+      "perMiniDescription": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. ویرایش شده",
+      "engMiniDescription": "Lorem Ipsum is a dummy text generated with ease and meaningless from the printing industry and used by graphic designers.  Printers and texts, not only but also newspapers and magazines in columns and lines as needed and for the current technological conditions required and diverse applications with the aim of improving practical tools. edited",
+      "perDescription": "<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p> ویرایش شده",
+      "engDescription": "<p>Lorem Ipsum is a dummy text generated with ease and meaningless from the printing industry and used by graphic designers. Printers and texts, not only but also newspapers and magazines in columns and lines as needed and for the current technological conditions required and diverse applications with the aim of improving practical tools. Many books in sixty-three percent of the past, present, and future require extensive knowledge of society and specialists so that computer designers, especially creative designers and pioneering culture in the English language, can have more knowledge of software. In this case, we can hope that all the difficulties present in presenting solutions and difficult typing conditions will come to an end, and the required time will include the main achievements and answer the continuous questions of the people of the existing design world, which is essentially used.</p><p>Lorem Ipsum is a dummy text generated with ease and meaningless from the printing industry and used by graphic designers. Printers and texts, not only but also newspapers and magazines in columns and lines as needed and for the current technological conditions required and diverse applications with the aim of improving practical tools. Many books in sixty-three percent of the past, present, and future require extensive knowledge of society and specialists so that computer designers, especially creative designers and pioneering culture in the English language, can have more knowledge of software. In this case, we can hope that all the difficulties present in presenting solutions and difficult typing conditions will come to an end, and the required time will include the main achievements and answer the continuous questions of the people of the existing design world, which is essentially used.</p> edited",
+      "rate": 5,
+      "width": "1.5",
+      "tags": [
+        {
+          "id": "1",
+          "TagName": "Width150",
+          "perTitle": "پارچه های عرض 1.5",
+          "engTitle": "1.5 width fabric"
+        },
+        {
+          "id": "9f5e5f15-3c11-4103-b9c7-92d1a790e1ca",
+          "perTitle": "پارچه ی تابستانه",
+          "engTitle": "summer cloth",
+          "TagName": "summerCloth"
+        },
+        {
+          "id": "aaf49545-0c79-4eb9-ab65-e41f02e761e2",
+          "perTitle": "برچسب 401",
+          "engTitle": "401 tag",
+          "TagName": "tag401"
+        }
+      ],
+      "inStore": [
+        {
+          "id": "5f8f5d17-1b0e-4064-9e9a-a480e13327bc",
+          "colorName": "آبی",
+          "colorCode": "#5195f6",
+          "colorImg": "/img-example-01/img-example-01-blue.jpg",
+          "qtys": "50"
+        },
+        {
+          "id": "26bf2bb7-c16d-4e1d-a051-f7ed1e37c93a",
+          "colorName": "مشکی",
+          "colorCode": "#0e0c0c",
+          "qtys": "40",
+          "colorImg": "/img-example-01/img-example-01-black.jpg"
+        },
+        {
+          "id": "bbc6cee6-8875-4e7a-be0d-d9e22a62db86",
+          "colorName": "سبز",
+          "colorCode": "#038964",
+          "qtys": "30",
+          "colorImg": "/img-example-01/img-example-01-green.jpg"
+        },
+        {
+          "id": "c4375c34-4d0c-4a9d-8135-e4e56bb05e43",
+          "colorName": "نارنجی",
+          "colorCode": "#f8492e",
+          "qtys": "45",
+          "colorImg": "/img-example-01/img-example-01-orange.jpg"
+        }
+      ],
+      "cat": {
+        "id": "8cc127ec-a39e-4e0a-b42a-66a6d6c922cf",
+        "catName": "cat401",
+        "perTitle": "دسته بندی 401",
+        "engTitle": "401 cat"
+      },
+      "price": "401100",
+      "createdAt": "2025-06-26T20:30:00.000Z",
+      "cats": {
+        "id": "8cc127ec-a39e-4e0a-b42a-66a6d6c922cf",
+        "catName": "cat401",
+        "perTitle": "دسته بندی 401",
+        "engTitle": "401 cat"
+      }
     }
   ],
   "cats": [
@@ -746,6 +822,17 @@
       "engTitle": "curtain",
       "engDesc": "Curtain fabric has different types based on the material of production, curtain fabric design, and country of production. Choosing the right polyester curtain fabric, cotton curtain fabric, etc., requires knowing about the different types of curtain fabric and considering several factors, including your purpose for installing the curtains and the style you intend for the curtain fabric in your room and home. In addition, some factors that may play a role in your decision to choose curtain fabric such as linen, silk, polyester, wool, acrylic rayon, types of curtain lining, etc., are:",
       "perDesc": "پارچه پرده‌ای بر اساس جنس تولیدی، طرح پارچه پرده و کشور تولیدکننده انواع مختلفی دارد. انتخاب پارچه مناسب پرده پلی‌استر، پرده نخی و…، مستلزم اطلاع از انواع مختلف پارچه پرده‌ای و در نظر گرفتن چندین عامل، شامل هدف شما از نصب پرده و سبکی است که برای پارچه پرده اتاق و خانه خود در نظر دارید. بجز آن، بعضی عواملی که ممکن است در تصمیم شما جهت انتخاب پارچه پرده ای کتان، ابریشم، پلی‌استر، وال، ریون اکرولیک، انواع زیر پرده و… نقش داشته باشد، عبارتند از:"
+    },
+    {
+      "id": "8cc127ec-a39e-4e0a-b42a-66a6d6c922cf",
+      "nameTag": "cat401",
+      "perTitle": "دسته بندی 401",
+      "engTitle": "401 cat",
+      "defImg": "/cat-example-01/cat-example-01.jpg",
+      "engDesc": "<p>Lorem Ipsum is a dummy text generated with ease and meaningless from the printing industry and used by graphic designers. Printers and texts, not only but also newspapers and magazines in columns and lines as needed and for the current technological conditions required and diverse applications with the aim of improving practical tools. Many books in sixty-three percent of the past, present, and future require extensive knowledge of society and specialists so that computer designers, especially creative designers and pioneering culture in the English language, can have more knowledge of software. In this case, we can hope that all the difficulties present in presenting solutions and difficult typing conditions will come to an end, and the required time will include the main achievements and answer the continuous questions of the people of the existing design world, which is essentially used.</p>",
+      "engMiniDescription": "Lorem Ipsum is a dummy text generated with ease and meaningless from the printing industry and used by graphic designers.",
+      "perDesc": "<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>",
+      "perMiniDescription": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است."
     }
   ],
   "tags": [
@@ -790,6 +877,12 @@
       "perTitle": "پارچه ی پاییزه",
       "engTitle": "autumn cloth",
       "TagName": "autumnCloth"
+    },
+    {
+      "id": "aaf49545-0c79-4eb9-ab65-e41f02e761e2",
+      "perTitle": "برچسب 401",
+      "engTitle": "401 tag",
+      "TagName": "tag401"
     }
   ],
   "ords": [
@@ -1264,6 +1357,44 @@
         },
         "isoDate": "2025-06-26T16:23:46.769Z"
       }
+    },
+    {
+      "id": "9659a920-59a1-41c5-96a0-405b42e907b3",
+      "statusCode": 4,
+      "name": "نام 401",
+      "country": "کشور 401",
+      "state": "ایالت 401",
+      "city": "شهر 401",
+      "address": "آدرس 401",
+      "phoneNumber": "401401401401",
+      "emailAddres": "email401@gmail.com",
+      "orders": [
+        {
+          "orderId": "dcfeb5cd-f0ae-40ed-a2d7-0bf2d1a19110",
+          "date": "2025-06-27T14:56:08.545Z",
+          "items": [
+            {
+              "id": "bd8f91f0-383d-4350-bcd8-505021913892",
+              "perTitle": "عنوان محصول 401",
+              "colorId": "bbc6cee6-8875-4e7a-be0d-d9e22a62db86",
+              "qty": 20.5,
+              "colorCode": "#038964",
+              "price": 401000
+            }
+          ]
+        }
+      ],
+      "finalPrice": 7398450,
+      "userOffCode": 10,
+      "date": {
+        "pertionDate": {
+          "year": "1404",
+          "month": "04",
+          "day": "06",
+          "time": "18:26"
+        },
+        "isoDate": "2025-06-27T14:56:08.545Z"
+      }
     }
   ],
   "offs": [
@@ -1450,7 +1581,7 @@
       "phoneNumber": "16514",
       "commentText": "kljasdhl",
       "createdAt": "2025-06-23T09:20:35.477Z",
-      "isShow": false,
+      "isShow": true,
       "productId": "57b02b4a-dcdc-465f-b8bd-f04626525bc1",
       "productTitle": "عنوان محصول6",
       "productImg": "/abrbadygoldar/abrbadygoldar-green.jpg"
@@ -1466,12 +1597,24 @@
       "productId": "57b02b4a-dcdc-465f-b8bd-f04626525bc1",
       "productTitle": "عنوان محصول6",
       "productImg": "/abrbadygoldar/abrbadygoldar-green.jpg"
+    },
+    {
+      "id": "b90f2ff6-244e-491c-9b94-b4e48a6810be",
+      "name": "شخص 401",
+      "email": "emaiil401@gmail.com",
+      "phoneNumber": "401401401",
+      "commentText": "نظر 401",
+      "createdAt": "2025-06-27T15:25:22.427Z",
+      "isShow": true,
+      "productId": "bd8f91f0-383d-4350-bcd8-505021913892",
+      "productTitle": "عنوان محصول 401 ویرایش شده",
+      "productImg": "/img-example-01/img-example-01-orange.jpg"
     }
   ],
   "spetialOffer": {
     "id": "1",
-    "time": "2025-10-26T20:30:00.000Z",
-    "description": "فروش ویژه!!!",
+    "time": "2025-10-22T20:30:00.000Z",
+    "description": "فروش استثنایی!!!",
     "spetialOfferList": [
       {
         "productId": "2",
@@ -1486,10 +1629,10 @@
         "defImg": "/shantonDoNakh-blue-model.jpg"
       },
       {
-        "productId": "4",
-        "persentage": "2",
-        "perTitle": "کشمیر",
-        "defImg": "/Keshmir-brown-model.jpg"
+        "productId": "bd8f91f0-383d-4350-bcd8-505021913892",
+        "persentage": "5",
+        "perTitle": "عنوان محصول 401 ویرایش شده",
+        "defImg": "/img-example-01/img-example-01-orange.jpg"
       }
     ]
   }

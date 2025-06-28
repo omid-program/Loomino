@@ -21,11 +21,17 @@ async function Shop({ searchParams }: TShopParams) {
 	const page = (await searchParams).page ?? '1';
 	const per_page = (await searchParams).per_page ?? '6';
 	const title = (await searchParams).title ?? '';
+	
+
+
+
+	
+
 
 	let url = `http://localhost:8000/fabrics?_page=${page}&_per_page=${per_page}`;
 
 	if (title.trim()) {
-		url += `&q=${encodeURIComponent(title)}`;
+		url += `&perTitle=${encodeURIComponent(title)}`;
 	}
 
 	const response = await fetch(url, { cache: 'no-cache' });
@@ -79,7 +85,7 @@ async function Shop({ searchParams }: TShopParams) {
 			</main>
 			<div>{/* <Pagination pageCount={allProducts.pages}/> */}</div>
 			<div className=' flex items-center'>
-			<PaginationC pageCount={2} />
+			<PaginationC pageCount={allProducts.pages} />
 			</div>
 		</Container>
 	);

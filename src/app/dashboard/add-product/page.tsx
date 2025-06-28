@@ -52,6 +52,7 @@ function AddProduct() {
 	const [selectedTag, setSelectedTag] = useState<string[]>([]);
 	const [catObjetForSend, setCatObjetForSend] = useState<TProductCatData>();
 	const [productTagList, setProductTagList] = useState<TTagData[]>([]);
+	const [selectedTagInfo, setSelectedTagInfo] = useState();
 	const [perCreatedAt, setPerCreatedAt] = useState({
 		year: '',
 		month: '',
@@ -214,6 +215,18 @@ function AddProduct() {
 			colorImg: '',
 		};
 		setInStoreState(prevInStore => [...prevInStore, newInStoreItem]);
+	};
+
+	const submitTagHand = async (tagName: string, checked: boolean) => {
+		if (checked) {
+			console.log(tagData?.find(orgTag => orgTag.TagName === tagName));
+
+			await setSelectedTag(prev => [...prev, tagName]);
+			const tagList = selectedTag.map(tagSel => {
+				return tagData?.find(tagInfo => tagInfo.TagName === tagSel);
+			});
+			// setSelectedTagInfo(prev=>[...prev , tagList])
+		}
 	};
 
 	const submiteSelectCatHand = () => {
@@ -390,10 +403,62 @@ function AddProduct() {
 						/>
 					))}
 				</div>
-				<div
-					id="createAt-cat-select"
-					className="grid grid-cols-3 my-8 gap-4"
-				>
+				<div id="tag-cat-select" className="grid grid-cols-3 my-8 gap-4">
+					{/* tag-import */}
+					<div className=" w-3/4 grid grid-cols-3 col-span-3 px-2 py-4 border-2 max-h-64 overflow-y-scroll border-violet-500 rounded-md">
+						<div className=" col-span-3 text-center py-2 border-b-2 border-dashed">
+							<h3 className=" font-bold text-lg">انتخاب برچسب ها</h3>
+						</div>
+						{tagData?.map(tag => (
+							<div className="flex gap-1  py-2 px-1 ">
+								<input
+									className="size-5 "
+									type="checkbox"
+									value={tag.TagName}
+									checked={selectedTag.includes(tag.TagName)}
+									onChange={e => {
+										changeChackBoxHand(tag.TagName, e.target.checked);
+									}}
+								/>
+								<label>{tag.perTitle}</label>
+							</div>
+						))}
+					</div>
+					{/* cat-select */}
+					<div
+						id="cat-select"
+						className="col-span-1 grid grid-cols-1 border-2 border-violet-500 px-1 "
+					>
+						<div className="py-2 text-center border-b-2 border-dashed my-2">
+							<h3 className="text-lg font-bold">انتخاب دسته بندی</h3>
+						</div>
+
+						{/* find cat */}
+						<select
+							className="text-center py-2 shadow-md shadow-violet-200  bg-gray-50"
+							name=""
+							id=""
+							value={catSelectVal}
+							onChange={e => {
+								setCatSelectVal(e.target.value);
+							}}
+						>
+							{catData?.map(category => (
+								<option value={category.nameTag}>
+									{category.perTitle}
+								</option>
+							))}
+						</select>
+						<button
+							className="py-2 my-2 text-center border-2 border-violet-300 bg-violet-50 rounded-md"
+							onClick={submiteSelectCatHand}
+							// onClick={submitTagHand}
+						>
+							ثبت دسته بندی
+						</button>
+					</div>
+
+					{/* date-set */}
 					<div
 						id="ceateAt-select-option"
 						className="border-2 border-violet-500 px-1 py-2 col-span-1 "
@@ -460,59 +525,8 @@ function AddProduct() {
 							<span></span>در صورت عدم تغییر تاریخ روز ثبت می‌شود
 						</span>
 					</div>
-					{/* cat-select */}
-					<div
-						id="cat-select"
-						className="col-span-1 grid grid-cols-1 border-2 border-violet-500 px-1 "
-					>
-						<div className="py-2 text-center border-b-2 border-dashed my-2">
-							<h3 className="text-lg font-bold">انتخاب دسته بندی</h3>
-						</div>
+				</div>
 
-						{/* find cat */}
-						<select
-							className="text-center py-2 shadow-md shadow-violet-200  bg-gray-50"
-							name=""
-							id=""
-							value={catSelectVal}
-							onChange={e => {
-								setCatSelectVal(e.target.value);
-							}}
-						>
-							{catData?.map(category => (
-								<option value={category.nameTag}>
-									{category.perTitle}
-								</option>
-							))}
-						</select>
-						<button
-							className="py-2 my-2 text-center border-2 border-violet-300 bg-violet-50 rounded-md"
-							onClick={submiteSelectCatHand}
-						>
-							ثبت دسته بندی
-						</button>
-					</div>
-				</div>
-				{/* tag-import */}
-				<div className=" w-3/4 grid grid-cols-3 px-2 py-4 border-2 max-h-64 overflow-y-scroll border-violet-500 rounded-md">
-					<div className=" col-span-3 text-center py-2 border-b-2 border-dashed">
-						<h3 className=" font-bold text-lg">انتخاب برچسب ها</h3>
-					</div>
-					{tagData?.map(tag => (
-						<div className="flex gap-1  py-2 px-1 ">
-							<input
-								className="size-5 "
-								type="checkbox"
-								value={tag.TagName}
-								checked={selectedTag.includes(tag.TagName)}
-								onChange={e => {
-									changeChackBoxHand(tag.TagName, e.target.checked);
-								}}
-							/>
-							<label>{tag.perTitle}</label>
-						</div>
-					))}
-				</div>
 				{/* color-product-add */}
 				<div className="grid grid-cols-2 gap-5 my-5">
 					{inStoreState.map(inStoreItem => (

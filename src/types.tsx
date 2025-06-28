@@ -115,6 +115,8 @@ export type TShopParams = {
 		page: string;
 		per_page: string;
 		title: string;
+		items: string
+		pages: string
 	}>;
 };
 

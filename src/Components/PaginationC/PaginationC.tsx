@@ -20,16 +20,22 @@ function PaginationC({ pageCount }: { pageCount: number }) {
 	};
 
 	return (
-			<ReactPaginate
-         className='bg-violet-200 flex gap-5 border-2 border-violet-600 rounded-md p-2 my-5 mx-auto'
-				breakLabel="..."
-				nextLabel="next >"
-				onPageChange={handlePageClick}
-				pageRangeDisplayed={5}
-				pageCount={pageCount}
-				previousLabel="< previous"
-				renderOnZeroPageCount={null}
-			/>
+		<ReactPaginate
+			className=" flex gap-5 border-2 border-violet-600 rounded-md p-2 my-5 mx-auto"
+			breakLabel="..."
+			nextLabel="next >"
+			onPageChange={handlePageClick}
+			pageRangeDisplayed={5}
+			pageCount={pageCount}
+			previousLabel="< previous"
+			renderOnZeroPageCount={null}
+			containerClassName="flex gap-2 justify-center my-5"
+			pageClassName="px-3 py-1 border-2 border-gray-600 border-dashed rounded hover:bg-violet-100"
+			activeClassName="shadow-md shadow-violet-300 border-2 border-violet-600  "
+			previousClassName="px-3 py-1 border border-violet-300 rounded hover:bg-violet-100"
+			nextClassName="px-3 py-1 border border-violet-300 rounded hover:bg-violet-100"
+			disabledClassName="opacity-50 cursor-not-allowed"
+		/>
 	);
 }
 
