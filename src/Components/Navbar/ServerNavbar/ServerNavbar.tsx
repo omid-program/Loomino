@@ -43,7 +43,7 @@ async function ServerNavbar() {
 		// },
 	];
 	return (
-		<nav className="w-full max-h-16 relative mx-auto py-3 px-1 flex justify-between items-center    ">
+		<nav className="md:w-full max-h-16 relative mx-auto py-3 px-1 flex md:justify-between items-center col-span-3   ">
 			<div className="flex justify-between items-center">
 				<ul className="flex gap-2">
 					{navLinks.map((navLinksItem: TLinksData) => (

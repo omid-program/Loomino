@@ -11,7 +11,7 @@ export default function Layout({
 	return (
 		<div>
 			<ShappingCartContextProvider>
-				<div className="flex gap-0 justify-center">
+				<div className= " flex gap-0 justify-center">
 					<ServerNavbar />
 					<ClientNavbar />
 				</div>
