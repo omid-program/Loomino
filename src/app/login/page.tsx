@@ -70,7 +70,7 @@ export default function Login() {
 	return (
 		<section
 			id="login-register"
-			className=" flex justify-center items-center py-5 my-24 "
+			className=" w-10/12 mx-auto  md:flex md:justify-center md:items-center py-5 my-24 "
 		>
 			<form
 				onSubmit={e => {
@@ -108,7 +108,10 @@ export default function Login() {
 						<i className="login-form__username-icon fa fa-user"></i>
 					</div>
 
-					<div id="password-input" className="flex gap-2 mb-5 items-center">
+					<div
+						id="password-input"
+						className="flex gap-2 mb-5 items-center"
+					>
 						<label htmlFor="">رمز عبور: </label>
 						<Input
 							className="rounded-md p-2 "
@@ -133,7 +136,7 @@ export default function Login() {
 					</div>
 					{formState.isFormValid ? (
 						<div className="shadow-md shadow-green-300 border-2 border-green-600 rounded-lg px-1 py-2 w-10/12 text-center mx-auto ">
-							<p >مقدار ورودی ها معتبر است</p>
+							<p>مقدار ورودی ها معتبر است</p>
 						</div>
 					) : (
 						<div className="shadow-md shadow-rose-300 border-2 border-rose-600 rounded-lg px-1 py-2 w-10/12 text-center mx-auto ">

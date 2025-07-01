@@ -16,9 +16,11 @@ async function page({ params }: TCatItemParams) {
 	const catData = (await catResponse.json()) as TCatDatas;
 	const fabricResponse = await fetch(`http://localhost:8000/fabrics`);
 	const fabricData = (await fabricResponse.json()) as TAllProductData[];
-
+	
 	const fabricSelCat = fabricData.filter(fabric => {
-		return fabric?.cat.id === id;
+		if(fabric.cat){
+			return fabric?.cat.id === id;
+		}
 	});
 	console.log(fabricSelCat);
 	console.log(id);
