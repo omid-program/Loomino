@@ -1,3 +1,4 @@
+import ProductCard from '@/Components/Cards/ProductCard/ProductCard';
 import Container from '@/Components/Container/Container';
 import PagesTitle from '@/Components/PageTitle/PagesTitle';
 import ProductBox from '@/Components/ProductBox/ProductBox';
@@ -14,20 +15,18 @@ async function TagItemPage({ params }: TTagParams) {
 	const tagsProduct = productData.filter(product => {
 		return product.tags.find(tag => tag.id === id);
 	});
-	console.log(tagsProduct);
+	console.log('tagsProduct=> ' ,tagsProduct);
 
 	return (
 		<Container>
-			<div>
+			<main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-screen-lg mx-auto p-4 font-yekan">
 				<PagesTitle title={`صفحه ی برچسب `} />
-				<div className="grid grid-cols-4 gap-3">
 					{tagsProduct.map(product => (
-						<Link href={`/shop/${product.id}`}>
-							<ProductBox {...product} />
+						<Link key={product.id} href={`/shop/${product.id}`} className='flex flex-col justify-center items-center md:block'>
+							<ProductCard {...product} />
 						</Link>
 					))}
-				</div>
-			</div>
+			</main>
 		</Container>
 	);
 }

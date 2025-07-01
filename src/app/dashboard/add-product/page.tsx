@@ -405,8 +405,8 @@ function AddProduct() {
 				</div>
 				<div id="tag-cat-select" className="grid grid-cols-3 my-8 gap-4">
 					{/* tag-import */}
-					<div className=" w-3/4 grid grid-cols-3 col-span-3 px-2 py-4 border-2 max-h-64 overflow-y-scroll border-violet-500 rounded-md">
-						<div className=" col-span-3 text-center py-2 border-b-2 border-dashed">
+					<div className=" grid  grid-cols-2  md:w-3/4 md:grid-cols-3 col-span-3 px-2 py-4 border-2 max-h-64 overflow-y-scroll border-violet-500 rounded-md">
+						<div className=" col-span-2 md:col-span-3 text-center py-2 border-b-2 border-dashed">
 							<h3 className=" font-bold text-lg">انتخاب برچسب ها</h3>
 						</div>
 						{tagData?.map(tag => (
@@ -427,7 +427,7 @@ function AddProduct() {
 					{/* cat-select */}
 					<div
 						id="cat-select"
-						className="col-span-1 grid grid-cols-1 border-2 border-violet-500 px-1 "
+						className=" col-span-2 md:col-span-1 grid grid-cols-1 border-2 border-violet-500 px-1 "
 					>
 						<div className="py-2 text-center border-b-2 border-dashed my-2">
 							<h3 className="text-lg font-bold">انتخاب دسته بندی</h3>
@@ -461,7 +461,7 @@ function AddProduct() {
 					{/* date-set */}
 					<div
 						id="ceateAt-select-option"
-						className="border-2 border-violet-500 px-1 py-2 col-span-1 "
+						className="col-span-2 border-2 border-violet-500 px-1 py-2 md:col-span-1 "
 					>
 						<div className="w-full py-2 text-center border-b-2 border-dashed">
 							<h3 className="text-lg font-bold">تاریخ افرودن محصول</h3>
@@ -528,7 +528,7 @@ function AddProduct() {
 				</div>
 
 				{/* color-product-add */}
-				<div className="grid grid-cols-2 gap-5 my-5">
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-5 my-5">
 					{inStoreState.map(inStoreItem => (
 						<EditeBoxInStore
 							key={inStoreItem.id}
@@ -543,22 +543,22 @@ function AddProduct() {
 					))}
 				</div>
 				{/* btns-add */}
-				<div className="flex justify-between  py-2">
+				<div className="grid grid-cols-2 gap-2 md:grid-cols-3  py-2">
 					<button
-						className="w-1/4 mx-auto py-2 text-center border-2 border-double border-violet-500 rounded-md hover:bg-violet-50"
+						className="w-full mx-auto py-2 text-center border-2 border-double border-violet-500 rounded-md hover:bg-violet-50"
 						onClick={addInStoreItem}
 					>
 						افزودن رنگبندی
 					</button>
 					<button
-						className="w-1/4 mx-auto py-2 text-center border-2 border-double border-sky-500 rounded-md hover:bg-sky-50"
+						className="w-full mx-auto py-2 text-center border-2 border-double border-sky-500 rounded-md hover:bg-sky-50"
 						onClick={handleSaveChanges}
 					>
 						ثبت اطلاعات
 					</button>
 					<button
-						// className="w-1/4 mx-auto py-2 text-center bg-green-300 rounded-lg"
-						className="w-1/4 mx-auto py-2 text-center border-2 border-double border-green-500 rounded-md hover:bg-green-50"
+						// className="w-full mx-auto py-2 text-center bg-green-300 rounded-lg"
+						className="w-full mx-auto py-2 text-center border-2 border-double border-green-500 rounded-md hover:bg-green-50"
 						onClick={sendEditedFabServer}
 					>
 						افزودن محصول به فروشگاه

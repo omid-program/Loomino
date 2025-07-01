@@ -72,7 +72,7 @@ async function Shop({ searchParams }: TShopParams) {
 							offerItem => offerItem.productId === product.id
 						);
 						return (
-							<Link key={product?.id} href={`/shop/${product?.id}`}>
+							<Link key={product?.id} href={`/shop/${product?.id}`} className='flex justify-center'>
 								<ProductCard
 									{...product}
 									offerPersentage={item?.persentage}

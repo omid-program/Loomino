@@ -2,6 +2,8 @@ import { ShappingCartContextProvider } from '@/context/ShappongCartContext';
 // import Navbar from "../Navbar/ServerNavbar/ServerNavbar";
 import ServerNavbar from '../Navbar/ServerNavbar/ServerNavbar';
 import ClientNavbar from '../Navbar/ClientNavbar/ClientNavbar';
+import MenueBtn from '../Navbar/MoboNav/MenueBtn/MenueBtn';
+import NavbarMenue from '../Navbar/MoboNav/NavbarMenue/NavbarMenue';
 
 export default function Layout({
 	children,
@@ -11,9 +13,24 @@ export default function Layout({
 	return (
 		<div>
 			<ShappingCartContextProvider>
-				<div className= " flex gap-0 justify-center">
+				{/* decstop */}
+				<div className="hidden lg:flex lg:gap-0 lg:justify-center   ">
 					<ServerNavbar />
 					<ClientNavbar />
+				</div>
+				{/* mobile */}
+				<div className="grid grid-cols-4 items-center py-2 justify-between w-full md:hidden">
+					<NavbarMenue/>
+					<div className="flex items-center flex-row-reverse col-span-3 gap-5 ">
+						<div className="bg-cover w-20 flex items-center">
+							<img
+								className="max-w-16"
+								src="/logo/omid-program-dark-logo-light-mode.png"
+								alt=""
+							/>
+						</div>
+						<span className="text-lg font-bold">omid-program</span>
+					</div>
 				</div>
 
 				{children}

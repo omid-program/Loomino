@@ -4,6 +4,7 @@ import { getTopSellingProductsAdvanced } from '@/utils/getTopSellingProductsAdva
 import { TAllOrdData, TAllProductData, TSpetialOfferData } from '@/types';
 import ProductCard from '@/Components/Cards/ProductCard/ProductCard';
 import { log } from 'console';
+import Link from '@/next/link';
 
 async function BestSellingSmart(props: { title: string; api: string }) {
 	const { api, title } = props;
@@ -35,18 +36,13 @@ async function BestSellingSmart(props: { title: string; api: string }) {
 						item => item.productId === product?.id
 					);
 					return (
-						<ProductCard
-							offerPersentage={spOfferItem?.persentage}
-							{...product}
-							// defImg={product?.defImg}
-							// engMiniDescription={product?.engMiniDescription}
-							// engTitle={product?.engTitle}
-							// perMiniDescription={product?.perMiniDescription}
-							// perTitle={product?.perTitle}
-							// price={product?.price}
-							// width={product?.width}
-							// rate={product?.rate}
-						/>
+						<Link href={`http://localhost:3000/shop/${product?.id}`}>
+							<ProductCard
+								key={product?.id}
+								offerPersentage={spOfferItem?.persentage}
+								{...product}
+							/>
+						</Link>
 					);
 				})}
 			</main>

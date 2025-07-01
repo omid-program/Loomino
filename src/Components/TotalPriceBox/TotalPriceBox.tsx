@@ -53,7 +53,7 @@ function TotalPriceBox() {
 	};
 
 	return (
-		<div className="w-1/3 mx-5 border-2 border-violet-200 px-2 py-4 my-8 rounded-md">
+		<div className=" w-10/12  mx-5 border-2 border-violet-200 px-2 py-4 my-8 rounded-md md:w-1/3">
 			<div className="border-b-2 border-dashed border-gray-500 my-3 p-1 ">
 				<span>قیمت کل:</span>
 				<span>{formatPrice(totalPrice)}</span>

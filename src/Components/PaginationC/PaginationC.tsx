@@ -29,7 +29,7 @@ function PaginationC({ pageCount }: { pageCount: number }) {
 			pageCount={pageCount}
 			previousLabel="< previous"
 			renderOnZeroPageCount={null}
-			containerClassName="flex gap-2 justify-center my-5"
+			containerClassName="grid grid-cols-3 lg:grid-cols-8 gap-2 justify-center my-5"
 			pageClassName="px-3 py-1 border-2 border-gray-600 border-dashed rounded hover:bg-violet-100"
 			activeClassName="shadow-md shadow-violet-300 border-2 border-violet-600  "
 			previousClassName="px-3 py-1 border border-violet-300 rounded hover:bg-violet-100"

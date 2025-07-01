@@ -156,6 +156,7 @@ export default function AddCatModal(
 				onClose={onCloseCatModal}
 				aria-labelledby="modal-modal-title"
 				aria-describedby="modal-modal-description"
+				className='overflow-y-scroll'
 			>
 				<Box sx={style}>
 					<div className='border-b-2 border-gray-800 py-1 text-center'>

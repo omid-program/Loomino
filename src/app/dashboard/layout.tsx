@@ -48,9 +48,11 @@ function layout({
 	];
 	const pathName = usePathname();
 	return (
-		<div className="flex">
-			<div className=" mb-2 mt-5 mr-0 ml-5 px-6 py-8  w-1/5 min-h-screen sticky  shadow-lg shadow-violet-500 rounded-tl-xl">
-				<div className='mb-7 flex flex-col justify-center items-center'>
+		<div className=" flex flex-col md:flex-row">
+			{/* side-bar */}
+			<div className=" mb-2 mt-5 w-full py-3 md:mr-0 md:ml-5 md:px-6 md:py-8  md:w-1/5 md:min-h-screen sticky  shadow-lg shadow-violet-500 rounded-tl-xl">
+				{/* logo-name */}
+				<div className=' hidden md:mb-7 md:flex md:flex-col md:justify-center md:items-center'>
 					<div className=" mx-auto text-center size-24 rounded-full  shadow-md shadow-violet-200 flex justify-center items-center font-bold bg-cover">
 						<img
 							className="max-w-full"
@@ -60,9 +62,11 @@ function layout({
 					</div>
 					<span className="text-lg font-bold">omid-program</span>
 				</div>
-				<div>
-					<div className="flex flex-col ">
+				{/* side-bar-items-container */}
+				<>
+					<div className="flex flex-row md:flex-col ">
 						{sidebarItems.map(item => (
+							// side-bar-item
 							<Link
 								href={item.href}
 								key={item.id}
@@ -78,7 +82,7 @@ function layout({
 							</Link>
 						))}
 					</div>
-				</div>
+				</>
 			</div>
 			<div className="w-full">{children}</div>
 		</div>

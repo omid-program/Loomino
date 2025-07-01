@@ -1,3 +1,5 @@
+import { IconType } from "@/react-icons/lib";
+
 export type TSubItemNav = [
 	{
 		id: string;
@@ -24,6 +26,7 @@ export type TLinksData = {
 	engTitle: string;
 	subItems?: TCatDatas[];
 	link: string;
+	icon?:any
 };
 
 export type TInStoreAllProduct = {

@@ -22,13 +22,6 @@ function Home() {
 					title="پر فروش‌ترین‌ها"
 				/>
 
-				{/* smart-best-sales */}
-				{/* <StorePiece
-					kind="shop"
-					api="http://localhost:8000/ords"
-					title="پر فروش‌ترین‌ها"
-				/> */}
-
 
 				{/* cat-pies */}
 				<StorePiece

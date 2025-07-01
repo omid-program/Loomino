@@ -13,7 +13,7 @@ function OrderShappingInfoInput(props: TOrderShappingInfoInputProps) {
       sendNewOrdInfo(name, value);
    };
    return (
-      <div className="w-full flex gap-1 items-center">
+      <div className="w-full flex gap-1 items-center col-span-2 md:col-span-1">
          <label>{label}:</label>
          {!isLong ? (
             <input

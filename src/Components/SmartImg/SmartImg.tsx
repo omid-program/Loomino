@@ -38,7 +38,7 @@ function SmartImg(props: TSmartImgProps) {
 	// console.log('SmartImg=>' , id);
 
 	return (
-		<div className="flex flex-col gap-4 justify-center items-center my-8 border-2 p-3 border-l-2 border-violet-400 rounded-sm ">
+		<div className="flex flex-col gap-4 justify-center items-center my-4 lg:my-8 mx-auto border-2 p-3 border-l-2 border-violet-400 rounded-sm ">
 			<div style={{ boxShadow: `3px 5px 17px 1px ${imgShadow}` }}>
 				<img id="smartImgId" src={colorImg} alt="" />
 			</div>

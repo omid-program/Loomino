@@ -11,7 +11,7 @@ async function CommentsShow(props: TCommentsShow) {
 				pComments.map(c => {
 					if (c.isShow) {
 						return (
-							<div className="w-1/2 min-h-60 mx-auto my-8 rounded-md border border-dashed border-violet-600 p-5">
+							<div className="w-11/12 md:w-1/2 min-h-60 mx-auto my-8 rounded-md border border-dashed border-violet-600 p-5 ">
 								<span className="block p-2 border border-b-2 border-dashed">
 									{c.name}
 								</span>
