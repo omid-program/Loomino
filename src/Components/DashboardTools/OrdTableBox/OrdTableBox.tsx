@@ -19,7 +19,8 @@ function OrdTableBox(props: TAllOrdData) {
 	);
 	const [statusCodeState, setStatusCodeState] = useState(statusCode);
 	const [isLoading, setIsLoadndg] = useState(false);
-	console.log('OrdTableBox-props-orders=>', orders);
+	// console.log('OrdTableBox-props-orders=>', orders);
+	console.log('OrdTableBox-props-date=>', date);
 
 	useEffect(() => {
 		if (!orders) return;

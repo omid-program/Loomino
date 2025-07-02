@@ -14,7 +14,7 @@ import { randomUUID } from 'crypto';
 import { format } from 'date-fns-jalali';
 import jalaali from 'jalaali-js';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 // import {} from 'date-fns-jalali'
 
 function AddProduct() {
@@ -58,7 +58,18 @@ function AddProduct() {
 		month: '',
 		day: '',
 	});
+	// submit-btn-desyne
+	// const [submitData, setSubmitData] = useState<boolean>(false);
 
+	// useMemo(() => {
+	// 	setSubmitData(false)
+	// }, [
+	// 	fabricData,
+	// 	inStoreState,
+	// 	catSelectVal,
+	// 	selectedTag,
+	// 	perCreatedAt,
+	// ]);
 	const inputCommonItems = [
 		{
 			id: 1,
@@ -270,6 +281,7 @@ function AddProduct() {
 				inStore: inStoreState, // جایگزینی inStore با حالت آپدیت شده
 				createdAt: isoDateGenerate,
 			});
+			alert(`تغییرات شما ثبت شد✅\n میتوانید اطلاعات را به فروشگاه ارسال کنید`)
 			console.log('داده‌های نهایی برای ارسال به بکند:', {
 				...fabricData,
 				inStore: inStoreState,
@@ -277,6 +289,7 @@ function AddProduct() {
 				tags: productTagList,
 				createdAt: isoDateGenerate,
 			});
+			// setSubmitData(true);
 		}
 	};
 	const sendEditedFabServer = async () => {
@@ -560,10 +573,21 @@ function AddProduct() {
 						// className="w-full mx-auto py-2 text-center bg-green-300 rounded-lg"
 						className="w-full mx-auto py-2 text-center border-2 border-double border-green-500 rounded-md hover:bg-green-50"
 						onClick={sendEditedFabServer}
+						// disabled={submitData}
 					>
 						افزودن محصول به فروشگاه
 					</button>
 				</div>
+				{/* <div className='text-center mt-2 mb-7'
+				>{
+					submitData?(
+						<span className=' py-2 px-2 rounded-sm font-bold text-gray-700 shadow-md shadow-green-300'>اطلاعات ثبت شده و آماده ‌ی ارسال هستند</span>
+					):(
+						
+						<span className=' py-2 px-2 rounded-sm font-bold text-gray-700 shadow-md shadow-rose-500'>اطلاعاتی تغییر پیدا کرده و ثبت نشده باید ابتدا آنها را ثبت کنید</span>
+					)
+				}
+				</div> */}
 			</div>
 		</Container>
 	);

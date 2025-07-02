@@ -118,9 +118,10 @@ function OrderShappingInfo() {
 			// 		basket: userOrd
 			// 	}
 			// })
-			console.log('ارسال داده ها با موفقیت انجام شد');
+			alert('ارسال داده ها با موفقیت انجام شد');
 		} catch (error) {
 			console.log('خطا در ارسال داده ها', error);
+			alert('خطا در ارسال داده ها');
 		}
 	};
 	const submitedOrd = () => {

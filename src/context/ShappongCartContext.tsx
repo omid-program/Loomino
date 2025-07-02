@@ -63,6 +63,7 @@ export function ShappingCartContextProvider({
 				};
 				setUserOrd(prev => [...prev, newOrd]);
 			}
+         alert('سبد خرید شما با موفقیت بروز رسانی شد🛒')
 		}
 	};
 
@@ -73,6 +74,7 @@ export function ShappingCartContextProvider({
 			});
 			return newCart;
 		});
+      alert("محصول با موفقیت حذف گردید")
 	};
 
 	const addOffcode = (persentageOffCode: number) => {

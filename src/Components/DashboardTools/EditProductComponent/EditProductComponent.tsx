@@ -141,6 +141,7 @@ function EditProductComponent({ id }: TEditProductComponent) {
 				tags: productTag,
 				createdAt: isoDateGenerate,
 			});
+			alert(`✅تغییرات با موفقیت ثبت شد \n داده ها را ارسال نمایید`)
 			// اینجا می‌تونی درخواست API برای ذخیره در بکند رو هم اضافه کنی
 			console.log('داده‌های نهایی برای ارسال به بکند:', {
 				...fabricData,
@@ -463,7 +464,7 @@ function EditProductComponent({ id }: TEditProductComponent) {
 									changePreDateHand(e);
 								}}
 								type="number"
-								className='col-span-1 py-2 border-x px-1 text-center'
+								className="col-span-1 py-2 border-x px-1 text-center"
 								value={perCreatedAt.year}
 							/>
 						</div>
@@ -535,16 +536,17 @@ function EditProductComponent({ id }: TEditProductComponent) {
 				<div className="flex justify-between  py-2">
 					<button
 						className="w-1/4 mx-auto py-2 text-center border-2 border-double border-sky-500 rounded-md hover:bg-sky-50"
-						onClick={handleSaveChanges}
-					>
-						ثبت تغییرات
-					</button>
-					<button
-						className="w-1/4 mx-auto py-2 text-center border-2 border-double border-sky-500 rounded-md hover:bg-sky-50"
 						onClick={addInStoreItem}
 					>
 						افزودن رنگبندی
 					</button>
+					<button
+						className="w-1/4 mx-auto py-2 text-center border-2 border-double border-sky-500 rounded-md hover:bg-sky-50"
+						onClick={handleSaveChanges}
+					>
+						ثبت تغییرات
+					</button>
+
 					<button
 						className="w-1/4 mx-auto py-2 text-center border-2 border-double border-green-500 rounded-md hover:bg-green-50"
 						onClick={sendEditedFabServer}

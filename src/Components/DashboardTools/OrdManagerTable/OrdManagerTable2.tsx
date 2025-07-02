@@ -9,7 +9,24 @@ function OrdManagerTable2() {
 	const getOrdsData = async () => {
 		const response = await fetch(`http://localhost:8000/ords`);
 		const ordsData = (await response.json()) as TAllOrdData[];
-		setOrdsDataState(ordsData);
+		const sortedOrdsData = ordsData.sort((a, b) => {
+			let aStock = Number(
+				b.date.pertionDate.year +
+					a.date.pertionDate.month +
+					a.date.pertionDate.day +
+					a.date.pertionDate.time.slice(0, 2) +
+					a.date.pertionDate.time.slice(3, 4)
+			);
+			let bStock = Number(
+				b.date.pertionDate.year +
+					b.date.pertionDate.month +
+					b.date.pertionDate.day +
+					b.date.pertionDate.time.slice(0, 2) +
+					b.date.pertionDate.time.slice(3, 4)
+			);
+			return bStock - aStock;
+		});
+		setOrdsDataState(sortedOrdsData);
 	};
 	useEffect(() => {
 		getOrdsData();

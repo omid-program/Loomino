@@ -53,9 +53,12 @@ function CommentsImport(props: ICommentImportProps) {
 					method: 'POST',
 					headers: { 'Content-Type': 'application/json' },
 					body: JSON.stringify(commentInfo),
+					
 				});
-		} catch (error) {
+				alert('با تشکر؛ نظر شما با موفیت ثبت شد و در به زودی نمایش داده می‌شود⭐🙏🏽')
+			} catch (error) {
 			console.log(error);
+			alert('با ارز پوزش مشکلی پیش آمده!!🔧')
 		}
 	};
 
