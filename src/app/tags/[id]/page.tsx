@@ -19,8 +19,8 @@ async function TagItemPage({ params }: TTagParams) {
 
 	return (
 		<Container>
-			<main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-screen-lg mx-auto p-4 font-yekan">
 				<PagesTitle title={`صفحه ی برچسب `} />
+			<main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-screen-lg mx-auto p-4 font-yekan">
 					{tagsProduct.map(product => (
 						<Link key={product.id} href={`/shop/${product.id}`} className='flex flex-col justify-center items-center md:block'>
 							<ProductCard {...product} />

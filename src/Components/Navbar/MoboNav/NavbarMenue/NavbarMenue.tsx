@@ -159,12 +159,14 @@ export default function AccountMenu() {
 				transformOrigin={{ horizontal: 'right', vertical: 'top' }}
 				anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
 			>
-				<MenuItem onClick={handleClose} className="flex gap-3">
-					<MdOutlineShoppingCart />{' '}
-					<div>
-						<span>{formatPrice(basketPrice)}</span>
-						<span> تومان</span>
-					</div>
+				<MenuItem onClick={handleClose} >
+					<Link href={`/cart`} className='flex gap-3'>
+						<MdOutlineShoppingCart />{' '}
+						<div>
+							<span>{formatPrice(basketPrice)}</span>
+							<span> تومان</span>
+						</div>
+					</Link>
 				</MenuItem>
 				{!isLogin ? (
 					<MenuItem onClick={handleClose}>
@@ -205,7 +207,6 @@ export default function AccountMenu() {
 						</Link>
 					</MenuItem>
 				))}
-
 			</Menu>
 		</>
 	);

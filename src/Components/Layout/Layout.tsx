@@ -12,7 +12,7 @@ export default function Layout({
 }>) {
 	return (
 		<div>
-			<ShappingCartContextProvider>
+			{/* <ShappingCartContextProvider> */}
 				{/* decstop */}
 				<div className="hidden lg:flex lg:gap-0 lg:justify-center   ">
 					<ServerNavbar />
@@ -34,7 +34,7 @@ export default function Layout({
 				</div>
 
 				{children}
-			</ShappingCartContextProvider>
+			{/* </ShappingCartContextProvider> */}
 		</div>
 	);
 }
