@@ -1,36 +1,131 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧵 Pru Cloth Shop
 
-## Getting Started
+A complete e-commerce web application for fabric sales, built with **Next.js**, **TypeScript**, and **Tailwind CSS**.  
+Includes a dynamic store interface and a powerful admin dashboard — all without a real backend!
 
-First, run the development server:
+---
+
+## 🚀 Live Features
+
+### 🛍 Public Store (Client Side)
+- Dynamic homepage:
+  - **Newest Products**
+  - **Best Sellers**
+  - **Seasonal Fabrics**
+  - **Special Sale** (controlled via Admin Dashboard)
+- Product listing with:
+  - Search & filtering
+  - Pagination
+- Single product page:
+  - Live price calculator based on selected meter
+  - Color-switch with image + shadow update
+  - Related products (tag-based)
+- Shopping cart:
+  - Managed with React Context + LocalStorage
+  - Dynamic total price, color-specific products, editable meters
+  - Full mobile responsiveness
+
+---
+
+### 🛠 Admin Dashboard (Simulated with JSON Server)
+
+- Basic login system with cookie-based authentication check
+- Sales reports:
+  - Daily / Monthly / Yearly charts (Chart.js)
+- Full product CRUD:
+  - Add / Edit / Delete
+  - Filter & pagination
+- Special Sale toggle
+- Order management:
+  - Track order status: "Paid / Preparing / Shipping / Delivered"
+- Comment moderation:
+  - Pending comments
+  - Search in product titles and comment body
+- Category & tag management:
+  - Create / Delete
+  - Category descriptions + image (SEO boost)
+
+> ⚠ Note: All admin-side data management is done via **JSON Server** (simulated backend).
+
+---
+
+## 🧪 Tech Stack
+
+| Tool/Library     | Purpose                         |
+|------------------|----------------------------------|
+| **Next.js**      | SSR + dynamic routing            |
+| **TypeScript**   | Type safety                      |
+| **Tailwind CSS** | Styling + responsiveness         |
+| **Chart.js**     | Sales charts in dashboard        |
+| **React Icons**  | Iconography                      |
+| **JSON Server**  | Mock backend for development     |
+
+---
+
+## 💻 How to Run Locally
+
+```bash
+git clone https://github.com/omid-program/pru-cloth-shop-salar-hagh.git
+cd pru-cloth-shop-salar-hagh
+npm install
+```
+
+### Run mock server:
+
+```bash
+npm run server
+```
+
+### Start development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📺 Demo Video
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Check out the demo videos (in Persian) for full walkthrough and future updates:
 
-## Learn More
+🔗 [Video on Aparat](https://aparat.com/)  
+🕒 YouTube version coming soon...
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🔒 License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project is released under a [Creative Commons BY-NC License](https://creativecommons.org/licenses/by-nc/4.0/).
 
-## Deploy on Vercel
+> Personal & educational use is allowed.  
+> **Commercial use is prohibited** without written permission from the author.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📬 Developer
+
+**Omid**  
+Frontend Developer (React / Next.js)  
+📧 omid.dev.contact [at] gmail.com  
+🌍 LinkedIn: coming soon...
+
+---
+
+## 🛠 Upcoming Features
+
+- 🔄 Dark Mode  
+- 🌐 Multilingual support (English version)  
+- 🧼 UI/UX improvements  
+- 📦 Switch to real backend (Node or Next API)
+
+---
+
+## ⭐ Like the project?
+
+- Leave a **Star**
+- Create an **Issue**
+- Fork and contribute via **Pull Requests**
+
+---
+
+📄 [Persian README is available here](./README.fa.md)
