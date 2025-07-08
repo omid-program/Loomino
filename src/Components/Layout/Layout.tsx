@@ -4,6 +4,8 @@ import ServerNavbar from '../Navbar/ServerNavbar/ServerNavbar';
 import ClientNavbar from '../Navbar/ClientNavbar/ClientNavbar';
 import MenueBtn from '../Navbar/MoboNav/MenueBtn/MenueBtn';
 import NavbarMenue from '../Navbar/MoboNav/NavbarMenue/NavbarMenue';
+import { AuthContextProvider } from '@/context/AuthContext';
+import Footer from '../Footer/Footer';
 
 export default function Layout({
 	children,
@@ -11,8 +13,9 @@ export default function Layout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<div>
-			{/* <ShappingCartContextProvider> */}
+		<ShappingCartContextProvider>
+			<div>
+				{/* <ShappingCartContextProvider> */}
 				{/* decstop */}
 				<div className="hidden lg:flex lg:gap-0 lg:justify-center   ">
 					<ServerNavbar />
@@ -20,7 +23,7 @@ export default function Layout({
 				</div>
 				{/* mobile */}
 				<div className="grid grid-cols-4 items-center py-2 justify-between w-full md:hidden">
-					<NavbarMenue/>
+					<NavbarMenue />
 					<div className="flex items-center flex-row-reverse col-span-3 gap-5 ">
 						<div className="bg-cover w-20 flex items-center">
 							<img
@@ -34,7 +37,9 @@ export default function Layout({
 				</div>
 
 				{children}
-			{/* </ShappingCartContextProvider> */}
-		</div>
+				{/* </ShappingCartContextProvider> */}
+				<Footer/>
+			</div>
+		</ShappingCartContextProvider>
 	);
 }
