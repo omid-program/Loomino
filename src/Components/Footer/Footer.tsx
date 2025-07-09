@@ -21,7 +21,7 @@ function Footer() {
 		{
 			id: '001',
 			bgImg: '/footer-img/addres-footer-img.jpg',
-			colorTeam: '#2b4a77',
+			colorTeam: '#9fa9d8',
 			title: 'آدرس',
 			describe: (
 				<div>

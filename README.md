@@ -1,11 +1,11 @@
-# 🧵 Pru Cloth Shop
+# 🧵 Loomino
 
 A complete e-commerce web application for fabric sales, built with **Next.js**, **TypeScript**, and **Tailwind CSS**.  
 Includes a dynamic store interface and a powerful admin dashboard — all without a real backend!
 
 ---
 
-## 🚀 Live Features
+## 🚀 Live Featuress
 
 ### 🛍 Public Store (Client Side)
 - Dynamic homepage:
@@ -65,15 +65,15 @@ Includes a dynamic store interface and a powerful admin dashboard — all withou
 ## 💻 How to Run Locally
 
 ```bash
-git clone https://github.com/omid-program/pru-cloth-shop-salar-hagh.git
-cd pru-cloth-shop-salar-hagh
+git clone https://github.com/omid-program/Loomino.git
+cd Loomino
 npm install
 ```
 
 ### Run mock server:
 
 ```bash
-npm run server
+npx json-server --watch db.json --port 8000
 ```
 
 ### Start development server:
@@ -106,7 +106,7 @@ This project is released under a [Creative Commons BY-NC License](https://creati
 
 **Omid**  
 Frontend Developer (React / Next.js)  
-📧 omid.dev.contact [at] gmail.com  
+📧 omidprogram79 [at] gmail.com  
 🌍 LinkedIn: coming soon...
 
 ---

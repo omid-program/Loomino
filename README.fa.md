@@ -1,4 +1,4 @@
-# 🧵 فروشگاه پارچه پرو
+# 🧵 Loomino  
 
 یک برنامه کامل تجارت الکترونیک برای فروش پارچه، ساخته شده با **Next.js**، **TypeScript** و **Tailwind CSS**.  
 شامل رابط فروشگاه پویا و یک داشبورد مدیریت قدرتمند - همه اینها بدون نیاز به بک‌اند واقعی!
@@ -65,15 +65,15 @@
 ## 💻 نحوه اجرای محلی
 
 ```bash
-git clone https://github.com/omid-program/pru-cloth-shop-salar-hagh.git
-cd pru-cloth-shop-salar-hagh
+git clone https://github.com/omid-program/Loomino.git
+cd Loomino
 npm install
 ```
 
 ### اجرای سرور شبیه‌سازی شده:
 
 ```bash
-npm run server
+npx json-server --watch db.json --port 8000
 ```
 
 ### شروع سرور توسعه:
@@ -106,7 +106,7 @@ npm run dev
 
 **امید**  
 توسعه‌دهنده فرانت‌اند (React / Next.js)  
-📧 omid.dev.contact [at] gmail.com  
+📧 omidprogram79 [at] gmail.com  
 🌍 لینکدین: به زودی...
 
 ---
