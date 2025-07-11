@@ -5,8 +5,7 @@ import { IoEarthOutline } from 'react-icons/io5';
 import { FaCity, FaLinkedinIn, FaMountainCity, FaStar } from 'react-icons/fa6';
 import { LuInstagram } from 'react-icons/lu';
 import { SiOrigin } from 'react-icons/si';
-import { LiaShippingFastSolid } from "react-icons/lia";
-
+import { LiaShippingFastSolid } from 'react-icons/lia';
 
 import EditRoadOutlinedIcon from '@mui/icons-material/EditRoadOutlined';
 
@@ -107,7 +106,7 @@ function Footer() {
 					</div>
 					<div className="w-10/12 flex items-center gap-2 ">
 						<span className=" text-black ">
-							<MdOutlineMonetizationOn  />
+							<MdOutlineMonetizationOn />
 						</span>
 						<span className="text-black">ضمانت قیمت</span>
 					</div>
@@ -139,6 +138,10 @@ function Footer() {
 	];
 	return (
 		<FooterContainer>
+			<div className="col-span-4">
+				<h3 className='text-xl '>Lomino فروشگاه هوشمند پارچه</h3>
+				<h4 className='text-lg font-bold'>omid-program</h4>
+			</div>
 			{footerItems.map(item => (
 				<FooterCart bgImg={item.bgImg} colorTeam={item.colorTeam}>
 					<div className="relative w-full flex flex-col justify-between gap-8">

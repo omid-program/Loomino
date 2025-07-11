@@ -29,6 +29,8 @@ export function getTopSellingProductsAdvanced(orders: TAllOrdData[], options: {
          if (maxDate && orderDate > maxDate) return;
 
          subOrder.items.forEach(item => {
+            // console.log('item3*forEach=> ' , item);
+            
             if (!productSales[item.id]) {
                productSales[item.id] = {
                   id: item.id,
@@ -42,6 +44,10 @@ export function getTopSellingProductsAdvanced(orders: TAllOrdData[], options: {
             productSales[item.id].totalQty += item.qty;
             productSales[item.id].totalRevenue += (item.price * item.qty);
             productSales[item.id].ordersCount += 1;
+            console.log('productSales => ' , productSales);
+            // console.log("productSales[item.id] => " , productSales[item.id]);
+            
+            
          });
       });
    });
