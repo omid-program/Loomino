@@ -2,6 +2,7 @@ import CatCard from '@/Components/Cards/CatCard/CatCard';
 import Container from '@/Components/Container/Container';
 import HeaderStatic from '@/Components/HeaderStatic/HeaderStatic';
 import BestSellingSmart from '@/Components/HomeComponents/BestSellingSmart/BestSellingSmart';
+import HomeDesignGapToImg from '@/Components/HomeComponents/homeDesign/HomeDesignGap/HomeDesignGapToImg-1';
 import InThisSesson from '@/Components/HomeComponents/InThisSesson/InThisSesson';
 import NewestProductPiece from '@/Components/HomeComponents/NewestProductPiece/NewestProductPiece';
 import SpetialOffer from '@/Components/HomeComponents/SpetialOffer/SpetialOffer';
@@ -17,26 +18,43 @@ function Home() {
 		<div>
 			{<HeaderStatic />}
 			<Container>
-				<BestSellingSmart
-					api="http://localhost:8000/ords"
-					title="پر فروش‌ترین‌ها"
-				/>
+				<main>
+					{/* categiry-section */}
+					<section className="bg-bg">
+						<StorePiece
+							kind="cats"
+							api="http://localhost:8000/cats"
+							title="دسته بندی ها"
+						/>
+						<div>
+							<img
+								src="Home-page/cat-section-1.png"
+								alt=""
+								className="w-full rounded-tr-full rounded-bl-full"
+							/>
+						</div>
+					</section>
 
+					<BestSellingSmart
+						api="http://localhost:8000/ords"
+						title="پر فروش‌ترین‌ها"
+					/>
 
-				{/* cat-pies */}
-				<StorePiece
-					kind="cats"
-					api="http://localhost:8000/cats"
-					title="دسته بندی ها"
-				/>
+					<NewestProductPiece />
 
-				<NewestProductPiece />
-				<InThisSesson />
-				<SpetialOffer />
-				{/* <HeaderHomeSlider/> */}
-				{/* <HeaderHomeSlider2/> */}
+					<HomeDesignGapToImg
+					title='لومینو'
+					description='مدرن‌ترین فروشگاه پارچه با امتیازات و ابزار های ویژه'
+					secendDescription='محیطی ویژه برای خرید جدیدترین پارچه‌ها'
+					/>
 
-				{/* <PagesTitle title="خانه" /> */}
+					<InThisSesson />
+					<SpetialOffer />
+					{/* <HeaderHomeSlider/> */}
+					{/* <HeaderHomeSlider2/> */}
+
+					{/* <PagesTitle title="خانه" /> */}
+				</main>
 			</Container>
 		</div>
 	);

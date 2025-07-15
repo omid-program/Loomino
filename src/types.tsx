@@ -473,3 +473,7 @@ export type TSpetialOfferListModalProps = {
 export type TOrdDetailModal = {
 	ords?: TUserOrds[] 
 }
+export type TModernLineCard = {
+	apiLink:string
+	
+}

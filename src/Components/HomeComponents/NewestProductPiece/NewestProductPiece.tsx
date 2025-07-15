@@ -4,6 +4,7 @@ import { TAllProductData, TSpetialOfferData } from '@/types';
 import ProductBox from '@/Components/ProductBox/ProductBox';
 import Link from '@/next/link';
 import ProductCard from '@/Components/Cards/ProductCard/ProductCard';
+import ModernLineCard from '@/Components/Cards/ModernLineCard/ModernLineCard';
 
 async function NewestProductPiece() {
 	const res = await fetch(`http://localhost:8000/fabrics`);
@@ -22,8 +23,15 @@ async function NewestProductPiece() {
 	// console.log("newestProducts=> " , newestProducts);
 
 	return (
-		<div className='bg-violet-100 p-1 rounded-lg my-8'>
+		<div className="bg-violet-100 p-1 rounded-lg my-8">
 			<TitleSectionHome title="جدیدترین پارچه ها" />
+
+			{/* <ModernLineCard {...newestProducts}>
+				<div></div>
+			</ModernLineCard> */}
+
+
+
 			<main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-screen-lg mx-auto p-4 font-yekan">
 				{newestProducts.map(product => {
 					const item = spOfferData.spetialOfferList?.find(
@@ -39,6 +47,7 @@ async function NewestProductPiece() {
 								offerPersentage={item?.persentage}
 							/>
 						</Link>
+	
 					);
 				})}
 			</main>

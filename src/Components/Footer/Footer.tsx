@@ -20,7 +20,7 @@ function Footer() {
 		{
 			id: '001',
 			bgImg: '/footer-img/addres-footer-img.jpg',
-			colorTeam: '#9fa9d8',
+			colorTeam: '#c1d6e9',
 			title: 'آدرس',
 			describe: (
 				<div>
@@ -54,7 +54,7 @@ function Footer() {
 		{
 			id: '002',
 			bgImg: '/footer-img/socials-footer-img-04.jpg',
-			colorTeam: '#fdb05e',
+			colorTeam: '#ebe4fa',
 			title: 'ارتباط با ما',
 			describe: (
 				<div>
@@ -88,7 +88,7 @@ function Footer() {
 		{
 			id: '003',
 			bgImg: '/footer-img/Warranty-footer-img-01.jpg',
-			colorTeam: '#ffcae3',
+			colorTeam: '#bbefdb',
 			title: 'ضمانت',
 			describe: (
 				<div>
@@ -116,7 +116,7 @@ function Footer() {
 		{
 			id: '004',
 			bgImg: '/footer-img/send-footer-img-01.jpg',
-			colorTeam: '#fcfcba',
+			colorTeam: '#ffe9aa',
 			title: 'ارسال',
 			describe: (
 				<div>

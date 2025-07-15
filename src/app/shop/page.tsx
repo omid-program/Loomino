@@ -63,6 +63,7 @@ async function Shop({ searchParams }: TShopParams) {
 				</div>
 				<div className='grid items-center  '>
 					<Search />
+					{/* <ModernShopSearch/> */}
 				</div>
 			</div>
 			<main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-screen-lg mx-auto p-4 font-yekan">

@@ -3,7 +3,6 @@ import TitleSectionHome from '../TitleSectionHome/TitleSectionHome';
 import { getTopSellingProductsAdvanced } from '@/utils/getTopSellingProductsAdvance';
 import { TAllOrdData, TAllProductData, TSpetialOfferData } from '@/types';
 import ProductCard from '@/Components/Cards/ProductCard/ProductCard';
-import { log } from 'console';
 import Link from '@/next/link';
 
 async function BestSellingSmart(props: { title: string; api: string }) {
@@ -25,7 +24,7 @@ async function BestSellingSmart(props: { title: string; api: string }) {
 	const mergeTopToAll = topSelling.map(p => {
 		return productData.find(ts => ts.id === p.id);
 	});
-	console.log('mergeTopToAll=> ', mergeTopToAll);
+	// console.log('mergeTopToAll=> ', mergeTopToAll);
 
 	return (
 		<div className="bg-violet-100 rounded-lg p-1 my-8">
