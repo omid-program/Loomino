@@ -5,14 +5,16 @@ import TitleSectionHome from '../TitleSectionHome/TitleSectionHome';
 import { AiFillProduct } from '@/react-icons/ai';
 import Link from '@/next/link';
 import ProductCard from '@/Components/Cards/ProductCard/ProductCard';
+import { API_BASE_URL } from './../../../../config';
+
 
 async function InThisSesson() {
 	const now = new Date().getUTCMonth() + 1;
 	// const now = 12
-	const res = await fetch(`http://localhost:8000/fabrics`);
+	const res = await fetch(`${API_BASE_URL}/fabrics`);
 	const data = (await res.json()) as TAllProductData[];
 
-	const spOfferRes = await fetch(`http://localhost:8000/spetialOffer`);
+	const spOfferRes = await fetch(`${API_BASE_URL}/spetialOffer`);
 	const spOfferData = (await spOfferRes.json()) as TSpetialOfferData;
 
 	let sessonTag = '';

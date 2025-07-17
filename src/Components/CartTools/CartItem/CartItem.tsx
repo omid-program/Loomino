@@ -10,6 +10,8 @@ import {
 } from '@/types';
 import axios from 'axios';
 import Link from '@/next/link';
+import { API_BASE_URL } from './../../../../config';
+
 
 function CartItem(props: TCartItemProps) {
 	const { id, colorId, colorCode, price } = props;
@@ -26,7 +28,7 @@ function CartItem(props: TCartItemProps) {
 	// finalPrice geting Function
 
 	const getSpetialOffer = async () => {
-		const spOfferRes = await fetch(`http://localhost:8000/spetialOffer`);
+		const spOfferRes = await fetch(`${API_BASE_URL}/spetialOffer`);
 		const spOfferData = (await spOfferRes.json()) as TSpetialOfferData;
 		setSpOfferDataState(spOfferData);
 	};
@@ -49,7 +51,7 @@ function CartItem(props: TCartItemProps) {
 
 	// گرفتن اطلاعات محصول از API
 	useEffect(() => {
-		axios(`http://localhost:8000/fabrics/${id}`).then(result => {
+		axios(`${API_BASE_URL}/fabrics/${id}`).then(result => {
 			setProductDatas(result.data);
 		});
 		getSpetialOffer();

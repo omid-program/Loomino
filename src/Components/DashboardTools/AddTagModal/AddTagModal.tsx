@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { TTagData } from '@/types';
+import { API_BASE_URL } from 'config';
 
 const style = {
 	position: 'absolute',
@@ -79,7 +80,7 @@ export default function AddTagModal({ open, onClose }: IAddTagModalProps) {
 	const sendNewCatToDatabase = async () => {
 		if (tagInputData) {
 			try {
-				const response = await fetch('http://localhost:8000/tags', {
+				const response = await fetch(`${API_BASE_URL}/tags`, {
 					method: 'POST',
 					headers: { 'Contetnt-Type': 'application/json' },
 					body: JSON.stringify(tagInputData),

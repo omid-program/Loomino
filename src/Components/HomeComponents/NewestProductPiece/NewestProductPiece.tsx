@@ -5,12 +5,14 @@ import ProductBox from '@/Components/ProductBox/ProductBox';
 import Link from '@/next/link';
 import ProductCard from '@/Components/Cards/ProductCard/ProductCard';
 import TitleSectionHomeSec from '../TitleSectionHome/TitleSectionHomeSec';
+import { API_BASE_URL } from './../../../../config';
+
 
 async function NewestProductPiece() {
-	const res = await fetch(`http://localhost:8000/fabrics`);
+	const res = await fetch(`${API_BASE_URL}/fabrics`);
 	const datas = (await res.json()) as TAllProductData[];
 
-	const spOfferRes = await fetch(`http://localhost:8000/spetialOffer`);
+	const spOfferRes = await fetch(`${API_BASE_URL}/spetialOffer`);
 	const spOfferData = (await spOfferRes.json()) as TSpetialOfferData;
 
 	const newestProducts = datas

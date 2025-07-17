@@ -3,9 +3,11 @@ import PagesTitle from '@/Components/PageTitle/PagesTitle'
 import { TAllOrdData } from '@/types'
 import axios from 'axios'
 import React from 'react'
+import { API_BASE_URL } from './../../../config';
+
 
 async function Dashboard () {
-  const response = await fetch(`http://localhost:8000/ords`)
+  const response = await fetch(`${API_BASE_URL}/ords`)
   const data= await response.json() as TAllOrdData[]
   console.log(data);
   

@@ -16,6 +16,8 @@ import { EffectFade, Navigation, Pagination } from 'swiper/modules';
 import { THomeHeadrSliders, TSliders } from '@/types';
 import HeaderHomeSliderItem from './HeaderHomeSliderItem/HeaderHomeSliderItem';
 import Link from 'next/link';
+import { API_BASE_URL } from './../../../../config';
+
 
 export default function HeaderHomeSlider({
 	// children,
@@ -25,7 +27,7 @@ export default function HeaderHomeSlider({
 	const [sliderInfo, setSliderInfo] = useState<THomeHeadrSliders>();
 
 	const getHeaderSiderInfo = async () => {
-		const response = await fetch(`http://localhost:8000/sliders`);
+		const response = await fetch(`${API_BASE_URL}/sliders`);
 		const allSliderInfo = (await response.json()) as TSliders;
 		setSliderInfo(allSliderInfo.homeHeadrSliders);
 	};

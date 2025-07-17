@@ -9,12 +9,14 @@ import {
 } from '@/types';
 import Link from 'next/link';
 import React from 'react';
+import { API_BASE_URL } from './../../../../config';
+
 
 async function page({ params }: TCatItemParams) {
 	const { id } = await params;
-	const catResponse = await fetch(`http://localhost:8000/cats/${id}`);
+	const catResponse = await fetch(`${API_BASE_URL}/cats/${id}`);
 	const catData = (await catResponse.json()) as TCatDatas;
-	const fabricResponse = await fetch(`http://localhost:8000/fabrics`);
+	const fabricResponse = await fetch(`${API_BASE_URL}/fabrics`);
 	const fabricData = (await fabricResponse.json()) as TAllProductData[];
 	
 	const fabricSelCat = fabricData.filter(fabric => {

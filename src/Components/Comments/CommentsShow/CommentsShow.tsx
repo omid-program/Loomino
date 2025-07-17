@@ -1,9 +1,11 @@
 import { TCommentsShow, TCommetsData } from '@/types';
 import React from 'react';
+import { API_BASE_URL } from './../../../../config';
+
 
 async function CommentsShow(props: TCommentsShow) {
 	const { id } = props;
-	const res = await fetch(`http://localhost:8000/comments?productId=${id}`);
+	const res = await fetch(`${API_BASE_URL}/comments?productId=${id}`);
 	const pComments = (await res.json()) as TCommetsData[];
 	return (
 		<div className="">

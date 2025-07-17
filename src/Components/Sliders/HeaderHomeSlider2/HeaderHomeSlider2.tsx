@@ -1,9 +1,11 @@
 import { TSliders } from '@/types';
 import Link from 'next/link';
 import React from 'react';
+import { API_BASE_URL } from './../../../../config';
+
 
 async function HeaderHomeSlider2() {
-	const response = await fetch(`http://localhost:8000/sliders`);
+	const response = await fetch(`${API_BASE_URL}/sliders`);
 	const data = (await response.json()) as TSliders;
 
 	return (

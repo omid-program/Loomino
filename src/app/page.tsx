@@ -11,7 +11,7 @@ import PagesTitle from '@/Components/PageTitle/PagesTitle';
 import HeaderHomeSlider from '@/Components/Sliders/HeaderHomeSlider/HeaderHomeSlider';
 import HeaderHomeSlider2 from '@/Components/Sliders/HeaderHomeSlider2/HeaderHomeSlider2';
 import React from 'react';
-
+import { API_BASE_URL } from './../../config';
 function Home() {
 	console.log(new Date().toISOString().slice(0, 10).split('-').join(''));
 	return (
@@ -23,7 +23,7 @@ function Home() {
 					<section className="bg-bg">
 						<StorePiece
 							kind="cats"
-							api="http://localhost:8000/cats"
+							api={`${API_BASE_URL}/cats`}
 							title="دسته بندی ها"
 						/>
 						<div>
@@ -36,7 +36,7 @@ function Home() {
 					</section>
 
 					<BestSellingSmart
-						api="http://localhost:8000/ords"
+						api={`${API_BASE_URL}/ords`}
 						title="پر فروش‌ترین‌ها"
 					/>
 

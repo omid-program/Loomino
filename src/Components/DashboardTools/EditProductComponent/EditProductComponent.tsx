@@ -14,6 +14,8 @@ import { format } from '@/date-fns-jalali';
 import jalaali from 'jalaali-js';
 import Container from '@/Components/Container/Container';
 import PagesTitle from '@/Components/PageTitle/PagesTitle';
+import { API_BASE_URL } from './../../../../config';
+
 
 interface TPerCreatedAt {
 	year: string;
@@ -47,14 +49,14 @@ function EditProductComponent({ id }: TEditProductComponent) {
 	const [isoDateGenState, setIsoDateGenState] = useState<string>();
 
 	const getCatHand = async () => {
-		const catResponse = await fetch(`http://localhost:8000/cats`);
+		const catResponse = await fetch(`${API_BASE_URL}/cats`);
 		const catFetched = (await catResponse.json()) as TCatDatas[];
 		setCatData(catFetched);
 		setCatData(catFetched);
 		// console.log("catFetched => " , catFetched);
 	};
 	const getTagHand = async () => {
-		const tagResponse = await fetch(`http://localhost:8000/tags`);
+		const tagResponse = await fetch(`${API_BASE_URL}/tags`);
 		const tagFetched = await tagResponse.json();
 		setTagData(tagFetched);
 	};
@@ -62,7 +64,7 @@ function EditProductComponent({ id }: TEditProductComponent) {
 	useEffect(() => {
 		async function getProduct() {
 			try {
-				const response = await fetch(`http://localhost:8000/fabrics/${id}`);
+				const response = await fetch(`${API_BASE_URL}/fabrics/${id}`);
 				const data = (await response.json()) as TAllProductData;
 				setFabricData(data);
 				setIsoDateGenState(data.createdAt);
@@ -164,7 +166,7 @@ function EditProductComponent({ id }: TEditProductComponent) {
 			};
 			try {
 				const response = await fetch(
-					`http://localhost:8000/fabrics/${id}`,
+					`${API_BASE_URL}/fabrics/${id}`,
 					{
 						method: 'PUT',
 						headers: { 'Content-Type': 'application/json' },

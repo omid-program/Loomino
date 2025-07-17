@@ -5,12 +5,14 @@ import ProductBox from '@/Components/ProductBox/ProductBox';
 import { TAllProductData, TTagParams } from '@/types';
 import Link from 'next/link';
 import React from 'react';
+import { API_BASE_URL } from './../../../../config';
+
 
 async function TagItemPage({ params }: TTagParams) {
 	const { id } = await params;
-	const productResponse = await fetch(`http://localhost:8000/fabrics`);
+	const productResponse = await fetch(`${API_BASE_URL}/fabrics`);
 	const productData = (await productResponse.json()) as TAllProductData[];
-	const tagsResponse = await fetch(`http://localhost:8000/tags/${id}`);
+	const tagsResponse = await fetch(`${API_BASE_URL}/tags/${id}`);
 
 	const tagsProduct = productData.filter(product => {
 		return product.tags.find(tag => tag.id === id);

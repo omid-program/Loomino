@@ -4,6 +4,8 @@ import { TAllOrdData, TAllProductData, TEditProductComponent } from '@/types';
 import { LineChart } from '@mui/x-charts';
 import { format, toDate } from 'date-fns-jalali';
 import React, { useEffect, useState } from 'react';
+import { API_BASE_URL } from './../../../../config';
+
 
 function ProductRaportChart({ id }: TEditProductComponent) {
 	const now = new Date();
@@ -18,13 +20,14 @@ function ProductRaportChart({ id }: TEditProductComponent) {
 	const [monthSales, setMonthSales] = useState<number[]>([]);
 	const [dayActive, setDayActive] = useState<boolean>(true);
 
+
 	const getOrdData = async () => {
-		const response = await fetch('http://localhost:8000/ords');
+		const response = await fetch(`${API_BASE_URL}/ords`);
 		const data = (await response.json()) as TAllOrdData[];
 		setAllOrds(data);
 	};
 	const getTitleProduct = async () => {
-		const productRes = await fetch(`http://localhost:8000/fabrics/${id}`);
+		const productRes = await fetch(`${API_BASE_URL}/fabrics/${id}`);
 		const productData = (await productRes.json()) as TAllProductData;
 		setProductTitle(productData.perTitle);
 	};

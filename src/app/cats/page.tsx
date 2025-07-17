@@ -5,9 +5,10 @@ import PagesTitle from '@/Components/PageTitle/PagesTitle';
 import Link from '@/next/link';
 import { TCatDatas } from '@/types';
 import React from 'react';
+import { API_BASE_URL } from './../../../config';
 
 async function Cats() {
-	const response = await fetch(`http://localhost:8000/cats`);
+	const response = await fetch(`${API_BASE_URL}/cats`);
 	const catDatas = (await response.json()) as TCatDatas[];
 	// console.log(catDatas);
 

@@ -5,12 +5,13 @@ import PaginationBtns from '../PaginationBtns/PaginationBtns';
 import ProductManager from '@/app/dashboard/product-manager/page';
 import ProductManagerEditActions from '../ProductManagerEditActions/ProductManagerEditActions';
 import ProductManagerRaportAction from '../ProductManagerRaportAction/ProductManagerRaportAction';
+import { API_BASE_URL } from './../../../../config';
 
 function ProductManagerTable() {
 	const [allFabric, setAllFabric] = useState<TAllProductData[]>([]);
 	useEffect(() => {
 		async function getAllfubric() {
-			const response = await fetch(`http://localhost:8000/fabrics`);
+			const response = await fetch(`${API_BASE_URL}/fabrics`);
 			const fabricData = (await response.json()) as TAllProductData[];
 			setAllFabric(fabricData);
 			console.log(fabricData);

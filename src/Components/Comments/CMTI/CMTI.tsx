@@ -5,6 +5,8 @@ import React, { useState } from 'react';
 import UserInfoModal from '../CommentModal/UserInfoModal/UserInfoModal';
 import CommentTextModal from '../CommentModal/CommentTextModal/CommentTextModal';
 import { space } from '@/postcss/lib/list';
+import { API_BASE_URL } from './../../../../config';
+
 import axios from '@/axios';
 
 function CMTI(props: TCommetsData) {
@@ -28,7 +30,7 @@ function CMTI(props: TCommetsData) {
 		if (isLoading) return;
 		try {
 			setIsLoading(true);
-			await axios.patch(`http://localhost:8000/comments/${id}`, {
+			await axios.patch(`${API_BASE_URL}/comments/${id}`, {
 				isShow: newIsShow,
 			});
 			// setIsValid(newIsShow);

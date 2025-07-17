@@ -4,6 +4,7 @@ import { TOffCodes, TUserOrds } from '@/types';
 import { formatPrice } from '@/utils/price';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { API_BASE_URL } from './../../../config';
 
 function TotalPriceBox() {
 	const { userOrd, addOffcode, userOffCode } = useShappingCartContext();
@@ -30,7 +31,7 @@ function TotalPriceBox() {
 	}, [qtyList]);
 
 	const offCodeHan = () => {
-		axios(`http://localhost:8000/offs/?offCode=${offCodeInput}`).then(
+		axios(`${API_BASE_URL}/offs/?offCode=${offCodeInput}`).then(
 			result => {
 				console.log('result=>', result);
 

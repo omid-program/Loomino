@@ -26,6 +26,8 @@ import { useShappingCartContext } from '@/context/ShappongCartContext';
 import { formatPrice } from '@/utils/price';
 import { GrLogout } from '@/react-icons/gr';
 import { TCatDatas, TLinksData } from '@/types';
+import { API_BASE_URL } from './../../../../../config';
+
 
 export default function AccountMenu() {
 	// {children}:{children:React.ReactNode}
@@ -44,7 +46,7 @@ export default function AccountMenu() {
 
 	const [catInfo, setCatInfo] = useState<TCatDatas[]>();
 	const getCatData = async () => {
-		const catRes = await fetch(`http://localhost:8000/cats`);
+		const catRes = await fetch(`${API_BASE_URL}/cats`);
 		const catData = (await catRes.json()) as TCatDatas[];
 		setCatInfo(catData);
 	};

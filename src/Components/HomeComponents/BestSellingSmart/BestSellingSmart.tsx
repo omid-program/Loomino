@@ -4,14 +4,16 @@ import { getTopSellingProductsAdvanced } from '@/utils/getTopSellingProductsAdva
 import { TAllOrdData, TAllProductData, TSpetialOfferData } from '@/types';
 import ProductCard from '@/Components/Cards/ProductCard/ProductCard';
 import Link from '@/next/link';
+import { API_BASE_URL } from './../../../../config';
+
 
 async function BestSellingSmart(props: { title: string; api: string }) {
 	const { api, title } = props;
 
-	const productRes = await fetch(`http://localhost:8000/fabrics`);
+	const productRes = await fetch(`${API_BASE_URL}/fabrics`);
 	const productData = (await productRes.json()) as TAllProductData[];
 
-	const spOfferRes = await fetch(`http://localhost:8000/spetialOffer`);
+	const spOfferRes = await fetch(`${API_BASE_URL}/spetialOffer`);
 	const spOfferData = (await spOfferRes.json()) as TSpetialOfferData;
 
 	const ordRes = await fetch(api);

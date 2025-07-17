@@ -3,11 +3,13 @@ import { TAllOrdData, TAllProductData } from '@/types';
 import React, { useEffect, useState } from 'react';
 import OrdTableBox from '../OrdTableBox/OrdTableBox';
 import Container from '@/Components/Container/Container';
+import { API_BASE_URL } from './../../../../config';
+
 
 function OrdManagerTable2() {
 	const [ordsDataState, setOrdsDataState] = useState<TAllOrdData[]>();
 	const getOrdsData = async () => {
-		const response = await fetch(`http://localhost:8000/ords`);
+		const response = await fetch(`${API_BASE_URL}/ords`);
 		const ordsData = (await response.json()) as TAllOrdData[];
 		const sortedOrdsData = ordsData.sort((a, b) => {
 			let aStock = Number(

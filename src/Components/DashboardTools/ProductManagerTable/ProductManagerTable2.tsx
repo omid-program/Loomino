@@ -13,6 +13,8 @@ import { TiDeleteOutline } from 'react-icons/ti';
 import RemoveModal from '../RemoveModal/RemoveModal';
 import PMTSOI from './PMTSOI/PMTSOI';
 import { formatPrice } from '@/utils/price';
+import { API_BASE_URL } from './../../../../config';
+
 
 // | products paginated and Filtred
 
@@ -45,13 +47,13 @@ function ProductManagerTable2(props: TProductManagerTable2Props) {
 	const buttons = [];
 
 	const getAllProducts = async () => {
-		const response = await fetch(`http://localhost:8000/fabrics`);
+		const response = await fetch(`${API_BASE_URL}/fabrics`);
 		const productsData = (await response.json()) as TAllProductData[];
 		setAllProductDatas(productsData);
 		// setFiltredProductData(productsData);
 	};
 	const getAllCats = async () => {
-		const response = await fetch(`http://localhost:8000/cats`);
+		const response = await fetch(`${API_BASE_URL}/cats`);
 		const catDataFetched = await response.json();
 		setCatData(catDataFetched);
 	};
@@ -146,7 +148,7 @@ function ProductManagerTable2(props: TProductManagerTable2Props) {
 	const removeProductHandeler = async () => {
 		if (!seletedItem) return;
 		const response = await fetch(
-			`http://localhost:8000/fabrics/${seletedItem.id}`,
+			`${API_BASE_URL}/fabrics/${seletedItem.id}`,
 			{
 				method: 'DELETE',
 			}

@@ -14,10 +14,12 @@ import {
 } from '@/types';
 import Link from 'next/link';
 import React from 'react';
+import { API_BASE_URL } from './../../../config';
+
 import { deserialize } from 'v8';
 
 async function Shop({ searchParams }: TShopParams) {
-	// const response = await fetch(`http://localhost:8000/fabrics`);
+	// const response = await fetch(`${API_BASE_URL}/fabrics`);
 	const page = (await searchParams).page ?? '1';
 	const per_page = (await searchParams).per_page ?? '6';
 	const title = (await searchParams).title ?? '';
@@ -28,7 +30,7 @@ async function Shop({ searchParams }: TShopParams) {
 	
 
 
-	let url = `http://localhost:8000/fabrics?_page=${page}&_per_page=${per_page}`;
+	let url = `${API_BASE_URL}/fabrics?_page=${page}&_per_page=${per_page}`;
 
 	if (title.trim()) {
 		url += `&perTitle=${encodeURIComponent(title)}`;
@@ -39,11 +41,11 @@ async function Shop({ searchParams }: TShopParams) {
 	console.log(allProducts);
 
 	// spetial-Offer / پیشنهاد ویژه
-	const spOfferRes = await fetch(`http://localhost:8000/spetialOffer`);
+	const spOfferRes = await fetch(`${API_BASE_URL}/spetialOffer`);
 	const spOfferData = (await spOfferRes.json()) as TSpetialOfferData;
 
 	if (new Date(spOfferData.time) < new Date()) {
-		await fetch(`http://localhost:8000/spetialOffer`, {
+		await fetch(`${API_BASE_URL}/spetialOffer`, {
 			method: 'PUT',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({

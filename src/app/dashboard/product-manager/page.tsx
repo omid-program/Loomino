@@ -5,6 +5,7 @@ import ProductManagerTable2 from '@/Components/DashboardTools/ProductManagerTabl
 import { TspetialOfferList, TSpetialOfferData, TOfferPackData } from '@/types';
 import React, { useEffect, useState } from 'react';
 import { getDay, getMonth, getYear, newDate } from '@/date-fns-jalali';
+import { API_BASE_URL } from './../../../../config';
 
 function ProductManager() {
 	const [spetialOfferList, setSpetialOfferList] = useState<
@@ -37,7 +38,7 @@ function ProductManager() {
 	};
 
 	const getSpetialOferData = async () => {
-		const spdRes = await fetch(`http://localhost:8000/spetialOffer`);
+		const spdRes = await fetch(`${API_BASE_URL}/spetialOffer`);
 		const data = (await spdRes.json()) as TSpetialOfferData;
 		const perMonth = String(getMonth(data.time));
 		const perDay = String(getDay(data.time));
@@ -104,7 +105,7 @@ function ProductManager() {
 			};
 
 			// مرحله 3: ارسال به سرور
-			const res = await fetch(`http://localhost:8000/spetialOffer`, {
+			const res = await fetch(`${API_BASE_URL}/spetialOffer`, {
 				method: 'PUT',
 				headers: {
 					'Content-Type': 'application/json',
@@ -142,7 +143,7 @@ function ProductManager() {
 		};
 
 		try {
-			const res = await fetch(`http://localhost:8000/spetialOffer`, {
+			const res = await fetch(`${API_BASE_URL}/spetialOffer`, {
 				method: 'PUT',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify(newSpetialOffer),
@@ -166,7 +167,7 @@ function ProductManager() {
 				monthExpier: '',
 				spetialOfferText: '',
 			});
-			const clearRes = await fetch(`http://localhost:8000/spetialOffer`, {
+			const clearRes = await fetch(`${API_BASE_URL}/spetialOffer`, {
 				method: 'PUT',
 				headers: { 'Content-Type': 'applocation/json' },
 				body: JSON.stringify({

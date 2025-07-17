@@ -9,6 +9,7 @@ import { patch } from '@mui/material';
 import OrdDetailModal from './OrdDetailModal/OrdDetailModal';
 import OrdAddresModal from './OrdAddresModal/OrdAddresModal';
 import { formatPrice } from '@/utils/price';
+import { API_BASE_URL } from './../../../../config';
 
 function OrdTableBox(props: TAllOrdData) {
 	const { id, date, orders, country, city, address, statusCode, state } =
@@ -49,7 +50,7 @@ function OrdTableBox(props: TAllOrdData) {
 			return;
 		}
 		try {
-			await axios.patch(`http://localhost:8000/ords/${id}`, {
+			await axios.patch(`${API_BASE_URL}/ords/${id}`, {
 				statusCode: newStatusCode,
 			});
 			setStatusCodeState(newStatusCode);

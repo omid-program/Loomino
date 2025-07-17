@@ -6,6 +6,7 @@ import UserInfoModal from '@/Components/Comments/CommentModal/UserInfoModal/User
 import CommentTextModal from '@/Components/Comments/CommentModal/CommentTextModal/CommentTextModal';
 import CMTI from '@/Components/Comments/CMTI/CMTI';
 import PagesTitle from '@/Components/PageTitle/PagesTitle';
+import { API_BASE_URL } from './../../../../config';
 
 type TShowUserInfoModal = (
 	email: string,
@@ -50,7 +51,7 @@ function CommentManager() {
 		},
 	];
 	const getAllComment = async () => {
-		const res = await fetch(`http://localhost:8000/comments`);
+		const res = await fetch(`${API_BASE_URL}/comments`);
 		const data = (await res.json()) as TCommetsData[];
 		setAllCommentDatas(data);
 	};

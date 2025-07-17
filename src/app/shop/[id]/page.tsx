@@ -11,14 +11,15 @@ import {
 } from '@/types';
 import Link from 'next/link';
 import React from 'react';
+import { API_BASE_URL } from './../../../../config';
 
 async function ProductPage({ params }: TProductPageParams) {
 	const { id } = await params;
 	console.log('productPage=>', id);
-	const response = await fetch(`http://localhost:8000/fabrics/${id}`);
+	const response = await fetch(`${API_BASE_URL}/fabrics/${id}`);
 	const productData = (await response.json()) as TAllProductData;
 
-	const spOfferRes = await fetch(`http://localhost:8000/spetialOffer`);
+	const spOfferRes = await fetch(`${API_BASE_URL}/spetialOffer`);
 	const spOfferData = (await spOfferRes.json()) as TSpetialOfferData;
 
 	const colorList = productData?.inStore as TInStoreAllProduct[];

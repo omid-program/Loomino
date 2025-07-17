@@ -10,9 +10,11 @@ import { BsCart4 } from 'react-icons/bs';
 import { TbChartArcs } from 'react-icons/tb';
 
 import LogoutComponent from '../LogoutComponent/LogoutComponent';
+import { API_BASE_URL } from './../../../../config';
+
 
 async function ServerNavbar() {
-	const response = await fetch(`http://localhost:8000/cats`);
+	const response = await fetch(`${API_BASE_URL}/cats`);
 	const catData = (await response.json()) as TCatDatas[];
 
 	const navLinks: TLinksData[] = [

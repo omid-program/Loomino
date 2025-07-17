@@ -1,6 +1,8 @@
 'use client';
 import { TCommetsData } from '@/types';
 import React, { useState } from 'react';
+import { API_BASE_URL } from './../../../../config';
+
 
 interface ICommentImportProps {
 	productId: string;
@@ -49,7 +51,7 @@ function CommentsImport(props: ICommentImportProps) {
 	const sendCommentHandler = () => {
 		try {
 			commentInfo &&
-				fetch(`http://localhost:8000/comments`, {
+				fetch(`${API_BASE_URL}/comments`, {
 					method: 'POST',
 					headers: { 'Content-Type': 'application/json' },
 					body: JSON.stringify(commentInfo),

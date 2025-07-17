@@ -13,6 +13,7 @@ import {
 } from '@/context/ShappongCartContext';
 import { format, toDate } from 'date-fns-jalali';
 import { LuNotebookPen } from 'react-icons/lu';
+import { API_BASE_URL } from 'config';
 
 function OrderShappingInfo() {
 	// ------------function for colected information---------------
@@ -82,7 +83,7 @@ function OrderShappingInfo() {
 		try {
 			await axios({
 				method: 'POST',
-				url: 'http://localhost:8000/ords',
+				url: `${API_BASE_URL}/ords`,
 				data: {
 					id: crypto.randomUUID(),
 					statusCode: 0,
@@ -109,15 +110,6 @@ function OrderShappingInfo() {
 					},
 				},
 			});
-			// setOrdDate(formatDate);
-			// await axios({
-			// 	method:'POST',
-			// 	url:'http://localhost:8000/sailRaport',
-			// 	data:{
-			// 		date: formatDate,
-			// 		basket: userOrd
-			// 	}
-			// })
 			alert('ارسال داده ها با موفقیت انجام شد');
 		} catch (error) {
 			console.log('خطا در ارسال داده ها', error);

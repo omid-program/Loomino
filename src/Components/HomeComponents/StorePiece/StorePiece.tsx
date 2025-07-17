@@ -6,6 +6,8 @@ import TitleSectionHome from '../TitleSectionHome/TitleSectionHome';
 import CatItemBox from '@/Components/CartTools/CatItemBox/CatItemBox';
 import CatCard from '@/Components/Cards/CatCard/CatCard';
 import ProductCard from '@/Components/Cards/ProductCard/ProductCard';
+import { API_BASE_URL } from './../../../../config';
+
 
 async function StorePiece(props: {
 	title: string;
@@ -17,7 +19,7 @@ async function StorePiece(props: {
 	const data = (await res.json()) as TProductBoxData[];
 
 	// spetial-Offer / پیشنهاد ویژه
-	const spOfferRes = await fetch(`http://localhost:8000/spetialOffer`);
+	const spOfferRes = await fetch(`${API_BASE_URL}/spetialOffer`);
 	const spOfferData = (await spOfferRes.json()) as TSpetialOfferData;
 
 	return (

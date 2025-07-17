@@ -6,6 +6,7 @@ import RemoveModal from '@/Components/DashboardTools/RemoveModal/RemoveModal';
 import PagesTitle from '@/Components/PageTitle/PagesTitle';
 import { TCatDatas, TTagData } from '@/types';
 import React, { useEffect, useState } from 'react';
+import { API_BASE_URL } from './../../../../config';
 
 function AddItemPage() {
 	const [catDatas, setCatDatas] = useState<TCatDatas[]>();
@@ -26,12 +27,12 @@ function AddItemPage() {
 	const [removeUrl, setRemoveUrl] = useState<string>();
 
 	const getCats = async () => {
-		const catResponse = await fetch(`http://localhost:8000/cats`);
+		const catResponse = await fetch(`${API_BASE_URL}/cats`);
 		const catFetched = (await catResponse.json()) as TCatDatas[];
 		setCatDatas(catFetched);
 	};
 	const getTag = async () => {
-		const tagResponse = await fetch(`http://localhost:8000/tags`);
+		const tagResponse = await fetch(`${API_BASE_URL}/tags`);
 		const tagsFetched = (await tagResponse.json()) as TTagData[];
 		setTagData(tagsFetched);
 	};
@@ -111,7 +112,7 @@ function AddItemPage() {
 											id: tag.id,
 											perTitle: tag.TagName,
 										});
-										setRemoveUrl('http://localhost:8000/tags');
+										setRemoveUrl(`${API_BASE_URL}/tags`);
 									}}
 								>
 									{tag.perTitle}
@@ -150,7 +151,7 @@ function AddItemPage() {
 											id: cat.id,
 											perTitle: cat.perTitle,
 										});
-										setRemoveUrl(`http://localhost:8000/cats`);
+										setRemoveUrl(`${API_BASE_URL}/cats`);
 									}}
 								>
 									{/* onClick for go to remove cat modal */}

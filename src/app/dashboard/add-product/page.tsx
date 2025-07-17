@@ -13,6 +13,8 @@ import {
 import { randomUUID } from 'crypto';
 import { format } from 'date-fns-jalali';
 import jalaali from 'jalaali-js';
+import { API_BASE_URL } from './../../../../config';
+
 
 import React, { useEffect, useMemo, useState } from 'react';
 // import {} from 'date-fns-jalali'
@@ -58,18 +60,6 @@ function AddProduct() {
 		month: '',
 		day: '',
 	});
-	// submit-btn-desyne
-	// const [submitData, setSubmitData] = useState<boolean>(false);
-
-	// useMemo(() => {
-	// 	setSubmitData(false)
-	// }, [
-	// 	fabricData,
-	// 	inStoreState,
-	// 	catSelectVal,
-	// 	selectedTag,
-	// 	perCreatedAt,
-	// ]);
 	const inputCommonItems = [
 		{
 			id: 1,
@@ -164,13 +154,13 @@ function AddProduct() {
 	];
 
 	const getCats = async () => {
-		const catResponse = await fetch(`http://localhost:8000/cats`);
+		const catResponse = await fetch(`${API_BASE_URL}/cats`);
 		const catFetched = (await catResponse.json()) as TCatDatas[];
 		setCatData(catFetched);
 		// console.log('CatData => ', catData);
 	};
 	const getTags = async () => {
-		const tagResponse = await fetch(`http://localhost:8000/tags`);
+		const tagResponse = await fetch(`${API_BASE_URL}/tags`);
 		const tagFetched = (await tagResponse.json()) as TTagData[];
 		setTagData(tagFetched);
 		// console.log('tagFetched=> ', tagFetched);
@@ -296,7 +286,7 @@ function AddProduct() {
 		if (fabricData) {
 			// const updatedData = { ...fabricData, inStore: inStoreState };
 			try {
-				const response = await fetch(`http://localhost:8000/fabrics`, {
+				const response = await fetch(`${API_BASE_URL}/fabrics`, {
 					method: 'POST',
 					headers: { 'Content-Type': 'application/json' },
 					body: JSON.stringify(fabricData),

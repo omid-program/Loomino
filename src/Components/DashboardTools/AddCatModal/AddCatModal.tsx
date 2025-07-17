@@ -4,6 +4,8 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { TCatDatas, TProductCatData } from '@/types';
+import { API_BASE_URL } from './../../../../config';
+
 
 const style = {
 	position: 'absolute',
@@ -129,7 +131,7 @@ export default function AddCatModal(
 	const sendNewCatToDatabase = async () => {
 		if (catInputData) {
 			try {
-				const response = await fetch('http://localhost:8000/cats', {
+				const response = await fetch(`${API_BASE_URL}/cats`, {
 					method: 'POST',
 					headers: { 'Contetnt-Type': 'application/json' },
 					body: JSON.stringify(catInputData),

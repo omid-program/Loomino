@@ -7,14 +7,16 @@ import dayjs from 'dayjs'
 import duration from 'dayjs/plugin/duration'
 import SpetialOfferTimer from '../SpetialOfferTimer/SpetialOfferTimer';
 import ProductCard from '@/Components/Cards/ProductCard/ProductCard';
+import { API_BASE_URL } from './../../../../config';
+
 
 async function SpetialOffer() {
    dayjs.extend(duration)
 
-	const proRes = await fetch(`http://localhost:8000/fabrics`);
+	const proRes = await fetch(`${API_BASE_URL}/fabrics`);
 	const proData = (await proRes.json()) as TAllProductData[];
 
-	const offerRes = await fetch(`http://localhost:8000/spetialOffer`);
+	const offerRes = await fetch(`${API_BASE_URL}/spetialOffer`);
 	const offerData = (await offerRes.json()) as TSpetialOfferData;
    
    console.log(offerData.time);
