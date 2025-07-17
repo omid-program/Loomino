@@ -56,7 +56,7 @@ function layout({
 					<div className=" mx-auto text-center size-24 rounded-full  shadow-md shadow-violet-200 flex justify-center items-center font-bold bg-cover">
 						<img
 							className="max-w-full"
-							src="logo/omid-program-dark-logo-light-mode.png"
+							src="logo/omid-program-logo-L-07.png"
 							alt=""
 						/>
 					</div>

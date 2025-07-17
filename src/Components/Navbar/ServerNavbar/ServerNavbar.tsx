@@ -35,6 +35,12 @@ async function ServerNavbar() {
 			subItems: catData,
 			link: '/cats',
 		},
+		{
+			id: 4,
+			perTitle: 'درباره ما',
+			engTitle: 'About us',
+			link: '/aboutUs',
+		},
 		// {
 		// 	id: 4,
 		// 	perTitle: 'داشبورد',
@@ -70,7 +76,7 @@ async function ServerNavbar() {
 				<div className="bg-cover w-20 flex items-center">
 					<img
 						className="max-w-full"
-						src="logo/omid-program-dark-logo-light-mode.png"
+						src="logo/omid-program-logo-L-07.png"
 						alt=""
 					/>
 				</div>

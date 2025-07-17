@@ -17,7 +17,16 @@ async function BestSellingSmart(props: { title: string; api: string }) {
 	const ordRes = await fetch(api);
 	const ordData = (await ordRes.json()) as TAllOrdData[];
 
-	const topSelling = getTopSellingProductsAdvanced(ordData, {
+	const validProductIds = new Set(productData.map(p => p.id));
+	const filteredOrders = ordData.map(order => ({
+		...order,
+		orders: order.orders.map(subOrder => ({
+			...subOrder,
+			items: subOrder.items.filter(item => validProductIds.has(item.id)),
+		})),
+	}));
+
+	const topSelling = getTopSellingProductsAdvanced(filteredOrders, {
 		sortBy: 'quantity',
 		limit: 4,
 	});

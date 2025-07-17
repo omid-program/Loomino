@@ -4,7 +4,7 @@ import { TAllProductData, TSpetialOfferData } from '@/types';
 import ProductBox from '@/Components/ProductBox/ProductBox';
 import Link from '@/next/link';
 import ProductCard from '@/Components/Cards/ProductCard/ProductCard';
-import ModernLineCard from '@/Components/Cards/ModernLineCard/ModernLineCard';
+import TitleSectionHomeSec from '../TitleSectionHome/TitleSectionHomeSec';
 
 async function NewestProductPiece() {
 	const res = await fetch(`http://localhost:8000/fabrics`);
@@ -24,7 +24,7 @@ async function NewestProductPiece() {
 
 	return (
 		<div className="bg-violet-100 p-1 rounded-lg my-8">
-			<TitleSectionHome title="جدیدترین پارچه ها" />
+			<TitleSectionHomeSec title="جدیدترین پارچه ها" />
 
 			{/* <ModernLineCard {...newestProducts}>
 				<div></div>
