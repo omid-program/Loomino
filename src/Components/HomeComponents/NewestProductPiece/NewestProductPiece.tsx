@@ -5,7 +5,7 @@ import ProductBox from '@/Components/ProductBox/ProductBox';
 import Link from '@/next/link';
 import ProductCard from '@/Components/Cards/ProductCard/ProductCard';
 import TitleSectionHomeSec from '../TitleSectionHome/TitleSectionHomeSec';
-import { API_BASE_URL } from './../../../../config';
+import { API_BASE_URL , API_INSIDE_URL } from './../../../../config';
 
 
 async function NewestProductPiece() {
@@ -41,7 +41,7 @@ async function NewestProductPiece() {
 					);
 					return (
 						<Link
-							href={`http://localhost:3000/shop/${product.id}`}
+							href={`${API_INSIDE_URL}/shop/${product.id}`}
 							key={product.id}
 						>
 							<ProductCard

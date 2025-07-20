@@ -7,7 +7,7 @@ import dayjs from 'dayjs'
 import duration from 'dayjs/plugin/duration'
 import SpetialOfferTimer from '../SpetialOfferTimer/SpetialOfferTimer';
 import ProductCard from '@/Components/Cards/ProductCard/ProductCard';
-import { API_BASE_URL } from './../../../../config';
+import { API_BASE_URL , API_INSIDE_URL } from './../../../../config';
 
 
 async function SpetialOffer() {
@@ -45,7 +45,7 @@ async function SpetialOffer() {
 					// );
 					return (
 						<Link
-							href={`http://localhost:3000/shop/${product.id}`}
+							href={`${API_INSIDE_URL}/shop/${product.id}`}
 							key={product.id}
 						>
 							<ProductCard

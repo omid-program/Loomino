@@ -10,7 +10,7 @@ import {
 } from '@/types';
 import axios from 'axios';
 import Link from '@/next/link';
-import { API_BASE_URL } from './../../../../config';
+import { API_BASE_URL , API_INSIDE_URL } from './../../../../config';
 
 
 function CartItem(props: TCartItemProps) {
@@ -96,7 +96,7 @@ function CartItem(props: TCartItemProps) {
 		<div className="grid col-span-2 md:col-span-1 grid-cols-2 shadow-lg shadow-violet-200 my-2 rounded-md p-2 gap-2">
 			<div className="col-span-1 rounded-sm bg-cover overflow-hidden">
 				{imageCartItem && (
-					<Link href={`http://localhost:3000/shop/${id}`}>
+					<Link href={`${API_INSIDE_URL}/shop/${id}`}>
 						<img
 							src={imageCartItem.colorImg}
 							alt="Product Image"

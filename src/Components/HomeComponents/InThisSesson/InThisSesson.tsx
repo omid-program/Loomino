@@ -5,7 +5,7 @@ import TitleSectionHome from '../TitleSectionHome/TitleSectionHome';
 import { AiFillProduct } from '@/react-icons/ai';
 import Link from '@/next/link';
 import ProductCard from '@/Components/Cards/ProductCard/ProductCard';
-import { API_BASE_URL } from './../../../../config';
+import { API_BASE_URL , API_INSIDE_URL } from './../../../../config';
 
 
 async function InThisSesson() {
@@ -57,7 +57,7 @@ async function InThisSesson() {
 			<main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-screen-lg mx-auto p-4 font-yekan">
 				{/* {seasonProducts.map(prod => (
 					<Link
-						href={`http://localhost:3000/shop/${prod.id}`}
+						href={`${API_INSIDE_URL}/shop/${prod.id}`}
 						key={prod.id}
 					>
 						<ProductBox {...prod} />
@@ -69,7 +69,7 @@ async function InThisSesson() {
 					);
 					return (
 						<Link
-							href={`http://localhost:3000/shop/${product.id}`}
+							href={`${API_INSIDE_URL}/shop/${product.id}`}
 							key={product.id}
 						>
 							<ProductCard

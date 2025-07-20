@@ -4,7 +4,7 @@ import { getTopSellingProductsAdvanced } from '@/utils/getTopSellingProductsAdva
 import { TAllOrdData, TAllProductData, TSpetialOfferData } from '@/types';
 import ProductCard from '@/Components/Cards/ProductCard/ProductCard';
 import Link from '@/next/link';
-import { API_BASE_URL } from './../../../../config';
+import { API_BASE_URL, API_INSIDE_URL } from './../../../../config';
 
 
 async function BestSellingSmart(props: { title: string; api: string }) {
@@ -46,7 +46,7 @@ async function BestSellingSmart(props: { title: string; api: string }) {
 						item => item.productId === product?.id
 					);
 					return (
-						<Link href={`http://localhost:3000/shop/${product?.id}`}>
+						<Link href={`${API_INSIDE_URL}/shop/${product?.id}`}>
 							<ProductCard
 								key={product?.id}
 								offerPersentage={spOfferItem?.persentage}

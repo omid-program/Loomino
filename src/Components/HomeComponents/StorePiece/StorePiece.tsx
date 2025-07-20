@@ -6,7 +6,7 @@ import TitleSectionHome from '../TitleSectionHome/TitleSectionHome';
 import CatItemBox from '@/Components/CartTools/CatItemBox/CatItemBox';
 import CatCard from '@/Components/Cards/CatCard/CatCard';
 import ProductCard from '@/Components/Cards/ProductCard/ProductCard';
-import { API_BASE_URL } from './../../../../config';
+import { API_BASE_URL , API_INSIDE_URL } from './../../../../config';
 
 async function StorePiece(props: {
 	title: string;
@@ -32,7 +32,7 @@ async function StorePiece(props: {
 					if (kind === 'shop') {
 						return (
 							<Link
-								href={`http://localhost:3000/${kind}/${product.id}`}
+								href={`${API_INSIDE_URL}/${kind}/${product.id}`}
 								className="col-span-1"
 								key={product.id}
 							>
@@ -45,7 +45,7 @@ async function StorePiece(props: {
 					} else {
 						return (
 							<Link
-								href={`http://localhost:3000/${kind}/${product.id}`}
+								href={`${API_INSIDE_URL}/${kind}/${product.id}`}
 								className="col-span-1"
 							>
 								{product.defImg &&
