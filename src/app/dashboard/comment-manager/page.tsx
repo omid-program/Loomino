@@ -1,18 +1,11 @@
 'use client';
 import { TCommentUserInfo, TCommetsData } from '@/types';
 import React, { useEffect, useMemo, useState } from 'react';
-import moment from 'moment-jalaali';
-import UserInfoModal from '@/Components/Comments/CommentModal/UserInfoModal/UserInfoModal';
-import CommentTextModal from '@/Components/Comments/CommentModal/CommentTextModal/CommentTextModal';
 import CMTI from '@/Components/Comments/CMTI/CMTI';
 import PagesTitle from '@/Components/PageTitle/PagesTitle';
 import { API_BASE_URL } from './../../../../config';
 
-type TShowUserInfoModal = (
-	email: string,
-	name: string,
-	phoneNumber: string
-) => void;
+
 type FilterMode = 'all' | 'show' | 'hide';
 
 function CommentManager() {

@@ -1,5 +1,5 @@
 'use client';
-import { TInStoreAllProduct, TSmartImgProps, TUserOrds } from '@/types';
+import { TColorItem, TSmartImgProps, TUserOrds } from '@/types';
 import React, { useState } from 'react';
 import QtyManager from '../QtyManager/QtyManager';
 
@@ -22,7 +22,9 @@ function SmartImg(props: TSmartImgProps) {
 
 	const [imgShadow, setImgShadow] = useState<string>(colorList[0].colorCode);
 
-	const changeImgColor = (colorSelectImg: TInStoreAllProduct) => {
+	const changeImgColor = (colorSelectImg: TColorItem) => {
+		// console.log('colorSelectImg=> ' ,colorSelectImg);
+		
 		if (colorSelectImg?.colorImg) {
 			setColorImg(colorSelectImg.colorImg);
 			colorSelectImg.colorCode && setImgShadow(colorSelectImg.colorCode);

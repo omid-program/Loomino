@@ -12,7 +12,7 @@ function FooterContainer({ children }: { children: React.ReactNode }) {
 			{/* به تمام کارت‌ها این تابع رو پاس بده */}
 			{React.Children.map(children, child => {
 				if (React.isValidElement(child)) {
-					return React.cloneElement(child, { setHoverColor });
+					return React.cloneElement(child as React.ReactElement<{setHoverColor:(colorTeam:string | null)=>void }>, { setHoverColor });
 				}
 				return child;
 			})}

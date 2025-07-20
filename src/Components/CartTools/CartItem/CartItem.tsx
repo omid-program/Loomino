@@ -4,7 +4,7 @@ import QtyManager from '../../QtyManager/QtyManager';
 import {
 	TAllProductData,
 	TCartItemProps,
-	TInStoreAllProduct,
+	TColorItem,
 	TSpetialOfferData,
 	TspetialOfferList,
 } from '@/types';
@@ -19,7 +19,7 @@ function CartItem(props: TCartItemProps) {
 		null
 	);
 	const [imageCartItem, setImageCartItem] = useState<
-		TInStoreAllProduct | undefined
+		TColorItem | undefined
 	>();
 	const [spOfferDataState, setSpOfferDataState] =
 		useState<TSpetialOfferData>();

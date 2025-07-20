@@ -4,7 +4,7 @@ import Container from '@/Components/Container/Container';
 import SmartImg from '@/Components/SmartImg/SmartImg';
 import {
 	TAllProductData,
-	TInStoreAllProduct,
+	TColorItem,
 	TProductPageParams,
 	TSpetialOfferData,
 	TspetialOfferList,
@@ -14,7 +14,7 @@ import React from 'react';
 import { API_BASE_URL } from './../../../../config';
 
 async function ProductPage({ params }: TProductPageParams) {
-	const { id } = await params;
+	const  { id } = await params;
 	console.log('productPage=>', id);
 	const response = await fetch(`${API_BASE_URL}/fabrics/${id}`);
 	const productData = (await response.json()) as TAllProductData;
@@ -22,7 +22,7 @@ async function ProductPage({ params }: TProductPageParams) {
 	const spOfferRes = await fetch(`${API_BASE_URL}/spetialOffer`);
 	const spOfferData = (await spOfferRes.json()) as TSpetialOfferData;
 
-	const colorList = productData?.inStore as TInStoreAllProduct[];
+	const colorList = productData?.inStore as TColorItem[];
 	//if(spetialOfferDtata.pspetialOfferDataList.filter(item)=>item.id ===id){
 	// /...
 	// }
@@ -42,18 +42,21 @@ async function ProductPage({ params }: TProductPageParams) {
 	console.log('finalPrice', finalPrice);
 
 	const productPrice = Number(productData?.price);
-	console.log(colorList);
+	console.log('colorList=> ', colorList);
 
 	return (
 		<Container>
 			<div className="grid grid-cols-10 gap-16 justify-center items-center md:items-start  ">
 				<div className="col-span-10 justify-center w-10/12 mx-auto md:col-span-3 md:w-full ">
+				
 					<SmartImg
 						id={id}
 						colorList={colorList}
 						price={finalPrice}
 						perTitle={productData.perTitle}
 					/>
+
+				
 				</div>
 				<div className="col-span-10 flex flex-col items-center md:col-span-7 my-2 md:my-8  ">
 					<div className="flex flex-col mb-16 border-2 border-violet-600 rounded-xl px-2 py-4 w-10/12 md:w-11/12 md:mx-auto ">

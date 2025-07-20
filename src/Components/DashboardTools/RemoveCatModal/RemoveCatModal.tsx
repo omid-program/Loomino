@@ -36,18 +36,19 @@ export default function RemoveCatModal({
 	loadingText,
 }: RemoveCatModalProps) {
 	const [loading , setLoading] = React.useState<boolean>(false)
-	const handleRemove = async ()=>{
-		try{
-			setLoading(true)
-			await onRemove()
-			onClose()
-		}catch(error){
-			console.log(error);
+	// what-the-hell
+	// const handleRemove = async ()=>{
+	// 	try{
+	// 		setLoading(true)
+	// 		await onRemove()
+	// 		onClose()
+	// 	}catch(error){
+	// 		console.log(error);
 			
-		}finally{
-			setLoading(false)
-		}
-	}
+	// 	}finally{
+	// 		setLoading(false)
+	// 	}
+	// }
 	return (
 		<Modal
 			open={open}

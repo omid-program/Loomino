@@ -1,5 +1,3 @@
-import { IconType } from "@/react-icons/lib";
-
 export type TSubItemNav = [
 	{
 		id: string;
@@ -26,30 +24,30 @@ export type TLinksData = {
 	engTitle: string;
 	subItems?: TCatDatas[];
 	link: string;
-	icon?:any
+	icon?: any;
 };
 
-export type TInStoreAllProduct = {
-	id: string | undefined;
-	colorName: string | undefined;
-	colorCode: string | undefined;
-	qtys: string | undefined;
-	colorImg: string | undefined;
-};
+// export type TInStoreAllProduct = {
+// 	id: string | undefined;
+// 	colorName: string | undefined;
+// 	colorCode: string | undefined;
+// 	qtys: string | undefined;
+// 	colorImg: string | undefined;
+// };
+
 export type TTagData = {
 	id: string;
 	TagName: string;
 	perTitle: string;
 	engTitle: string;
 };
-export type TProductCatData =
-	| {
-			id: string | undefined;
-			catName: string | undefined;
-			perTitle: string | undefined;
-			engTitle: string | undefined;
-	  }
-	| undefined;
+export type TProductCatData = {
+	id: string | undefined
+	catName: string | undefined
+	perTitle: string | undefined
+	engTitle: string | undefined
+} | undefined;
+
 
 export type TAllProductData = {
 	id: string;
@@ -63,7 +61,7 @@ export type TAllProductData = {
 	rate: number;
 	width: string;
 	tags: TTagData[];
-	inStore: TInStoreAllProduct[];
+	inStore: TColorItem[];
 	cat: TProductCatData;
 	price: number;
 	createdAt: string;
@@ -118,14 +116,14 @@ export type TShopParams = {
 		page: string;
 		per_page: string;
 		title: string;
-		items: string
-		pages: string
+		items: string;
+		pages: string;
 	}>;
 };
 
 export type TProductPageParams = {
 	params: Promise<{ id: string }>;
-	seachPrams: Promise<{}>;
+	searchParams: Promise<{}>;
 };
 export type TCatItemParams = {
 	params: Promise<{ id: string }>;
@@ -143,13 +141,13 @@ export type TColorItem = {
 export type TSmartImgProps = {
 	colorList: TColorItem[];
 	id: string;
-	perTitle: string
+	perTitle: string;
 	price: number | undefined;
 };
 
 export type TItemsOfOrders = {
 	id: string;
-	perTitle: string
+	perTitle: string;
 	colorId: string;
 	qty: number;
 	colorCode: string;
@@ -166,7 +164,7 @@ export type TShappingCartContext = {
 	userOrd: TItemsOfOrders[];
 	addOrdToCart: (
 		id: string,
-		perTitle: string ,
+		perTitle: string,
 		colorId: string,
 		meterCount: number,
 		centiMeterCount: number,
@@ -186,11 +184,11 @@ export type TCartItemProps = {
 };
 export type TQtyManagerProps = {
 	id: string;
-	perTitle?: string
+	perTitle?: string;
 	colorCode: string;
 	price: number;
 	colorId: string | undefined;
-	colorQtys?:number
+	colorQtys?: number;
 };
 
 export type TOffCodes = {
@@ -253,13 +251,17 @@ export type TEditProductComponent = {
 
 export type TProductManagerEditInputProps = {
 	// id: number,
-	label: string;
-	type: string;
-	name: string;
-	isLong: boolean;
-	size: string;
-	value: string;
-	changeInputHand: (e: React.ChangeEvent<HTMLInputElement> |React.ChangeEvent<HTMLTextAreaElement> ) => void;
+	label: string | undefined;
+	type: string | undefined;
+	name: string | undefined;
+	isLong: boolean | undefined;
+	size: string | undefined;
+	value: string | undefined;
+	changeInputHand: (
+		e:
+			| React.ChangeEvent<HTMLInputElement>
+			| React.ChangeEvent<HTMLTextAreaElement>
+	) => void;
 };
 
 export type TEditeBoxInStoreProps = {
@@ -379,7 +381,7 @@ export type TProductBoxData = {
 	rate?: number;
 	width?: string;
 	price?: number;
-} ;
+};
 
 ///////// comments-type
 
@@ -394,7 +396,19 @@ export type TCommetsData = {
 	createdAt: string;
 	commentText: string;
 	isShow: boolean;
-	onStatusChange?: (id: string, newStatus: boolean) => void;
+	onStatusChange: (id: string, newStatus: boolean) => void;
+};
+export type TCommetsInfo = {
+	id: string;
+	productId: string;
+	productTitle: string;
+	productImg: string;
+	name: string;
+	phoneNumber: string;
+	email: string;
+	createdAt: string;
+	commentText: string;
+	isShow: boolean;
 };
 
 export type TCommentUserInfo = {
@@ -438,7 +452,7 @@ export type TAddSpetialOfferDataProps = {
 		day: string,
 		spetialOfferList: TspetialOfferList[]
 	) => void;
-	clearSpetialOffer:()=>void
+	clearSpetialOffer: () => void;
 };
 
 export type TProductManagerTable2Props = {
@@ -471,9 +485,8 @@ export type TSpetialOfferListModalProps = {
 	removeProToSPeOffer: (productId: string) => void;
 };
 export type TOrdDetailModal = {
-	ords?: TUserOrds[] 
-}
+	ords?: TUserOrds[];
+};
 export type TModernLineCard = {
-	apiLink:string
-	
-}
+	apiLink: string;
+};

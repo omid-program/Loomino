@@ -8,7 +8,6 @@ import CatCard from '@/Components/Cards/CatCard/CatCard';
 import ProductCard from '@/Components/Cards/ProductCard/ProductCard';
 import { API_BASE_URL } from './../../../../config';
 
-
 async function StorePiece(props: {
 	title: string;
 	api: string;
@@ -49,9 +48,22 @@ async function StorePiece(props: {
 								href={`http://localhost:3000/${kind}/${product.id}`}
 								className="col-span-1"
 							>
-								<div>
-									<CatCard {...product} />
-								</div>
+								{product.defImg &&
+									product.perTitle &&
+									product.id &&
+									product.perMiniDescription && (
+										<div>
+											<CatCard
+												// {...product}
+												defImg={product.defImg}
+												id={product.id}
+												perMiniDescription={
+													product.perMiniDescription
+												}
+												perTitle={product.perTitle}
+											/>
+										</div>
+									)}
 							</Link>
 						);
 					}

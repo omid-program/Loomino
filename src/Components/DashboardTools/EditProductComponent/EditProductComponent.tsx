@@ -3,7 +3,7 @@ import {
 	TAllProductData,
 	TCatDatas,
 	TEditProductComponent,
-	TInStoreAllProduct,
+	TColorItem,
 	TProductCatData,
 	TTagData,
 } from '@/types';
@@ -25,7 +25,7 @@ interface TPerCreatedAt {
 
 function EditProductComponent({ id }: TEditProductComponent) {
 	const [fabricData, setFabricData] = useState<TAllProductData | null>(null);
-	const [inStoreState, setInStoreState] = useState<TInStoreAllProduct[]>([]);
+	const [inStoreState, setInStoreState] = useState<TColorItem[]>([]);
 
 	const [catData, setCatData] = useState<TCatDatas[]>([]);
 
@@ -278,7 +278,7 @@ function EditProductComponent({ id }: TEditProductComponent) {
 					name: 'rate',
 					isLong: false,
 					size: 'sm',
-					value: fabricData.rate,
+					value: String(fabricData.rate),
 				},
 				{
 					id: 9,
@@ -287,7 +287,7 @@ function EditProductComponent({ id }: TEditProductComponent) {
 					name: 'width',
 					isLong: false,
 					size: 'sm',
-					value: fabricData.width,
+					value: String(fabricData.width),
 				},
 				{
 					id: 10,
@@ -296,7 +296,7 @@ function EditProductComponent({ id }: TEditProductComponent) {
 					name: 'price',
 					isLong: false,
 					size: 'sm',
-					value: fabricData.price,
+					value: String(fabricData.price),
 				},
 				{
 					id: 4,

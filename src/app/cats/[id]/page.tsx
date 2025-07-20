@@ -1,9 +1,7 @@
 import ProductCard from '@/Components/Cards/ProductCard/ProductCard';
 import Container from '@/Components/Container/Container';
-import ProductBox from '@/Components/ProductBox/ProductBox';
 import {
 	TAllProductData,
-	TCartItemProps,
 	TCatDatas,
 	TCatItemParams,
 } from '@/types';
@@ -39,7 +37,7 @@ async function page({ params }: TCatItemParams) {
 				</div>
 				<main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-screen-lg mx-auto p-4 font-yekan">
 					{fabricSelCat.map(fabric => (
-						<Link href={`/shop/${fabric.id}`}>
+						<Link key={fabric.id} href={`/shop/${fabric.id}`}>
 							<ProductCard {...fabric} />
 						</Link>
 					))}

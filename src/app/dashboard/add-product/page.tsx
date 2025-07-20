@@ -6,17 +6,17 @@ import PagesTitle from '@/Components/PageTitle/PagesTitle';
 import {
 	TAllProductData,
 	TCatDatas,
-	TInStoreAllProduct,
+	
+	TColorItem,
+	
 	TProductCatData,
 	TTagData,
 } from '@/types';
-import { randomUUID } from 'crypto';
 import { format } from 'date-fns-jalali';
 import jalaali from 'jalaali-js';
 import { API_BASE_URL } from './../../../../config';
 
-
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 // import {} from 'date-fns-jalali'
 
 function AddProduct() {
@@ -35,10 +35,11 @@ function AddProduct() {
 		inStore: [
 			// { id: '', colorCode: '', colorImg: '', colorName: '', qtys: '' },
 		],
-		cat: [],
+		cat: { catName: '', engTitle: '', id: '', perTitle: '' },
 		price: 0,
+		createdAt:''
 	});
-	const [inStoreState, setInStoreState] = useState<TInStoreAllProduct[]>([
+	const [inStoreState, setInStoreState] = useState<TColorItem[]>([
 		{
 			id: crypto.randomUUID(),
 			colorName: '',
@@ -54,7 +55,6 @@ function AddProduct() {
 	const [selectedTag, setSelectedTag] = useState<string[]>([]);
 	const [catObjetForSend, setCatObjetForSend] = useState<TProductCatData>();
 	const [productTagList, setProductTagList] = useState<TTagData[]>([]);
-	const [selectedTagInfo, setSelectedTagInfo] = useState();
 	const [perCreatedAt, setPerCreatedAt] = useState({
 		year: '',
 		month: '',
@@ -95,7 +95,7 @@ function AddProduct() {
 			name: 'rate',
 			isLong: false,
 			size: 'sm',
-			value: fabricData?.rate,
+			value: String(fabricData?.rate),
 		},
 		{
 			id: 9,
@@ -104,7 +104,7 @@ function AddProduct() {
 			name: 'width',
 			isLong: false,
 			size: 'sm',
-			value: fabricData?.width,
+			value: String(fabricData?.width),
 		},
 		{
 			id: 10,
@@ -113,7 +113,7 @@ function AddProduct() {
 			name: 'price',
 			isLong: false,
 			size: 'sm',
-			value: fabricData?.price,
+			value: String(fabricData?.price),
 		},
 		{
 			id: 4,
@@ -195,7 +195,8 @@ function AddProduct() {
 			prevData ? { ...prevData, [name]: value } : null
 		);
 	};
-	const changeInStoreItemHand = (id: string, name: string, value: any) => {
+	// any error
+	const changeInStoreItemHand = (id: string, name: string, value: string) => {
 		setInStoreState(prevState =>
 			prevState.map(item =>
 				item.id === id ? { ...item, [name]: value } : item
@@ -203,7 +204,7 @@ function AddProduct() {
 		);
 	};
 	const removeInStoreItemHand = (id: string) => {
-		let newInStoreItems = inStoreState.filter(item => item.id !== id);
+		const newInStoreItems = inStoreState.filter(item => item.id !== id);
 		// console.log(newInStoreItems);
 		setInStoreState(newInStoreItems);
 	};
@@ -218,24 +219,23 @@ function AddProduct() {
 		setInStoreState(prevInStore => [...prevInStore, newInStoreItem]);
 	};
 
-	const submitTagHand = async (tagName: string, checked: boolean) => {
-		if (checked) {
-			console.log(tagData?.find(orgTag => orgTag.TagName === tagName));
+	// const submitTagHand = async (tagName: string, checked: boolean) => {
+	// 	if (checked) {
+	// 		console.log(tagData?.find(orgTag => orgTag.TagName === tagName));
 
-			await setSelectedTag(prev => [...prev, tagName]);
-			const tagList = selectedTag.map(tagSel => {
-				return tagData?.find(tagInfo => tagInfo.TagName === tagSel);
-			});
-			// setSelectedTagInfo(prev=>[...prev , tagList])
-		}
-	};
+	// 		await setSelectedTag(prev => [...prev, tagName]);
+	// 		conclast tagList = selectedTag.map(tagSel => {
+	// 			return tagData?.find(tagInfo => tagInfo.TagName === tagSel);
+	// 		});
+	// 		// setSelectedTagInfo(prev=>[...prev , tagList])
+	// 	}
+	// };
 
 	const submiteSelectCatHand = () => {
 		const catFiltred = catData?.find(cat => cat.nameTag === catSelectVal);
 		const tagList = selectedTag.map(tagSel => {
 			return tagData?.find(tagInfo => tagInfo.TagName === tagSel);
 		});
-		const matchTagDataSelTag = selectedTag;
 
 		const newObgCategory = {
 			id: catFiltred?.id,
@@ -264,6 +264,7 @@ function AddProduct() {
 			const isoDateGenerate = new Date(gy, gm - 1, gd).toISOString();
 
 			// const miniIsoDate = jalaaliToDate()
+			if(catObjetForSend)
 			setFabricData({
 				...fabricData,
 				cat: catObjetForSend,
@@ -271,7 +272,9 @@ function AddProduct() {
 				inStore: inStoreState, // جایگزینی inStore با حالت آپدیت شده
 				createdAt: isoDateGenerate,
 			});
-			alert(`تغییرات شما ثبت شد✅\n میتوانید اطلاعات را به فروشگاه ارسال کنید`)
+			alert(
+				`تغییرات شما ثبت شد✅\n میتوانید اطلاعات را به فروشگاه ارسال کنید`
+			);
 			console.log('داده‌های نهایی برای ارسال به بکند:', {
 				...fabricData,
 				inStore: inStoreState,
@@ -308,8 +311,9 @@ function AddProduct() {
 						inStore: [
 							// { id: '', colorCode: '', colorImg: '', colorName: '', qtys: '' },
 						],
-						cat: [],
+						cat: {catName:'' , engTitle:'' , id:'' , perTitle:''},
 						price: 0,
+						createdAt:''
 					});
 				}
 			} catch (error) {
@@ -413,7 +417,7 @@ function AddProduct() {
 							<h3 className=" font-bold text-lg">انتخاب برچسب ها</h3>
 						</div>
 						{tagData?.map(tag => (
-							<div className="flex gap-1  py-2 px-1 ">
+							<div key={tag.id} className="flex gap-1  py-2 px-1 ">
 								<input
 									className="size-5 "
 									type="checkbox"
@@ -447,7 +451,7 @@ function AddProduct() {
 							}}
 						>
 							{catData?.map(category => (
-								<option value={category.nameTag}>
+								<option key={category.id} value={category.nameTag}>
 									{category.perTitle}
 								</option>
 							))}
@@ -509,7 +513,7 @@ function AddProduct() {
 								value={perCreatedAt.month}
 							>
 								{monthInputInfo.map(month => (
-									<option value={month.value}>
+									<option key={month.value} value={month.value}>
 										{month.monthName}
 									</option>
 								))}

@@ -12,6 +12,7 @@ import { FaReact } from 'react-icons/fa';
 import { RiNextjsFill } from 'react-icons/ri';
 import { SiMui } from 'react-icons/si';
 import { SiCss3 } from 'react-icons/si';
+import Image from '@/next/image';
 
 function AboutUs() {
 	const prujectTec = [
@@ -63,7 +64,7 @@ function AboutUs() {
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-16 my-24 ">
 				<div className="flex flex-col items-center shadow-md shadow-violet-400 px-2 py-6">
 					<div className="mb-5">
-						<img src="logo/omid-program-logo-L-07.png" alt="" />
+						<img src="logo/omid-program-logo-L-07.png" alt="omid-program" />
 					</div>
 					<div>
 						<h3 className="text-3xl font-bold">omid-program</h3>

@@ -1,5 +1,4 @@
 import CatCard from '@/Components/Cards/CatCard/CatCard';
-import CatItemBox from '@/Components/CartTools/CatItemBox/CatItemBox';
 import Container from '@/Components/Container/Container';
 import PagesTitle from '@/Components/PageTitle/PagesTitle';
 import Link from '@/next/link';

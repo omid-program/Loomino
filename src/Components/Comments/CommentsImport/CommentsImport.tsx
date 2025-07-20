@@ -1,5 +1,5 @@
 'use client';
-import { TCommetsData } from '@/types';
+import { TCommetsData, TCommetsInfo } from '@/types';
 import React, { useState } from 'react';
 import { API_BASE_URL } from './../../../../config';
 
@@ -22,7 +22,7 @@ interface ICommentImportProps {
 function CommentsImport(props: ICommentImportProps) {
 	const { productId, productImg, productTitle } = props;
 	const now = new Date().toISOString();
-	const [commentInfo, setComentInfo] = useState<TCommetsData>({
+	const [commentInfo, setComentInfo] = useState<TCommetsInfo>({
 		id: crypto.randomUUID(),
 		name: '',
 		email: '',

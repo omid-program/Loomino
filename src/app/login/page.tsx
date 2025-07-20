@@ -82,7 +82,7 @@ export default function Login() {
 				{/* top-form */}
 				<div className="mb-6" id="top-form">
 					<div className=" border-2 border-dashed border-violet-400 rounded-md px-2 py-3 mb-3 text-center">
-						<h2 className="text-2xl mb-2">صفحه ی ورود</h2>
+						<h2 className="text-2xl mb-2">فرم ورود</h2>
 					</div>
 					<span id="login__subtitle" className="text-violet-700 mb-7">
 						خوشحالم دوباره می‌بینیمت دوست من :)
