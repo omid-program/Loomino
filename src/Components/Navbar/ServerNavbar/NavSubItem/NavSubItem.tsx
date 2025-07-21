@@ -1,7 +1,7 @@
 import { TCatDatas, TSubItems } from "@/types";
 import Link from "next/link";
 import React from "react";
-import {API_INSIDE_URL} from" ./../../config"
+import {API_INSIDE_URL} from"./../../../../../config"
 
 function NavSubItem({subItems}:{subItems:TCatDatas}) {
    // console.log(subItems);

@@ -6,5 +6,5 @@ export const API_BASE_URL = isDev
   : 'https://loomino.onrender.com'; // آدرس دیپلوی‌شده بکند
   
   export const API_INSIDE_URL = isDev
-    ? 'http://localhost:3000' // آدرس لوکال بکند
-    : 'https://loomino.onrender.com'; // آدرس دیپلوی‌شده بکند
+    ? 'http://localhost:3000' // آدرس لوکال فرانت
+    : 'https://loomino.onrender.com'; // آدرس دیپلوی‌شده فرانت
