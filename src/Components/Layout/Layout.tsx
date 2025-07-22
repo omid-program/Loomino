@@ -17,7 +17,7 @@ export default function Layout({
 			<div>
 				{/* <ShappingCartContextProvider> */}
 				{/* decstop */}
-				<div className="hidden lg:flex lg:gap-0 lg:justify-center   ">
+				<div className="hidden md:flex md:gap-0 md:justify-center   ">
 					<ServerNavbar />
 					<ClientNavbar />
 				</div>
@@ -27,8 +27,8 @@ export default function Layout({
 					<div className="flex items-center flex-row-reverse col-span-3 gap-5 ">
 						<div className="bg-cover w-20 flex items-center">
 							<img
-								className="max-w-16"
-								src="/logo/omid-program-dark-logo-light-mode.png"
+								className="max-w-8"
+								src="/logo/omid-program-logo-L-07.png"
 								alt=""
 							/>
 						</div>

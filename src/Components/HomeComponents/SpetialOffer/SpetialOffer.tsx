@@ -45,7 +45,7 @@ async function SpetialOffer() {
 					// );
 					return (
 						<Link
-							href={`${API_INSIDE_URL}/shop/${product.id}`}
+							href={`/shop/${product.id}`}
 							key={product.id}
 						>
 							<ProductCard

@@ -45,7 +45,7 @@ async function StorePiece(props: {
 					} else {
 						return (
 							<Link
-								href={`${API_INSIDE_URL}/${kind}/${product.id}`}
+								href={`/${kind}/${product.id}`}
 								className="col-span-1"
 							>
 								{product.defImg &&

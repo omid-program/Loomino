@@ -6,7 +6,6 @@ import ProductCard from '@/Components/Cards/ProductCard/ProductCard';
 import Link from '@/next/link';
 import { API_BASE_URL, API_INSIDE_URL } from './../../../../config';
 
-
 async function BestSellingSmart(props: { title: string; api: string }) {
 	const { api, title } = props;
 
@@ -46,7 +45,9 @@ async function BestSellingSmart(props: { title: string; api: string }) {
 						item => item.productId === product?.id
 					);
 					return (
-						<Link href={`${API_INSIDE_URL}/shop/${product?.id}`}>
+						<Link
+							href={`/shop/${product?.id}`}
+						>
 							<ProductCard
 								key={product?.id}
 								offerPersentage={spOfferItem?.persentage}
