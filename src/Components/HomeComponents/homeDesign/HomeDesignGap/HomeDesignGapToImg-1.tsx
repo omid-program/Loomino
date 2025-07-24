@@ -10,10 +10,10 @@ type THomeDesignGapToPageProps = {
 
 function HomeDesignGapToImg(props: THomeDesignGapToPageProps) {
 	return (
-		<div className="grid grid-cols-7 gap-0 ">
+		<div className="grid grid-cols-7 gap-0 h-36 md:h-[420px] ">
 			<div className="col-span-2 h-[420px]">
 				<img
-					className="h-[420px] rounded-br-full mx-0 px-0 w-full"
+					className="h-[100%] rounded-br-full mx-0 px-0 w-full"
 					src="Home-page/tow-img-gap-design-2.jpg"
 					alt=""
 				/>
@@ -32,7 +32,7 @@ function HomeDesignGapToImg(props: THomeDesignGapToPageProps) {
 			</div>
 			<div className="col-span-2 h-[420px]">
 				<img
-					className="h-[420px] rounded-tl-full"
+					className="h-[100%] rounded-tl-full"
 					src="Home-page/tow-img-gap-design.jpg"
 					alt=""
 				/>

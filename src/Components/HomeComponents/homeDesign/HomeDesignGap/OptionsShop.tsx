@@ -10,7 +10,7 @@ import { BsCoin } from 'react-icons/bs';
 const OptionsShop = () => {
 	return (
 		<StyledWrapper>
-			<ul className="example-2">
+			<ul className="example-2 hidden md:grid md:grid-cols-4">
 				<li className="icon-content">
 					<a href="/" aria-label="Spotify" data-social="spotify">
 						<div className="filled" />

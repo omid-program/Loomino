@@ -7,9 +7,6 @@ import InThisSesson from '@/Components/HomeComponents/InThisSesson/InThisSesson'
 import NewestProductPiece from '@/Components/HomeComponents/NewestProductPiece/NewestProductPiece';
 import SpetialOffer from '@/Components/HomeComponents/SpetialOffer/SpetialOffer';
 import StorePiece from '@/Components/HomeComponents/StorePiece/StorePiece';
-import PagesTitle from '@/Components/PageTitle/PagesTitle';
-import HeaderHomeSlider from '@/Components/Sliders/HeaderHomeSlider/HeaderHomeSlider';
-import HeaderHomeSlider2 from '@/Components/Sliders/HeaderHomeSlider2/HeaderHomeSlider2';
 import React from 'react';
 import { API_BASE_URL } from './../../config';
 function Home() {

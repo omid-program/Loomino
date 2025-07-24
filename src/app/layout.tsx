@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import Layout from '@/Components/Layout/Layout';
-import { ShappingCartContextProvider } from '@/context/ShappongCartContext';
 import { AuthContextProvider } from '@/context/AuthContext';
 
 export const metadata: Metadata = {
