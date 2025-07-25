@@ -6,6 +6,8 @@ import { MdOutlineShoppingCart } from 'react-icons/md';
 import { FaHome } from 'react-icons/fa';
 import { GiRolledCloth } from 'react-icons/gi';
 import { MdOutlineCategory } from 'react-icons/md';
+import { MdOutlineMapsHomeWork } from "react-icons/md";
+
 
 import React, { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
@@ -15,11 +17,7 @@ import MenuItem from '@mui/material/MenuItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
-import PersonAdd from '@mui/icons-material/PersonAdd';
-import Settings from '@mui/icons-material/Settings';
-import Logout from '@mui/icons-material/Logout';
 import Link from '@/next/link';
 import { useAuthStatus } from '@/hooks/useAuthStatus';
 import { useShappingCartContext } from '@/context/ShappongCartContext';
@@ -93,6 +91,13 @@ export default function AccountMenu() {
 			subItems: catInfo,
 			link: '/cats',
 			icon: <MdOutlineCategory fontSize="small" />,
+		},
+		{
+			id: 5,
+			perTitle: 'درباره‌ی ما',
+			engTitle: 'About us',
+			link: '/aboutUs',
+			icon: <MdOutlineMapsHomeWork fontSize="small" />,
 		},
 		// {
 		// 	id: 4,

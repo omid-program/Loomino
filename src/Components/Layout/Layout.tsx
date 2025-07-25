@@ -27,7 +27,7 @@ export default function Layout({
 					<div className="flex items-center flex-row-reverse col-span-3 gap-5 ">
 						<div className="bg-cover w-20 flex items-center">
 							<img
-								className="max-w-8"
+								className="max-w-14"
 								src="/logo/omid-program-logo-L-07.png"
 								alt=""
 							/>
