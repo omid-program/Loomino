@@ -18,7 +18,7 @@ function EditeBoxInStore(props: TEditeBoxInStoreProps) {
 
 
 	return (
-		<div className= "border-2 border-violet-400 px-2 py-4 shadow-md shadow-violet-200 rounded-md">
+		<div className= "border-2 border-primary px-2 py-4 shadow-md shadow-accent rounded-md">
 			<div className="my-4 col-span-1">
 				<label className='mx-2'>نام رنگ</label>
 				<input
@@ -31,7 +31,7 @@ function EditeBoxInStore(props: TEditeBoxInStoreProps) {
 							changeInStoreItemHand(id, e.target.name, e.target.value);
 						}
 					}}
-					className="px-1 py-2 shadow-md shadow-violet-200 rounded-md"
+					className="px-1 py-2 shadow-md shadow-accent rounded-md bg-bg"
 				/>
 			</div>
 			<div className="my-4">
@@ -45,7 +45,7 @@ function EditeBoxInStore(props: TEditeBoxInStoreProps) {
 							changeInStoreItemHand(id, e.target.name, e.target.value);
 						}
 					}}
-					className="size-8 rounded-full shadow-md shadow-violet-300 p-1 "
+					className=" bg-bg size-8 rounded-full shadow-md shadow-accent p-1 "
 				/>
 			</div>
 			<div className="my-4">
@@ -59,7 +59,7 @@ function EditeBoxInStore(props: TEditeBoxInStoreProps) {
 							changeInStoreItemHand(id, e.target.name, e.target.value);
 						}
 					}}
-					className="px-1 py-2 shadow-md shadow-violet-200 rounded-md"
+					className="px-1 py-2 bg-bg shadow-md shadow-accent rounded-md"
 				/>
 			</div>
 			<div className="my-4">
@@ -74,7 +74,7 @@ function EditeBoxInStore(props: TEditeBoxInStoreProps) {
 							changeInStoreItemHand(id, e.target.name, e.target.value);
 						}
 					}}
-					className="px-1 py-2 shadow-md shadow-violet-200 rounded-md w-full"
+					className="px-1 py-2 bg-bg shadow-md shadow-accent rounded-md w-full"
 				/>
 			</div>
 			<button

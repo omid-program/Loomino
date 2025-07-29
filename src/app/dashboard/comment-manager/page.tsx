@@ -126,7 +126,7 @@ function CommentManager() {
 							{/* <label htmlFor="">جست و جو در متن کامنت</label> */}
 							<input
 								placeholder="جست و جو در متن کامنت ..."
-								className="py-2 px-1 rounded-md border-2 border-violet-400 shadow-md shadow-violet-200 w-full"
+								className="py-2 px-1 rounded-md border-2 border-primary shadow-md shadow-accent bg-bg w-full"
 								type="text"
 								onChange={e => {
 									setSearchCommentText(e.target.value);
@@ -136,7 +136,7 @@ function CommentManager() {
 						{/* <div id="search-comment-product-title"> */}
 							{/* <label htmlFor="">جست و جو در عنوان محصول:</label> */}
 							<input
-								className="py-2 px-1 rounded-md border-2 border-violet-400 shadow-md shadow-violet-300 w-full"
+								className="py-2 px-1 rounded-md border-2 border-primary shadow-md shadow-accent bg-bg w-full"
 								type="text"
 								placeholder="جست و جو در عنوان محصول ..."
 								onChange={e => {
@@ -148,7 +148,7 @@ function CommentManager() {
 					<div id="filtter-comments" className="col-span-1 flex justify-center items-center gap-5">
 						<div id="sort-of-time">
 							<select
-							className='p-1 border-2 border-dashed border-violet-400 text-center'
+							className='p-1 border-2 border-dashed border-primary text-center bg-bg'
 								onChange={e => {
 									setSortTime(e.target.value as any);
 								}}
@@ -168,7 +168,7 @@ function CommentManager() {
 								{isShowFlag ? 'تایید شده' : 'درحال انتظار'}
 							</button> */}
 							<select
-							className='p-1 border-2 text-center border-dashed border-violet-400'
+							className='p-1 border-2 text-center border-dashed border-primary bg-bg'
 								value={filterMode}
 								onChange={e => {
 									setFilterMode(e.target.value as any);
@@ -185,7 +185,7 @@ function CommentManager() {
 					{commentTabelHeader.map(hI => (
 						<div
 							key={hI.id}
-							className=" grid col-span-1 text-center border-2 border-gray-900  py-2 font-bold "
+							className=" grid col-span-1 text-center border-2 border-gray-300  py-2 font-bold "
 						>
 							{hI.title}
 						</div>

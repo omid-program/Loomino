@@ -9,7 +9,7 @@ type TitleSectionHomeProps = {
 const TitleSectionHome = (props: TitleSectionHomeProps) => {
 	return (
 		<StyledWrapper>
-			<div className="flex gap-8 justify-center items-center">
+			<div className="flex gap-8 justify-center items-center my-3">
 				<div className="loader">
 					<div className="light" />
 					<div className="black_overlay" />

@@ -6,9 +6,7 @@ import PagesTitle from '@/Components/PageTitle/PagesTitle';
 import {
 	TAllProductData,
 	TCatDatas,
-	
 	TColorItem,
-	
 	TProductCatData,
 	TTagData,
 } from '@/types';
@@ -37,7 +35,7 @@ function AddProduct() {
 		],
 		cat: { catName: '', engTitle: '', id: '', perTitle: '' },
 		price: 0,
-		createdAt:''
+		createdAt: '',
 	});
 	const [inStoreState, setInStoreState] = useState<TColorItem[]>([
 		{
@@ -219,18 +217,6 @@ function AddProduct() {
 		setInStoreState(prevInStore => [...prevInStore, newInStoreItem]);
 	};
 
-	// const submitTagHand = async (tagName: string, checked: boolean) => {
-	// 	if (checked) {
-	// 		console.log(tagData?.find(orgTag => orgTag.TagName === tagName));
-
-	// 		await setSelectedTag(prev => [...prev, tagName]);
-	// 		conclast tagList = selectedTag.map(tagSel => {
-	// 			return tagData?.find(tagInfo => tagInfo.TagName === tagSel);
-	// 		});
-	// 		// setSelectedTagInfo(prev=>[...prev , tagList])
-	// 	}
-	// };
-
 	const submiteSelectCatHand = () => {
 		const catFiltred = catData?.find(cat => cat.nameTag === catSelectVal);
 		const tagList = selectedTag.map(tagSel => {
@@ -264,14 +250,14 @@ function AddProduct() {
 			const isoDateGenerate = new Date(gy, gm - 1, gd).toISOString();
 
 			// const miniIsoDate = jalaaliToDate()
-			if(catObjetForSend)
-			setFabricData({
-				...fabricData,
-				cat: catObjetForSend,
-				tags: productTagList,
-				inStore: inStoreState, // جایگزینی inStore با حالت آپدیت شده
-				createdAt: isoDateGenerate,
-			});
+			if (catObjetForSend)
+				setFabricData({
+					...fabricData,
+					cat: catObjetForSend,
+					tags: productTagList,
+					inStore: inStoreState, // جایگزینی inStore با حالت آپدیت شده
+					createdAt: isoDateGenerate,
+				});
 			alert(
 				`تغییرات شما ثبت شد✅\n میتوانید اطلاعات را به فروشگاه ارسال کنید`
 			);
@@ -311,9 +297,9 @@ function AddProduct() {
 						inStore: [
 							// { id: '', colorCode: '', colorImg: '', colorName: '', qtys: '' },
 						],
-						cat: {catName:'' , engTitle:'' , id:'' , perTitle:''},
+						cat: { catName: '', engTitle: '', id: '', perTitle: '' },
 						price: 0,
-						createdAt:''
+						createdAt: '',
 					});
 				}
 			} catch (error) {
@@ -412,14 +398,14 @@ function AddProduct() {
 				</div>
 				<div id="tag-cat-select" className="grid grid-cols-3 my-8 gap-4">
 					{/* tag-import */}
-					<div className=" grid  grid-cols-2  md:w-3/4 md:grid-cols-3 col-span-3 px-2 py-4 border-2 max-h-64 overflow-y-scroll border-violet-500 rounded-md">
+					<div className=" grid  grid-cols-2  md:w-3/4 md:grid-cols-3 col-span-3 px-2 py-4 border-2 max-h-64 overflow-y-scroll border-primary rounded-md">
 						<div className=" col-span-2 md:col-span-3 text-center py-2 border-b-2 border-dashed">
 							<h3 className=" font-bold text-lg">انتخاب برچسب ها</h3>
 						</div>
 						{tagData?.map(tag => (
 							<div key={tag.id} className="flex gap-1  py-2 px-1 ">
 								<input
-									className="size-5 "
+									className="size-5 border-primary bg-bg "
 									type="checkbox"
 									value={tag.TagName}
 									checked={selectedTag.includes(tag.TagName)}
@@ -434,7 +420,7 @@ function AddProduct() {
 					{/* cat-select */}
 					<div
 						id="cat-select"
-						className=" col-span-2 md:col-span-1 grid grid-cols-1 border-2 border-violet-500 px-1 "
+						className=" col-span-2 md:col-span-1 grid grid-cols-1 border-2 border-primary px-1 "
 					>
 						<div className="py-2 text-center border-b-2 border-dashed my-2">
 							<h3 className="text-lg font-bold">انتخاب دسته بندی</h3>
@@ -442,7 +428,7 @@ function AddProduct() {
 
 						{/* find cat */}
 						<select
-							className="text-center py-2 shadow-md shadow-violet-200  bg-gray-50"
+							className="text-center py-2 shadow-md shadow-accent  bg-bg"
 							name=""
 							id=""
 							value={catSelectVal}
@@ -457,7 +443,7 @@ function AddProduct() {
 							))}
 						</select>
 						<button
-							className="py-2 my-2 text-center border-2 border-violet-300 bg-violet-50 rounded-md"
+							className="py-2 my-2 text-center border-2 border-primary bg-bg rounded-md"
 							onClick={submiteSelectCatHand}
 							// onClick={submitTagHand}
 						>
@@ -468,7 +454,7 @@ function AddProduct() {
 					{/* date-set */}
 					<div
 						id="ceateAt-select-option"
-						className="col-span-2 border-2 border-violet-500 px-1 py-2 md:col-span-1 "
+						className="col-span-2 border-2 border-primary px-1 py-2 md:col-span-1 "
 					>
 						<div className="w-full py-2 text-center border-b-2 border-dashed">
 							<h3 className="text-lg font-bold">تاریخ افرودن محصول</h3>
@@ -488,7 +474,7 @@ function AddProduct() {
 						<div className="grid grid-cols-3 text-center py-1 border-b">
 							<select
 								name="day"
-								className="col-span-1 border-x px-1 text-center py-2"
+								className="col-span-1 border-x px-1 text-center py-2 bg-bg "
 								value={perCreatedAt.day}
 								onChange={e => {
 									changePreDateHand(e);
@@ -498,14 +484,14 @@ function AddProduct() {
 									<option
 										key={i + 1}
 										value={i + 1}
-										className="p-1 bg-violet-300"
+										className="p-1 bg-bg"
 									>
 										{i + 1}
 									</option>
 								))}
 							</select>
 							<select
-								className="col-span-1 border-x px-1 py-2 text-center"
+								className="col-span-1 border-x px-1 py-2 text-center bg-bg "
 								name="month"
 								onChange={e => {
 									changePreDateHand(e);
@@ -513,7 +499,11 @@ function AddProduct() {
 								value={perCreatedAt.month}
 							>
 								{monthInputInfo.map(month => (
-									<option key={month.value} value={month.value}>
+									<option
+										className="bg-bg"
+										key={month.value}
+										value={month.value}
+									>
 										{month.monthName}
 									</option>
 								))}
@@ -524,11 +514,11 @@ function AddProduct() {
 									changePreDateHand(e);
 								}}
 								type="number"
-								className="col-span-1 py-2 border-x px-1 text-center"
+								className="col-span-1 py-2 border-x px-1 text-center bg-bg"
 								value={perCreatedAt.year}
 							/>
 						</div>
-						<span className="text-sm text-violet-600">
+						<span className="text-sm text-accent">
 							<span></span>در صورت عدم تغییر تاریخ روز ثبت می‌شود
 						</span>
 					</div>

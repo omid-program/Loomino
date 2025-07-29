@@ -10,11 +10,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary:'#4C1D95',
-        accent:'#FACC15',
-        bg:'#F9FAFB',
-        textMain:'#111827',
-        textMainMuted:'#6B7280',
+        primary:'#dcba92',
+        accent:'#dbd0c0',
+        bg:'#1d1d1d',
+        textMain:'#dcba92',
+        textMainMuted:'#dbd0c0',
         background: "var(--background)",
         foreground: "var(--foreground)",
       },

@@ -93,7 +93,7 @@ function CartItem(props: TCartItemProps) {
 	// }
 
 	return (
-		<div className="grid col-span-2 md:col-span-1 grid-cols-2 shadow-lg shadow-violet-200 my-2 rounded-md p-2 gap-2">
+		<div className="grid col-span-2 md:col-span-1 grid-cols-2 shadow-lg shadow-accent my-2 rounded-md p-2 gap-2">
 			<div className="col-span-1 rounded-sm bg-cover overflow-hidden">
 				{imageCartItem && (
 					<Link href={`${API_INSIDE_URL}/shop/${id}`}>

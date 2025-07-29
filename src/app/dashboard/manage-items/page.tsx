@@ -7,6 +7,9 @@ import PagesTitle from '@/Components/PageTitle/PagesTitle';
 import { TCatDatas, TTagData } from '@/types';
 import React, { useEffect, useState } from 'react';
 import { API_BASE_URL } from './../../../../config';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { CssBaseline } from '@/@mui/material/esm';
+import { dark } from '@/@mui/material/esm/styles/createPalette';
 
 function AddItemPage() {
 	const [catDatas, setCatDatas] = useState<TCatDatas[]>();
@@ -25,6 +28,9 @@ function AddItemPage() {
 	>();
 
 	const [removeUrl, setRemoveUrl] = useState<string>();
+	const darkMode = createTheme({
+		palette: { mode: 'dark' },
+	});
 
 	const getCats = async () => {
 		const catResponse = await fetch(`${API_BASE_URL}/cats`);
@@ -96,16 +102,18 @@ function AddItemPage() {
 									+
 								</button>
 							</div>
-							<AddTagModal
-								open={openAddTagModal}
-								onClose={handelCloseAddTagModal}
-							/>
+							<ThemeProvider theme={darkMode}>
+								<AddTagModal
+									open={openAddTagModal}
+									onClose={handelCloseAddTagModal}
+								/>
+							</ThemeProvider>
 						</div>
 						<div className="shadow-md shadow-blue-200 rounded-md py-4 px-2 max-h-96 overflow-y-scroll grid grid-cols-2 gap-5">
 							{tagData?.map(tag => (
 								<div
 									key={tag.id}
-									className="border-r-4 rounded-l-md  px-1 py-2 border-blue-500 bg-blue-200 cursor-pointer"
+									className="border-r-4 rounded-l-md  px-1 py-2 border-blue-500 bg-gray-800 cursor-pointer"
 									onClick={() => {
 										setOpenRemoveModal(true);
 										setSelectedItem({
@@ -134,17 +142,19 @@ function AddItemPage() {
 								</button>
 							</div>
 							<div>
-								<AddCatModal
-									openCatModal={openAddCatModal}
-									onCloseCatModal={handelCloseAddCatModal}
-								/>
+								<ThemeProvider theme={darkMode}>
+									<AddCatModal
+										openCatModal={openAddCatModal}
+										onCloseCatModal={handelCloseAddCatModal}
+									/>
+								</ThemeProvider>
 							</div>
 						</div>
 						<div className="shadow-md shadow-rose-200 rounded-md py-4 px-2 max-h-96 overflow-y-scroll grid grid-cols-2 gap-5">
 							{catDatas?.map(cat => (
 								<div
 									key={cat.id}
-									className="border-r-4 rounded-l-md  px-1 py-2 my-1 border-rose-500 bg-rose-200 cursor-pointer"
+									className="border-r-4 rounded-l-md  px-1 py-2 my-1 border-rose-500 bg-stone-800 cursor-pointer"
 									onClick={() => {
 										setOpenRemoveModal(true);
 										setSelectedItem({
@@ -159,15 +169,17 @@ function AddItemPage() {
 								</div>
 							))}
 						</div>
-						<RemoveModal
-							onClose={handleCloseModal}
-							open={openRemoveModal}
-							itemTitle={selectedItem?.perTitle}
-							onRemove={removeCatHandler}
-							confirmText="حذف آیتم"
-							cancelText="لغو"
-							loadingText="در حال حذف آیتم ..."
-						/>
+						<ThemeProvider theme={darkMode}>
+							<RemoveModal
+								onClose={handleCloseModal}
+								open={openRemoveModal}
+								itemTitle={selectedItem?.perTitle}
+								onRemove={removeCatHandler}
+								confirmText="حذف آیتم"
+								cancelText="لغو"
+								loadingText="در حال حذف آیتم ..."
+							/>
+						</ThemeProvider>
 					</div>
 				</div>
 			</div>

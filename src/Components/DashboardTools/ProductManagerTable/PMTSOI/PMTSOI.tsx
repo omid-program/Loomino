@@ -27,7 +27,7 @@ function PMTSOI(props: TPMTSOI) {
 			<div>
 				<label htmlFor=""> % درصد تخفیف %  </label>
 				<input
-					className=" py-1 px-1 text-center rounded-md w-11/12 border border-violet-600"
+					className=" py-1 px-1 text-center rounded-md w-11/12 border border-primary bg-bg"
 					value={persentageSO}
 					onChange={e => {
 						setPersentageSO(e.target.value);

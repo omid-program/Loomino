@@ -3,12 +3,9 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import CardActionArea from '@mui/material/CardActionArea';
-import CardActions from '@mui/material/CardActions';
 import { TProductBoxData } from '@/types';
 import { Box } from '@/@mui/material/esm';
-import { isOverflown } from '@/@mui/x-data-grid/utils/domUtils';
 import { formatPrice } from '@/utils/price';
 
 type TProductBoxProps = TProductBoxData & {
@@ -35,6 +32,7 @@ export default function ProductCard(props: TProductBoxProps) {
 				display: 'flex',
 				flexDirection: 'column',
 				height: '100%',
+				background: '#dbd0c0'
 				// objectFit: 'cover',
 				// overflow: 'hidden',
 			}}

@@ -26,8 +26,8 @@ export default function SpetialOfferListModal(props:TSpetialOfferListModalProps)
 	return (
 		<div>
 			<Button
-			style={{fontSize:'1.1rem', color:'black'}}
-			className='text-lg shadow-md shadow-violet-200'
+			style={{fontSize:'1.1rem', color:'white'}}
+			className='text-lg shadow-md shadow-accent '
 			onClick={handleOpen}>لیست محصولات</Button>
 			<Modal
 				open={open}

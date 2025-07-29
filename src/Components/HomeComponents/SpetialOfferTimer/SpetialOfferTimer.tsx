@@ -23,7 +23,7 @@ function SpetialOfferTimer(props: TSpetialOfferTimer) {
 
 	const timerFunction = () => {
 		now = dayjs();
-		const diff = end.diff(now); // اختلاف به میلی‌ثانیه
+		const diff = end.diff(now) / 1000; // اختلاف به ثانیه
 
 
 		if (diff > 0) {

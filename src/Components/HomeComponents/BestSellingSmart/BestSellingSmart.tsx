@@ -37,7 +37,7 @@ async function BestSellingSmart(props: { title: string; api: string }) {
 	// console.log('mergeTopToAll=> ', mergeTopToAll);
 
 	return (
-		<div className="bg-violet-100 rounded-lg p-1 my-8">
+		<div className="border-2 border-primary shadow-sm shadow-accent rounded-lg p-1 my-8">
 			<TitleSectionHome title={title} />
 			<main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-screen-lg mx-auto p-4 font-yekan">
 				{mergeTopToAll.map(product => {

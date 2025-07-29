@@ -51,18 +51,18 @@ async function ServerNavbar() {
 		// },
 	];
 	return (
-		<nav className="w-full max-h-16 relative mx-auto py-3 px-1 flex justify-between items-center    ">
+		<nav className="w-full max-h-16 relative mx-auto py-4 px-3 flex justify-between items-center">
 			<div className="flex justify-between items-center">
 				<ul className="flex gap-2">
 					{navLinks.map((navLinksItem: TLinksData) => (
 						<li key={navLinksItem.id}>
 							<NavItem key={navLinksItem.id} navLinksItem={navLinksItem}>
 								{navLinksItem.subItems && (
-									<div className="px-2 py-4 shadow-md shadow-violet-200 border-2 border-violet-400 relative z-40  ">
+									<div className="px-2 py-4 shadow-md shadow-textMainMuted border-2 border-textMain bg-bg relative z-40  ">
 										{navLinksItem.subItems?.map(subItem => (
 											<ul
 												key={subItem?.id}
-												className="text-md border-r-4 border-violet-600 bg-violet-200 mt-1 px-1 py-2 rounded-l-md relative z-50"
+												className="text-md border-r-4 border-textMain bg-gray-700 mt-1 px-1 py-2 rounded-l-md relative z-50"
 											>
 												<NavSubItem subItems={subItem} />
 											</ul>

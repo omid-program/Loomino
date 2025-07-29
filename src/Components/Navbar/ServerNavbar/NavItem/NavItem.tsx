@@ -21,7 +21,7 @@ function NavItem({ children, navLinksItem }: TPropsNavItem): React.JSX.Element{
 
    return (
       <div
-         className={`p-1 text-lg   ${pathName ===navLinksItem.link ? 'border-b-4 border-violet-600 bg-violet-100 rounded-t-md': '' }`} 
+         className={`p-1 text-lg   ${pathName ===navLinksItem.link ? 'border-y-2 border-textMain text-textMainMuted transition duration-150 ease-out  ': ' hover:border-b-2 hover:border-textMain hover:text-textMainMuted ' }`} 
          onMouseEnter={startHoverItem}
          onMouseLeave={endHoverItem}
       >

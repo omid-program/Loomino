@@ -33,7 +33,7 @@ export default function OrdDetailModal(props: TOrdDetailModal) {
 		<div>
 			<Button onClick={handleOpen} >
 				{ords ? (
-					<span className='text-lg text-violet-500 py-1 px-3 border-2 border-violet-600 rounded-md'>{ords?.flatMap(ord => ord.items.length)}-محصول</span>
+					<span className='text-lg text-textMainMuted py-1 px-3 border-2 border-primary rounded-md'>{ords?.flatMap(ord => ord.items.length)}-محصول</span>
 				) : (
 					<div></div>
 				)}

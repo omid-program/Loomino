@@ -25,7 +25,7 @@ async function NewestProductPiece() {
 	// console.log("newestProducts=> " , newestProducts);
 
 	return (
-		<div className="bg-violet-100 p-1 rounded-lg my-8">
+		<div className="border-2 border-primary p-1 rounded-lg my-8">
 			<TitleSectionHomeSec title="جدیدترین پارچه ها" />
 
 			{/* <ModernLineCard {...newestProducts}>

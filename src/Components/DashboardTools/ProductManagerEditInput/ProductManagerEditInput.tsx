@@ -24,7 +24,7 @@ function ProductManagerEditInput(props: TProductManagerEditInputProps) {
 			>
 				<label className="text-center"> {label}</label>
 				<textarea
-					className="w-full h-full  shadow-md shadow-violet-200 rounded-md my-3 px-1 py-2 text-violet-900"
+					className="w-full h-full  shadow-md shadow-accent rounded-md my-3 px-1 py-2 text-primary bg-bg"
 					placeholder={`متن ${label} را وارد نمایید...`}
 					name={name}
 					value={value}
@@ -49,7 +49,7 @@ function ProductManagerEditInput(props: TProductManagerEditInputProps) {
 					onChange={e => {
 						changeInputHand(e);
 					}}
-					className={`px-1 py-2 rounded-md w-full border-2 border-violet-300 shadow-md shadow-violet-200 mx-6 `}
+					className={`px-1 py-2 rounded-md w-full border-2 border-primary shadow-md shadow-accent bg-bg mx-6 `}
 				/>
 			</div>
 		);

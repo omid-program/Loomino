@@ -177,18 +177,18 @@ function ProductManagerTable2(props: TProductManagerTable2Props) {
 	}
 
 	return (
-		<div className="border-2 border-violet-400 shadow-md shadow-violet-200 rounded-md w-10/12 my-8">
+		<div className="border-2 border-PRIMA shadow-md shadow-accent bg-bg rounded-md w-10/12 my-8">
 			{/* Filttering Elements */}
 			{isShowTitleSearch && (
-				<div className="col-span-6 flex justify-center gap-12 border-b-2 border-violet-500">
+				<div className=" bg-bg col-span-6 flex justify-center gap-12 border-b-2 border-primary">
 						<input
-							className="	px-1 py-2 my-1 shadow-md shadow-violet-200 border-2 border-violet-400  rounded-md "
+							className=" bg-bg	px-1 py-2 my-1 shadow-md shadow-accent border-2 border-primary  rounded-md "
 							type="text"
 							placeholder="جست و جو در عنوان"
 							onChange={e => setTitleSearchInput(e.target.value)}
 						/>
 					<select onChange={e => setSortOption(e.target.value as any)}
-						className='shadow-md shadow-violet-200 px-2 rounded-md my-1'
+						className='shadow-md shadow-accent px-2 rounded-md my-1 bg-bg'
 						>
 						<option className='py-0.5 text-center ' value="">مرتب‌سازی</option>
 						<option className='py-0.5 text-center ' value="priceAsc">قیمت ↑</option>
@@ -199,12 +199,12 @@ function ProductManagerTable2(props: TProductManagerTable2Props) {
 				</div>
 			)}
 			{/* Header Table */}
-			<div className="grid grid-cols-12 w-full py-2 px-1 m-0 border-b-2 border-violet-500">
+			<div className="grid grid-cols-12 w-full py-2 px-1 m-0 border-b-2 border-primary">
 				<div
-					className="col-span-2 w-full text-center py-1 font-bold border-x"
+					className="col-span-2 w-full flex justify-center items-center py-1 font-bold border-x"
 					onClick={() => setIsShowTitleSearch(prev => !prev)} 
 				> 
-					عنوان 
+					<span>عنوان </span>
 				</div>
 				<div className="col-span-2 w-full text-center py-1 font-bold border-x">عکس</div>
 				<div className="col-span-2 w-full text-center py-1 font-bold border-x">قیمت</div>
@@ -212,13 +212,13 @@ function ProductManagerTable2(props: TProductManagerTable2Props) {
 				<div className="col-span-2 w-full text-center py-1 font-bold border-x">
 					{/* Category FiltterHeadeer */}
 					<select
-					className='text-center py-1 font-bold'
+					className='text-center py-1 font-bold bg-bg'
 						onChange={e => {
 							setCatSelectedTable(e.target.value);
 							setPresentPage(1);
 						}}
 					>
-						<option className='text-center py-1 font-bold border-x' value={''}>دسته بندی</option>
+						<option className='text-center py-1 font-bold border-x bg-bg ' value={''}>دسته بندی</option>
 						{catData?.map(cat => (
 							<option value={cat.nameTag}>{cat.perTitle}</option>
 						))}
@@ -230,7 +230,7 @@ function ProductManagerTable2(props: TProductManagerTable2Props) {
 			{/* Table Body */}
 			{paginatedProducts.length > 0 &&
 				paginatedProducts[presentPage - 1].map(item => (
-					<div className="grid grid-cols-12 w-full px-1 text-center border-b-2 border-violet-500">
+					<div className="grid grid-cols-12 w-full px-1 text-center border-b-2 border-primary">
 						<div className="col-span-2  border-x flex items-center justify-center">
 							{item.perTitle}
 						</div>

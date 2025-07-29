@@ -13,7 +13,7 @@ function TitleSectionHome(props:{title:string}) {
 				</div>
 
 				{/* عنوان */}
-				<h2 className="mx-4 text-xl font-bold text-gray-700">
+				<h2 className="mx-4 text-xl font-bold text-textMain">
 					{props.title}
 				</h2>
 

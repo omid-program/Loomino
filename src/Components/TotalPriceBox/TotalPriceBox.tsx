@@ -54,7 +54,7 @@ function TotalPriceBox() {
 	};
 
 	return (
-		<div className=" w-10/12  mx-5 border-2 border-violet-200 px-2 py-4 my-8 rounded-md md:w-1/3">
+		<div className=" w-10/12  mx-5 border-2 border-accent px-2 py-4 my-8 rounded-md md:w-1/3">
 			<div className="border-b-2 border-dashed border-gray-500 my-3 p-1 ">
 				<span>قیمت کل:</span>
 				<span>{formatPrice(totalPrice)}</span>
@@ -64,7 +64,7 @@ function TotalPriceBox() {
 					<input
 					placeholder='کد تخفیف:'
 						value={offCodeInput}
-						className="shadow-md shadow-violet-200 p-1 rounded-md"
+						className="shadow-md shadow-accent bg-bg p-1 rounded-md"
 						type="text"
 						onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
 							setOffCodeInput(e.target.value);
@@ -72,20 +72,20 @@ function TotalPriceBox() {
 					/>
 					<button
 						onClick={offCodeHan}
-						className="border-2 border-double border-violet-400 rounded-md  text-gray-800 px-1 py-2"
+						className="border-2 border-double border-primary rounded-md  text-textMainMuted px-1 py-2"
 					>
 						اعمال کد تخفیف
 					</button>
 				</div>
 				<span
-					className={`text-red-600 my-2 mt-1 ${
+					className={`text-red-800 my-2 mt-1 ${
 						!isValidOffCode ? 'block' : 'hidden'
 					}`}
 				>
 					مقدار کد تخفیف معتبر نمی‌باشد
 				</span>
 				<span
-					className={`text-green-600 mt-1 mb-2 ${
+					className={`text-green-700 mt-1 mb-2 ${
 						isValidOffCode ? 'block' : 'hidden'
 					}`}
 				>

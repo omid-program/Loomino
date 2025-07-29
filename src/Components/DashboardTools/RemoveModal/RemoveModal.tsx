@@ -55,7 +55,7 @@ export default function RemoveModal({
 			aria-describedby="modal-modal-description"
 		>
 			<Box sx={style}>
-				<div className="border-b-2 border-gray-700 text-center my-4">
+				<div className="border-b-2 border-gray-700 text-center my-4 text-primary">
 					<Typography id="modal-modal-title" variant="h5" component="h2">
 						حذف محصول
 					</Typography>

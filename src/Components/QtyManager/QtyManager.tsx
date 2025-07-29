@@ -50,14 +50,14 @@ function QtyManager(props: TQtyManagerProps) {
 	return (
 		<div className='flex flex-col justify-between'>
 			<div className="grid grid-cols-5 gap-2 px-1 py-2 border">
-				<div className="grid col-span-2 grid-cols-2 border-l-2 border-violet-400 items-center px-1">
-					<label className="col-span-1" htmlFor="meterInputId">
+				<div className="grid col-span-2 grid-cols-2 border-l-2 border-textMainMuted items-center px-1">
+					<label className="col-span-1 text-textMainMuted" htmlFor="meterInputId">
 						متر:
 					</label>
 					<input
 						min={0}
 						max={maxMeterValue || 100}
-						className="text-center col-span-1 border-b-2 border-dashed border-violet-500 "
+						className=" bg-bg text-center col-span-1 border-b-2 border-dashed border-textMainMuted "
 						id="meterInputId"
 						type="number"
 						placeholder="متر"
@@ -65,7 +65,7 @@ function QtyManager(props: TQtyManagerProps) {
 						onChange={e => setMeterVal(Number(e.target.value))}
 					/>
 				</div>
-				<div className="grid col-span-3 grid-cols-3 ">
+				<div className="grid col-span-3 grid-cols-3 text-textMainMuted">
 					<label className="col-span-2" htmlFor="centiMeterInputId">
 						سانتی متر
 					</label>
@@ -73,7 +73,7 @@ function QtyManager(props: TQtyManagerProps) {
 						min={0}
 						max={100}
 						id="centiMeterInputId"
-						className="text-center col-span-1 border-b-2 border-dashed border-violet-500 "
+						className=" bg-bg text-center col-span-1 border-b-2 border-dashed border-textMainMuted "
 						type="number"
 						placeholder="سانتی متر"
 						value={centiMeterVal}
@@ -84,11 +84,11 @@ function QtyManager(props: TQtyManagerProps) {
 			</div>
 			<div className="grid grid-rows-2 ">
 				<div id="price-of-one-meter" className="grid grid-cols-2 border ">
-					<div className="grid col-span-1 text-center border py-2 bg-inherit rounded-tr-md">
+					<div className="grid col-span-1 text-center border border-textMainMuted py-2 bg-inherit rounded-tr-md">
 						قیمت یک متر:
 					</div>
 					{price && (
-						<div className="grid col-span-1 text-center border py-2 bg-inherit rounded-tl-md">
+						<div className="grid col-span-1 text-center border border-textMainMuted py-2 bg-inherit rounded-tl-md">
 							{formatPrice(Number(price))}
 						</div>
 					)}
@@ -97,11 +97,11 @@ function QtyManager(props: TQtyManagerProps) {
 					id="price-of-one-meter"
 					className="grid grid-cols-2 border rounded-md "
 				>
-					<div className="grid col-span-1 text-center border py-2 bg-inherit rounded-br-md">
+					<div className="grid col-span-1 text-center border border-textMainMuted py-2 bg-inherit rounded-br-md">
 						قیمت {baskeFormatMeter(meterVal, centiMeterVal)} متر:
 					</div>
 					{price && (
-						<div className="grid col-span-1 text-center border py-2 bg-inherit rounded-bl-md">
+						<div className="grid col-span-1 text-center border border-textMainMuted py-2 bg-inherit rounded-bl-md">
 							{formatPrice(Math.floor(userProductPrice))}
 						</div>
 					)}
@@ -114,7 +114,7 @@ function QtyManager(props: TQtyManagerProps) {
 				{/* add BTN */}
 				<div className="col-span-4">
 					<button
-						className=" w-full mx-auto px-1 py-2 rounded-md shadow-md shadow-sky-200 border-2 border-sky-400"
+						className=" w-full mx-auto px-1 py-2 rounded-md shadow-md shadow-textMainMuted border-2 border-textMain"
 						onClick={() => {
 							// addOrdToCart(id, meterVal, centiMeterVal, colorCode , Number(price));
 							if (colorId && perTitle) {

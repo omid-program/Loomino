@@ -59,13 +59,13 @@ async function ProductPage({ params }: TProductPageParams) {
 				
 				</div>
 				<div className="col-span-10 flex flex-col items-center md:col-span-7 my-2 md:my-8  ">
-					<div className="flex flex-col mb-16 border-2 border-violet-600 rounded-xl px-2 py-4 w-10/12 md:w-11/12 md:mx-auto ">
+					<div className="flex flex-col mb-16 border-2 border-textMain rounded-xl px-2 py-4 w-10/12 md:w-11/12 md:mx-auto ">
 						<h1 className="text-3xl my-3">{productData?.perTitle}</h1>
-						<div className="bg-violet-50 px-2 rounded-xl min-h-80 py-4">
+						<div className="border border-dashed text-textMainMuted border-textMain px-2 rounded-xl min-h-80 py-4 m-2">
 							<p>{productData?.perDescription}</p>
 						</div>
 					</div>
-					<div className="grid grid-cols-4 gap-5 w-10/12 md:grid-cols-3 md:w-11/12 mx-auto shadow-md shadow-violet-300 rounded px-2 py-4 min-h-52 max-h-56 overflow-y-scroll">
+					<div className="grid grid-cols-4 gap-5 w-10/12 md:grid-cols-3 md:w-11/12 mx-auto shadow-md shadow-textMainMuted rounded px-2 py-4 min-h-52 max-h-56 overflow-y-scroll">
 						<div className="col-span-4 text-center">
 							<h2 className="text-xl ">
 								شاید این نوع پارچه ها را هم بپسندید😉
@@ -73,7 +73,7 @@ async function ProductPage({ params }: TProductPageParams) {
 						</div>
 						{productData.tags.map(tag => (
 							<Link key={tag.id} href={`/tags/${tag.id}`}>
-								<div className='border-r-4 rounded-l-md p-1 border-violet-600 bg-violet-50'>{tag.perTitle}</div>
+								<div className='border-r-4 rounded-l-md p-1 border-textMain bg-hover text-textMainMuted'>{tag.perTitle}</div>
 							</Link>
 						))}
 					</div>

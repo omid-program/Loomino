@@ -5,11 +5,12 @@ import { IoIosArrowForward } from 'react-icons/io';
 import { IoIosArrowBack } from 'react-icons/io';
 import { statusRules } from '@/rules/statusRules/StatusRules';
 import axios from 'axios';
-import { patch } from '@mui/material';
 import OrdDetailModal from './OrdDetailModal/OrdDetailModal';
 import OrdAddresModal from './OrdAddresModal/OrdAddresModal';
 import { formatPrice } from '@/utils/price';
 import { API_BASE_URL } from './../../../../config';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { CssBaseline } from '@/@mui/material/esm';
 
 function OrdTableBox(props: TAllOrdData) {
 	const { id, date, orders, country, city, address, statusCode, state } =
@@ -20,6 +21,9 @@ function OrdTableBox(props: TAllOrdData) {
 	);
 	const [statusCodeState, setStatusCodeState] = useState(statusCode);
 	const [isLoading, setIsLoadndg] = useState(false);
+	const darkMode = createTheme({
+		palette: { mode: 'dark' },
+	});
 	// console.log('OrdTableBox-props-orders=>', orders);
 	console.log('OrdTableBox-props-date=>', date);
 
@@ -76,23 +80,32 @@ function OrdTableBox(props: TAllOrdData) {
 
 	return (
 		<div className="grid grid-cols-5 border">
+			{/* date */}
 			<div className="grid col-span-1 text-center py-2 border-x ">
 				{date.pertionDate.year}/{date.pertionDate.month}/
 				{date.pertionDate.day}-{date.pertionDate.time}
 			</div>
-			<div className="grid col-span-1 text-center py-2 border-x ">
-				<OrdDetailModal ords={orders} />
-			</div>
+			<ThemeProvider theme={darkMode}>
+				<CssBaseline/>
+			{/* ord-list */}
+				<div className="grid col-span-1 text-center py-2 border-x ">
+					<OrdDetailModal ords={orders} />
+				</div>
+				{/* ord-addres */}
+				<div className="grid col-span-1 text-center py-2 border-x">
+					<OrdAddresModal
+						address={address}
+						city={city}
+						country={country}
+						state={state}
+					/>
+				</div>
+			</ThemeProvider>
+			{/* price */}
 			<div className="grid col-span-1 text-center py-2 border-x">
-				
-				<OrdAddresModal
-					address={address}
-					city={city}
-					country={country}
-					state={state}
-				/>
+				{formatPrice(Number(totalPrice))} تومان{' '}
 			</div>
-			<div className="grid col-span-1 text-center py-2 border-x">{formatPrice(Number(totalPrice))} تومان </div>
+			{/* change-status */}
 			<div className="grid col-span-1 text-center grid-cols-5 px-3">
 				<button
 					onClick={nextStatusHand}
@@ -104,7 +117,7 @@ function OrdTableBox(props: TAllOrdData) {
 					<IoIosArrowForward />
 				</button>
 				<span
-					className={`text-center col-span-3 ${
+					className={`text-center col-span-3 flex items-center justify-center text-lg ${
 						statosRulleOrd?.style || 'bg-gray-200'
 					}`}
 				>

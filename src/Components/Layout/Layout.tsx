@@ -14,10 +14,10 @@ export default function Layout({
 }>) {
 	return (
 		<ShappingCartContextProvider>
-			<div>
+			<div className='text-textMain'>
 				{/* <ShappingCartContextProvider> */}
 				{/* decstop */}
-				<div className="hidden md:flex md:gap-0 md:justify-center   ">
+				<div className="hidden md:flex md:gap-0 md:justify-center border-y-2 border-accent rounded-br-2xl rounded-tl-2xl   ">
 					<ServerNavbar />
 					<ClientNavbar />
 				</div>

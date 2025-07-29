@@ -22,7 +22,7 @@ async function StorePiece(props: {
 	const spOfferData = (await spOfferRes.json()) as TSpetialOfferData;
 
 	return (
-		<div className="bg-violet-100 rounded-lg p-1 my-8">
+		<div className="border-2 border-primary rounded-lg p-1 my-8">
 			<TitleSectionHome title={title} />
 			<main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-screen-lg mx-auto p-4 font-yekan">
 				{data.map(product => {

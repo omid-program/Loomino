@@ -7,7 +7,7 @@ function FooterContainer({ children }: { children: React.ReactNode }) {
 	return (
 		<div
 			style={{ backgroundColor: hoverColor ?? 'transparent' }}
-			className="mt-10 border-violet-400 border-2 px-8 py-12 flex flex-col md:grid md:grid-cols-4  gap-7 transition-colors duration-300 "
+			className="mt-10 border-textMain border-y-2 rounded-tl-full rounded-br-full px-8 py-12 flex flex-col md:grid md:grid-cols-4  gap-7 transition-colors duration-300 "
 		>
 			{/* به تمام کارت‌ها این تابع رو پاس بده */}
 			{React.Children.map(children, child => {

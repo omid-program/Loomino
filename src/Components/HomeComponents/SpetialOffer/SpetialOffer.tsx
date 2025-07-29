@@ -36,7 +36,7 @@ async function SpetialOffer() {
 	}, [] as (TAllProductData & { persentage: string })[]);
 
 	return (
-		<div className='bg-violet-100 p-1 my-8 rounded-lg'>
+		<div className='border-2 border-primary p-1 my-8 rounded-lg'>
 			<TitleSectionHome title={offerData.description} />
 			<main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-screen-lg mx-auto p-4 font-yekan">
 				{combineProductOffer.map(product => {

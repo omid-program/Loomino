@@ -44,8 +44,8 @@ async function InThisSesson() {
 
 	// console.log('sessonProduct=> ', seasonProducts);
 	return (
-		<div className="my-8 bg-violet-100 rounded-lg p-1">
-			<div className="flex gap-2 text-xl">
+		<div className="my-8 border-2 border-primary rounded-lg p-1">
+			<div className="flex gap-2 text-xl text-textMain my-3 mx-2 items-center">
 				<span>
 					<AiFillProduct />
 				</span>

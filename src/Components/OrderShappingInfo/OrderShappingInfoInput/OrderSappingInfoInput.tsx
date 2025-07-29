@@ -21,7 +21,7 @@ function OrderShappingInfoInput(props: TOrderShappingInfoInputProps) {
                type="text"
                name={name}
                // value={state}
-               className="mx-1 px-1 py-2 shadow-md shadow-violet-200  rounded-md w-8/12"
+               className="mx-1 px-1 py-2 shadow-md shadow-accent bg-bg  rounded-md w-8/12"
                onChange={(e) => {
                   sendNewOrdInfoHan(e);
                }}
@@ -33,7 +33,7 @@ function OrderShappingInfoInput(props: TOrderShappingInfoInputProps) {
                onChange={(e) => {
                   sendNewOrdInfoHan(e);
                }}
-               className="w-full shadow-md shadow-violet-200 px-1 py-2 rounded-md"
+               className="w-full shadow-md shadow-accent bg-bg px-1 py-2 rounded-md"
             ></textarea>
          )}
       </div>

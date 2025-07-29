@@ -161,13 +161,13 @@ export default function AddCatModal(
 				className='overflow-y-scroll'
 			>
 				<Box sx={style}>
-					<div className='border-b-2 border-gray-800 py-1 text-center'>
+					<div className='border-b-2 border-gray-800 py-1 text-center text-accent'>
 					<Typography id="modal-modal-title" variant="h5" component="h2">
 						افزودن دسته بندی جدید
 					</Typography>
 					</div>
 					<Box id="modal-modal-description" sx={{ mt: 2 }}>
-						<div className="grid grid-cols-2 gap-1 overflow-y-scroll">
+						<div className="grid grid-cols-2 gap-1 overflow-y-scroll text-accent">
 							{catInputs.map(item => (
 								<div
 									key={item.name}
@@ -179,7 +179,7 @@ export default function AddCatModal(
 											name={item.name}
 											value={item.value}
 											type="text"
-											className=" w-full border-r-4 border-rose-600 bg-rose-200 rounded-l-md py-1"
+											className=" w-full border-r-4 border-rose-600 bg-stone-800 rounded-l-md py-1"
 											onChange={e => {
 												changeStateHand(e);
 											}}
@@ -188,7 +188,7 @@ export default function AddCatModal(
 										<textarea
 											name={item.name}
 											value={item.value}
-											className="w-full border-r-4 border-rose-600 bg-rose-200 rounded-l-md py-1"
+											className="w-full border-r-4 border-rose-600 bg-stone-800 rounded-l-md py-1"
 											rows={4}
 											onChange={e => {
 												changeStateHand(e);
@@ -199,7 +199,7 @@ export default function AddCatModal(
 							))}
 						</div>
 							<button
-								className="w-1/3 mx-auto my-2 border-2 border-rose-600 rounded-md py-2 hover:bg-rose-200 text-center"
+								className="w-1/3 mx-auto my-2 border-2 border-rose-600 text-primary rounded-md py-2 hover:bg-rose-950 text-center "
 								onClick={sendNewCatToDatabase}
 							>
 								ثبت دسته بندی جدید

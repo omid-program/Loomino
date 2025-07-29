@@ -110,7 +110,8 @@ export default function AccountMenu() {
 	return (
 		<>
 			<Box
-				sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}
+				sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' , background:'#1d1d1d' , color:'#dbd0c0' }}
+				
 			>
 				{/* <Typography sx={{ minWidth: 100 }}>Contact</Typography> */}
 				{/* <Typography sx={{ minWidth: 100 }}>Profile</Typography> */}
@@ -130,6 +131,7 @@ export default function AccountMenu() {
 				</Tooltip>
 			</Box>
 			<Menu
+			sx={{background:'#374151' , color:'dcba92'}}
 				anchorEl={anchorEl}
 				id="account-menu"
 				open={open}
@@ -169,7 +171,7 @@ export default function AccountMenu() {
 				<MenuItem onClick={handleClose} >
 					<Link href={`/cart`} className='flex gap-3'>
 						<MdOutlineShoppingCart />{' '}
-						<div>
+						<div >
 							<span>{formatPrice(basketPrice)}</span>
 							<span> تومان</span>
 						</div>

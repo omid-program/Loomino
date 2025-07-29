@@ -77,14 +77,14 @@ export default function Login() {
 					userLogin(e);
 				}}
 				id="login"
-				className=" border-2 rounded-md border-violet-600 shadow-md shadow-violet-300 px-4 py-8 flex flex-col"
+				className=" border-2 rounded-md border-textMain shadow-md shadow-textMainMuted px-4 py-8 flex flex-col"
 			>
 				{/* top-form */}
 				<div className="mb-6" id="top-form">
-					<div className=" border-2 border-dashed border-violet-400 rounded-md px-2 py-3 mb-3 text-center">
+					<div className=" border-2 border-dashed border-textMain rounded-md px-2 py-3 mb-3 text-center">
 						<h2 className="text-2xl mb-2">فرم ورود</h2>
 					</div>
-					<span id="login__subtitle" className="text-violet-700 mb-7">
+					<span id="login__subtitle" className="text-textMain mb-7">
 						خوشحالم دوباره می‌بینیمت دوست من :)
 					</span>
 				</div>
@@ -93,7 +93,7 @@ export default function Login() {
 					<div id="username-input" className="flex gap-2 items-center">
 						<label>نام کاربری/ ایمیل: </label>
 						<Input
-							className="rounded-md p-2"
+							className="rounded-md p-2 bg-bg"
 							type="text"
 							placeholder="نام کاربری یا آدرس ایمیل"
 							element="input"
@@ -105,7 +105,6 @@ export default function Login() {
 							]}
 							onInputHandeler={onInputHandeler}
 						/>
-						<i className="login-form__username-icon fa fa-user"></i>
 					</div>
 
 					<div
@@ -114,7 +113,7 @@ export default function Login() {
 					>
 						<label htmlFor="">رمز عبور: </label>
 						<Input
-							className="rounded-md p-2 "
+							className="rounded-md p-2 bg-bg"
 							type="password"
 							placeholder="رمز عبور"
 							element="input"
@@ -126,7 +125,7 @@ export default function Login() {
 							]}
 							onInputHandeler={onInputHandeler}
 						/>
-						<i className="login-form__password-icon fa fa-lock-open"></i>
+						<i className="login-form__password-icon fa fa-lock-open bg-bg"></i>
 
 						{/* <ReCAPTCHA
 							sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
@@ -135,11 +134,11 @@ export default function Login() {
 						/> */}
 					</div>
 					{formState.isFormValid ? (
-						<div className="shadow-md shadow-green-300 border-2 border-green-600 rounded-lg px-1 py-2 w-10/12 text-center mx-auto ">
+						<div className="shadow-md shadow-green-700 border-2 border-green-800 rounded-lg px-1 py-2 w-10/12 text-center mx-auto ">
 							<p>مقدار ورودی ها معتبر است</p>
 						</div>
 					) : (
-						<div className="shadow-md shadow-rose-300 border-2 border-rose-600 rounded-lg px-1 py-2 w-10/12 text-center mx-auto ">
+						<div className="shadow-md shadow-rose-700 border-2 border-rose-800 rounded-lg px-1 py-2 w-10/12 text-center mx-auto ">
 							<p>مقادیر وارد شده نا معتبر است</p>
 						</div>
 					)}
@@ -147,8 +146,8 @@ export default function Login() {
 						className={`border-2 rounded-md py-2 w-8/12 mx-auto  ${
 							!formState.isFormValid
 								? // && isRecaptcha
-								  ' bg-gray-400'
-								: ' border-violet-400 shadow-md shadow-violet-200'
+								  ' bg-hover'
+								: ' border-textMain shadow-md shadow-textMainMuted'
 						}`}
 						type={'submit'}
 						disabled={

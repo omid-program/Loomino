@@ -24,7 +24,7 @@ export default function CommentTextModal(props:{commentText:string}) {
 
 	return (
 		<div>
-			<Button onClick={handleOpen}><span className='text-xl'>متن کامل نظر</span></Button>
+			<Button onClick={handleOpen}><span className='text-xl text-hover px-2 py-2 border border-dashed rounded-3xl'>متن کامل نظر</span></Button>
 			<Modal
 				open={open}
 				onClose={handleClose}
@@ -33,12 +33,12 @@ export default function CommentTextModal(props:{commentText:string}) {
 			>
 				<Box sx={style}>
 					<Box id="modal-modal-title"  component="h2">
-						<div className='p-1 border-b-2 text-center'>
+						<div className='p-1 border-b-2 text-center text-textMain'>
 							<Typography variant='h5' >متن کامل نظر</Typography>
 						</div>
 					</Box>
 					<Box id="modal-modal-description" sx={{ mt: 2 }}>
-						<div className='overflow-y-scroll'>
+						<div className='overflow-y-scroll text-textMainMuted'>
                   <Typography>
                      {commentText}
                   </Typography>

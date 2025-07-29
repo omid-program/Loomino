@@ -62,7 +62,7 @@ function AboutUs() {
 	return (
 		<Container>
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-16 my-24 ">
-				<div className="flex flex-col items-center shadow-md shadow-violet-400 px-2 py-6">
+				<div className="flex flex-col items-center shadow-md shadow-textMainMuted px-2 py-6">
 					<div className="mb-5">
 						<img src="logo/omid-program-logo-L-07.png" alt="omid-program" />
 					</div>
@@ -76,7 +76,7 @@ function AboutUs() {
 						<TelegramBtn />
 					</div>
 				</div>
-				<div className="text-center border-2 border-violet-500 shadow-sm shadow-violet-300 bg-violet-50 px-2 py-4 rounded-md">
+				<div className="text-center border-2 border-textMain shadow-sm shadow-textMainMuted px-2 py-4 rounded-md">
 					<h3 className="text-2xl font-bold my-3">Loomino</h3>
 					<div className="mt-3 mb-5">
 						<p>

@@ -5,7 +5,7 @@ function HeaderStatic() {
 	return (
 		<header className="relative w-full h-[500px] mb-8">
 			<img
-				src="/Header-img/Black-violet-wavy-background.jpg"
+				src="/Header-img/Black-violet-wavy-background-2.jpg"
 				alt="header"
 				className="absolute inset-0 w-full h-full object-cover z-0"
 			/>

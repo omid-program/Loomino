@@ -26,7 +26,7 @@ export default function UserInfoModal(props: TCommentUserInfo) {
 	return (
 		<div>
 			<Button onClick={handleOpen}>
-				<span className="text-xl ">نمایش مشخصات</span>
+				<span className="text-xl text-hover px-2 py-2 border border-dashed rounded-3xl  ">نمایش مشخصات</span>
 			</Button>
 			<Modal
 				open={open}
@@ -35,7 +35,7 @@ export default function UserInfoModal(props: TCommentUserInfo) {
 				aria-describedby="modal-modal-description"
 			>
 				<Box sx={style}>
-					<div className="p-1 text-center border-2">
+					<div className="p-1 text-center border-2 text-textMain">
 						<Typography
 							id="modal-modal-title"
 							variant="h5"
@@ -44,7 +44,7 @@ export default function UserInfoModal(props: TCommentUserInfo) {
 							لیست مشخصات کاربر
 						</Typography>
 					</div>
-					<div className="mt-4">
+					<div className="mt-4 text-textMainMuted">
 						<div className=" p-1 border-b-2 border-dashed border-gray-800 flex gap-4 items-center">
 							<span className="">
 								<Typography variant="h6">نام کاربری: </Typography>

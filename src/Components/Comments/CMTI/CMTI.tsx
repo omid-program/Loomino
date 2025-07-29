@@ -6,6 +6,8 @@ import UserInfoModal from '../CommentModal/UserInfoModal/UserInfoModal';
 import CommentTextModal from '../CommentModal/CommentTextModal/CommentTextModal';
 import { space } from '@/postcss/lib/list';
 import { API_BASE_URL } from './../../../../config';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { CssBaseline } from '@/@mui/material/esm';
 
 import axios from '@/axios';
 
@@ -25,6 +27,10 @@ function CMTI(props: TCommetsData) {
 	} = props;
 	// const [isValid, setIsValid] = useState<boolean>(isShow);
 	const [isLoading, setIsLoading] = useState<boolean>(false);
+
+	const darkMode = createTheme({
+		palette: { mode: 'dark' },
+	});
 
 	const changeStatusHand = async (newIsShow: boolean) => {
 		if (isLoading) return;
@@ -50,23 +56,27 @@ function CMTI(props: TCommetsData) {
 	return (
 		<div>
 			<div className="grid grid-cols-5">
-				<div className="grid col-span-1 text-center py-2 border border-gray-800">
+				<div className="grid col-span-1 text-center py-2 border border-gray-300">
 					{moment(createdAt).format('jYYYY/jMM/jDD')}
 				</div>
-				<div className="grid col-span-1 text-center py-2 border border-gray-800">
+				<div className="grid col-span-1 text-center py-2 border border-gray-300">
 					{productTitle}
 				</div>
-				<div className="grid col-span-1 text-center py-2 border border-gray-800">
-					<UserInfoModal
-						name={name}
-						phoneNumber={phoneNumber}
-						email={email}
-					/>
+				<div className="grid col-span-1 text-center py-2 border border-gray-300">
+					<ThemeProvider theme={darkMode}>
+						<UserInfoModal
+							name={name}
+							phoneNumber={phoneNumber}
+							email={email}
+						/>
+					</ThemeProvider>
 				</div>
-				<div className="grid col-span-1 text-center py-2 border border-gray-800">
-					<CommentTextModal commentText={commentText} />
+				<div className="grid col-span-1 text-center py-2 border border-gray-300">
+					<ThemeProvider theme={darkMode}>
+						<CommentTextModal commentText={commentText} />
+					</ThemeProvider>
 				</div>
-				<div className="  text-center py-2 border border-gray-800 ">
+				<div className="  text-center py-2 border border-gray-300 ">
 					<button
 						onClick={() => {
 							changeCommentStatus();

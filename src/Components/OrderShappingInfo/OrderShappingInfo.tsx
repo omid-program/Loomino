@@ -182,7 +182,7 @@ function OrderShappingInfo() {
 		},
 	];
 	return (
-		<div className=" my-8 px-4 py-6 shadow-lg shadow-violet-200 rounded-md">
+		<div className=" my-8 px-4 py-6 shadow-lg shadow-accent rounded-md">
 			<div id="userInfoOrd" className='my-5 flex flex-row items-center'>
 				<LuNotebookPen className='text-2xl font-bold ' />
 				<h3 className="text-2xl font-bold">مشخصات جهت ارسال سفارش</h3>
@@ -211,7 +211,7 @@ function OrderShappingInfo() {
 					سبد خرید شما نمیتواند خالی باشد
 				</p>
 				<button
-					className="border-2 border-violet-500 rounded-md px-7 py-3 my-5 hover:bg-violet-200 hover:text-gray-700"
+					className="border-2 border-primary rounded-md px-7 py-3 my-5 hover:bg-stone-700 hover:text-gray-200"
 					onClick={submitedOrd}
 				>
 					ثبت سفارش

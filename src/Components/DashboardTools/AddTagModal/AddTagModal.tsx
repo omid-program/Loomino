@@ -104,7 +104,7 @@ export default function AddTagModal({ open, onClose }: IAddTagModalProps) {
 				aria-describedby="modal-modal-description"
 			>
 				<Box sx={style}>
-					<div className="border-b-2 border-gray-700 text-center">
+					<div className="border-b-2 border-gray-700 text-center text-accent">
 						<Typography
 							id="modal-modal-title"
 							variant="h5"
@@ -115,7 +115,7 @@ export default function AddTagModal({ open, onClose }: IAddTagModalProps) {
 					</div>
 					<Box id="modal-modal-description" sx={{ mt: 2 }}>
 						<div
-							className="flex flex-col gap-3 justify-start items-start"
+							className="flex flex-col gap-3 justify-start items-start text-accent"
 							// className="grid grid-cols-2"
 						>
 							{catInputs.map(item => (
@@ -130,7 +130,7 @@ export default function AddTagModal({ open, onClose }: IAddTagModalProps) {
 										value={item.value}
 										type="text"
 										// className="shadow-md shadow-violet-200 rounded-md p-1 flex-shrink"
-										className="border-r-4 border-blue-500 rounded-l-md bg-blue-200 p-1 flex-shrink"
+										className="border-r-4 border-blue-500 rounded-l-md bg-gray-800 p-1 flex-shrink"
 										onChange={e => {
 											changeStateHand(e);
 										}}
@@ -138,7 +138,7 @@ export default function AddTagModal({ open, onClose }: IAddTagModalProps) {
 								</div>
 							))}
 							<button
-								className="w-full py-2 my-1 border-2 border-blue-500 rounded-md hover:bg-blue-200  "
+								className="w-full py-2 my-1 border-2 text-accent border-blue-500 rounded-md hover:bg-blue-950   "
 								onClick={sendNewCatToDatabase}
 							>
 								ثبت برچسب جدید

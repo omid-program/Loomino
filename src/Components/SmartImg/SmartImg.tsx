@@ -40,7 +40,7 @@ function SmartImg(props: TSmartImgProps) {
 	// console.log('SmartImg=>' , id);
 
 	return (
-		<div className="flex flex-col gap-4 justify-center items-center my-4 lg:my-8 mx-auto border-2 p-3 border-l-2 border-violet-400 rounded-sm ">
+		<div className="flex flex-col gap-4 justify-center items-center my-4 lg:my-8 mx-auto border-2 p-3 border-l-2 border-textMain rounded-sm ">
 			<div style={{ boxShadow: `3px 5px 17px 1px ${imgShadow}` }}>
 				<img id="smartImgId" src={colorImg} alt="" />
 			</div>
@@ -56,7 +56,7 @@ function SmartImg(props: TSmartImgProps) {
 						style={{ backgroundColor: colorItem.colorCode }}
 
 						// className="size-10 rounded-full"
-						className="p-1  rounded-md"
+						className="p-1 text-textMainMuted  rounded-md"
 					>
 						{colorItem.colorName}
 						{/* . */}
@@ -64,8 +64,8 @@ function SmartImg(props: TSmartImgProps) {
 				))}
 			</div>
 			<div className="grid grid-cols-4 gap-1 ">
-				<span className='grid col-span-3'>موجودی رنگ {colorName}: </span>
-				<span className='grid col-span-1'>{colorQtys}متر</span>
+				<span className='grid col-span-3 text-textMainMuted'>موجودی رنگ {colorName}: </span>
+				<span className='grid col-span-1 text-textMainMuted'>{colorQtys}متر</span>
 			</div>
 			<QtyManager
 				id={id}

@@ -32,7 +32,7 @@ export default function OrdAddresModal(props: TOrdAddresModal) {
 	return (
 		<div>
 			<Button onClick={handleOpen}>
-				<span className='px-2 py-1 border-2 border-violet-600 rounded-md text-md'>
+				<span className='px-2 py-1 border-2 border-primary text-textMainMuted rounded-md text-md'>
 				{country} - {city}
 				</span>
 				</Button>
